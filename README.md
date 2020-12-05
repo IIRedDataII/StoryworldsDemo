@@ -1,2 +1,8 @@
 # StoryworldsDemo
-2nd try
+
+Folder Structure:
+Assests
+	Scenes
+	Scripts
+	Sprites
+	Materials
