@@ -2,12 +2,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerInteraction : MonoBehaviour
+public class Player : MonoBehaviour
 {
     
     #region Variables
     
     // Constants
+    private const float Speed = 10f;
     private const float Range = 2f;
 
     // Unity variables
@@ -18,6 +19,8 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject computerNav;
 
     // variables
+    private Rigidbody2D _rigidbody;
+    private bool canMove;
     private bool blockEForThisFrame;
     private bool readEarthLog;
     private bool readFamilyLog;
@@ -28,16 +31,27 @@ public class PlayerInteraction : MonoBehaviour
     {
         
         #region Initialization
-        
+
+        canMove = true;
         earthMessageLog.enabled = false;
         familyMessageLog.enabled = false;
-        
+        _rigidbody = GetComponent<Rigidbody2D>();
+
         #endregion
-        
+
     }
 
     private void Update()
     {
+        
+        #region Movement
+
+        if (canMove)
+        {
+            _rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * Speed;
+        }
+        
+        #endregion
         
         #region Leave Scene
 
@@ -45,6 +59,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             // TODO
             Debug.Log("Change Scene");
+            transform.position = new Vector3(-6.4f, -12f, 0f);
         }
 
         #endregion
@@ -76,6 +91,7 @@ public class PlayerInteraction : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && !earthMessageLog.enabled)
             {
                 earthMessageLog.enabled = true;
+                canMove = false;
                 if (!readEarthLog)
                     readEarthLog = true;
                 blockEForThisFrame = true;
@@ -92,6 +108,7 @@ public class PlayerInteraction : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && !familyMessageLog.enabled)
             {
                 familyMessageLog.enabled = true;
+                canMove = false;
                 if (!readFamilyLog)
                     readFamilyLog = true;
                 blockEForThisFrame = true;
@@ -104,12 +121,14 @@ public class PlayerInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && earthMessageLog.enabled && !blockEForThisFrame)
         {
             earthMessageLog.enabled = false;
+            canMove = true;
         }
         
         // disabled family message log overlay
         if (Input.GetKeyDown(KeyCode.E) && familyMessageLog.enabled && !blockEForThisFrame)
         {
             familyMessageLog.enabled = false;
+            canMove = true;
         }
         
         

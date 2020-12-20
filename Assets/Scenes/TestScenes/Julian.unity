@@ -1049,8 +1049,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.01731, y: 0}
-  m_SizeDelta: {x: 731.03455, y: 411}
+  m_AnchoredPosition: {x: 0.000026703, y: -0.000016212}
+  m_SizeDelta: {x: 799.9999, y: 449.93286}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &577089833
 MonoBehaviour:
@@ -1250,11 +1250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8784148513861587143, guid: 9f0e02460bd274d478af944b899afd06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.51
+      value: -11.502
       objectReference: {fileID: 0}
     - target: {fileID: 8784148513861587143, guid: 9f0e02460bd274d478af944b899afd06, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.999
+      value: 10.0039
       objectReference: {fileID: 0}
     - target: {fileID: 8784148513861587143, guid: 9f0e02460bd274d478af944b899afd06, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1481,7 +1481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -14644,7 +14644,6 @@ GameObject:
   - component: {fileID: 1512231565}
   - component: {fileID: 1512231564}
   - component: {fileID: 1512231562}
-  - component: {fileID: 1512231563}
   - component: {fileID: 1512231567}
   m_Layer: 0
   m_Name: Player
@@ -14679,19 +14678,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.50710547, y: 0.9717194}
   m_EdgeRadius: 0
---- !u!114 &1512231563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512231561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68bb8ec0b502fd746b99f9b453beea10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!50 &1512231564
 Rigidbody2D:
   serializedVersion: 4
@@ -14704,7 +14690,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -14787,7 +14773,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1512231561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 109fda99f48114546967de2f9c436b5d, type: 3}
+  m_Script: {fileID: 11500000, guid: dc4bd118801a06647bc9d9676116e75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interact: {fileID: 1652248483}
@@ -21482,8 +21468,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: 0}
-  m_SizeDelta: {x: 731, y: 411}
+  m_AnchoredPosition: {x: 0.00003624, y: -0.000016212}
+  m_SizeDelta: {x: 800, y: 449.93286}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889342763
 MonoBehaviour:
@@ -21666,11 +21652,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4388043797771286726, guid: 483aa133fe3f76446a5aa59dfa97a99a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -306
+      value: -327
       objectReference: {fileID: 0}
     - target: {fileID: 4388043797771286726, guid: 483aa133fe3f76446a5aa59dfa97a99a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -148
+      value: -155.5
       objectReference: {fileID: 0}
     - target: {fileID: 4388043797771286726, guid: 483aa133fe3f76446a5aa59dfa97a99a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
