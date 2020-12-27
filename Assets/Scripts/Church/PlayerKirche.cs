@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -21,9 +22,13 @@ public class PlayerKirche : MonoBehaviour
     public GameObject steinTafel2;
     public GameObject steinTafel3;
     public GameObject steinTafel1;
-
+    public GameObject Rebell;
+    
     // variables
     private Rigidbody2D _rigidbody;
+    private bool letztesBildWasEnabled = false;
+    public bool moveRebell = false;
+    private bool rebellTriggered = false;
     private bool canMove;
     private bool blockEForThisFrame;
     private bool readzweiteVision;
@@ -34,7 +39,7 @@ public class PlayerKirche : MonoBehaviour
 
     private void Start()
     {
-        
+        Debug.Log("Trigger");
         #region Initialization
 
         canMove = true;
@@ -49,6 +54,15 @@ public class PlayerKirche : MonoBehaviour
 
     private void Update()
     {
+    
+        #region Rebell
+
+        if (moveRebell)
+        {
+            Rebell.transform.Translate(Vector3.up);
+        }
+        
+        #endregion
         
         #region Movement
 
@@ -59,26 +73,7 @@ public class PlayerKirche : MonoBehaviour
         
         #endregion
         
-        //#region Leave Scene
 
-        //if (transform.position.x >= -7.62 && transform.position.x <= -5.39 && transform.position.y <= -13.3)
-       // {
-         //   // TODO
-         //   Debug.Log("Change Scene");
-       //     transform.position = new Vector3(-6.4f, -12f, 0f);
-       // }
-
-        //#endregion
-
-       // #region End Sequence
-        
-        // initiate end sequence
-       // if (readzweiteVision && readdritteVision && !zweiteVision.enabled && !dritteVision.enabled)
-       // {
-       //     StartCoroutine(EndSequence());
-       // }
-        
-      //  #endregion
 
         #region Interaction
         
@@ -118,6 +113,7 @@ public class PlayerKirche : MonoBehaviour
                 if (!readErsteVision)
                     readErsteVision = true;
                 blockEForThisFrame = true;
+                letztesBildWasEnabled = true;
             }
         }
         
@@ -177,15 +173,30 @@ public class PlayerKirche : MonoBehaviour
     
     #endregion
     
-   // #region Coroutines
+    #region Coroutines
+     private IEnumerator rebellenSequence()
+    {
+        
+        yield return new WaitWhile(()=>Rebell.transform.position.y < 21);
+        moveRebell = false;
+        yield return new WaitForSeconds(10);
+        canMove = true;
+        Debug.Log("rebellensequenz");
+    }
+    
+    #endregion
 
-  /// private IEnumerator EndSequence()
-  //  {
-       // yield return new WaitForSeconds(3);
-        // TODO
-     //   Debug.Log("*end sequence starts*");
-  //  }
-    
-   // #endregion
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger");
+        if (other.tag.Equals("RebellenTrigger") && letztesBildWasEnabled && !rebellTriggered)
+        {
+            rebellTriggered = true;
+            moveRebell = true;
+            canMove = false;
+            Rebell.GetComponent<SpriteRenderer>().enabled = true;
+            StartCoroutine(rebellenSequence());
+            
+        }
+    }
 }
