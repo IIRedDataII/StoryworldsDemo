@@ -59,7 +59,7 @@ public class PlayerKirche : MonoBehaviour
 
         if (moveRebell)
         {
-            Rebell.transform.Translate(Vector3.up);
+            Rebell.transform.Translate(new Vector3(0,0.2f,0));
         }
         
         #endregion
@@ -154,6 +154,14 @@ public class PlayerKirche : MonoBehaviour
         {
             ersteVision.enabled = false;
             canMove = true;
+            if (!rebellTriggered)
+            {
+                StartCoroutine(rebellenSequence());
+                rebellTriggered = true;
+                moveRebell = true;
+                canMove = false;
+                Rebell.GetComponent<SpriteRenderer>().enabled = true;
+            }
         }
         
         
@@ -177,7 +185,7 @@ public class PlayerKirche : MonoBehaviour
      private IEnumerator rebellenSequence()
     {
         
-        yield return new WaitWhile(()=>Rebell.transform.position.y < 21);
+        yield return new WaitWhile(()=>Rebell.transform.position.y < 37);//auf 21 ändern nach test
         moveRebell = false;
         yield return new WaitForSeconds(10);
         canMove = true;
@@ -185,6 +193,20 @@ public class PlayerKirche : MonoBehaviour
     }
     
     #endregion
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Trigger");
+        if (other.tag.Equals("RebellenTrigger") && letztesBildWasEnabled && !rebellTriggered)
+        {
+            rebellTriggered = true;
+            moveRebell = true;
+            canMove = false;
+            Rebell.GetComponent<SpriteRenderer>().enabled = true;
+            StartCoroutine(rebellenSequence());
+            
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
