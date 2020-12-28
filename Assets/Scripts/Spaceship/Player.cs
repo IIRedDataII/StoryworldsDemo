@@ -1,29 +1,38 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     
-    #region Variables
+    #region Constants
     
-    // Constants
     private const float Speed = 10f;
     private const float Range = 2f;
-
+    
+    #endregion
+    
+    #region Variables
+    
     // Unity variables
     public Image interact;
     public Image earthMessageLog;
     public Image familyMessageLog;
     public GameObject computerCom;
     public GameObject computerNav;
+    public GameObject temp;
 
     // variables
     private Rigidbody2D _rigidbody;
+    private MessageBox messageBox;
     private bool canMove;
     private bool blockEForThisFrame;
     private bool readEarthLog;
     private bool readFamilyLog;
+
+    private bool end;   // probably temporary.
 
     #endregion
 
@@ -32,10 +41,11 @@ public class Player : MonoBehaviour
         
         #region Initialization
 
+        messageBox = GameObject.FindGameObjectWithTag("MessageBox").GetComponent<MessageBox>();
+        _rigidbody = GetComponent<Rigidbody2D>();
         canMove = true;
         earthMessageLog.enabled = false;
         familyMessageLog.enabled = false;
-        _rigidbody = GetComponent<Rigidbody2D>();
 
         #endregion
 
@@ -46,11 +56,15 @@ public class Player : MonoBehaviour
         
         #region Movement
 
-        if (canMove)
+        if (canMove && !messageBox.GetMessageActive())
         {
             _rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * Speed;
         }
-        
+        else
+        {
+            _rigidbody.velocity = Vector2.zero;
+        }
+
         #endregion
         
         #region Leave Scene
@@ -67,8 +81,9 @@ public class Player : MonoBehaviour
         #region End Sequence
         
         // initiate end sequence
-        if (readEarthLog && readFamilyLog && !earthMessageLog.enabled && !familyMessageLog.enabled)
+        if (!end && readEarthLog && readFamilyLog && !earthMessageLog.enabled && !familyMessageLog.enabled && !messageBox.GetMessageActive())
         {
+            end = true;
             StartCoroutine(EndSequence());
         }
         
@@ -122,6 +137,14 @@ public class Player : MonoBehaviour
         {
             earthMessageLog.enabled = false;
             canMove = true;
+            
+            LinkedList<string> authors = new LinkedList<string>();
+            authors.AddLast("Jordan");
+            authors.AddLast("Jordan");
+            LinkedList<string> messages = new LinkedList<string>();
+            messages.AddLast("Ach Mensch!");
+            messages.AddLast("Desch' ja blöd.");
+            messageBox.ShowMessages(authors, messages);
         }
         
         // disabled family message log overlay
@@ -129,6 +152,14 @@ public class Player : MonoBehaviour
         {
             familyMessageLog.enabled = false;
             canMove = true;
+            
+            LinkedList<string> authors = new LinkedList<string>();
+            authors.AddLast("Jordan");
+            authors.AddLast("Jordan");
+            LinkedList<string> messages = new LinkedList<string>();
+            messages.AddLast("Ach Mensch!");
+            messages.AddLast("Desch' ja supi.");
+            messageBox.ShowMessages(authors, messages);
         }
         
         
@@ -152,9 +183,12 @@ public class Player : MonoBehaviour
 
     private IEnumerator EndSequence()
     {
-        yield return new WaitForSeconds(3);
-        // TODO
-        Debug.Log("*end sequence starts*");
+        yield return new WaitForSeconds(5);
+        
+        messageBox.ShowMessage("Jordan", "Was soll ich tun? Meine Familie suchen? Oder mich den Chia-Rebellen anschließen und hierbleiben?");
+        
+        // TODO: Knöpfe für Entscheidung einfügen
+        Debug.Log("*end*");
     }
     
     #endregion
