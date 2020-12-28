@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -46,7 +48,7 @@ public class Player : MonoBehaviour
         canMove = true;
         earthMessageLog.enabled = false;
         familyMessageLog.enabled = false;
-
+        GameData.Instance.setGetlastRoom = GameData.LastRoom.Spaceship;
         #endregion
 
     }
@@ -192,5 +194,12 @@ public class Player : MonoBehaviour
     }
     
     #endregion
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("ScenenWechsel"))
+        {
+            SceneManager.LoadScene("City");
+        }
+    }
 }
