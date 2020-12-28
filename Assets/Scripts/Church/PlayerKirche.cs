@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //Julians skript koopiert
 public class PlayerKirche : MonoBehaviour
@@ -50,6 +51,8 @@ public class PlayerKirche : MonoBehaviour
 
         #endregion
 
+        GameData.Instance.setGetlastRoom = GameData.LastRoom.Kirche;
+
     }
 
     private void Update()
@@ -93,6 +96,7 @@ public class PlayerKirche : MonoBehaviour
             {
                 zweiteVision.enabled = true;
                 canMove = false;
+                _rigidbody.velocity = Vector2.zero;
                 if (!readzweiteVision)
                     readzweiteVision = true;
                 blockEForThisFrame = true;
@@ -110,6 +114,7 @@ public class PlayerKirche : MonoBehaviour
             {
                 ersteVision.enabled = true;
                 canMove = false;
+                _rigidbody.velocity = Vector2.zero;
                 if (!readErsteVision)
                     readErsteVision = true;
                 blockEForThisFrame = true;
@@ -128,6 +133,7 @@ public class PlayerKirche : MonoBehaviour
             {
                 dritteVision.enabled = true;
                 canMove = false;
+                _rigidbody.velocity = Vector2.zero;
                 if (!readdritteVision)
                     readdritteVision = true;
                 blockEForThisFrame = true;
@@ -154,14 +160,6 @@ public class PlayerKirche : MonoBehaviour
         {
             ersteVision.enabled = false;
             canMove = true;
-            if (!rebellTriggered)
-            {
-                StartCoroutine(rebellenSequence());
-                rebellTriggered = true;
-                moveRebell = true;
-                canMove = false;
-                Rebell.GetComponent<SpriteRenderer>().enabled = true;
-            }
         }
         
         
@@ -185,40 +183,33 @@ public class PlayerKirche : MonoBehaviour
      private IEnumerator rebellenSequence()
     {
         
-        yield return new WaitWhile(()=>Rebell.transform.position.y < 37);//auf 21 ändern nach test
+        yield return new WaitWhile(()=>Rebell.transform.position.y < 21);
         moveRebell = false;
         yield return new WaitForSeconds(10);
         canMove = true;
-        Debug.Log("rebellensequenz");
+        
     }
     
     #endregion
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger");
         if (other.tag.Equals("RebellenTrigger") && letztesBildWasEnabled && !rebellTriggered)
         {
             rebellTriggered = true;
             moveRebell = true;
             canMove = false;
+            _rigidbody.velocity = Vector2.zero;
             Rebell.GetComponent<SpriteRenderer>().enabled = true;
             StartCoroutine(rebellenSequence());
             
+        }
+
+        if (other.gameObject.tag.Equals("ScenenWechsel"))
+        {
+            SceneManager.LoadScene("City");
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Trigger");
-        if (other.tag.Equals("RebellenTrigger") && letztesBildWasEnabled && !rebellTriggered)
-        {
-            rebellTriggered = true;
-            moveRebell = true;
-            canMove = false;
-            Rebell.GetComponent<SpriteRenderer>().enabled = true;
-            StartCoroutine(rebellenSequence());
-            
-        }
-    }
+   
 }

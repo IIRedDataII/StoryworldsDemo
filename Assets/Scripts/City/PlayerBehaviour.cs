@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerBehaviour : MonoBehaviour
@@ -48,5 +49,25 @@ public class PlayerBehaviour : MonoBehaviour
         }
         #endregion
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("ScenenWechsel"))
+        {
+            if (other.gameObject.name.Equals("ScenenWechsel (C->Ship)"))
+            {
+                SceneManager.LoadScene("Spaceship");
+            }
+            
+            if (other.gameObject.name.Equals("ScenenWechsel (C->Kirche)"))
+            {
+                SceneManager.LoadScene("Church");
+            }
+            
+            if (other.gameObject.name.Equals("ScenenWechsel (C->Lab)"))
+            {
+                SceneManager.LoadScene("Laboaratory");
+            }
+        }
+    }
 }

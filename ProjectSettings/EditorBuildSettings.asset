@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Laboaratory.unity
+    guid: b55263dd84aa4ce4d8e1e86e1553dc36
+  - enabled: 1
     path: Assets/Scenes/City.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Church.unity
+    guid: 6e1fc8e5e73a838489affc3e2ed17cdf
+  - enabled: 1
+    path: Assets/Scenes/Spaceship.unity
+    guid: b9b51dd0bdf10b846bdc37447ac9e0ef
   m_configObjects: {}
