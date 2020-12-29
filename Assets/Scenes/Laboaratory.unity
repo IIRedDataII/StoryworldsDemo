@@ -22794,7 +22794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 212031798}
   door: {fileID: 231401076}
-  keypad: {fileID: 0}
+  keypad: {fileID: 2037749752}
   code: 1234
   _input: 0
 --- !u!61 &1723294496
