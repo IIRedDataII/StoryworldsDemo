@@ -71,17 +71,6 @@ public class Player : MonoBehaviour
 
         #endregion
         
-        #region Leave Scene
-
-        /*if (transform.position.x >= -7.62 && transform.position.x <= -5.39 && transform.position.y <= -13.3)
-        {
-            // TODO
-            Debug.Log("Change Scene");
-            transform.position = new Vector3(-6.4f, -12f, 0f);
-        }*/
-
-        #endregion
-
         #region End Sequence
         
         // initiate end sequence
