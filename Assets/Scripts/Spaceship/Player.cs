@@ -48,7 +48,9 @@ public class Player : MonoBehaviour
         canMove = true;
         earthMessageLog.enabled = false;
         familyMessageLog.enabled = false;
+        
         GameData.Instance.setGetlastRoom = GameData.LastRoom.Spaceship;
+        
         #endregion
 
     }
@@ -71,12 +73,12 @@ public class Player : MonoBehaviour
         
         #region Leave Scene
 
-        if (transform.position.x >= -7.62 && transform.position.x <= -5.39 && transform.position.y <= -13.3)
+        /*if (transform.position.x >= -7.62 && transform.position.x <= -5.39 && transform.position.y <= -13.3)
         {
             // TODO
             Debug.Log("Change Scene");
             transform.position = new Vector3(-6.4f, -12f, 0f);
-        }
+        }*/
 
         #endregion
 
@@ -195,6 +197,8 @@ public class Player : MonoBehaviour
     
     #endregion
 
+    #region Event Functions
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag.Equals("ScenenWechsel"))
@@ -202,4 +206,7 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("City");
         }
     }
+    
+    #endregion
+    
 }
