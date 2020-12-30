@@ -5,8 +5,7 @@
  * Add this to your global variables:
  * private MessageBox messageBox;
  *
- * Add this to your Start() function
- * messageBox = GameObject.FindGameObjectWithTag("MessageBox").GetComponent<MessageBox>();
+ * Set the variable in Unity
  *
  * Show one message by calling:
  * messageBox.ShowMessage("author", "message");
