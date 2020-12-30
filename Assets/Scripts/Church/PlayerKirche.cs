@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -24,6 +25,7 @@ public class PlayerKirche : MonoBehaviour
     public GameObject steinTafel3;
     public GameObject steinTafel1;
     public GameObject Rebell;
+    public MessageBox messageBox;
     
     // variables
     private Rigidbody2D _rigidbody;
@@ -47,6 +49,16 @@ public class PlayerKirche : MonoBehaviour
         ersteVision.enabled = false;
         _rigidbody = GetComponent<Rigidbody2D>();
         GameData.Instance.setGetlastRoom = GameData.LastRoom.Kirche;
+        
+        // example
+        LinkedList<string> authors = new LinkedList<string>();
+        authors.AddLast("Jordan");
+        authors.AddLast("Bernd");
+        LinkedList<string> messages = new LinkedList<string>();
+        messages.AddLast("Weg von mieeer!");
+        messages.AddLast("Iech kiiihl diiiech!");
+        messageBox.ShowMessages(authors, messages);
+
         #endregion
     }
 

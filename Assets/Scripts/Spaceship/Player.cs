@@ -22,11 +22,10 @@ public class Player : MonoBehaviour
     public Image familyMessageLog;
     public GameObject computerCom;
     public GameObject computerNav;
-    public GameObject temp;
 
     // variables
     private Rigidbody2D _rigidbody;
-    private MessageBox messageBox;
+    public MessageBox messageBox;
     private bool canMove;
     private bool blockEForThisFrame;
     private bool readEarthLog;
@@ -41,7 +40,6 @@ public class Player : MonoBehaviour
         
         #region Initialization
 
-        messageBox = GameObject.FindGameObjectWithTag("MessageBox").GetComponent<MessageBox>();
         _rigidbody = GetComponent<Rigidbody2D>();
         canMove = true;
         earthMessageLog.enabled = false;
