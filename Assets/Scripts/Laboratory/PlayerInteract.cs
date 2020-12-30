@@ -23,10 +23,13 @@ public class PlayerInteract : MonoBehaviour
      */
     private void OnTriggerEnter2D(Collider2D other)
     {
-        interact.enabled = true;
-        _interactable = other.GetComponent<Interactable>();
-        _interactable.highlight.SetActive(true);
-        _canInteract = true;
+        if (other.CompareTag("Interactable"))
+        {
+            interact.enabled = true;
+            _interactable = other.GetComponent<Interactable>();
+            _interactable.highlight.SetActive(true);
+            _canInteract = true;
+        }
     }
 
     private void Update()
