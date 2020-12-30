@@ -22,7 +22,6 @@ public abstract class Interactable : MonoBehaviour
             SpecificAction();
             Active = true;
             Player.gameObject.SetActive(false);
-            
         }
 
     }
