@@ -175,6 +175,7 @@ public class PlayerKirche : MonoBehaviour
             canMove = false;
             _rigidbody.velocity = Vector2.zero;
             Rebell.GetComponent<SpriteRenderer>().enabled = true;
+            GameData.Instance.wasInChurch = true;
             StartCoroutine(rebellenSequence());
         }
         if (other.gameObject.tag.Equals("ScenenWechsel"))

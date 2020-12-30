@@ -26,6 +26,8 @@ public class GameData
     };
     
     private LastRoom lastRoom = LastRoom.Start;
+    
+    
 
     public LastRoom setGetlastRoom
     {
@@ -38,4 +40,6 @@ public class GameData
             lastRoom = value;
         }
     }
+
+    public bool wasInChurch = false;
 }
