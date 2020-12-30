@@ -142,6 +142,10 @@ public class MessageBox : MonoBehaviour
             messagesLeft = messages.Count;
             messagesFollowing = true;
         }
+        else
+        {
+            Debug.Log("There is another message in progress at the moment. This message was ignored.");
+        }
         
     }
     

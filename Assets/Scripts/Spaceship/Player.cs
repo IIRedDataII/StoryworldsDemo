@@ -127,13 +127,7 @@ public class Player : MonoBehaviour
             earthMessageLog.enabled = false;
             canMove = true;
             
-            LinkedList<string> authors = new LinkedList<string>();
-            authors.AddLast("Jordan");
-            authors.AddLast("Jordan");
-            LinkedList<string> messages = new LinkedList<string>();
-            messages.AddLast("Ach Mensch!");
-            messages.AddLast("Desch' ja blöd.");
-            messageBox.ShowMessages(authors, messages);
+            DialogueNavigations();
         }
         
         // disabled family message log overlay
@@ -141,14 +135,8 @@ public class Player : MonoBehaviour
         {
             familyMessageLog.enabled = false;
             canMove = true;
-            
-            LinkedList<string> authors = new LinkedList<string>();
-            authors.AddLast("Jordan");
-            authors.AddLast("Jordan");
-            LinkedList<string> messages = new LinkedList<string>();
-            messages.AddLast("Ach Mensch!");
-            messages.AddLast("Desch' ja supi.");
-            messageBox.ShowMessages(authors, messages);
+
+            DialogueCommunications();
         }
         
         
@@ -160,6 +148,28 @@ public class Player : MonoBehaviour
     }
 
     #region Helper Functions
+
+    private void DialogueCommunications()
+    {
+        LinkedList<string> authors = new LinkedList<string>();
+        authors.AddLast("Jordan");
+        authors.AddLast("Jordan");
+        LinkedList<string> messages = new LinkedList<string>();
+        messages.AddLast("Ach Mensch!");
+        messages.AddLast("Desch' ja supi.");
+        messageBox.ShowMessages(authors, messages);
+    }
+    
+    private void DialogueNavigations()
+    {
+        LinkedList<string> authors = new LinkedList<string>();
+        authors.AddLast("Jordan");
+        authors.AddLast("Jordan");
+        LinkedList<string> messages = new LinkedList<string>();
+        messages.AddLast("Ach Mensch!");
+        messages.AddLast("Desch' ja blöd.");
+        messageBox.ShowMessages(authors, messages);
+    }
     
     private bool IsCloseTo(GameObject other)
     {
