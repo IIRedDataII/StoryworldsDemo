@@ -31,7 +31,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void Update()
     {
-        if (_canInteract && _interactable && Input.GetButton("Interact") )
+        if (_canInteract && _interactable && Input.GetButtonDown("Interact") )
         {
             interact.enabled = false;
             _interactable.Action(this.gameObject);

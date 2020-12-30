@@ -12,7 +12,12 @@ public class DoorTerminal : Interactable
     //KeyCode
     [SerializeField] private int code = 1234;
     [SerializeField] private int _input = 0;
-    
+
+    private void Start()
+    {
+        keypad.SetActive(false);
+    }
+
     protected override void SpecificAction()
     {
         //Open Code Terminal View
@@ -22,13 +27,16 @@ public class DoorTerminal : Interactable
     protected override void UndoSpecificAction()
     {
         //Close Terminal View
+        WrongInput();
         keypad.SetActive(false);
     }
 
     private void Update()
     {
-        //test
-        if(Active && Input.GetButton("Debug Validate")) Sucess();
+        if (Active && (Input.GetButtonDown("UndoInteract") || Input.GetMouseButtonDown(0))) 
+        { 
+            UndoAction();
+        }
     }
 
     #region Keypad

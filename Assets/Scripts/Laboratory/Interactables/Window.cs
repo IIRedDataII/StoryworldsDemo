@@ -17,7 +17,7 @@ public class Window : Interactable
 
     private void Update()
     {
-        if (Active && (Input.GetButton("UndoInteract") || Input.GetMouseButtonDown(0)))
+        if (Active && (Input.GetButtonDown("UndoInteract") || Input.GetMouseButtonDown(0)))
         {
             UndoAction();
         }
