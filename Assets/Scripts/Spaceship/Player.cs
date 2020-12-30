@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -10,28 +8,25 @@ public class Player : MonoBehaviour
     #region Constants
     
     private const float Speed = 10f;
-    private const float Range = 2f;
     
     #endregion
     
     #region Variables
+
+    // static variables
+    public static bool AtComputerNav;
+    public static bool AtComputerCom;
+    public static bool AtButton;
     
     // Unity variables
-    public Image interact;
-    public Image earthMessageLog;
-    public Image familyMessageLog;
-    public GameObject computerCom;
-    public GameObject computerNav;
+    [SerializeField] private Image earthMessageLog;
+    [SerializeField] private Image familyMessageLog;
+    [SerializeField] private MessageBox messageBox;
 
     // variables
     private Rigidbody2D _rigidbody;
-    public MessageBox messageBox;
-    private bool canMove;
-    private bool blockEForThisFrame;
-    private bool readEarthLog;
-    private bool readFamilyLog;
-
-    private bool end;   // probably temporary.
+    private bool imageActive;
+    private bool readEnd;
 
     #endregion
 
@@ -40,10 +35,11 @@ public class Player : MonoBehaviour
         
         #region Initialization
 
+        AtComputerNav = false;
+        AtComputerCom = false;
+        AtButton = false;
+        
         _rigidbody = GetComponent<Rigidbody2D>();
-        canMove = true;
-        earthMessageLog.enabled = false;
-        familyMessageLog.enabled = false;
         
         GameData.Instance.setGetlastRoom = GameData.LastRoom.Spaceship;
         
@@ -56,9 +52,9 @@ public class Player : MonoBehaviour
         
         #region Movement
 
-        if (canMove && !messageBox.GetMessageActive())
+        if (!imageActive && !messageBox.GetMessageActive())
         {
-            _rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * Speed;
+            _rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * (Speed * Time.deltaTime * 1000f);
         }
         else
         {
@@ -66,83 +62,78 @@ public class Player : MonoBehaviour
         }
 
         #endregion
-        
-        #region End Sequence
-        
-        // initiate end sequence
-        if (!end && readEarthLog && readFamilyLog && !earthMessageLog.enabled && !familyMessageLog.enabled && !messageBox.GetMessageActive())
+
+        #region Interaction
+
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            end = true;
-            StartCoroutine(EndSequence());
+            
+            if (AtButton)
+            {
+                if (GameData.Instance.wasInChurch)
+                {
+                    LinkedList<string> messages = new LinkedList<string>();
+                    messages.AddLast("Das Schiff scheint noch überraschend intakt zu sein... Ich hätte jetzt die Gelegenheit, von diesem Planeten zu fliehen. Aber wohin?");
+                    messages.AddLast("Was soll ich nur tun? Ich bin der einzige Überlebende... die Erde ist tot... meine Familie ist irgendwo da draußen...");
+                    messages.AddLast("Soll ich versuchen, sie zu finden? Wer weiß, ob sie überhaupt noch leben? Oder bereits aus dem Kälteschlaf erwacht sind?");
+                    messages.AddLast("Oder soll ich hierbleiben? Ich verdanke den Rebellen mein Leben. Vielleicht kann ich ihnen wirklich helfen...");
+                    messages.AddLast("Vielleicht finde ich in ihnen sogar eine neue Familie? Ein neues Leben? Wer weiß, ob ich je wieder einen so bewohnbaren Planeten finde?");
+                    messageBox.ShowMonologue("Jordan", messages);
+
+                    readEnd = true;
+                }
+                else
+                {
+                    messageBox.ShowMessage("Jordan", "Ich möchte mich hier lieber noch etwas umsehen, bevor ich das Schiff starte.");
+                }
+            }
+            
+            else if (AtComputerNav)
+            {
+                if (earthMessageLog.enabled)
+                {
+                    earthMessageLog.enabled = false;
+                    imageActive = false;
+            
+                    DialogueNavigations();
+                }
+                else
+                {
+                    earthMessageLog.enabled = true;
+                    imageActive = true;
+                }
+            }
+            
+            else if (AtComputerCom)
+            {
+                if (familyMessageLog.enabled)
+                {
+                    familyMessageLog.enabled = false;
+                    imageActive = false;
+
+                    DialogueCommunications();
+                }
+                else
+                {
+                    familyMessageLog.enabled = true;
+                    imageActive = true;
+                }
+            }
+            
+            
         }
         
         #endregion
+        
+        #region End
+        
+        if (readEnd && !messageBox.GetMessageActive())
+        {
+            readEnd = false;
+            // TODO: Add decision & end to demo
+            Debug.Log("End: Decision");
+        }
 
-        #region Interaction
-        
-        // disable interact overlay
-        if (interact.enabled)
-            interact.enabled = false;
-        
-        
-        // player at navigation
-        if (IsCloseTo(computerNav))
-        {
-            
-            if (!interact.enabled)
-                interact.enabled = true;
-            
-            if (Input.GetKeyDown(KeyCode.E) && !earthMessageLog.enabled)
-            {
-                earthMessageLog.enabled = true;
-                canMove = false;
-                if (!readEarthLog)
-                    readEarthLog = true;
-                blockEForThisFrame = true;
-            }
-        }
-        
-        // player at communication
-        if (IsCloseTo(computerCom))
-        {
-            
-            if (!interact.enabled)
-                interact.enabled = true;
-            
-            if (Input.GetKeyDown(KeyCode.E) && !familyMessageLog.enabled)
-            {
-                familyMessageLog.enabled = true;
-                canMove = false;
-                if (!readFamilyLog)
-                    readFamilyLog = true;
-                blockEForThisFrame = true;
-            }
-            
-        }
-        
-        
-        // disabled earth message log overlay
-        if (Input.GetKeyDown(KeyCode.E) && earthMessageLog.enabled && !blockEForThisFrame)
-        {
-            earthMessageLog.enabled = false;
-            canMove = true;
-            
-            DialogueNavigations();
-        }
-        
-        // disabled family message log overlay
-        if (Input.GetKeyDown(KeyCode.E) && familyMessageLog.enabled && !blockEForThisFrame)
-        {
-            familyMessageLog.enabled = false;
-            canMove = true;
-
-            DialogueCommunications();
-        }
-        
-        
-        // unblock E
-        blockEForThisFrame = false;
-        
         #endregion
         
     }
@@ -169,37 +160,6 @@ public class Player : MonoBehaviour
         messages.AddLast("Ach Mensch!");
         messages.AddLast("Desch' ja blöd.");
         messageBox.ShowMessages(authors, messages);
-    }
-    
-    private bool IsCloseTo(GameObject other)
-    {
-        return Vector3.Magnitude((Vector2) transform.position - (Vector2) other.transform.position) < Range;
-    }
-    
-    #endregion
-    
-    #region Coroutines
-
-    private IEnumerator EndSequence()
-    {
-        yield return new WaitForSeconds(5);
-        
-        messageBox.ShowMessage("Jordan", "Was soll ich tun? Meine Familie suchen? Oder mich den Chia-Rebellen anschließen und hierbleiben?");
-        
-        // TODO: Knöpfe für Entscheidung einfügen
-        Debug.Log("*end*");
-    }
-    
-    #endregion
-
-    #region Event Functions
-    
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag.Equals("ScenenWechsel"))
-        {
-            SceneManager.LoadScene("City");
-        }
     }
     
     #endregion

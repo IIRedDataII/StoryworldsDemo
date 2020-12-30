@@ -8,11 +8,11 @@
  * Set the variable in Unity
  *
  * Show one message by calling:
- * messageBox.ShowMessage("author", "message");
+ * messageBox.ShowMessage("speaker", "message");
  * 
  * Show mutiple messages one after another by calling:
- * messageBox.ShowMessages(authors, messages);
- * where authors & messages are LinkedLists of strings. They can't be empty and have to be of the same size (author i is shown for message i).
+ * messageBox.ShowMessages(speakers, messages);
+ * where speakers & messages are LinkedLists of strings. They can't be empty and have to be of the same size (speaker i is shown for message i).
  * 
  * To check wether there's a message box showing at the moment (for example to turn of player movement in that case), use the fuction
  * public bool GetMessageActive();
@@ -46,7 +46,7 @@ public class MessageBox : MonoBehaviour
     private bool messagesFollowing;
 
     private LinkedList<string> messages;
-    private LinkedList<string> authors;
+    private LinkedList<string> speakers;
     
     #endregion
     
@@ -97,8 +97,8 @@ public class MessageBox : MonoBehaviour
             else if (!messageBusy)
             {
                 messageBusy = true;
-                text.text = authors.First.Value + ": ";
-                authors.RemoveFirst();
+                text.text = speakers.First.Value + ": ";
+                speakers.RemoveFirst();
                 StartCoroutine(ShowMessage(messages.First.Value));
                 messages.RemoveFirst();
                 messagesLeft--;
@@ -111,43 +111,60 @@ public class MessageBox : MonoBehaviour
     }
     
     #region Helper Functions
-
-    public void ShowMessage(string author, string message)
+    
+    public void ShowMonologue(string speaker, LinkedList<string> messages)
     {
-        LinkedList<string> authors = new LinkedList<string>();
-        authors.AddLast(author);
-        LinkedList<string> messages = new LinkedList<string>();
-        messages.AddLast(message);
-        ShowMessages(authors, messages);
+        LinkedList<string> speakers = new LinkedList<string>();
+        for (int i = 0; i < messages.Count; i++)
+            speakers.AddLast(speaker);
+        ShowMessages(speakers, messages);
     }
     
-    public void ShowMessages(LinkedList<string> authors, LinkedList<string> messages)
+    public void ShowDialogue(string speakerFirst, string speakerSecond, LinkedList<string> messages)
+    {
+        LinkedList<string> speakers = new LinkedList<string>();
+        for (int i = 0; i < messages.Count; i++)
+            speakers.AddLast(i % 2 == 0 ? speakerFirst : speakerSecond);
+        ShowMessages(speakers, messages);
+    }
+
+    public void ShowMessage(string speaker, string message)
+    {
+        LinkedList<string> speakers = new LinkedList<string>();
+        speakers.AddLast(speaker);
+        LinkedList<string> messages = new LinkedList<string>();
+        messages.AddLast(message);
+        ShowMessages(speakers, messages);
+    }
+    
+    public void ShowMessages(LinkedList<string> speakers, LinkedList<string> messages)
     {
         
-        if (authors.Count < 1 || messages.Count < 1)
+        if (speakers.Count < 1 || messages.Count < 1)
         {
-            throw new ArgumentException("@authors and @messages cannot be zero");
+            throw new ArgumentException("@speakers and @messages cannot be zero");
         }
-        if (authors.Count != messages.Count)
+        if (speakers.Count != messages.Count)
         {
-            throw new ArgumentException("@authors and @messages cannot be of different size");
+            throw new ArgumentException("@speakers and @messages cannot be of different size");
         }
 
         if (!GetMessageActive())
         {
             box.enabled = true;
             text.enabled = true;
-            this.authors = authors;
+            this.speakers = speakers;
             this.messages = messages;
             messagesLeft = messages.Count;
             messagesFollowing = true;
         }
         else
         {
-            Debug.Log("There is another message in progress at the moment. This message was ignored.");
+            Debug.Log("There is another message active at the moment. This message was ignored.");
         }
         
     }
+    
     
     #endregion
     
