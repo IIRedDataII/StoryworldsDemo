@@ -1,4 +1,26 @@
-﻿using System;
+﻿/* Documentation
+ * 
+ * in-game: press space to go to the next message
+ * 
+ * Add this to your global variables:
+ * private MessageBox messageBox;
+ *
+ * Add this to your Start() function
+ * messageBox = GameObject.FindGameObjectWithTag("MessageBox").GetComponent<MessageBox>();
+ *
+ * Show one message by calling:
+ * messageBox.ShowMessage("author", "message");
+ * 
+ * Show mutiple messages one after another by calling:
+ * messageBox.ShowMessages(authors, messages);
+ * where authors & messages are LinkedLists of strings. They can't be empty and have to be of the same size (author i is shown for message i).
+ * 
+ * To check wether there's a message box showing at the moment (for example to turn of player movement in that case), use the fuction
+ * public bool GetMessageActive();
+ * 
+ */
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
