@@ -2,6 +2,13 @@
 public class GameData
 {
     private static GameData instance;
+
+    #region variablen
+    public bool wasInChurch = false;
+    public bool rebelTriggered = false;
+    
+
+    #endregion 
     private GameData()
     {
         if (instance != null)
@@ -41,5 +48,5 @@ public class GameData
         }
     }
 
-    public bool wasInChurch = false;
+    
 }

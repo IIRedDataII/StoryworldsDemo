@@ -30,7 +30,6 @@ public class PlayerKirche : MonoBehaviour
     // variables
     private Rigidbody2D _rigidbody;
     private bool letztesBildWasEnabled = false;
-    private bool rebellTriggered = false;
     private bool canMove;
     private bool blockEForThisFrame;
     private bool readzweiteVision;
@@ -157,9 +156,9 @@ public class PlayerKirche : MonoBehaviour
     #region Coroutines
      private IEnumerator rebellenSequence()
     {
-        while (Rebell.transform.position.y < 21)
+        while (Rebell.transform.position.y < 12)
         {
-            Rebell.transform.Translate(new Vector3(0,0.2f,0));
+            Rebell.transform.Translate(new Vector3(0,10,0)*Time.deltaTime);
             yield return new WaitForSeconds(0.003f);
         }
         yield return new WaitForSeconds(8);
@@ -169,9 +168,9 @@ public class PlayerKirche : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag.Equals("RebellenTrigger") && letztesBildWasEnabled && !rebellTriggered)
+        if (other.tag.Equals("RebellenTrigger") && letztesBildWasEnabled && !GameData.Instance.rebelTriggered)
         {
-            rebellTriggered = true;
+            GameData.Instance.rebelTriggered = true;
             canMove = false;
             _rigidbody.velocity = Vector2.zero;
             Rebell.GetComponent<SpriteRenderer>().enabled = true;
