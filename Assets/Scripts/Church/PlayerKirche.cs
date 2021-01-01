@@ -14,7 +14,7 @@ public class PlayerKirche : MonoBehaviour
     
     // Constants
     private const float Speed = 10f;
-    private const float Range = 5f;
+    private const float Range = 2f;
 
     // Unity variables
     public Image interact;
@@ -50,14 +50,14 @@ public class PlayerKirche : MonoBehaviour
         GameData.Instance.setGetlastRoom = GameData.LastRoom.Kirche;
         
         // example
-        LinkedList<string> authors = new LinkedList<string>();
+        /*LinkedList<string> authors = new LinkedList<string>();
         authors.AddLast("Jordan");
         authors.AddLast("Bernd");
         LinkedList<string> messages = new LinkedList<string>();
         messages.AddLast("Weg von mieeer!");
         messages.AddLast("Iech kiiihl diiiech!");
         messageBox.ShowMessages(authors, messages);
-
+*/
         #endregion
     }
 
@@ -88,6 +88,9 @@ public class PlayerKirche : MonoBehaviour
                 if (!readzweiteVision)
                     readzweiteVision = true;
                 blockEForThisFrame = true;
+                LinkedList<string> messages = new LinkedList<string>();
+                messages.AddLast("jo des bin ja ich auf dem bild");
+                messageBox.ShowMonologue("Jordan", messages);
             }
         }
         
@@ -106,6 +109,10 @@ public class PlayerKirche : MonoBehaviour
                     readErsteVision = true;
                 blockEForThisFrame = true;
                 letztesBildWasEnabled = true;
+                
+                LinkedList<string> messages = new LinkedList<string>();
+                messages.AddLast("Erlösung !");
+                messageBox.ShowMonologue("Jordan", messages);
             }
         }
         
@@ -122,21 +129,25 @@ public class PlayerKirche : MonoBehaviour
                 if (!readdritteVision)
                     readdritteVision = true;
                 blockEForThisFrame = true;
+                
+                LinkedList<string> messages = new LinkedList<string>();
+                messages.AddLast("Sieht aus als wären alle tot!");
+                messageBox.ShowMonologue("Jordan", messages);
             }
         }
         // disabled earth message log overlay
-        if (Input.GetKeyDown(KeyCode.E) && zweiteVision.enabled && !blockEForThisFrame)
+        if (Input.GetKeyDown(KeyCode.E) && zweiteVision.enabled && !blockEForThisFrame && !messageBox.GetMessageActive())
         {
             zweiteVision.enabled = false;
             canMove = true;
         }
         // disabled family message log overlay
-        if (Input.GetKeyDown(KeyCode.E) && dritteVision.enabled && !blockEForThisFrame)
+        if (Input.GetKeyDown(KeyCode.E) && dritteVision.enabled && !blockEForThisFrame && !messageBox.GetMessageActive())
         {
             dritteVision.enabled = false;
             canMove = true;
         }
-        if (Input.GetKeyDown(KeyCode.E) && ersteVision.enabled && !blockEForThisFrame)
+        if (Input.GetKeyDown(KeyCode.E) && ersteVision.enabled && !blockEForThisFrame && !messageBox.GetMessageActive())
         {
             ersteVision.enabled = false;
             canMove = true;
@@ -161,7 +172,21 @@ public class PlayerKirche : MonoBehaviour
             Rebell.transform.Translate(new Vector3(0,10,0)*Time.deltaTime);
             yield return new WaitForSeconds(0.003f);
         }
-        yield return new WaitForSeconds(8);
+        LinkedList<string> authors = new LinkedList<string>();
+        authors.AddLast("Rebell");
+        authors.AddLast("Jordan");
+        LinkedList<string> messages = new LinkedList<string>();
+        messages.AddLast("jo lass mal die Regierung stürzen");
+        messages.AddLast("sPrICh DeUTsch dU HUso");
+        messageBox.ShowMessages(authors, messages);
+        yield return new WaitWhile(()=>!messageBox.GetMessageActive());
+        while (Rebell.transform.position.y > -5)
+        {
+            Rebell.transform.Translate(new Vector3(0,-10,0)*Time.deltaTime);
+            yield return new WaitForSeconds(0.003f);
+        }
+        Rebell.GetComponent<SpriteRenderer>().enabled = false;
+        
         canMove = true;
     }
      #endregion
