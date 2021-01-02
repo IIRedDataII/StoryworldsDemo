@@ -4,25 +4,25 @@
  * 
  * Add this to your global variables:
  * [SerializeField] private MessageBox messageBox;
- * Set it in Unity (get the Frame UI GameObject from Spaceship)
+ * Copy the UI GameObject "Frame" from the Spaceship scene into your scene and use it to set the variable in the editor
  *
  * Show one message by calling:
  * messageBox.ShowMessage("speaker", "message");
  * 
  * Show mutiple messages one after another by calling:
  * messageBox.ShowMessages(speakers, messages);
- * where speakers & messages are LinkedLists of strings. They can't be empty and have to be of the same size (speaker i is shown for message i).
+ * where speakers & messages are LinkedLists of strings. They cannot be empty and must be of the same size (speaker i is shown for message i).
  *
  * Show a monologue with only one person speaking by calling:
- * messageBox.ShowMessages("speaker", messages);
+ * messageBox.ShowMonologue("speaker", messages);
  * where messages is a LinkedList of strings
  *
  * Show a dialogue with two persons speaking by calling:
- * messageBox.ShowMessages("speakerFirst", "speakerSecond", messages);
- * where messages is a LinkedList of strings. speakerFirst and speakerSecond alternate in the MessageBoxes, with speakerFirst beginning
+ * messageBox.ShowDialogue("speakerFirst", "speakerSecond", messages);
+ * where messages is a LinkedList of strings. speakerFirst and speakerSecond alternate in the MessageBoxes with speakerFirst beginning.
  * 
  * To check wether there's a message box showing at the moment (for example to turn of player movement in that case), use the fuction
- * public bool GetMessageActive();
+ * messageBox.GetMessageActive();
  * 
  */
 
