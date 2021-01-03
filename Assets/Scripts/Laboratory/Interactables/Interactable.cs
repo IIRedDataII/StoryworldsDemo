@@ -5,32 +5,43 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    protected PlayerMovement Player;
+    protected PlayerMovement PlayerMovement;
+    protected PlayerInteract PlayerInteract;
+    protected BoxCollider2D PlayerCollider;
     protected bool Active = false;
     public GameObject highlight;
 
-    private void Awake()
+    private void Start()
     {
         highlight.SetActive(false);
     }
 
     public void Action(GameObject other)
     {
-        Player = other.GetComponent<PlayerMovement>();
-        if (Player)
+        //Disable Players abilities and collider
+        PlayerMovement = other.GetComponent<PlayerMovement>();
+        PlayerInteract = other.GetComponent<PlayerInteract>();
+        PlayerCollider = other.GetComponent<BoxCollider2D>();
+        if (PlayerMovement && PlayerInteract)
         {
-            SpecificAction();
             Active = true;
-            Player.gameObject.SetActive(false);
+            PlayerMovement.canMove = false;
+            PlayerInteract.enabled = false;
+            PlayerCollider.enabled = false;
+            SpecificAction();
         }
 
     }
 
     public void UndoAction()
     {
-        //Surprise tool that will help us later
-        Player.gameObject.SetActive(true);
-        Player = null;
+        //Undo Action
+        PlayerMovement.canMove = true;
+        PlayerCollider.enabled = true;
+        PlayerInteract.enabled = true;
+        PlayerCollider = null;
+        PlayerInteract = null;
+        PlayerMovement = null;
         Active = false;
         UndoSpecificAction();
     }

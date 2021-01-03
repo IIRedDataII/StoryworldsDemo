@@ -3,16 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class Window : Interactable
 {
-    [SerializeField] private GameObject cityPicture;
+    [SerializeField] private Image cityImage;
 
-    private GameObject _currView;
+    private void Awake()
+    {
+        cityImage.enabled = false;
+    }
 
     protected override void SpecificAction()
     {
-        if(!_currView) _currView = Instantiate(cityPicture, transform);
+        cityImage.enabled = true;
     }
 
     private void Update()
@@ -24,7 +29,7 @@ public class Window : Interactable
     }
     protected override void UndoSpecificAction()
     {
-        Destroy(_currView);
+        cityImage.enabled = false;
     }
     
 }

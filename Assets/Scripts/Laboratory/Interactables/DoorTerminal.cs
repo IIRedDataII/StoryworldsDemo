@@ -3,19 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorTerminal : Interactable
 {
     [SerializeField] private Door door;
-
+    [SerializeField] private Text text;
     [SerializeField] private GameObject keypad;
+
     //KeyCode
     [SerializeField] private int code = 1234;
-    [SerializeField] private int _input = 0;
+    [SerializeField] private int _input;
 
-    private void Start()
+
+    private void Awake()
     {
         keypad.SetActive(false);
+        PostCodeInTextbox();
     }
 
     protected override void SpecificAction()
@@ -27,14 +31,14 @@ public class DoorTerminal : Interactable
     protected override void UndoSpecificAction()
     {
         //Close Terminal View
-        WrongInput();
+        _input = 0;
         keypad.SetActive(false);
     }
 
     private void Update()
     {
-        if (Active && Input.GetButtonDown("UndoInteract")) 
-        { 
+        if (Active && Input.GetButtonDown("UndoInteract"))
+        {
             UndoAction();
         }
     }
@@ -45,6 +49,7 @@ public class DoorTerminal : Interactable
     {
         //Concatenate Numbers to check code;
         _input = _input * 10 + num;
+        PostCodeInTextbox();
     }
 
     public void SubmitInput()
@@ -62,21 +67,36 @@ public class DoorTerminal : Interactable
     public void UndoInput()
     {
         _input /= 10;
+        PostCodeInTextbox();
     }
-    
+
+    public void PostCodeInTextbox()
+    {
+        if (_input == 0)
+        {
+            text.text = "*Insert Code*";
+        }
+        else
+        {
+            text.text = _input.ToString();
+        }
+    }
+
     #endregion
 
     private void Sucess()
     {
         door.Open();
+        _input = 0;
+        PostCodeInTextbox();
         UndoAction();
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
-    
-    
-    
+
+
     private void WrongInput()
     {
-        //TO DO: Show Error somehow,
         _input = 0;
+        PostCodeInTextbox();
     }
 }

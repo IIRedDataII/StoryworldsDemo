@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour
 {
-    private Interactable _interactable;
+    [SerializeField] private Interactable _interactable;
 
     private bool _canInteract;
     
@@ -23,19 +23,20 @@ public class PlayerInteract : MonoBehaviour
      */
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Interactable"))
-        {
-            interact.enabled = true;
-            _interactable = other.GetComponent<Interactable>();
-            _interactable.highlight.SetActive(true);
-            _canInteract = true;
-        }
+        interact.enabled = true;
+        _interactable = other.GetComponent<Interactable>();
+        _interactable.highlight.SetActive(true);
+        _canInteract = true;
     }
-
+    int cnt = 0;
     private void Update()
     {
         if (_canInteract && _interactable && Input.GetButtonDown("Interact") )
         {
+            Input.ResetInputAxes();
+            cnt++;
+            Debug.Log(cnt);
+            _canInteract = false;
             interact.enabled = false;
             _interactable.Action(this.gameObject);
         }

@@ -1,22 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Datapad : Interactable
 {
-    //Prefab
-    [SerializeField] private GameObject datapadImage;
-    //Instance of the Prefab
-    private GameObject  _currView;
+    [SerializeField] private Image datapadImage;
     protected override void SpecificAction()
     {
-        _currView = Instantiate(datapadImage);
-        _currView.transform.position = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 10));
+        datapadImage.enabled = true;
     }
 
     protected override void UndoSpecificAction()
     {
-        Destroy(_currView);
+        datapadImage.enabled = false;
     }
     
     private void Update()
