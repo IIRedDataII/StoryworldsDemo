@@ -28,14 +28,12 @@ public class PlayerInteract : MonoBehaviour
         _interactable.highlight.SetActive(true);
         _canInteract = true;
     }
-    int cnt = 0;
+    
     private void Update()
     {
         if (_canInteract && _interactable && Input.GetButtonDown("Interact") )
         {
             Input.ResetInputAxes();
-            cnt++;
-            Debug.Log(cnt);
             _canInteract = false;
             interact.enabled = false;
             _interactable.Action(this.gameObject);
