@@ -178,8 +178,10 @@ public class PlayerKirche : MonoBehaviour
         LinkedList<string> messages = new LinkedList<string>();
         messages.AddLast("jo lass mal die Regierung stürzen");
         messages.AddLast("sPrICh DeUTsch dU HUso");
+        yield return new WaitForSeconds(2);
         messageBox.ShowMessages(authors, messages);
-        yield return new WaitWhile(()=>!messageBox.GetMessageActive());
+        yield return new WaitWhile(()=>messageBox.GetMessageActive());
+        yield return new WaitForSeconds(2);
         while (Rebell.transform.position.y > -5)
         {
             Rebell.transform.Translate(new Vector3(0,-10,0)*Time.deltaTime);
