@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class PlayerCity : MonoBehaviour
 {
@@ -24,7 +21,13 @@ public class PlayerCity : MonoBehaviour
     
     private void Start()
     {
+        
+        #region Initialization
+        
         _rigidbody = GetComponent<Rigidbody2D>();
+        
+        #endregion
+        
     }
 
     private void Update()

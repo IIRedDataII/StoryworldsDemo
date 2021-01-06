@@ -5,25 +5,11 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class PlayerBehaviour : MonoBehaviour
 {
     
-    #region Variables
-    // Constants
-    private const float Speed = 10f;
-    // variables
-    private Rigidbody2D _rigidbody;
-    private bool canMove;
-    private bool blockEForThisFrame;
-    #endregion
-
     private void Start()
     {
-        #region Initialization
-        canMove = true;
-        _rigidbody = GetComponent<Rigidbody2D>();
-        #endregion
 
         switch (GameData.Instance.setGetlastRoom)
         {
@@ -39,16 +25,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         GameData.Instance.setGetlastRoom = GameData.LastRoom.City;
     }
-
-    private void Update()
-    {
-        #region Movement
-        if (canMove)
-        {
-            _rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * Speed;
-        }
-        #endregion
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
