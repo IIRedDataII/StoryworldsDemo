@@ -6,8 +6,8 @@ TagManager:
   tags:
   - RebellenTrigger
   - MessageBox
-  - ScenenWechsel
   - Interactable
+  - SceneChange
   layers:
   - Default
   - TransparentFX

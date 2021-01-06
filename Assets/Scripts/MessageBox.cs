@@ -4,7 +4,7 @@
  * 
  * Add this to your global variables:
  * [SerializeField] private MessageBox messageBox;
- * Copy the UI GameObject "Frame" from the Spaceship scene into your scene and use it to set the variable in the editor
+ * Copy the UI GameObject "MessageBox" from the Spaceship scene into your scene and use it to set the variable in the editor
  *
  * Show one message by calling:
  * messageBox.ShowMessage("speaker", "message");

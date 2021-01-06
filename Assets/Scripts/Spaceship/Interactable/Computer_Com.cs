@@ -9,13 +9,13 @@ public class Computer_Com : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         interactPrompt.enabled = true;
-        other.gameObject.GetComponent<Player>().atComputerCom = true;
+        other.gameObject.GetComponent<PlayerSpaceship>().atComputerCom = true;
     }
     
     private void OnTriggerExit2D(Collider2D other)
     {
         interactPrompt.enabled = false;
-        other.gameObject.GetComponent<Player>().atComputerCom = false;
+        other.gameObject.GetComponent<PlayerSpaceship>().atComputerCom = false;
     }
     
 }

@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Laboaratory.unity
+    path: Assets/Scenes/Laboratory.unity
     guid: b55263dd84aa4ce4d8e1e86e1553dc36
   - enabled: 1
     path: Assets/Scenes/City.unity
