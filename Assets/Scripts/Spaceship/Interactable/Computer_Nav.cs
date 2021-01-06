@@ -9,13 +9,13 @@ public class Computer_Nav : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         interactPrompt.enabled = true;
-        Player.AtComputerNav = true;
+        other.gameObject.GetComponent<Player>().atComputerNav = true;
     }
     
     private void OnTriggerExit2D(Collider2D other)
     {
         interactPrompt.enabled = false;
-        Player.AtComputerNav = false;
+        other.gameObject.GetComponent<Player>().atComputerNav = false;
     }
     
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -14,9 +15,9 @@ public class Player : MonoBehaviour
     #region Variables
 
     // static variables
-    public static bool AtComputerNav;
-    public static bool AtComputerCom;
-    public static bool AtButton;
+    public bool atComputerNav;
+    public bool atComputerCom;
+    public bool atButton;
     
     // Unity variables
     [SerializeField] private Image earthMessageLog;
@@ -35,9 +36,9 @@ public class Player : MonoBehaviour
         
         #region Initialization
 
-        AtComputerNav = false;
-        AtComputerCom = false;
-        AtButton = false;
+        atComputerNav = false;
+        atComputerCom = false;
+        atButton = false;
         
         _rigidbody = GetComponent<Rigidbody2D>();
         
@@ -61,10 +62,10 @@ public class Player : MonoBehaviour
 
         #region Interaction
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("Interact"))
         {
             
-            if (AtButton)
+            if (atButton)
             {
                 if (GameData.Instance.wasInChurch)
                 {
@@ -85,7 +86,7 @@ public class Player : MonoBehaviour
                 }
             }
             
-            else if (AtComputerNav)
+            else if (atComputerNav)
             {
                 if (earthMessageLog.enabled)
                 {
@@ -101,7 +102,7 @@ public class Player : MonoBehaviour
                 }
             }
             
-            else if (AtComputerCom)
+            else if (atComputerCom)
             {
                 if (familyMessageLog.enabled)
                 {

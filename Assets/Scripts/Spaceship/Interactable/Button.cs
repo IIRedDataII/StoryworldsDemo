@@ -9,13 +9,13 @@ public class Button : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         interactPrompt.enabled = true;
-        Player.AtButton = true;
+        other.gameObject.GetComponent<Player>().atButton = true;
     }
     
     private void OnTriggerExit2D(Collider2D other)
     {
         interactPrompt.enabled = false;
-        Player.AtButton = false;
+        other.gameObject.GetComponent<Player>().atButton = false;
     }
     
 }

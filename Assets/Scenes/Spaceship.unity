@@ -15082,7 +15082,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268662870}
   m_CullTransparentMesh: 0
---- !u!43 &1286763320
+--- !u!43 &1303804777
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15489,8 +15489,8 @@ MonoBehaviour:
   - {x: -30.506653, y: -1.4627688, z: 0.0000076293945}
   - {x: -9.503092, y: -1.4668939, z: 0.0000076293945}
   m_ShapePathHash: 908380728
-  m_Mesh: {fileID: 1286763320}
-  m_InstanceId: 17622
+  m_Mesh: {fileID: 1303804777}
+  m_InstanceId: 17616
 --- !u!1 &1506876866
 GameObject:
   m_ObjectHideFlags: 0
@@ -15868,6 +15868,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4bd118801a06647bc9d9676116e75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atComputerNav: 0
+  atComputerCom: 0
+  atButton: 0
   earthMessageLog: {fileID: 1889342763}
   familyMessageLog: {fileID: 577089833}
   messageBox: {fileID: 833331285}
