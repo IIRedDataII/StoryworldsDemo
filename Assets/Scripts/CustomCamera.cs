@@ -3,7 +3,7 @@
 public class CustomCamera : MonoBehaviour
 {
 
-    public GameObject player;
+    [SerializeField] private GameObject player;
     private Transform cameraTransform;
 
     private void Start()
