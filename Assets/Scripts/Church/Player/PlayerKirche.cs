@@ -48,23 +48,13 @@ public class PlayerKirche : MonoBehaviour
         ersteVision.enabled = false;
         _rigidbody = GetComponent<Rigidbody2D>();
         GameData.Instance.setGetlastRoom = GameData.LastRoom.Church;
-        
-        // example
-        /*LinkedList<string> authors = new LinkedList<string>();
-        authors.AddLast("Jordan");
-        authors.AddLast("Bernd");
-        LinkedList<string> messages = new LinkedList<string>();
-        messages.AddLast("Weg von mieeer!");
-        messages.AddLast("Iech kiiihl diiiech!");
-        messageBox.ShowMessages(authors, messages);
-*/
         #endregion
     }
 
     private void Update()
     {
         #region Movement
-        if (canMove)
+        if (canMove && !messageBox.GetMessageActive())
         {
             _rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * Speed;
         }
@@ -80,7 +70,7 @@ public class PlayerKirche : MonoBehaviour
         {
             if (!interact.enabled)
                 interact.enabled = true;
-            if (Input.GetKeyDown(KeyCode.E) && !zweiteVision.enabled)
+            if (Input.GetKeyDown(KeyCode.E) && !zweiteVision.enabled && !messageBox.GetMessageActive())
             {
                 zweiteVision.enabled = true;
                 canMove = false;
@@ -88,9 +78,7 @@ public class PlayerKirche : MonoBehaviour
                 if (!readzweiteVision)
                     readzweiteVision = true;
                 blockEForThisFrame = true;
-                LinkedList<string> messages = new LinkedList<string>();
-                messages.AddLast("jo des bin ja ich auf dem bild");
-                messageBox.ShowMonologue("Jordan", messages);
+               
             }
         }
         
@@ -100,7 +88,7 @@ public class PlayerKirche : MonoBehaviour
             if (!interact.enabled)
                 interact.enabled = true;
             
-            if (Input.GetKeyDown(KeyCode.E) && !ersteVision.enabled)
+            if (Input.GetKeyDown(KeyCode.E) && !ersteVision.enabled  && !messageBox.GetMessageActive())
             {
                 ersteVision.enabled = true;
                 canMove = false;
@@ -110,9 +98,7 @@ public class PlayerKirche : MonoBehaviour
                 blockEForThisFrame = true;
                 letztesBildWasEnabled = true;
                 
-                LinkedList<string> messages = new LinkedList<string>();
-                messages.AddLast("Erlösung !");
-                messageBox.ShowMonologue("Jordan", messages);
+                
             }
         }
         
@@ -121,7 +107,7 @@ public class PlayerKirche : MonoBehaviour
         {
             if (!interact.enabled)
                 interact.enabled = true;
-            if (Input.GetKeyDown(KeyCode.E) && !dritteVision.enabled)
+            if (Input.GetKeyDown(KeyCode.E) && !dritteVision.enabled  && !messageBox.GetMessageActive())
             {
                 dritteVision.enabled = true;
                 canMove = false;
@@ -130,27 +116,37 @@ public class PlayerKirche : MonoBehaviour
                     readdritteVision = true;
                 blockEForThisFrame = true;
                 
-                LinkedList<string> messages = new LinkedList<string>();
-                messages.AddLast("Sieht aus als wären alle tot!");
-                messageBox.ShowMonologue("Jordan", messages);
+                
             }
         }
         // disabled earth message log overlay
-        if (Input.GetKeyDown(KeyCode.E) && zweiteVision.enabled && !blockEForThisFrame && !messageBox.GetMessageActive())
+        if (Input.GetKeyDown(KeyCode.E) && zweiteVision.enabled && !blockEForThisFrame)
         {
             zweiteVision.enabled = false;
             canMove = true;
+            LinkedList<string> messages = new LinkedList<string>();
+            messages.AddLast("jo des bin ja ich auf dem bild");
+            messageBox.ShowMonologue("Jordan", messages);
+            
+            
         }
         // disabled family message log overlay
-        if (Input.GetKeyDown(KeyCode.E) && dritteVision.enabled && !blockEForThisFrame && !messageBox.GetMessageActive())
+        if (Input.GetKeyDown(KeyCode.E) && dritteVision.enabled && !blockEForThisFrame)
         {
             dritteVision.enabled = false;
             canMove = true;
+            LinkedList<string> messages = new LinkedList<string>();
+            messages.AddLast("Sieht aus als wären alle tot!");
+            messageBox.ShowMonologue("Jordan", messages);
+            
         }
-        if (Input.GetKeyDown(KeyCode.E) && ersteVision.enabled && !blockEForThisFrame && !messageBox.GetMessageActive())
+        if (Input.GetKeyDown(KeyCode.E) && ersteVision.enabled && !blockEForThisFrame)
         {
             ersteVision.enabled = false;
             canMove = true;
+            LinkedList<string> messages = new LinkedList<string>();
+            messages.AddLast("Erlösung !");
+            messageBox.ShowMonologue("Jordan", messages);
         }
         // unblock E
         blockEForThisFrame = false;
@@ -165,6 +161,8 @@ public class PlayerKirche : MonoBehaviour
     #endregion
     
     #region Coroutines
+
+ 
      private IEnumerator rebellenSequence()
     {
         while (Rebell.transform.position.y < 12)
@@ -180,7 +178,9 @@ public class PlayerKirche : MonoBehaviour
         messages.AddLast("sPrICh DeUTsch dU HUso");
         yield return new WaitForSeconds(2);
         messageBox.ShowMessages(authors, messages);
+        Debug.Log(""+messageBox.GetMessageActive());
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
+        Debug.Log(""+messageBox.GetMessageActive());
         yield return new WaitForSeconds(2);
         while (Rebell.transform.position.y > -5)
         {
