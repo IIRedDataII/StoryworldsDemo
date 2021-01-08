@@ -178,9 +178,7 @@ public class PlayerKirche : MonoBehaviour
         messages.AddLast("sPrICh DeUTsch dU HUso");
         yield return new WaitForSeconds(2);
         messageBox.ShowMessages(authors, messages);
-        Debug.Log(""+messageBox.GetMessageActive());
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
-        Debug.Log(""+messageBox.GetMessageActive());
         yield return new WaitForSeconds(2);
         while (Rebell.transform.position.y > -5)
         {
@@ -203,10 +201,6 @@ public class PlayerKirche : MonoBehaviour
             Rebell.GetComponent<SpriteRenderer>().enabled = true;
             GameData.Instance.wasInChurch = true;
             StartCoroutine(rebellenSequence());
-        }
-        if (other.gameObject.tag.Equals("SceneChange"))
-        {
-            SceneManager.LoadScene("City");
         }
     }
     

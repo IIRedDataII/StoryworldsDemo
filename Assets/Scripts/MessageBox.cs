@@ -21,7 +21,7 @@
  * messageBox.ShowDialogue("speakerFirst", "speakerSecond", messages);
  * where messages is a LinkedList of strings. speakerFirst and speakerSecond alternate in the MessageBoxes with speakerFirst beginning.
  * 
- * To check wether there's a message box showing at the moment (for example to turn of player movement in that case), use the fuction
+ * To check wether there's a message box showing at the moment (for example to turn off player movement in that case), use the fuction
  * messageBox.GetMessageActive();
  * 
  */
@@ -164,6 +164,7 @@ public class MessageBox : MonoBehaviour
             this.messages = messages;
             messagesLeft = messages.Count;
             messagesFollowing = true;
+            Update();
         }
         else
         {

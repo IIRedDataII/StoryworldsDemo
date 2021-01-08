@@ -7,7 +7,7 @@ public class PlayerSpaceship : MonoBehaviour
     
     #region Constants
     
-    private const float Speed = 10f;
+    private const float Speed = 7f;
     
     #endregion
     
