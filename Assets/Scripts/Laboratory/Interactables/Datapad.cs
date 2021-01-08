@@ -18,7 +18,7 @@ public class Datapad : Interactable
     
     private void Update()
     {
-        if (Active && (Input.GetButtonDown("UndoInteract") || Input.GetMouseButtonDown(0)))
+        if (Active && (Input.GetButtonDown("UndoInteract")))
         {
             UndoAction();
         }
