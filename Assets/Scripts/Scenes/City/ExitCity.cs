@@ -6,6 +6,7 @@ public class ExitCity : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         GameData.Instance.SetGetlastRoom = GameData.LastRoom.City;
         switch (name)
         {
@@ -19,6 +20,7 @@ public class ExitCity : MonoBehaviour
                 SceneManager.LoadScene("Church");
                 break;
         }
+        
     }
     
 }

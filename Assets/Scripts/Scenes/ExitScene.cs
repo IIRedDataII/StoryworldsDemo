@@ -6,6 +6,7 @@ public class ExitScene : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         switch (SceneManager.GetActiveScene().name)
         {
             case "Laboratory":
@@ -19,6 +20,7 @@ public class ExitScene : MonoBehaviour
                 break;
         }
         SceneManager.LoadScene("City");
+        
     }
     
 }
