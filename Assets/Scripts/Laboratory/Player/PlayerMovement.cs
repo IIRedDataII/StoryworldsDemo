@@ -20,11 +20,9 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.transform.position = GameData.Instance.setGetlastRoom == GameData.LastRoom.Start ? new Vector3(-6.14f,1.77f,0) : new Vector3(46.74f,-13,0);
         rb = this.GetComponent<Rigidbody2D>();
         direction = Vector2.zero;
         canMove = true;
-        GameData.Instance.setGetlastRoom = GameData.LastRoom.Lab;
     }
 
     // Update is called once per frame
