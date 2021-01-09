@@ -16,4 +16,10 @@ public class Weapon : Interactable
     {
         //Not necessary, but it has to be there, cause abstract class n stuff
     }
+
+    protected override void UpdateSpecific()
+    {
+        //Not necessary, but it has to be there, cause abstract class n stuff
+    }
+    
 }
