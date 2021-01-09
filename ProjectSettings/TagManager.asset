@@ -8,6 +8,7 @@ TagManager:
   - MessageBox
   - Interactable
   - SceneChange
+  - Object
   layers:
   - Default
   - TransparentFX
