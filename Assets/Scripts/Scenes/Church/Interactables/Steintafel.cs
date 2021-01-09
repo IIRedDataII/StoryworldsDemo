@@ -20,6 +20,7 @@ public class Steintafel : Interactable
             case 1: dritteVision.enabled = true;
                 break;
             case 2: ersteVision.enabled = true;
+                PlayerKirche.letztesBildWasEnabled = true;
                 break;
             default: throw new NullReferenceException();  
         }

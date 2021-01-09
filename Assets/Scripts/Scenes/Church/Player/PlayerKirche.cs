@@ -13,7 +13,7 @@ public class PlayerKirche : MonoBehaviour
     #region Variables
     
     // Constants
-    private const float Speed = 10f;
+   // private const float Speed = 10f;
     //private const float Range = 2f;
 
     // Unity variables
@@ -28,9 +28,9 @@ public class PlayerKirche : MonoBehaviour
     public MessageBox messageBox;
     
     // variables
-    private Rigidbody2D _rigidbody;
-    private bool letztesBildWasEnabled = false;
-    private bool canMove;
+   // private Rigidbody2D _rigidbody;
+    public static bool letztesBildWasEnabled = false;
+  //  private bool canMove;
     //private bool blockEForThisFrame;
    // private bool readzweiteVision;
     //private bool readdritteVision;
@@ -42,23 +42,23 @@ public class PlayerKirche : MonoBehaviour
     {
 
         #region Initialization
-        canMove = true;
+       // canMove = true;
        // zweiteVision.enabled = false;
         //dritteVision.enabled = false;
         //ersteVision.enabled = false;
-        _rigidbody = GetComponent<Rigidbody2D>();
+       // _rigidbody = GetComponent<Rigidbody2D>();
         GameData.Instance.setGetlastRoom = GameData.LastRoom.Church;
         #endregion
     }
 
     private void Update()
     {
-        #region Movement
-        if (canMove && !messageBox.GetMessageActive())
-        {
-            _rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * Speed;
-        }
-        #endregion
+       // #region Movement
+       // if (canMove && !messageBox.GetMessageActive())
+       // {
+         //   _rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * Speed;
+      //  }
+       // #endregion
         
        /* #region Interaction
         // disable interact overlay
@@ -176,10 +176,10 @@ public class PlayerKirche : MonoBehaviour
         LinkedList<string> messages = new LinkedList<string>();
         messages.AddLast("jo lass mal die Regierung stürzen");
         messages.AddLast("sPrICh DeUTsch dU HUso");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.5f);
         messageBox.ShowMessages(authors, messages);
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.5f);
         while (Rebell.transform.position.y > -5)
         {
             Rebell.transform.Translate(new Vector3(0,-10,0)*Time.deltaTime);
@@ -187,7 +187,7 @@ public class PlayerKirche : MonoBehaviour
         }
         Rebell.GetComponent<SpriteRenderer>().enabled = false;
         
-        canMove = true;
+        PlayerMovement.CanMove = true;
     }
      #endregion
 
@@ -196,8 +196,7 @@ public class PlayerKirche : MonoBehaviour
         if (other.tag.Equals("RebellenTrigger") && letztesBildWasEnabled && !GameData.Instance.rebelTriggered)
         {
             GameData.Instance.rebelTriggered = true;
-            canMove = false;
-            _rigidbody.velocity = Vector2.zero;
+            PlayerMovement.CanMove = false;
             Rebell.GetComponent<SpriteRenderer>().enabled = true;
             GameData.Instance.wasInChurch = true;
             StartCoroutine(rebellenSequence());
