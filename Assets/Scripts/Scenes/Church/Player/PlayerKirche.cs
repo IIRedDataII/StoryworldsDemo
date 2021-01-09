@@ -11,60 +11,123 @@ public class PlayerKirche : MonoBehaviour
 {
     
     #region Variables
-    
-    // Constants
-   // private const float Speed = 10f;
-    //private const float Range = 2f;
-
-    // Unity variables
-    //public Image interact;
-    //public Image zweiteVision;
-   // public Image dritteVision;
-    //public Image ersteVision;
-    // GameObject steinTafel2;
-    //public GameObject steinTafel3;
-    //public GameObject steinTafel1;
     public GameObject Rebell;
     public MessageBox messageBox;
-    
-    // variables
-   // private Rigidbody2D _rigidbody;
     public static bool letztesBildWasEnabled = false;
-  //  private bool canMove;
-    //private bool blockEForThisFrame;
-   // private bool readzweiteVision;
-    //private bool readdritteVision;
-    //private bool readErsteVision;
-
     #endregion
 
-    private void Start()
+    
+    #region Coroutines
+    private IEnumerator rebellenSequence()
+    {
+        while (Rebell.transform.position.y < 12)
+        {
+            Rebell.transform.Translate(new Vector3(0,10,0)*Time.deltaTime);
+            yield return new WaitForSeconds(0.003f);
+        }
+        LinkedList<string> authors = new LinkedList<string>();
+        authors.AddLast("Rebell");
+        authors.AddLast("Jordan");
+        LinkedList<string> messages = new LinkedList<string>();
+        messages.AddLast("jo lass mal die Regierung stürzen");
+        messages.AddLast("sPrICh DeUTsch dU HUso");
+        yield return new WaitForSeconds(1);
+        messageBox.ShowMessages(authors, messages);
+        yield return new WaitWhile(()=>messageBox.GetMessageActive());
+        yield return new WaitForSeconds(1);
+        while (Rebell.transform.position.y > -5)
+        {
+            Rebell.transform.Translate(new Vector3(0,-10,0)*Time.deltaTime);
+            yield return new WaitForSeconds(0.003f);
+        }
+        Rebell.GetComponent<SpriteRenderer>().enabled = false;
+        PlayerMovement.CanMove = true;
+    }
+    #endregion
+
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag.Equals("RebellenTrigger") && letztesBildWasEnabled && !GameData.Instance.RebelTriggered)
+        {
+            GameData.Instance.RebelTriggered = true;
+            PlayerMovement.CanMove = false;
+            Rebell.GetComponent<SpriteRenderer>().enabled = true;
+            GameData.Instance.WasInChurch = true;
+            StartCoroutine(rebellenSequence());
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*########################################################################################################################################################################################################
+                    MÜLL
+    ########################################################################################################################################################################################################*/
+    
+    
+    
+    
+    
+    
+    
+    
+    /* Constants
+   private const float Speed = 10f;
+   private const float Range = 2f;
+
+    Unity variables
+    public GameObject steinTafel1;
+   public Image interact;
+   public Image zweiteVision;
+   public Image dritteVision;
+   public Image ersteVision;
+   GameObject steinTafel2;
+   public GameObject steinTafel3;
+   
+   
+    variables
+   private Rigidbody2D _rigidbody;
+   
+   private bool canMove;
+   private bool blockEForThisFrame;
+   private bool readzweiteVision;
+   private bool readdritteVision;
+   private bool readErsteVision;
+*/
+   /* private void Start()
     {
 
         #region Initialization
-       // canMove = true;
-       // zweiteVision.enabled = false;
-        //dritteVision.enabled = false;
-        //ersteVision.enabled = false;
-       // _rigidbody = GetComponent<Rigidbody2D>();
+        canMove = true;
+        zweiteVision.enabled = false;
+        dritteVision.enabled = false;
+        ersteVision.enabled = false;
+        _rigidbody = GetComponent<Rigidbody2D>();
         #endregion
     }
-
-    private void Update()
+*/
+    
+   /*private void Update()
     {
-       // #region Movement
-       // if (canMove && !messageBox.GetMessageActive())
-       // {
-         //   _rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * Speed;
-      //  }
-       // #endregion
+        #region Movement
+        if (canMove && !messageBox.GetMessageActive())
+        {
+            _rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * Speed;
+        }
+        #endregion
         
-       /* #region Interaction
-        // disable interact overlay
+        #region Interaction
+         disable interact overlay
         if (interact.enabled)
             interact.enabled = false;
         
-        // player at steintafel3
+         player at steintafel3
         if (IsCloseTo(steinTafel3))
         {
             if (!interact.enabled)
@@ -81,7 +144,7 @@ public class PlayerKirche : MonoBehaviour
             }
         }
         
-        // player at steintafel1
+         player at steintafel1
         if (IsCloseTo(steinTafel1))
         {
             if (!interact.enabled)
@@ -101,7 +164,7 @@ public class PlayerKirche : MonoBehaviour
             }
         }
         
-        // player at steintafel2
+         player at steintafel2
         if (IsCloseTo(steinTafel2))
         {
             if (!interact.enabled)
@@ -118,7 +181,7 @@ public class PlayerKirche : MonoBehaviour
                 
             }
         }
-        // disabled earth message log overlay
+         disabled earth message log overlay
         if (Input.GetKeyDown(KeyCode.E) && zweiteVision.enabled && !blockEForThisFrame)
         {
             zweiteVision.enabled = false;
@@ -129,7 +192,7 @@ public class PlayerKirche : MonoBehaviour
             
             
         }
-        // disabled family message log overlay
+         disabled family message log overlay
         if (Input.GetKeyDown(KeyCode.E) && dritteVision.enabled && !blockEForThisFrame)
         {
             dritteVision.enabled = false;
@@ -147,10 +210,11 @@ public class PlayerKirche : MonoBehaviour
             messages.AddLast("Erlösung !");
             messageBox.ShowMonologue("Jordan", messages);
         }
-        // unblock E
+         unblock E
         blockEForThisFrame = false;
-        #endregion*/
-    }
+        #endregion
+    }*/
+
 
     /*#region Helper Functions
     private bool IsCloseTo(GameObject other)
@@ -159,47 +223,4 @@ public class PlayerKirche : MonoBehaviour
     }
     #endregion
     */
-    #region Coroutines
-
- 
-     private IEnumerator rebellenSequence()
-    {
-        while (Rebell.transform.position.y < 12)
-        {
-            Rebell.transform.Translate(new Vector3(0,10,0)*Time.deltaTime);
-            yield return new WaitForSeconds(0.003f);
-        }
-        LinkedList<string> authors = new LinkedList<string>();
-        authors.AddLast("Rebell");
-        authors.AddLast("Jordan");
-        LinkedList<string> messages = new LinkedList<string>();
-        messages.AddLast("jo lass mal die Regierung stürzen");
-        messages.AddLast("sPrICh DeUTsch dU HUso");
-        yield return new WaitForSeconds(1.5f);
-        messageBox.ShowMessages(authors, messages);
-        yield return new WaitWhile(()=>messageBox.GetMessageActive());
-        yield return new WaitForSeconds(1.5f);
-        while (Rebell.transform.position.y > -5)
-        {
-            Rebell.transform.Translate(new Vector3(0,-10,0)*Time.deltaTime);
-            yield return new WaitForSeconds(0.003f);
-        }
-        Rebell.GetComponent<SpriteRenderer>().enabled = false;
-        
-        PlayerMovement.CanMove = true;
-    }
-     #endregion
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag.Equals("RebellenTrigger") && letztesBildWasEnabled && !GameData.Instance.RebelTriggered)
-        {
-            GameData.Instance.RebelTriggered = true;
-            PlayerMovement.CanMove = false;
-            Rebell.GetComponent<SpriteRenderer>().enabled = true;
-            GameData.Instance.WasInChurch = true;
-            StartCoroutine(rebellenSequence());
-        }
-    }
-    
 }
