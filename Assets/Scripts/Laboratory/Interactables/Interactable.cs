@@ -45,13 +45,26 @@ public abstract class Interactable : MonoBehaviour
         Active = false;
         UndoSpecificAction();
     }
+    
+    private void Update()
+    {
+        UpdateSpecific();
+        
+        if (Active && (Input.GetButtonDown("UndoInteract")))
+        {
+            UndoAction();
+        }
+    }
 
     protected abstract void SpecificAction();
     
     protected abstract void UndoSpecificAction();
 
+    protected abstract void UpdateSpecific();
+    
     private IEnumerable Wait()
     {
         yield return new WaitForFixedUpdate();
     }
+    
 }

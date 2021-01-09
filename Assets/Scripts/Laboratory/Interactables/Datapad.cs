@@ -15,12 +15,10 @@ public class Datapad : Interactable
     {
         datapadImage.enabled = false;
     }
-    
-    private void Update()
+
+    protected override void UpdateSpecific()
     {
-        if (Active && (Input.GetButtonDown("UndoInteract")))
-        {
-            UndoAction();
-        }
+        
     }
+    
 }

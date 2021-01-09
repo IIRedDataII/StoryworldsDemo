@@ -35,12 +35,9 @@ public class DoorTerminal : Interactable
         keypad.SetActive(false);
     }
 
-    private void Update()
+    protected override void UpdateSpecific()
     {
-        if (Active && Input.GetButtonDown("UndoInteract"))
-        {
-            UndoAction();
-        }
+        
     }
 
     #region Keypad

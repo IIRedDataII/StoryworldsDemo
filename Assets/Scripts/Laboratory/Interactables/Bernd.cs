@@ -6,14 +6,7 @@ public class Bernd : Interactable
 {
     
     public MessageBox messageBox;
-    void Update()
-    {
-        if (Active && !messageBox.GetMessageActive())
-        {
-            UndoAction();
-        }
-    }
-
+    
     protected override void SpecificAction()
     {
         LinkedList<string> authors = new LinkedList<string>();
@@ -32,5 +25,12 @@ public class Bernd : Interactable
         
     }
 
-   
+    protected override void UpdateSpecific()
+    {
+        if (Active && !messageBox.GetMessageActive())
+        {
+            UndoAction();
+        }
+    }
+    
 }
