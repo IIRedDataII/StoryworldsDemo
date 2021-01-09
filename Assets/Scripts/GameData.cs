@@ -1,48 +1,33 @@
-﻿
-public class GameData
+﻿public class GameData
 {
     
-    private static GameData instance;
+    #region Singleton Pattern
     
-    public bool wasInChurch = false;
-    public bool rebelTriggered = false;
-
+    private static GameData _instance;
+    
     private GameData()
     {
-        if (instance != null)
+        if (_instance != null)
             return;
-        instance = this;
+        _instance = this;
     }
     
-    public static GameData Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = new GameData();
-            }
-            return instance;
-        }
-    }
+    public static GameData Instance => _instance ?? (_instance = new GameData());
+
+    #endregion
+    
+    #region LastRoom
     
     public enum LastRoom
     {
-        Lab, City, Church, Spaceship, Start
+        Start, Lab, Church, Spaceship, City
     };
+
+    public LastRoom SetGetlastRoom { get; set; } = LastRoom.Start;
     
-    private LastRoom lastRoom = LastRoom.Start;
-
-    public LastRoom setGetlastRoom
-    {
-        get
-        {
-            return lastRoom;
-        }
-        set
-        {
-            lastRoom = value;
-        }
-    }
-
+    #endregion
+    
+    public bool WasInChurch = false;
+    public bool RebelTriggered = false;
+    
 }

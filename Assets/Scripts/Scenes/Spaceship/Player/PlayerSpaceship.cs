@@ -38,7 +38,7 @@ public class PlayerSpaceship : MonoBehaviour
 
         at = At.Nothing;
         
-        GameData.Instance.setGetlastRoom = GameData.LastRoom.Spaceship;
+        GameData.Instance.SetGetlastRoom = GameData.LastRoom.Spaceship;
         
         #endregion
 
@@ -62,7 +62,7 @@ public class PlayerSpaceship : MonoBehaviour
                 
                 case At.Button:
                     
-                    if (GameData.Instance.wasInChurch)
+                    if (GameData.Instance.WasInChurch)
                     {
                         string[] messages = {
                             "Das Schiff scheint noch überraschend intakt zu sein... Ich hätte jetzt die Gelegenheit, von diesem Planeten zu fliehen. Aber wohin?",

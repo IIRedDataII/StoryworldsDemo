@@ -192,12 +192,12 @@ public class PlayerKirche : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag.Equals("RebellenTrigger") && letztesBildWasEnabled && !GameData.Instance.rebelTriggered)
+        if (other.tag.Equals("RebellenTrigger") && letztesBildWasEnabled && !GameData.Instance.RebelTriggered)
         {
-            GameData.Instance.rebelTriggered = true;
+            GameData.Instance.RebelTriggered = true;
             PlayerMovement.CanMove = false;
             Rebell.GetComponent<SpriteRenderer>().enabled = true;
-            GameData.Instance.wasInChurch = true;
+            GameData.Instance.WasInChurch = true;
             StartCoroutine(rebellenSequence());
         }
     }
