@@ -94,6 +94,7 @@ public class MessageBox : MonoBehaviour
                         messagesFollowing = false;
                         box.enabled = false;
                         text.enabled = false;
+                        PlayerMovement.CanMove = false;
                     }
 
                 }
@@ -112,9 +113,9 @@ public class MessageBox : MonoBehaviour
             }
             
         }
-        
+
         #endregion
-        
+
     }
     
     #region Helper Functions
@@ -164,6 +165,7 @@ public class MessageBox : MonoBehaviour
             this.messages = messages;
             messagesLeft = messages.Count;
             messagesFollowing = true;
+            PlayerMovement.CanMove = false;
             Update();
         }
         else

@@ -27,7 +27,7 @@ public abstract class Interactable : MonoBehaviour
         if (PlayerMovement && PlayerInteract && PlayerCollider && PlayerShoot)
         {
             Active = true;
-            PlayerMovement.canMove = false;
+            PlayerMovement.CanMove = false;
             PlayerInteract.enabled = false;
             PlayerCollider.enabled = false;
             PlayerShoot.allowInput = false;
@@ -38,7 +38,7 @@ public abstract class Interactable : MonoBehaviour
     protected void UndoAction()
     {
         //Undo Action
-        PlayerMovement.canMove = true;
+        PlayerMovement.CanMove = true;
         PlayerCollider.enabled = true;
         PlayerInteract.enabled = true;
         PlayerShoot.allowInput = true;
