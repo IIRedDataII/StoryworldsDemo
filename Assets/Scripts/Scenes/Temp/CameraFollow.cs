@@ -7,17 +7,20 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private Room room;
-    
-    private Vector2 camHalfDim;
-    private Camera cam;
 
+    private Vector3 _cameraPosition;
+    private Vector2 _camHalfDim;
+    private float _orthographicSize;
+    private Vector3 _playerPosition;
     private bool _atLeftBorder, _atRightBorder, _atTopBorder, _atBottomBorder;
     // Start is called before the first frame update
     void Start()
     {
-        camHalfDim = new Vector2(1.75f, 1f);
-        cam = GetComponent<Camera>();
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        _cameraPosition = transform.position;
+        _camHalfDim = new Vector2(1.75f, 1f);
+        _orthographicSize = GetComponent<Camera>().orthographicSize;
+        _playerPosition = player.position;
+        _cameraPosition = new Vector3(_playerPosition.x, _playerPosition.y, transform.position.z);
     }
 
     // Update is called once per frame
@@ -25,10 +28,12 @@ public class CameraFollow : MonoBehaviour
     {
         if(room)
         {
-            _atLeftBorder = (player.position.x - (camHalfDim.x * cam.orthographicSize)) < room.center.x - (room.width / 2);
-            _atRightBorder = (player.position.x + (camHalfDim.x * cam.orthographicSize)) > room.center.x + (room.width / 2);
-            _atTopBorder = (player.position.y + (camHalfDim.y * cam.orthographicSize)) > room.center.y + (room.height / 2);
-            _atBottomBorder = (player.position.y - (camHalfDim.y * cam.orthographicSize)) < room.center.y - (room.height / 2);
+            _playerPosition = player.position;
+            
+            _atLeftBorder = (playerPosition.x - (_camHalfDim.x * _orthographicSize)) < room.center.x - (room.width / 2);
+            _atRightBorder = (playerPosition.x + (_camHalfDim.x * _orthographicSize)) > room.center.x + (room.width / 2);
+            _atTopBorder = (playerPosition.y + (_camHalfDim.y * _orthographicSize)) > room.center.y + (room.height / 2);
+            _atBottomBorder = (playerPosition.y - (_camHalfDim.y * _orthographicSize)) < room.center.y - (room.height / 2);
             if ((_atLeftBorder || _atRightBorder) && (_atTopBorder || _atBottomBorder))
                 transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             else if (_atLeftBorder || _atRightBorder)
