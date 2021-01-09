@@ -9,6 +9,7 @@ public class PlayerShoot : MonoBehaviour
 {
 #region Attributes
     public bool canShoot;
+    public bool allowInput;
     [SerializeField] private GameObject projectile;
     [SerializeField] private int ammunition;
     [SerializeField] private int roundsInMagazine;
@@ -19,13 +20,14 @@ public class PlayerShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //canShoot = false;
+        canShoot = false;
+        allowInput = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canShoot)
+        if (canShoot && allowInput)
         {
             //check if rounds in Mag and Fire pressed, fire if true
             if (roundsInMagazine > 0 && Input.GetButtonDown("Fire1"))

@@ -16,12 +16,4 @@ public class FamilyPicture : Interactable
     {
         familyImage.enabled = false;
     }
-    
-    private void Update()
-    {
-        if (Active && (Input.GetButtonDown("UndoInteract")))
-        {
-            UndoAction();
-        }
-    }
 }

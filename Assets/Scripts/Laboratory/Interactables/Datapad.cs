@@ -15,12 +15,4 @@ public class Datapad : Interactable
     {
         datapadImage.enabled = false;
     }
-    
-    private void Update()
-    {
-        if (Active && (Input.GetButtonDown("UndoInteract")))
-        {
-            UndoAction();
-        }
-    }
 }

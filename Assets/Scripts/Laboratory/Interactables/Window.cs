@@ -19,14 +19,7 @@ public class Window : Interactable
     {
         cityImage.enabled = true;
     }
-
-    private void Update()
-    {
-        if (Active && (Input.GetButtonDown("UndoInteract")))
-        {
-            UndoAction();
-        }
-    }
+    
     protected override void UndoSpecificAction()
     {
         cityImage.enabled = false;

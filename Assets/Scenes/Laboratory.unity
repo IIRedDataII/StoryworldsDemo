@@ -2336,12 +2336,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e03a20b39d71e45959b1774bdf007e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canShoot: 1
+  canShoot: 0
   projectile: {fileID: 657484398884308695, guid: 2102a44b1379b2444bd8f386cfb42f6f, type: 3}
-  ammunition: 100
-  roundsInMagazine: 100
-  magSize: 100
-  projectileVelocity: 3
+  ammunition: 15
+  roundsInMagazine: 7
+  magSize: 7
+  projectileVelocity: 5
 --- !u!4 &534215465 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6345575164714276490, guid: 652a509894649fe49bb851a1ee99779d, type: 3}
