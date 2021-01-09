@@ -9,13 +9,13 @@ public class Button : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         interactPrompt.enabled = true;
-        other.gameObject.GetComponent<PlayerSpaceship>().at = PlayerSpaceship.At.Button;
+        other.gameObject.GetComponent<PlayerSpaceship>().atButton = true;
     }
     
     private void OnTriggerExit2D(Collider2D other)
     {
         interactPrompt.enabled = false;
-        other.gameObject.GetComponent<PlayerSpaceship>().at = PlayerSpaceship.At.Nothing;
+        other.gameObject.GetComponent<PlayerSpaceship>().atButton = false;
     }
     
 }

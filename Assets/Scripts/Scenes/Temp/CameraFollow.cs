@@ -26,14 +26,14 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(room)
+        if (room)
         {
             _playerPosition = player.position;
             
-            _atLeftBorder = (playerPosition.x - (_camHalfDim.x * _orthographicSize)) < room.center.x - (room.width / 2);
-            _atRightBorder = (playerPosition.x + (_camHalfDim.x * _orthographicSize)) > room.center.x + (room.width / 2);
-            _atTopBorder = (playerPosition.y + (_camHalfDim.y * _orthographicSize)) > room.center.y + (room.height / 2);
-            _atBottomBorder = (playerPosition.y - (_camHalfDim.y * _orthographicSize)) < room.center.y - (room.height / 2);
+            _atLeftBorder = (_playerPosition.x - (_camHalfDim.x * _orthographicSize)) < room.center.x - (room.width / 2);
+            _atRightBorder = (_playerPosition.x + (_camHalfDim.x * _orthographicSize)) > room.center.x + (room.width / 2);
+            _atTopBorder = (_playerPosition.y + (_camHalfDim.y * _orthographicSize)) > room.center.y + (room.height / 2);
+            _atBottomBorder = (_playerPosition.y - (_camHalfDim.y * _orthographicSize)) < room.center.y - (room.height / 2);
             if ((_atLeftBorder || _atRightBorder) && (_atTopBorder || _atBottomBorder))
                 transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             else if (_atLeftBorder || _atRightBorder)

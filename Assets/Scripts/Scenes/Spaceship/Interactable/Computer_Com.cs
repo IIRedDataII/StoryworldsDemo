@@ -1,21 +1,34 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class Computer_Com : MonoBehaviour
+public class Computer_Com : Interactable
 {
-
-    [SerializeField] private Image interactPrompt;
     
-    private void OnTriggerEnter2D(Collider2D other)
+    [SerializeField] private MessageBox messageBox;
+    [SerializeField] private Image familyMessageLog;
+    
+    protected override void SpecificAction()
     {
-        interactPrompt.enabled = true;
-        other.gameObject.GetComponent<PlayerSpaceship>().at = PlayerSpaceship.At.ComputerCom;
+        familyMessageLog.enabled = true;
+        PlayerMovement.CanMove = false;
     }
-    
-    private void OnTriggerExit2D(Collider2D other)
+
+    protected override void UndoSpecificAction()
     {
-        interactPrompt.enabled = false;
-        other.gameObject.GetComponent<PlayerSpaceship>().at = PlayerSpaceship.At.Nothing;
+        familyMessageLog.enabled = false;
+                        
+        PlayerMovement.CanMove = true;
+        string[] messages = {
+            "Ach Mensch!",
+            "Desch' ja blöd."
+        };
+        messageBox.ShowMonologue("Jordan", new LinkedList<string>(messages));
+    }
+
+    protected override void SpecificUpdate()
+    {
+        
     }
     
 }

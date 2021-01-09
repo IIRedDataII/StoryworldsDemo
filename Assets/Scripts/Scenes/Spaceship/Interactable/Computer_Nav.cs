@@ -1,21 +1,34 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class Computer_Nav : MonoBehaviour
+public class Computer_Nav : Interactable
 {
     
-    [SerializeField] private Image interactPrompt;
+    [SerializeField] private MessageBox messageBox;
+    [SerializeField] private Image earthMessageLog;
     
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void SpecificAction()
     {
-        interactPrompt.enabled = true;
-        other.gameObject.GetComponent<PlayerSpaceship>().at = PlayerSpaceship.At.ComputerNav;
+        earthMessageLog.enabled = true;
+        PlayerMovement.CanMove = false;
     }
-    
-    private void OnTriggerExit2D(Collider2D other)
+
+    protected override void UndoSpecificAction()
     {
-        interactPrompt.enabled = false;
-        other.gameObject.GetComponent<PlayerSpaceship>().at = PlayerSpaceship.At.Nothing;
+        earthMessageLog.enabled = false;
+                        
+        PlayerMovement.CanMove = true;
+        string[] messages = {
+            "Ach Mensch!",
+            "Desch' ja supi."
+        };
+        messageBox.ShowMonologue("Jordan", new LinkedList<string>(messages));
     }
-    
+
+    protected override void SpecificUpdate()
+    {
+        
+    }
+
 }

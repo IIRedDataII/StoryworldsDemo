@@ -8,8 +8,8 @@ public class PlayerInteract : MonoBehaviour
     
     public Image interactPrompt;
     
-    private bool _canInteract;
     private Interactable _interactable;
+    private bool _canInteract;
     
     #endregion
     
