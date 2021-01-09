@@ -16,7 +16,7 @@ public class PlayerCityPos : MonoBehaviour
         
         #region Player Positioning
             
-        switch (GameData.Instance.setGetlastRoom)
+        switch (GameData.Instance.SetGetlastRoom)
         {
             case GameData.LastRoom.Spaceship:
                 gameObject.transform.position = spaceshipJunction.transform.position + new Vector3(0.0f, -2.0f, 0.0f);
