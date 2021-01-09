@@ -5,12 +5,6 @@ using UnityEngine.UI;
 public class PlayerSpaceship : MonoBehaviour
 {
     
-    #region Constants
-    
-    private const float Speed = 10f;
-    
-    #endregion
-    
     #region Enums, Structs, Classes, ...
 
     public enum At {
@@ -33,9 +27,6 @@ public class PlayerSpaceship : MonoBehaviour
     public At at;
     
     // private variables
-    private Rigidbody2D _rigidbody;
-    private Vector2 moveDirection;
-    private bool imageActive;
     private bool readEnd;
 
     #endregion
@@ -47,8 +38,6 @@ public class PlayerSpaceship : MonoBehaviour
 
         at = At.Nothing;
         
-        _rigidbody = GetComponent<Rigidbody2D>();
-        
         GameData.Instance.setGetlastRoom = GameData.LastRoom.Spaceship;
         
         #endregion
@@ -58,15 +47,6 @@ public class PlayerSpaceship : MonoBehaviour
     private void Update()
     {
         
-        #region Movement
-
-        if (!imageActive && !messageBox.GetMessageActive())
-            moveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        else
-            moveDirection = Vector2.zero;
-
-        #endregion
-
         #region Interaction
 
         if (Input.GetButtonDown("Interact"))
@@ -106,14 +86,14 @@ public class PlayerSpaceship : MonoBehaviour
                     if (earthMessageLog.enabled)
                     {
                         earthMessageLog.enabled = false;
-                        imageActive = false;
-            
+                        
+                        PlayerMovement.CanMove = true;
                         DialogueNavigations();
                     }
                     else
                     {
                         earthMessageLog.enabled = true;
-                        imageActive = true;
+                        PlayerMovement.CanMove = false;
                     }
                     break;
                 
@@ -122,14 +102,14 @@ public class PlayerSpaceship : MonoBehaviour
                     if (familyMessageLog.enabled)
                     {
                         familyMessageLog.enabled = false;
-                        imageActive = false;
-
+                        
+                        PlayerMovement.CanMove = true;
                         DialogueCommunications();
                     }
                     else
                     {
                         familyMessageLog.enabled = true;
-                        imageActive = true;
+                        PlayerMovement.CanMove = false;
                     }
                     break;
 
@@ -152,17 +132,6 @@ public class PlayerSpaceship : MonoBehaviour
         
     }
     
-    private void FixedUpdate()
-    {
-        
-        #region Movement
-        
-        _rigidbody.velocity = moveDirection * Speed;
-        
-        #endregion
-        
-    }
-
     #region Helper Functions
 
     private void DialogueCommunications()

@@ -94,7 +94,7 @@ public class MessageBox : MonoBehaviour
                         messagesFollowing = false;
                         box.enabled = false;
                         text.enabled = false;
-                        PlayerMovement.CanMove = false;
+                        PlayerMovement.CanMove = true;
                     }
 
                 }
