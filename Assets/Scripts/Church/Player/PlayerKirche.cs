@@ -14,27 +14,27 @@ public class PlayerKirche : MonoBehaviour
     
     // Constants
     private const float Speed = 10f;
-    private const float Range = 2f;
+    //private const float Range = 2f;
 
     // Unity variables
-    public Image interact;
-    public Image zweiteVision;
-    public Image dritteVision;
-    public Image ersteVision;
-    public GameObject steinTafel2;
-    public GameObject steinTafel3;
-    public GameObject steinTafel1;
+    //public Image interact;
+    //public Image zweiteVision;
+   // public Image dritteVision;
+    //public Image ersteVision;
+    // GameObject steinTafel2;
+    //public GameObject steinTafel3;
+    //public GameObject steinTafel1;
     public GameObject Rebell;
-    public MessageBox messageBox;
+   // public MessageBox messageBox;
     
     // variables
     private Rigidbody2D _rigidbody;
     private bool letztesBildWasEnabled = false;
     private bool canMove;
-    private bool blockEForThisFrame;
-    private bool readzweiteVision;
-    private bool readdritteVision;
-    private bool readErsteVision;
+    //private bool blockEForThisFrame;
+   // private bool readzweiteVision;
+    //private bool readdritteVision;
+    //private bool readErsteVision;
 
     #endregion
 
@@ -43,9 +43,9 @@ public class PlayerKirche : MonoBehaviour
 
         #region Initialization
         canMove = true;
-        zweiteVision.enabled = false;
-        dritteVision.enabled = false;
-        ersteVision.enabled = false;
+       // zweiteVision.enabled = false;
+        //dritteVision.enabled = false;
+        //ersteVision.enabled = false;
         _rigidbody = GetComponent<Rigidbody2D>();
         GameData.Instance.setGetlastRoom = GameData.LastRoom.Church;
         #endregion
@@ -60,7 +60,7 @@ public class PlayerKirche : MonoBehaviour
         }
         #endregion
         
-        #region Interaction
+       /* #region Interaction
         // disable interact overlay
         if (interact.enabled)
             interact.enabled = false;
@@ -150,16 +150,16 @@ public class PlayerKirche : MonoBehaviour
         }
         // unblock E
         blockEForThisFrame = false;
-        #endregion
+        #endregion*/
     }
 
-    #region Helper Functions
+    /*#region Helper Functions
     private bool IsCloseTo(GameObject other)
     {
         return Vector3.Magnitude((Vector2) transform.position - (Vector2) other.transform.position) < Range;
     }
     #endregion
-    
+    */
     #region Coroutines
 
  
