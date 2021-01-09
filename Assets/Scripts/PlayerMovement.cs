@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     
     private Rigidbody2D rigidBody;
     private Vector2 direction;
-    public bool CanMove
+    public static bool CanMove
     {
         set;
         get;
