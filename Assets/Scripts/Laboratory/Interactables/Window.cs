@@ -20,7 +20,7 @@ public class Window : Interactable
         cityImage.enabled = true;
     }
 
-    protected override void UpdateSpecific()
+    protected override void SpecificUpdate()
     {
         
     }

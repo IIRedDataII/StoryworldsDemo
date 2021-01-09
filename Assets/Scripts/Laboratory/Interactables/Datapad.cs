@@ -16,7 +16,7 @@ public class Datapad : Interactable
         datapadImage.enabled = false;
     }
 
-    protected override void UpdateSpecific()
+    protected override void SpecificUpdate()
     {
         
     }

@@ -52,7 +52,7 @@ public abstract class Interactable : MonoBehaviour
     
     private void Update()
     {
-        UpdateSpecific();
+        SpecificUpdate();
         
         if (Active && (Input.GetButtonDown("UndoInteract")))
         {
@@ -64,7 +64,7 @@ public abstract class Interactable : MonoBehaviour
     
     protected abstract void UndoSpecificAction();
 
-    protected abstract void UpdateSpecific();
+    protected abstract void SpecificUpdate();
     
     private IEnumerable Wait()
     {

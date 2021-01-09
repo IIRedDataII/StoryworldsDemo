@@ -25,7 +25,7 @@ public class Bernd : Interactable
         
     }
 
-    protected override void UpdateSpecific()
+    protected override void SpecificUpdate()
     {
         if (Active && !messageBox.GetMessageActive())
         {

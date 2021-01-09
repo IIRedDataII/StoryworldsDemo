@@ -17,7 +17,7 @@ public class FamilyPicture : Interactable
         familyImage.enabled = false;
     }
     
-    protected override void UpdateSpecific()
+    protected override void SpecificUpdate()
     {
         
     }

@@ -35,7 +35,7 @@ public class DoorTerminal : Interactable
         keypad.SetActive(false);
     }
 
-    protected override void UpdateSpecific()
+    protected override void SpecificUpdate()
     {
         
     }
