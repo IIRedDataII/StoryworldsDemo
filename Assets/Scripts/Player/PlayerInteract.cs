@@ -7,9 +7,10 @@ public class PlayerInteract : MonoBehaviour
     #region Variables
     
     public Image interactPrompt;
-    
-    private Interactable _interactable;
+
+    public static bool CanInteract;
     private bool _canInteract;
+    private Interactable _interactable;
     
     #endregion
     
@@ -18,18 +19,31 @@ public class PlayerInteract : MonoBehaviour
         
         #region Initialization
         
+        CanInteract = true;
         interactPrompt.enabled = false;
-        
+
         #endregion
-        
+
     }
     
     private void Update()
     {
         
         #region Interaction
+
+        if (CanInteract && _canInteract && !interactPrompt.enabled)
+        {
+            interactPrompt.enabled = true;
+            _interactable.highlight.SetActive(true);
+        }
         
-        if (Input.GetButtonDown("Interact") && _canInteract && _interactable)
+        if (!CanInteract && interactPrompt.enabled)
+        {
+            interactPrompt.enabled = false;
+            _interactable.highlight.SetActive(false);
+        }
+
+        if (Input.GetButtonDown("Interact") && CanInteract && _canInteract && _interactable)
         {
             Input.ResetInputAxes();
             interactPrompt.enabled = false;
@@ -64,6 +78,21 @@ public class PlayerInteract : MonoBehaviour
             _interactable = null;
         }
     }
+    
+    #endregion
+    
+    #region Setter & Getter
+
+    /*
+    {
+        set
+        {
+            CanInteract = value;
+            GameObject.Find("Interact").GetComponent<Image>().enabled = value;
+        }
+        get => CanInteract;
+    }
+    */
     
     #endregion
     

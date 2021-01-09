@@ -95,6 +95,7 @@ public class MessageBox : MonoBehaviour
                         box.enabled = false;
                         text.enabled = false;
                         PlayerMovement.CanMove = true;
+                        PlayerInteract.CanInteract = true;
                     }
 
                 }
@@ -166,6 +167,7 @@ public class MessageBox : MonoBehaviour
             messagesLeft = messages.Count;
             messagesFollowing = true;
             PlayerMovement.CanMove = false;
+            PlayerInteract.CanInteract = false;
             Update();
         }
         else
