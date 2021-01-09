@@ -25,7 +25,7 @@ public class PlayerKirche : MonoBehaviour
     //public GameObject steinTafel3;
     //public GameObject steinTafel1;
     public GameObject Rebell;
-   // public MessageBox messageBox;
+    public MessageBox messageBox;
     
     // variables
     private Rigidbody2D _rigidbody;
