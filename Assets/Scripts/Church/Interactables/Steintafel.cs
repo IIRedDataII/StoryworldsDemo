@@ -46,13 +46,15 @@ public class Steintafel : Interactable
         }
     }
 
-    protected override void UpdateSpecific()
+    protected override void SpecificUpdate()
     {
         if (Active && !messageBox.GetMessageActive() && !ersteVision.enabled && !zweiteVision.enabled && !dritteVision.enabled)
         {
             UndoAction();
         }
     }
+
+    
 
     
 }
