@@ -5,7 +5,7 @@ public class PlayerCity : MonoBehaviour
     
     #region Constants
     
-    private const float Speed = 7f;
+    private const float Speed = 10f;
     
     #endregion
     
@@ -19,6 +19,7 @@ public class PlayerCity : MonoBehaviour
     
     // variables
     private Rigidbody2D _rigidbody;
+    private Vector2 moveDirection;
     
     #endregion
     
@@ -60,12 +61,23 @@ public class PlayerCity : MonoBehaviour
         #region Movement
 
         if (!messageBox.GetMessageActive())
-            _rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * (Speed * Time.deltaTime * 1000f);
+            moveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         else
-            _rigidbody.velocity = Vector2.zero;
+            moveDirection = _rigidbody.velocity = Vector2.zero;
 
         #endregion
 
     }
 
+    private void FixedUpdate()
+    {
+        
+        #region Movement
+        
+        _rigidbody.velocity = moveDirection * Speed;
+        
+        #endregion
+        
+    }
+    
 }
