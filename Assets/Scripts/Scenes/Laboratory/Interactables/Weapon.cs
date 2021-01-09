@@ -8,6 +8,7 @@ public class Weapon : Interactable
     protected override void SpecificAction()
     {
         PlayerShoot.canShoot = true;
+        UndoAction();
         //Enter TextBox Stuff for weapon, Maybe enable Weapon GUI Stuff
         Destroy(gameObject);
     }
