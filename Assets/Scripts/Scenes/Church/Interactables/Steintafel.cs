@@ -13,16 +13,23 @@ public class Steintafel : Interactable
     [SerializeField] private int number;
     protected override void SpecificAction()
     {
-        switch (number)
+
+        if (!messageBox.GetMessageActive())
         {
-            case 0: zweiteVision.enabled = true;
-                break;
-            case 1: dritteVision.enabled = true;
-                break;
-            case 2: ersteVision.enabled = true;
-                PlayerKirche.letztesBildWasEnabled = true;
-                break;
-            default: throw new NullReferenceException();  
+            switch (number)
+            {
+                case 0:
+                    zweiteVision.enabled = true;
+                    break;
+                case 1:
+                    dritteVision.enabled = true;
+                    break;
+                case 2:
+                    ersteVision.enabled = true;
+                    PlayerKirche.letztesBildWasEnabled = true;
+                    break;
+                default: throw new NullReferenceException("no Number");
+            }
         }
     }
 
@@ -43,12 +50,12 @@ public class Steintafel : Interactable
                 messages.AddLast("Erlösung!");
                 messageBox.ShowMonologue("Jordan", messages);
                 break;
-            default: throw new NullReferenceException();  
+            default: throw new NullReferenceException("no Number");  
         }
     }
 
     protected override void SpecificUpdate()
-    {
+    { 
         if (Active && !messageBox.GetMessageActive() && !ersteVision.enabled && !zweiteVision.enabled && !dritteVision.enabled)
         {
             UndoAction();
