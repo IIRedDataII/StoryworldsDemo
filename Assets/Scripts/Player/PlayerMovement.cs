@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     
     #region Variables
     
-    private Rigidbody2D rigidBody;
-    private Vector2 direction;
+    private Rigidbody2D _rigidBody;
+    private Vector2 _direction;
     public static bool CanMove
     {
         set;
@@ -21,14 +21,13 @@ public class PlayerMovement : MonoBehaviour
     
     #endregion
     
-
     private void Start()
     {
         
         #region Initialization
         
         CanMove = true;
-        rigidBody = GetComponent<Rigidbody2D>();
+        _rigidBody = GetComponent<Rigidbody2D>();
         
         #endregion
         
@@ -40,9 +39,9 @@ public class PlayerMovement : MonoBehaviour
         #region Direction
         
         if (CanMove)
-            direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         else
-            direction = Vector2.zero;
+            _direction = Vector2.zero;
         
         #endregion
         
@@ -53,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         
         #region Rigidbody 
         
-        rigidBody.velocity = direction * Speed;
+        _rigidBody.velocity = _direction * Speed;
         
         #endregion
         

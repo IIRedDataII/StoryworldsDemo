@@ -47,7 +47,6 @@ public class PlayerKirche : MonoBehaviour
         //dritteVision.enabled = false;
         //ersteVision.enabled = false;
        // _rigidbody = GetComponent<Rigidbody2D>();
-        GameData.Instance.setGetlastRoom = GameData.LastRoom.Church;
         #endregion
     }
 
