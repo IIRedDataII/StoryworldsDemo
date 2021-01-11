@@ -11,6 +11,13 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("Ich hab was getroffen: " + other);
             Destroy(gameObject);
+            
+            if (other.gameObject.name.Equals("Bernd"))
+            {
+                Bernd bernd = (Bernd)other.gameObject.GetComponent("Bernd");
+                Debug.Log("berndWurdeGetroffen");
+                bernd.kill();
+            }
         }
     }
 }
