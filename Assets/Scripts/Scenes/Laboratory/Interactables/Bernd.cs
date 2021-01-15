@@ -8,7 +8,16 @@ public class Bernd : Interactable
     
     public MessageBox messageBox;
     public Sprite dead;
-    
+
+    private void Awake()
+    {
+        if (GameData.Instance.BerndDead)
+        {
+            gameObject.tag = "Untagged";
+            gameObject.GetComponent<SpriteRenderer>().sprite = dead;
+        }
+    }
+
     protected override void SpecificAction()
     {
        UndoAction();
@@ -36,6 +45,7 @@ public class Bernd : Interactable
 
     public void kill()
     {
+        GameData.Instance.BerndDead = true;
         gameObject.tag = "Untagged";
         gameObject.GetComponent<SpriteRenderer>().sprite = dead;
     }

@@ -29,5 +29,5 @@
     
     public bool WasInChurch = false;
     public bool RebelTriggered = false;
-    
+    public bool BerndDead = false;
 }
