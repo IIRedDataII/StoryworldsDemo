@@ -56,6 +56,17 @@ public abstract class DetectPlayer : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(position, alienToPlayerVector, ViewDistance);
                 if (hit && hit.collider.gameObject.tag.Equals("Player"))
                 {
+                    Pathing pathing = GetComponent<Pathing>();
+                    if (pathing)
+                        pathing.enabled = false;
+                    Idle idle = GetComponent<Idle>();
+                    if (idle)
+                    {
+                        idle.StopAllCoroutines();
+                        idle.enabled = false;
+                    }
+                    GetComponent<TrackPlayer>().SetPlayerObject(_player);
+
                     DetectAction();
                 }
             }
