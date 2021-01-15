@@ -23,7 +23,7 @@ public class PlayerKirche : MonoBehaviour
         Rebell.transform.position = new Vector3(Rebell.transform.position.x,8.9f,0);
         while (Rebell.transform.position.y < 12)
         {
-            Rebell.transform.Translate(new Vector3(0,10,0)*Time.deltaTime);
+            Rebell.transform.Translate(new Vector3(0,5,0)*Time.deltaTime);
             yield return new WaitForSeconds(0.003f);
         }
         LinkedList<string> authors = new LinkedList<string>();
@@ -38,7 +38,7 @@ public class PlayerKirche : MonoBehaviour
         //yield return new WaitForSeconds(1);
         while (Rebell.transform.position.y > 8.9f)
         {
-            Rebell.transform.Translate(new Vector3(0,-10,0)*Time.deltaTime);
+            Rebell.transform.Translate(new Vector3(0,-5,0)*Time.deltaTime);
             yield return new WaitForSeconds(0.003f);
         }
         Rebell.GetComponent<SpriteRenderer>().enabled = false;
