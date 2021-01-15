@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Translator : Interactable
 {
-    [SerializeField] private MessageBox _box;
+    [SerializeField] private MessageBox box;
     protected override void SpecificAction()
     {
         PlayerInteract.CanTranslate = true;
@@ -16,16 +16,15 @@ public class Translator : Interactable
     {
         LinkedList<string> messages = new LinkedList<string>();
         messages.AddLast("Moment, ist das...? Nein, das kann ich nicht glauben!");
-        messages.AddLast("Doch, das ist unser Translator. Vieleicht kann ich benutzen um hier raus zu kommen.");
-        messages.AddLast("Es sollte mir auf jeden Fall einfacher Fallen wenn ich einen Teil dieser Texte verstehen kann.");
-        _box.ShowMonologue("Jordan",messages);
+        messages.AddLast("Doch, das ist unser Translator. Vieleicht kann ich ihn benutzen um hier raus zu kommen.");
+        messages.AddLast("Es sollte auf jeden Fall einfacher sein, wenn ich einen Teil dieser Texte verstehen kann.");
+        box.ShowMonologue("Jordan",messages);
         Destroy(gameObject);
     }
 
     protected override void SpecificUpdate()
     {
-        //TODO: Fix MessageBox Stuff
-        if (!_box.GetMessageActive() && Active)
+        if (!box.GetMessageActive() && Active)
         {
             UndoAction();
         }

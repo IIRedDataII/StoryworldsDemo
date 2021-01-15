@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class DoorTerminal : Interactable
 {
 
-    [SerializeField] private MessageBox _box;
+    [SerializeField] private MessageBox box;
      
     [SerializeField] private Door door;
     [SerializeField] private Text text;
@@ -45,7 +45,7 @@ public class DoorTerminal : Interactable
             LinkedList<string> messages = new LinkedList<string>();
             messages.AddLast("Verdammt, irgendwas stimmt nicht. Ich sollte mich mal umschauen.");
             messages.AddLast("Vieleicht finde ich etwas, das wie der Code aussieht?");
-            _box.ShowMonologue("Jordan", messages);
+            box.ShowMonologue("Jordan", messages);
         }
 
     }
