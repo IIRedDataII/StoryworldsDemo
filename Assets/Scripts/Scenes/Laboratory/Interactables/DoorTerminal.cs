@@ -7,10 +7,17 @@ using UnityEngine.UI;
 
 public class DoorTerminal : Interactable
 {
+
+    [SerializeField] private MessageBox _box;
+     
     [SerializeField] private Door door;
     [SerializeField] private Text text;
     [SerializeField] private GameObject keypad;
 
+    [SerializeField][Range(0.5f, 2.0f)] private float WaitTime;
+    
+    private bool _open;
+    
     //KeyCode
     [SerializeField] private int code = 1234;
     [SerializeField] private int _input;
@@ -30,9 +37,17 @@ public class DoorTerminal : Interactable
 
     protected override void UndoSpecificAction()
     {
-        //Close Terminal View
+        //Close Terminal View, Reset Input, Give Hint to Player
         _input = 0;
         keypad.SetActive(false);
+        if (!_open)
+        {
+            LinkedList<string> messages = new LinkedList<string>();
+            messages.AddLast("Verdammt, irgendwas stimmt nicht. Ich sollte mich mal umschauen.");
+            messages.AddLast("Vieleicht finde ich etwas, das wie der Code aussieht?");
+            _box.ShowMonologue("Jordan", messages);
+        }
+
     }
 
     protected override void SpecificUpdate()
@@ -73,6 +88,10 @@ public class DoorTerminal : Interactable
         {
             text.text = "*Insert Code*";
         }
+        else if (_input < 0)
+        {
+            text.text = "*Sucess*";
+        }
         else
         {
             text.text = _input.ToString();
@@ -84,7 +103,8 @@ public class DoorTerminal : Interactable
     private void Sucess()
     {
         door.Open();
-        _input = 0;
+        _open = true;
+        _input = -1;
         PostCodeInTextbox();
         UndoAction();
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -94,6 +114,13 @@ public class DoorTerminal : Interactable
     private void WrongInput()
     {
         _input = 0;
+        StartCoroutine(Error());
+    }
+
+    IEnumerator Error()
+    {
+        text.text = "Error";
+        yield return new WaitForSeconds(WaitTime);
         PostCodeInTextbox();
     }
 }
