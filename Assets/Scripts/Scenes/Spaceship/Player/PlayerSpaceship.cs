@@ -14,7 +14,7 @@ public class PlayerSpaceship : MonoBehaviour
     public bool atButton;
     
     // private variables
-    private bool readEnd;
+    private bool _readEnd;
 
     #endregion
     
@@ -37,7 +37,7 @@ public class PlayerSpaceship : MonoBehaviour
                 };
                 messageBox.ShowMonologue("Jordan", new LinkedList<string>(messages));
                         
-                readEnd = true;
+                _readEnd = true;
             }
             else
             {
@@ -50,9 +50,9 @@ public class PlayerSpaceship : MonoBehaviour
         
         #region End
         
-        if (readEnd && !messageBox.GetMessageActive())
+        if (_readEnd && !messageBox.GetMessageActive())
         {
-            readEnd = false;
+            _readEnd = false;
             // TODO: Add decision & end to demo
             Debug.Log("End: Decision");
         }

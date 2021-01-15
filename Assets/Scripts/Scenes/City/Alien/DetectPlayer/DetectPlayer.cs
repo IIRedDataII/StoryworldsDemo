@@ -6,7 +6,7 @@ public abstract class DetectPlayer : MonoBehaviour
 
     #region Constants
     
-    private const float ViewDistance = 8f;
+    private const float ViewDistance = 7f;
     private const int ViewRange = 45;   // something between 0 and 180
     
     #endregion

@@ -43,17 +43,17 @@ public class MessageBox : MonoBehaviour
     
     #region Variables
     
-    private Image box;
-    private Text text;
+    private Image _box;
+    private Text _text;
     
-    private bool messageBusy;
-    private bool messageDone;
+    private bool _messageBusy;
+    private bool _messageDone;
 
-    private int messagesLeft;
-    private bool messagesFollowing;
+    private int _messagesLeft;
+    private bool _messagesFollowing;
 
-    private LinkedList<string> messages;
-    private LinkedList<string> speakers;
+    private LinkedList<string> _messages;
+    private LinkedList<string> _speakers;
     
     #endregion
     
@@ -62,11 +62,11 @@ public class MessageBox : MonoBehaviour
         
         #region Initialization
         
-        box = GetComponentInChildren<Image>();
-        text = GetComponentInChildren<Text>();
-        box.enabled = false;
-        text.enabled = false;
-        messagesLeft = 0;
+        _box = GetComponentInChildren<Image>();
+        _text = GetComponentInChildren<Text>();
+        _box.enabled = false;
+        _text.enabled = false;
+        _messagesLeft = 0;
         
         #endregion
         
@@ -78,22 +78,22 @@ public class MessageBox : MonoBehaviour
         #region Message Queueing
         
         // there are messages left
-        if (messagesFollowing)
+        if (_messagesFollowing)
         {
             
             // the last message has been fully formulated
-            if (messageDone)
+            if (_messageDone)
             {
                 
                 // press space to show the next message in the next frame
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    messageDone = false;
-                    if (messagesLeft < 1)
+                    _messageDone = false;
+                    if (_messagesLeft < 1)
                     {
-                        messagesFollowing = false;
-                        box.enabled = false;
-                        text.enabled = false;
+                        _messagesFollowing = false;
+                        _box.enabled = false;
+                        _text.enabled = false;
                         PlayerMovement.CanMove = true;
                         PlayerInteract.CanInteract = true;
                     }
@@ -103,14 +103,14 @@ public class MessageBox : MonoBehaviour
             }
             
             // the next message can be shown
-            else if (!messageBusy)
+            else if (!_messageBusy)
             {
-                messageBusy = true;
-                text.text = speakers.First.Value + ": ";
-                speakers.RemoveFirst();
-                StartCoroutine(ShowMessage(messages.First.Value));
-                messages.RemoveFirst();
-                messagesLeft--;
+                _messageBusy = true;
+                _text.text = _speakers.First.Value + ": ";
+                _speakers.RemoveFirst();
+                StartCoroutine(ShowMessage(_messages.First.Value));
+                _messages.RemoveFirst();
+                _messagesLeft--;
             }
             
         }
@@ -160,12 +160,12 @@ public class MessageBox : MonoBehaviour
 
         if (!GetMessageActive())
         {
-            box.enabled = true;
-            text.enabled = true;
-            this.speakers = speakers;
-            this.messages = messages;
-            messagesLeft = messages.Count;
-            messagesFollowing = true;
+            _box.enabled = true;
+            _text.enabled = true;
+            this._speakers = speakers;
+            this._messages = messages;
+            _messagesLeft = messages.Count;
+            _messagesFollowing = true;
             PlayerMovement.CanMove = false;
             PlayerInteract.CanInteract = false;
             Update();
@@ -186,11 +186,11 @@ public class MessageBox : MonoBehaviour
     {
         foreach (char character in message)
         { 
-            text.text += character;
+            _text.text += character;
             yield return new WaitForSeconds(Speed);
         }
-        messageBusy = false;
-        messageDone = true;
+        _messageBusy = false;
+        _messageDone = true;
     }
     
     #endregion
@@ -199,7 +199,7 @@ public class MessageBox : MonoBehaviour
     
     public bool GetMessageActive()
     {
-        return messageDone || messageBusy;
+        return _messageDone || _messageBusy;
     }
 
     #endregion
