@@ -42,7 +42,7 @@ public abstract class DetectPlayer : MonoBehaviour
             Quaternion rotation = thisTransform.rotation;
             
             Debug.DrawLine(position, (Vector2) position + AngleToVector(rotation.y == 0 ? -ViewRange : 180 + ViewRange) * ViewDistance, Color.yellow);
-            Debug.DrawLine(position, (Vector2) position + AngleToVector(rotation.y == 0 ? 0 : 180 - 0) * ViewDistance, Color.yellow);
+            Debug.DrawLine(position, (Vector2) position + AngleToVector(rotation.y == 0 ? 0 : 180) * ViewDistance, Color.yellow);
             Debug.DrawLine(position, (Vector2) position + AngleToVector(rotation.y == 0 ? ViewRange : 180 - ViewRange) * ViewDistance, Color.yellow);
         
             Vector2 alienToPlayerVector = ((Vector2) _player.transform.position - (Vector2) position).normalized;
@@ -98,14 +98,20 @@ public abstract class DetectPlayer : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        _player = other.gameObject;
-        _check = true;
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            _player = other.gameObject;
+            _check = true;
+        }
     }
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        _player = null;
-        _check = false;
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            _player = null;
+            _check = false;
+        }
     }
     
     #endregion

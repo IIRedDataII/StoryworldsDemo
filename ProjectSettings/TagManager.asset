@@ -9,6 +9,7 @@ TagManager:
   - Interactable
   - SceneChange
   - Object
+  - Alien
   layers:
   - Default
   - TransparentFX
