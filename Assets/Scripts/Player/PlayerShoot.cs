@@ -9,40 +9,38 @@ public class PlayerShoot : MonoBehaviour
 {
 #region Attributes
     public bool canShoot;
-    public bool allowInput;
+    public static bool AllowInput;
     [SerializeField] private GameObject projectile;
-    [SerializeField] private int ammunition;
-    [SerializeField] private int roundsInMagazine;
     [SerializeField] private int magSize;
     [SerializeField] private float projectileVelocity;
-#endregion
+    #endregion
 
     // Start is called before the first frame update
     void Start()
     {
         canShoot = false;
-        allowInput = true;
+        AllowInput = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canShoot && allowInput)
+        if (canShoot && AllowInput)
         {
             //check if rounds in Mag and Fire pressed, fire if true
-            if (roundsInMagazine > 0 && Input.GetButtonDown("Fire1"))
+            if (GameData.Instance.RoundsInMagazine > 0 && Input.GetButtonDown("Fire1"))
             {
                 FireProjectile();
             }
             //Check for ammo and if Reload pressed, reload if true
-            if (ammunition > 0 && Input.GetButtonDown("Reload"))
+            if (GameData.Instance.Ammunition > 0 && Input.GetButtonDown("Reload"))
             {
                 ReloadWeapon();
             }
         }
         
     }
-    
+
     private void FireProjectile()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -55,25 +53,25 @@ public class PlayerShoot : MonoBehaviour
         GameObject temp = Instantiate(projectile, transform);
         temp.transform.Rotate(0f,0f,angle);
         temp.GetComponent<Rigidbody2D>().AddForce(mousePos.normalized * projectileVelocity,ForceMode2D.Impulse);
-        roundsInMagazine--;
+        GameData.Instance.RoundsInMagazine--;
     }
 
     private void ReloadWeapon()
     {
         //get missing bullets
-        int bulletDif = magSize - roundsInMagazine;
+        int bulletDif = magSize - GameData.Instance.RoundsInMagazine;
         //check if more ammo then missing bullets
-        if (ammunition >= bulletDif)
+        if (GameData.Instance.Ammunition >= bulletDif)
         {
             //if ture, reload bullets, subtract bullets from ammunition
-            roundsInMagazine += bulletDif;
-            ammunition -= bulletDif;
+            GameData.Instance.RoundsInMagazine += bulletDif;
+            GameData.Instance.Ammunition -= bulletDif;
         }
         else
         {
             //if false add remaining ammunition to magazine, set ammo to 0
-            roundsInMagazine += ammunition;
-            ammunition = 0;
+            GameData.Instance.RoundsInMagazine += GameData.Instance.Ammunition;
+            GameData.Instance.Ammunition = 0;
         }
     }
 }

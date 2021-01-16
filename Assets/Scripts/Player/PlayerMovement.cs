@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
     
     #region Constants
     
-    private const float Speed = 10f;
+    private const float Speed = 10;
     
     #endregion
     

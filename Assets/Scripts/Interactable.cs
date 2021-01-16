@@ -30,7 +30,7 @@ public abstract class Interactable : MonoBehaviour
             PlayerMovement.CanMove = false;
             PlayerInteract.enabled = false;
             PlayerCollider.enabled = false;
-            PlayerShoot.allowInput = false;
+            PlayerShoot.AllowInput = false;
             SpecificAction();
         }
     }
@@ -41,7 +41,7 @@ public abstract class Interactable : MonoBehaviour
         PlayerMovement.CanMove = true;
         PlayerCollider.enabled = true;
         PlayerInteract.enabled = true;
-        PlayerShoot.allowInput = true;
+        PlayerShoot.AllowInput = true;
         PlayerShoot = null;
         PlayerCollider = null;
         PlayerInteract = null;
