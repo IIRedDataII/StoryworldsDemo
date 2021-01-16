@@ -20,8 +20,8 @@ public class PlayerKirche : MonoBehaviour
     #region Coroutines
     private IEnumerator rebellenSequence()
     {
-        Rebell.transform.position = new Vector3(Rebell.transform.position.x,8.9f,0);
-        while (Rebell.transform.position.y < 12)
+        Rebell.transform.position = new Vector3(Rebell.transform.position.x,7.9f,0);
+        while (Rebell.transform.position.y < 11)
         {
             Rebell.transform.Translate(new Vector3(0,5,0)*Time.deltaTime);
             yield return new WaitForSeconds(0.003f);
@@ -36,7 +36,7 @@ public class PlayerKirche : MonoBehaviour
         messageBox.ShowMessages(authors, messages);
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
         //yield return new WaitForSeconds(1);
-        while (Rebell.transform.position.y > 8.9f)
+        while (Rebell.transform.position.y > 7.9f)
         {
             Rebell.transform.Translate(new Vector3(0,-5,0)*Time.deltaTime);
             yield return new WaitForSeconds(0.003f);
