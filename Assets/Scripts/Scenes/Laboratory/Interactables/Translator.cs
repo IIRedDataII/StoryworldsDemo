@@ -6,9 +6,18 @@ using UnityEngine;
 public class Translator : Interactable
 {
     [SerializeField] private MessageBox box;
+    
+    public void Start()
+    {
+        if (GameData.Instance.CanTranslate)
+        {
+            Destroy(gameObject);
+        }
+    }
+    
     protected override void SpecificAction()
     {
-        PlayerInteract.CanTranslate = true;
+        GameData.Instance.CanTranslate = true;
         UndoAction();
     }
 

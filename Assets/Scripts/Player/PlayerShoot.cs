@@ -18,14 +18,14 @@ public class PlayerShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canShoot = false;
+        GameData.Instance.CanShoot = false;
         AllowInput = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canShoot && AllowInput)
+        if (GameData.Instance.CanShoot && AllowInput)
         {
             //check if rounds in Mag and Fire pressed, fire if true
             if (GameData.Instance.RoundsInMagazine > 0 && Input.GetButtonDown("Fire1"))

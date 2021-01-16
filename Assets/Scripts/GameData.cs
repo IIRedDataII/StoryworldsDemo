@@ -30,7 +30,17 @@
     public bool WasInChurch = false;
     public bool RebelTriggered = false;
     public bool BerndDead = false;
-
+    
+    #region WeaponValues
     public int Ammunition =  15;
     public int RoundsInMagazine = 7;
+    public bool CanShoot = false;
+    #endregion
+
+    #region LaboratoryBooleans
+
+    public bool CanTranslate = false;
+
+    #endregion
+
 }

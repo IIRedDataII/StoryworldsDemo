@@ -7,8 +7,7 @@ public class PlayerInteract : MonoBehaviour
     #region Variables
     
     public Image interactPrompt;
-
-    public static bool CanTranslate;
+    
     public static bool CanInteract;
     private bool _canInteract;
     private Interactable _interactable;
@@ -21,7 +20,6 @@ public class PlayerInteract : MonoBehaviour
         #region Initialization
         
         CanInteract = true;
-        CanTranslate = false;
         interactPrompt.enabled = false;
 
         #endregion

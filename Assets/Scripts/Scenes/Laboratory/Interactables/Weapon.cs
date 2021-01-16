@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Weapon : Interactable
 {
-
+    public void Start()
+    {
+        if (GameData.Instance.CanShoot)
+        {
+            Destroy(gameObject);
+        }
+    }
+    
     protected override void SpecificAction()
     {
-        PlayerShoot.canShoot = true;
+        GameData.Instance.CanShoot = true;
         UndoAction();
         //Enter TextBox Stuff for weapon, Maybe enable Weapon GUI Stuff
         Destroy(gameObject);

@@ -19,7 +19,7 @@ public class Datapad : Interactable
         datapadImage.enabled = false;
         LinkedList<string> speakers = new LinkedList<string>();
         LinkedList<string> messages = new LinkedList<string>();
-        if (PlayerInteract.CanTranslate)
+        if (GameData.Instance.CanTranslate)
         {
             speakers.AddLast("Translator");
             messages.AddLast(" ...Spezies scheint durch Bahnen mit roter Flüssigkeit versorgt zu werden...");
