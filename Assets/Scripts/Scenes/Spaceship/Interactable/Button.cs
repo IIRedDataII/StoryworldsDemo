@@ -1,31 +1,50 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-public class Button : MonoBehaviour
+public class Button : Interactable
 {
     
-    [SerializeField] private Image interactPrompt;
+    [SerializeField] private MessageBox messageBox;
+    private bool _readEnd;
     
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void SpecificAction()
     {
-        if (other.CompareTag("Player"))
+        UndoAction();
+    }
+
+    protected override void UndoSpecificAction()
+    {
+        if (GameData.Instance.WasInChurch)
         {
-            
-            interactPrompt.enabled = true;
-            other.gameObject.GetComponent<PlayerSpaceship>().atButton = true;
-            
+            string[] messages = {
+                "Das Schiff scheint noch überraschend intakt zu sein... Ich hätte jetzt die Gelegenheit, von diesem Planeten zu fliehen. Aber wohin?",
+                "Was soll ich nur tun? Ich bin der einzige Überlebende... die Erde ist tot... meine Familie ist irgendwo da draußen...",
+                "Soll ich versuchen, sie zu finden? Wer weiß, ob sie überhaupt noch leben? Oder bereits aus dem Kälteschlaf erwacht sind?",
+                "Oder soll ich hierbleiben? Ich verdanke den Rebellen mein Leben. Möglicherweise kann ich ihnen wirklich helfen...",
+                "Vielleicht finde ich in ihnen sogar eine neue Familie? Ein neues Leben? Wer weiß, ob ich je wieder einen so bewohnbaren Planeten finde?"
+            };
+            messageBox.ShowMonologue("Jordan", new LinkedList<string>(messages));
+            _readEnd = true;
+        }
+        else
+        {
+            messageBox.ShowMessage("Jordan", "Ich möchte mich hier lieber noch etwas umsehen, bevor ich das Schiff starte.");
         }
     }
-    
-    private void OnTriggerExit2D(Collider2D other)
+
+    protected override void SpecificUpdate()
     {
-        if (other.CompareTag("Player"))
+        if (_readEnd && !messageBox.GetMessageActive())
         {
-            
-            interactPrompt.enabled = false;
-            other.gameObject.GetComponent<PlayerSpaceship>().atButton = false;
-            
+            Ending();
+            _readEnd = false;
         }
+    }
+
+    private void Ending()
+    {
+        // TODO: add decision & end to demo
+        Debug.Log("End: Decision");
     }
     
 }
