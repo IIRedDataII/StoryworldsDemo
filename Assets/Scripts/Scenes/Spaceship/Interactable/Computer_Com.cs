@@ -11,14 +11,12 @@ public class Computer_Com : Interactable
     protected override void SpecificAction()
     {
         familyMessageLog.enabled = true;
-        PlayerMovement.CanMove = false;
     }
 
     protected override void UndoSpecificAction()
     {
         familyMessageLog.enabled = false;
                         
-        PlayerMovement.CanMove = true;
         string[] messages = {
             "Ach Mensch!",
             "Desch' ja blöd."

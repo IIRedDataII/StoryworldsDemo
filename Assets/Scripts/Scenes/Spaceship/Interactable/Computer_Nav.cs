@@ -11,14 +11,12 @@ public class Computer_Nav : Interactable
     protected override void SpecificAction()
     {
         earthMessageLog.enabled = true;
-        PlayerMovement.CanMove = false;
     }
 
     protected override void UndoSpecificAction()
     {
         earthMessageLog.enabled = false;
                         
-        PlayerMovement.CanMove = true;
         string[] messages = {
             "Ach Mensch!",
             "Desch' ja supi."
