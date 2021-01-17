@@ -21,7 +21,7 @@
  * messageBox.ShowDialogue("speakerFirst", "speakerSecond", messages);
  * where messages is a LinkedList of strings. speakerFirst and speakerSecond alternate in the MessageBoxes with speakerFirst beginning.
  * 
- * To check wether there's a message box showing at the moment (for example to turn off player movement in that case), use the fuction
+ * To check wether there's a message box showing at the moment, use the fuction
  * messageBox.GetMessageActive();
  * 
  */
@@ -45,15 +45,14 @@ public class MessageBox : MonoBehaviour
     
     private Image _box;
     private Text _text;
-    
-    private bool _messageBusy;
-    private bool _messageDone;
-
-    private int _messagesLeft;
-    private bool _messagesFollowing;
 
     private LinkedList<string> _messages;
     private LinkedList<string> _speakers;
+    
+    private int _messagesLeft;
+    
+    private bool _messageBusy;
+    private bool _messageDone;
     
     #endregion
     
@@ -76,54 +75,35 @@ public class MessageBox : MonoBehaviour
     {
         
         #region Message Queueing
-        
-        // there are messages left
-        if (_messagesFollowing)
+
+        if (_messageDone)
         {
-
-            if (!_messageBusy)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                // TODO: fix one-frame-no-messagebox-error
-            }
-
-            // the last message has been fully formulated
-            if (_messageDone)
-            {
-                
-                // press space to show the next message in the next frame
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (_messagesLeft > 0)
                 {
-                    _messageDone = false;
-                    if (_messagesLeft < 1)
-                    {
-                        _messagesFollowing = false;
-                        _box.enabled = false;
-                        _text.enabled = false;
-                        DisablePlayerControls(true);
-                    }
-
+                    ShowNextMessage();
                 }
-
+                else
+                {
+                    _box.enabled = false;
+                    _text.enabled = false;
+                    _messageDone = false;
+                    SetPlayerControls(true);
+                }
             }
-            
-            // the next message can be shown
-            else if (!_messageBusy)
-            {
-                _messageBusy = true;
-                _text.text = _speakers.First.Value + ": ";
-                _speakers.RemoveFirst();
-                StartCoroutine(ShowMessage(_messages.First.Value));
-                _messages.RemoveFirst();
-                _messagesLeft--;
-            }
-            
         }
-
+        
         #endregion
 
     }
     
-    #region Helper Functions
+    #region Public Functions
+    
+    public bool GetMessageActive()
+    {
+        return _messageBusy || _messageDone;
+    }
     
     public void ShowMonologue(string speaker, LinkedList<string> messages)
     {
@@ -164,14 +144,13 @@ public class MessageBox : MonoBehaviour
 
         if (!GetMessageActive())
         {
-            DisablePlayerControls(false);
+            SetPlayerControls(false);
             _box.enabled = true;
             _text.enabled = true;
             _speakers = speakers;
             _messages = messages;
             _messagesLeft = messages.Count;
-            _messagesFollowing = true;
-            Update();
+            ShowNextMessage();
         }
         else
         {
@@ -180,17 +159,32 @@ public class MessageBox : MonoBehaviour
         
     }
     
-    
     #endregion
     
     #region Helper Functions
 
-    private void DisablePlayerControls(bool active)
+    private void ShowNextMessage()
+    {
+        string speaker = _speakers.First.Value;
+        _speakers.RemoveFirst();
+        string message = _messages.First.Value;
+        _messages.RemoveFirst();
+
+        _messageBusy = true;
+        _messageDone = false;
+        _messagesLeft--;
+        
+        _text.text = speaker + ": ";
+        StartCoroutine(ShowMessage(message));
+    }
+    
+    private void SetPlayerControls(bool active)
     {
         PlayerMovement.CanMove = active;
         PlayerInteract.CanInteract = active;
+        PlayerShoot.AllowInput = active;
     }
-
+    
     #endregion
     
     #region Coroutines
@@ -202,19 +196,11 @@ public class MessageBox : MonoBehaviour
             _text.text += character;
             yield return new WaitForSeconds(1 / Speed);
         }
-        _messageBusy = false;
+        
         _messageDone = true;
+        _messageBusy = false;
     }
     
-    #endregion
-    
-    #region Setter & Getter
-    
-    public bool GetMessageActive()
-    {
-        return _messageDone || _messageBusy;
-    }
-
     #endregion
     
 }
