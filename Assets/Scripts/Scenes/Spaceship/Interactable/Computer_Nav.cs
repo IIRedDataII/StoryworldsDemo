@@ -11,6 +11,8 @@ public class Computer_Nav : Interactable
     protected override void SpecificAction()
     {
         earthMessageLog.enabled = true;
+        
+        GameData.Instance.ReadEarthLog = true;
     }
 
     protected override void UndoSpecificAction()
@@ -19,7 +21,7 @@ public class Computer_Nav : Interactable
                         
         string[] messages = {
             "Ach Mensch!",
-            "Desch' ja supi."
+            "Desch' ja blöd."
         };
         messageBox.ShowMonologue("Jordan", new LinkedList<string>(messages));
     }

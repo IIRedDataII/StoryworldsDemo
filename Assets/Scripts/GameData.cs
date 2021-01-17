@@ -16,7 +16,7 @@
 
     #endregion
     
-    #region LastRoom
+    #region Scene
     
     public enum LastRoom
     {
@@ -27,7 +27,7 @@
     
     #endregion
     
-    #region WeaponValues
+    #region Weapon
     
     public int Ammunition = 20;
     public int RoundsInMagazine = 7;
@@ -42,7 +42,7 @@
 
     #endregion
     
-    #region CityAliens
+    #region City
     
     public bool[] DeadAliens = new bool[20];
     
@@ -52,6 +52,13 @@
     
     public bool WasInChurch = false;
     public bool RebelTriggered = false;
+    
+    #endregion
+    
+    #region Spaceship
+
+    public bool ReadFamilyLog = false;
+    public bool ReadEarthLog = false;
     
     #endregion
 
