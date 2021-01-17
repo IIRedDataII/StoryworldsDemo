@@ -36,7 +36,7 @@ public class Datapad : Interactable
         {
             speakers.AddLast("Jordan");
             messages.AddLast(
-                "Hmm.. diese Tablet zeigt eine Skizze eines Menschen, aber ich kann den Text daneben nicht verstehen.");
+                "Hmm.. dieses Tablet zeigt eine Skizze eines Menschen, aber ich kann den Text daneben nicht verstehen.");
             speakers.AddLast("Jordan");
             messages.AddLast("Wir haben doch einen Translator bekommen. Vielleicht hilft der mir weiter.");
         }
