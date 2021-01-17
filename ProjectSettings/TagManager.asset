@@ -10,6 +10,7 @@ TagManager:
   - SceneChange
   - Object
   - Alien
+  - Junction
   layers:
   - Default
   - TransparentFX

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2301423597739117607}
   - component: {fileID: 1629135373792225037}
   - component: {fileID: 3522345857501184234}
-  - component: {fileID: 7237601997326201831}
-  - component: {fileID: 3710999361596715723}
   - component: {fileID: 1744406730531847751}
-  - component: {fileID: 7991569046796229769}
+  - component: {fileID: 5400096236656634656}
+  - component: {fileID: 3710999361596715723}
+  - component: {fileID: 7237601997326201831}
   m_Layer: 2
   m_Name: alien_soldier
   m_TagString: Alien
@@ -104,32 +104,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 4, y: 1}
   m_Direction: 0
---- !u!114 &7237601997326201831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4456302947070385159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ffe6c8594950784aacf20983ace8739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3710999361596715723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4456302947070385159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 784cc87333a8a9042856dafbe59f15d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 0, y: -1, z: 0}
-  innerCollider: {fileID: 1744406730531847751}
 --- !u!70 &1744406730531847751
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -146,7 +120,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.3, y: 0.3}
   m_Direction: 0
---- !u!114 &7991569046796229769
+--- !u!114 &5400096236656634656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,7 +129,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 4456302947070385159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b221776e59971544f90fa18561295dbe, type: 3}
+  m_Script: {fileID: 11500000, guid: 04a31a5312e9c0945a6a70204ccbb264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  innerCollider: {fileID: 1744406730531847751}
+  id: -1
+  seenPlayer: 0
+--- !u!114 &3710999361596715723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4456302947070385159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784cc87333a8a9042856dafbe59f15d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: -1, z: 0}
+--- !u!114 &7237601997326201831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4456302947070385159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ffe6c8594950784aacf20983ace8739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5460890687269806237

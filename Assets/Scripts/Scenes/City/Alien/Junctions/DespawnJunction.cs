@@ -5,15 +5,10 @@ public class DespawnJunction : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag.Equals("Alien"))
+        if (other.CompareTag("Alien") && other.GetComponent<AlienBehaviour>().CompareInnerCollider(other))
         {
-            Pathing pathingScript = other.GetComponent<Pathing>();
-            if (pathingScript && other == other.GetComponent<Pathing>().innerCollider)
-            {
-                Destroy(other.gameObject);
-            }
+            Destroy(other.gameObject);
         }
-
     }
     
 }

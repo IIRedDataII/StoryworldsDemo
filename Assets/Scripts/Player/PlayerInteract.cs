@@ -34,13 +34,15 @@ public class PlayerInteract : MonoBehaviour
         if (CanInteract && _canInteract && !interactPrompt.enabled)
         {
             interactPrompt.enabled = true;
-            _interactable.highlight.SetActive(true);
+            if (_interactable)
+                _interactable.highlight.SetActive(true);
         }
         
         if (!CanInteract && interactPrompt.enabled)
         {
             interactPrompt.enabled = false;
-            _interactable.highlight.SetActive(false);
+            if (_interactable)
+                _interactable.highlight.SetActive(false);
         }
 
         if (Input.GetButtonDown("Interact") && CanInteract && _canInteract && _interactable)

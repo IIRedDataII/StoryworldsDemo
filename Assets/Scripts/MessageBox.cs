@@ -37,7 +37,7 @@ public class MessageBox : MonoBehaviour
     
     #region Constants
     
-    private const float Speed = 0.025f;
+    private const float Speed = 40f;
     
     #endregion
     
@@ -80,7 +80,12 @@ public class MessageBox : MonoBehaviour
         // there are messages left
         if (_messagesFollowing)
         {
-            
+
+            if (!_messageBusy)
+            {
+                // TODO: fix one-frame-no-messagebox-error
+            }
+
             // the last message has been fully formulated
             if (_messageDone)
             {
@@ -94,8 +99,7 @@ public class MessageBox : MonoBehaviour
                         _messagesFollowing = false;
                         _box.enabled = false;
                         _text.enabled = false;
-                        PlayerMovement.CanMove = true;
-                        PlayerInteract.CanInteract = true;
+                        DisablePlayerControls(true);
                     }
 
                 }
@@ -160,14 +164,13 @@ public class MessageBox : MonoBehaviour
 
         if (!GetMessageActive())
         {
+            DisablePlayerControls(false);
             _box.enabled = true;
             _text.enabled = true;
-            this._speakers = speakers;
-            this._messages = messages;
+            _speakers = speakers;
+            _messages = messages;
             _messagesLeft = messages.Count;
             _messagesFollowing = true;
-            PlayerMovement.CanMove = false;
-            PlayerInteract.CanInteract = false;
             Update();
         }
         else
@@ -180,6 +183,16 @@ public class MessageBox : MonoBehaviour
     
     #endregion
     
+    #region Helper Functions
+
+    private void DisablePlayerControls(bool active)
+    {
+        PlayerMovement.CanMove = active;
+        PlayerInteract.CanInteract = active;
+    }
+
+    #endregion
+    
     #region Coroutines
     
     private IEnumerator ShowMessage(string message)
@@ -187,7 +200,7 @@ public class MessageBox : MonoBehaviour
         foreach (char character in message)
         { 
             _text.text += character;
-            yield return new WaitForSeconds(Speed);
+            yield return new WaitForSeconds(1 / Speed);
         }
         _messageBusy = false;
         _messageDone = true;

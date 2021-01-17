@@ -1,0 +1,76 @@
+﻿using UnityEngine;
+
+public class AlienBehaviour : MonoBehaviour
+{
+    
+    #region Variables
+    
+    // Unity variables
+    public Collider2D innerCollider;
+    public int id;
+    
+    // public variables
+    public bool seenPlayer;
+    
+    // private variables
+    private GameObject _player;
+    
+    #endregion
+
+    private void Start()
+    {
+        
+        #region Initialization
+
+        if (id >= 0 && GameData.Instance.DeadAliens[id])
+            MakeDead();
+        
+        #endregion
+        
+        #region Variable Initialization
+        
+        _player = GameObject.FindGameObjectWithTag("Player");
+        
+        #endregion
+        
+    }
+
+    private void Update()
+    {
+        
+        #region Track Player
+        
+        if (seenPlayer)
+            transform.rotation = Quaternion.Euler(0, _player.transform.position.x < transform.position.x ? 180 : 0, 0);
+        
+        #endregion
+        
+    }
+    
+    #region Helper Functions
+
+    private void MakeDead()
+    {
+        // Just destroy game object? Or give it exploding animation? Or change sprite to a dead version? Or...?
+        Destroy(gameObject);
+    }
+    
+    #endregion
+
+    #region Public Functions
+
+    public void Die()
+    {
+        if (id >= 0)
+            GameData.Instance.DeadAliens[id] = true;
+        MakeDead();
+    }
+    
+    public bool CompareInnerCollider(Collider2D otherCollider)
+    {
+        return otherCollider.Equals(innerCollider);
+    }
+
+    #endregion
+    
+}

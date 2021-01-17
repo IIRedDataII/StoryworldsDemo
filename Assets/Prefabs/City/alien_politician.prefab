@@ -93,10 +93,10 @@ GameObject:
   - component: {fileID: 1670875499105220386}
   - component: {fileID: 1722906258980812398}
   - component: {fileID: 3268573263656588414}
-  - component: {fileID: 2224500758555343956}
-  - component: {fileID: 2532380897465206780}
   - component: {fileID: 3729812600141302652}
-  - component: {fileID: 7173029670050794001}
+  - component: {fileID: 3734431066706824126}
+  - component: {fileID: 2532380897465206780}
+  - component: {fileID: 2224500758555343956}
   m_Layer: 2
   m_Name: alien_politician
   m_TagString: Alien
@@ -186,32 +186,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 4, y: 1}
   m_Direction: 0
---- !u!114 &2224500758555343956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4717325631390949209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17aefb6e7b70f8a498db81b26bee82a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2532380897465206780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4717325631390949209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 784cc87333a8a9042856dafbe59f15d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 0, y: -1, z: 0}
-  innerCollider: {fileID: 3729812600141302652}
 --- !u!70 &3729812600141302652
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -228,7 +202,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.3, y: 0.3}
   m_Direction: 0
---- !u!114 &7173029670050794001
+--- !u!114 &3734431066706824126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,6 +211,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 4717325631390949209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b221776e59971544f90fa18561295dbe, type: 3}
+  m_Script: {fileID: 11500000, guid: 04a31a5312e9c0945a6a70204ccbb264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  innerCollider: {fileID: 3729812600141302652}
+  id: -1
+  seenPlayer: 0
+--- !u!114 &2532380897465206780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717325631390949209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784cc87333a8a9042856dafbe59f15d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: -1, z: 0}
+--- !u!114 &2224500758555343956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717325631390949209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17aefb6e7b70f8a498db81b26bee82a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

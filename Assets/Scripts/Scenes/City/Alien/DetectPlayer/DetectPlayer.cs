@@ -67,7 +67,7 @@ public abstract class DetectPlayer : MonoBehaviour
                         idle.StopAllCoroutines();
                         idle.enabled = false;
                     }
-                    GetComponent<TrackPlayer>().SetPlayerObject(_player);
+                    GetComponent<AlienBehaviour>().seenPlayer = true;
 
                     DetectAction();
                 }
@@ -111,7 +111,7 @@ public abstract class DetectPlayer : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag.Equals("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             _player = other.gameObject;
             _check = true;
@@ -120,7 +120,7 @@ public abstract class DetectPlayer : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag.Equals("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             _player = null;
             _check = false;

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerSpaceship : MonoBehaviour
 {
@@ -53,7 +52,7 @@ public class PlayerSpaceship : MonoBehaviour
         if (_readEnd && !messageBox.GetMessageActive())
         {
             _readEnd = false;
-            // TODO: Add decision & end to demo
+            // TODO: add decision & end to demo
             Debug.Log("End: Decision");
         }
 

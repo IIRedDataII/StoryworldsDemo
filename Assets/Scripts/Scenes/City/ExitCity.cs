@@ -6,21 +6,24 @@ public class ExitCity : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
-        GameData.Instance.SetGetlastRoom = GameData.LastRoom.City;
-        switch (name)
+        if (other.CompareTag("Player"))
         {
-            case "SceneChangeLab":
-                SceneManager.LoadScene("Laboratory");
-                break;
-            case "SceneChangeShip":
-                SceneManager.LoadScene("Spaceship");
-                break;
-            case "SceneChangeChurch":
-                SceneManager.LoadScene("Church");
-                break;
+            
+            GameData.Instance.SetGetlastRoom = GameData.LastRoom.City;
+            switch (name)
+            {
+                case "SceneChangeLab":
+                    SceneManager.LoadScene("Laboratory");
+                    break;
+                case "SceneChangeShip":
+                    SceneManager.LoadScene("Spaceship");
+                    break;
+                case "SceneChangeChurch":
+                    SceneManager.LoadScene("Church");
+                    break;
+            }
+            
         }
-        
     }
     
 }

@@ -38,9 +38,9 @@ public class Datapad : Interactable
             messages.AddLast(
                 "Hmm.. diese Tablet zeigt eine Skizze eines Menschen, aber ich kann den Text daneben nicht verstehen.");
             speakers.AddLast("Jordan");
-            messages.AddLast("Wir haben doch einen Translator bekommen. Vieleicht hilft der mir weiter.");
+            messages.AddLast("Wir haben doch einen Translator bekommen. Vielleicht hilft der mir weiter.");
         }
-        box.ShowMessages(speakers,messages);
+        box.ShowMessages(speakers, messages);
     }
 
     protected override void SpecificUpdate()

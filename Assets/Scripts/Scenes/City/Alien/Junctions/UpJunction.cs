@@ -5,13 +5,9 @@ public class UpJunction : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag.Equals("Alien"))
+        if (other.CompareTag("Alien") && other.GetComponent<AlienBehaviour>().CompareInnerCollider(other))
         {
-            Pathing pathingScript = other.GetComponent<Pathing>();
-            if (pathingScript && other == other.GetComponent<Pathing>().innerCollider)
-            {
-                other.gameObject.GetComponent<Pathing>().direction = Vector3.up;
-            }
+            other.gameObject.GetComponent<Pathing>().direction = Vector3.up;
         }
     }
     

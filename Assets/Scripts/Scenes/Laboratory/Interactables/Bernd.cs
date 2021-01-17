@@ -43,7 +43,7 @@ public class Bernd : Interactable
     }
 
 
-    public void kill()
+    public void Kill()
     {
         GameData.Instance.BerndDead = true;
         gameObject.tag = "Untagged";

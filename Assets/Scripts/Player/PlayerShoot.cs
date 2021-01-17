@@ -1,28 +1,23 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
-using UnityEngine;
-using UnityEngine.UIElements;
+﻿using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-#region Attributes
-    public bool canShoot;
+    
+    #region Attributes
+    
     public static bool AllowInput;
     [SerializeField] private GameObject projectile;
-    [SerializeField] private int magSize;
     [SerializeField] private float projectileVelocity;
+    [SerializeField] private int magSize;
+    
     #endregion
 
-    // Start is called before the first frame update
     void Start()
     {
-        GameData.Instance.CanShoot = false;
+        //GameData.Instance.CanShoot = false;
         AllowInput = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameData.Instance.CanShoot && AllowInput)
@@ -74,4 +69,5 @@ public class PlayerShoot : MonoBehaviour
             GameData.Instance.Ammunition = 0;
         }
     }
+    
 }

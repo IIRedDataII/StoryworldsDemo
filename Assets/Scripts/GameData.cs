@@ -27,20 +27,32 @@
     
     #endregion
     
-    public bool WasInChurch = false;
-    public bool RebelTriggered = false;
-    public bool BerndDead = false;
-    
     #region WeaponValues
-    public int Ammunition =  15;
+    
+    public int Ammunition = 20;
     public int RoundsInMagazine = 7;
     public bool CanShoot = false;
+    
     #endregion
 
-    #region LaboratoryBooleans
+    #region Laboratory
 
+    public bool BerndDead = false;
     public bool CanTranslate = false;
 
+    #endregion
+    
+    #region CityAliens
+    
+    public bool[] DeadAliens = new bool[20];
+    
+    #endregion
+    
+    #region Church
+    
+    public bool WasInChurch = false;
+    public bool RebelTriggered = false;
+    
     #endregion
 
 }

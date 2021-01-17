@@ -33,7 +33,10 @@ public class PlayerCityPos : MonoBehaviour
         }
             
         #endregion
-        
+
+        // TODO DF: remove this
+        GameData.Instance.CanShoot = true;
+
     }
     
 }
