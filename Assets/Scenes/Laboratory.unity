@@ -2457,12 +2457,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531253843}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5603abf1eac645043982bc8403e59063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   start: {fileID: 2056290612}
+  _box: {fileID: 148476098}
 --- !u!95 &531253852
 Animator:
   serializedVersion: 3
