@@ -8,13 +8,7 @@ public class AlienBehaviour : MonoBehaviour
     // Unity variables
     public Collider2D innerCollider;
     public int id;
-    
-    // public variables
-    public bool seenPlayer;
-    
-    // private variables
-    private GameObject _player;
-    
+
     #endregion
 
     private void Start()
@@ -26,25 +20,7 @@ public class AlienBehaviour : MonoBehaviour
             MakeDead();
         
         #endregion
-        
-        #region Variable Initialization
-        
-        _player = GameObject.FindGameObjectWithTag("Player");
-        
-        #endregion
-        
-    }
 
-    private void Update()
-    {
-        
-        #region Track Player
-        
-        if (seenPlayer)
-            transform.rotation = Quaternion.Euler(0, _player.transform.position.x < transform.position.x ? 180 : 0, 0);
-        
-        #endregion
-        
     }
     
     #region Helper Functions

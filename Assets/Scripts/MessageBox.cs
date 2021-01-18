@@ -6,13 +6,6 @@
  * [SerializeField] private MessageBox messageBox;
  * Copy the UI Element "MessageBox" from the Spaceship scene into your scene and use it to set the variable in the editor
  *
- * Show one message by calling:
- * messageBox.ShowMessage("speaker", "message");
- * 
- * Show mutiple messages one after another by calling:
- * messageBox.ShowMessages(speakers, messages);
- * where speakers & messages are LinkedLists of strings. They cannot be empty and must be of the same size (speaker i is shown for message i).
- *
  * Show a monologue with only one person speaking by calling:
  * messageBox.ShowMonologue("speaker", messages);
  * where messages is a LinkedList of strings
@@ -20,6 +13,18 @@
  * Show a dialogue with two persons speaking by calling:
  * messageBox.ShowDialogue("speakerFirst", "speakerSecond", messages);
  * where messages is a LinkedList of strings. speakerFirst and speakerSecond alternate in the MessageBoxes with speakerFirst beginning.
+ *
+ * Show one message by calling:
+ * messageBox.ShowMessage("speaker", "message");
+ * 
+ * Show mutiple messages one after another by calling:
+ * messageBox.ShowMessages(speakers, messages);
+ * where speakers & messages are LinkedLists of strings. They cannot be empty and must be of the same size (speaker i is shown for message i).
+ * 
+ * In any case, use strings to initialize LinkedLists inside the function parameter brackets:
+ * string[] messages = {"Message 1", "Message 2", ..., "Message n"};
+ * string[] speakers = {"Speaker 1", "Speaker 2", ..., "Speaker n"};
+ * messageBox.showMessages(new LinkedList<string>(speakers), new LinkedList<string>(messages));
  * 
  * To check wether there's a message box showing at the moment, use the fuction
  * messageBox.GetMessageActive();

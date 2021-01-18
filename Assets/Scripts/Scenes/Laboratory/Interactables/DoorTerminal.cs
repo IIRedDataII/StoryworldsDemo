@@ -44,7 +44,7 @@ public class DoorTerminal : Interactable
         {
             LinkedList<string> messages = new LinkedList<string>();
             messages.AddLast("Verdammt, irgendwas stimmt nicht. Ich sollte mich mal umschauen.");
-            messages.AddLast("Vieleicht finde ich etwas, das wie der Code aussieht?");
+            messages.AddLast("Vielleicht finde ich etwas, das wie der Code aussieht?");
             box.ShowMonologue("Jordan", messages);
         }
 

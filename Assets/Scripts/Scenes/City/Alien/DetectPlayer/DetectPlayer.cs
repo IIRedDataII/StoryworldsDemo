@@ -13,8 +13,10 @@ public abstract class DetectPlayer : MonoBehaviour
     
     #region Variables
     
+    protected GameObject Player;
+    
+    private bool _detectedPlayer;
     private bool _check;
-    private GameObject _player;
     
     #endregion
     
@@ -26,6 +28,8 @@ public abstract class DetectPlayer : MonoBehaviour
         GetComponent<CapsuleCollider2D>().size = new Vector2(ViewDistance / 2, 1f);
         
         #endregion
+
+        SpecificStart();
         
     }
 
@@ -34,7 +38,7 @@ public abstract class DetectPlayer : MonoBehaviour
         
         #region Field of View
         
-        if (_check)
+        if (_check && !_detectedPlayer)
         {
             
             Transform thisTransform = transform;
@@ -45,7 +49,7 @@ public abstract class DetectPlayer : MonoBehaviour
             Debug.DrawLine(position, (Vector2) position + AngleToVector(rotation.y == 0 ? 0 : 180) * ViewDistance, Color.yellow);
             Debug.DrawLine(position, (Vector2) position + AngleToVector(rotation.y == 0 ? ViewRange : 180 - ViewRange) * ViewDistance, Color.yellow);
         
-            Vector2 alienToPlayerVector = ((Vector2) _player.transform.position - (Vector2) position).normalized;
+            Vector2 alienToPlayerVector = ((Vector2) Player.transform.position - (Vector2) position).normalized;
             double alienToPlayerAngle = VectorToAngle(alienToPlayerVector);
             bool looksRight = rotation.y == 0;
         
@@ -56,20 +60,8 @@ public abstract class DetectPlayer : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(position, alienToPlayerVector, ViewDistance);
                 if (hit && hit.collider.gameObject.tag.Equals("Player"))
                 {
-                    GetComponentsInChildren<SpriteRenderer>()[1].enabled = true;
-                    
-                    Pathing pathing = GetComponent<Pathing>();
-                    if (pathing)
-                        pathing.enabled = false;
-                    Idle idle = GetComponent<Idle>();
-                    if (idle)
-                    {
-                        idle.StopAllCoroutines();
-                        idle.enabled = false;
-                    }
-                    GetComponent<AlienBehaviour>().seenPlayer = true;
-
                     DetectAction();
+                    _detectedPlayer = true;
                 }
             }
             
@@ -77,15 +69,39 @@ public abstract class DetectPlayer : MonoBehaviour
         
         #endregion
         
+        SpecificUpdate();
+        
     }
     
     #region Abstract Functions
     
-    protected abstract void DetectAction();
+    protected abstract void SpecificStart();
     
+    protected abstract void SpecificUpdate();
+    
+    protected abstract void SpecificDetectAction();
+
     #endregion
 
     #region Helper Functions
+
+    private void DetectAction()
+    {
+        
+        GetComponentsInChildren<SpriteRenderer>()[1].enabled = true;
+        Pathing pathing = GetComponent<Pathing>();
+        if (pathing)
+            pathing.enabled = false;
+        Idle idle = GetComponent<Idle>();
+        if (idle)
+        {
+            idle.StopAllCoroutines();
+            idle.enabled = false;
+        }
+            
+        SpecificDetectAction();
+        
+    }
    
     private double VectorToAngle(Vector2 vector)
     {
@@ -113,7 +129,7 @@ public abstract class DetectPlayer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _player = other.gameObject;
+            Player = other.gameObject;
             _check = true;
         }
     }
@@ -122,7 +138,8 @@ public abstract class DetectPlayer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _player = null;
+            if (!_detectedPlayer)
+                Player = null;
             _check = false;
         }
     }

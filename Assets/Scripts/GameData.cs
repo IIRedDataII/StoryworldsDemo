@@ -1,4 +1,11 @@
-﻿public class GameData
+﻿/*
+ * Suffixes:
+ * DF: don't forget
+ * NTH: nice to have
+ * MH: must have
+ */
+
+public class GameData
 {
     
     #region Singleton Pattern
@@ -28,10 +35,10 @@
     #endregion
     
     #region Weapon
-    
-    public int Ammunition = 20;
+
+    public int Ammunition = 100;//20;
     public int RoundsInMagazine = 7;
-    public bool CanShoot = false;
+    public bool CanShoot = true;//false;
     
     #endregion
 
