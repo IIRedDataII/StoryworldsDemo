@@ -5,7 +5,7 @@ public class Alert : DetectPlayer
     
     protected override void DetectAction()
     {
-        Debug.Log("Alert! (Gold, Blue & Green)");
+        Debug.Log("Enemy spotted! Preferred action: Alert! (Gold, Blue & Green)");
     }
     
 }

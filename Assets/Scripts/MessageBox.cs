@@ -154,6 +154,7 @@ public class MessageBox : MonoBehaviour
         }
         else
         {
+            // TODO NTH: queue multiple message calls
             Debug.Log("There is another message active at the moment. This message was ignored.");
         }
         

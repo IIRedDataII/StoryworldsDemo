@@ -5,7 +5,7 @@ public class Run : DetectPlayer
     
     protected override void DetectAction()
     {
-        Debug.Log("Run! (Red & Black)");
+        Debug.Log("Enemy spotted! Preferred action: Run! (Red & Black)");
     }
     
 }
