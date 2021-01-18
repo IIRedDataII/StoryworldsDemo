@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2519758080874298518}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.2, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1670875499105220386}
   m_RootOrder: 0
@@ -242,6 +242,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399879a169edf164a96de124becff52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dot1: {fileID: 21300000, guid: 2e0daf079083d13438075739cc872d4d, type: 3}
+  dot2: {fileID: 21300000, guid: 7df0107cc8f6ddc4bae3dedb1627b358, type: 3}
+  dot3: {fileID: 21300000, guid: 8b7555284b235214e88cabae7450be90, type: 3}
+  exclamationMark3: {fileID: 21300000, guid: 17a1c84a96cee8d4e94e27722fac8985, type: 3}
 --- !u!50 &4620953643943073945
 Rigidbody2D:
   serializedVersion: 4

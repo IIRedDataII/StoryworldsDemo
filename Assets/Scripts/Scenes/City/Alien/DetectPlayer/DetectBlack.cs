@@ -3,9 +3,20 @@
 public class DetectBlack : DetectRun
 {
     
-    private const float SpeedBlack = 0.1f;
+    #region Constants
+    
+    private const float SpeedBlack = 0.2f;
+    
+    #endregion
 
+    #region Variables
+    
+    // Unity variables
     [SerializeField] private Sprite runningSprite;
+    
+    #endregion
+    
+    #region Override Functions
     
     protected override void SpecificStart()
     {
@@ -23,5 +34,7 @@ public class DetectBlack : DetectRun
     {
         GetComponent<SpriteRenderer>().sprite = runningSprite;
     }
+    
+    #endregion
 
 }

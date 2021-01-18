@@ -12,6 +12,7 @@ TagManager:
   - Alien
   - Junction
   - Building
+  - Projectile
   layers:
   - Default
   - TransparentFX
