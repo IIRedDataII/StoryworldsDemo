@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class DetectRed : DetectRun
 {
@@ -6,6 +7,7 @@ public class DetectRed : DetectRun
     #region Constants
     
     private const float SpeedRed = 0.3f;
+    private const float RecognizeDelayRed = 0.5f;
     
     #endregion
     
@@ -21,6 +23,7 @@ public class DetectRed : DetectRun
     protected override void SpecificStart()
     {
         Speed = SpeedRed;
+        RecognizeDelay = RecognizeDelayRed;
         Direction = Vector3.right;
     }
     
@@ -29,10 +32,21 @@ public class DetectRed : DetectRun
         
     }
 
-    protected override void MoreSpecificDetectAction()
+    protected override void SpecificDetectAction()
     {
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        StartCoroutine(RecognizeRed());
+    }
+    
+    #endregion
+    
+    #region Coroutines
+    
+    private IEnumerator RecognizeRed()
+    {
+        yield return new WaitForSeconds(RecognizeDelay);
+        Run = true;
         GetComponent<SpriteRenderer>().sprite = runningSprite;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
     
     #endregion

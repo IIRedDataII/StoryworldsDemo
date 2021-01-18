@@ -8,6 +8,7 @@ public abstract class DetectRun : DetectPlayer
     // protected variables
     protected bool Run;
     protected float Speed;
+    protected float RecognizeDelay;
     protected Vector3 Direction;
     
     #endregion
@@ -24,22 +25,6 @@ public abstract class DetectRun : DetectPlayer
         
     }
     
-    #region Override Functions
-    protected override void SpecificDetectAction()
-    {
-        Run = true;
-
-        MoreSpecificDetectAction();
-    }
-    
-    #endregion
-
-    #region Abstract Functions
-    
-    protected abstract void MoreSpecificDetectAction();
-    
-    #endregion
-
     #region Public Functions
     
     public bool GetRun()

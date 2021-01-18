@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class DetectBlack : DetectRun
 {
@@ -6,6 +7,7 @@ public class DetectBlack : DetectRun
     #region Constants
     
     private const float SpeedBlack = 0.2f;
+    private const float RecognizeDelayBlack = 1f;
     
     #endregion
 
@@ -21,6 +23,7 @@ public class DetectBlack : DetectRun
     protected override void SpecificStart()
     {
         Speed = SpeedBlack;
+        RecognizeDelay = RecognizeDelayBlack;
         SpecificUpdate();
     }
     
@@ -30,11 +33,22 @@ public class DetectBlack : DetectRun
             Direction = Player.transform.position.y >= transform.position.y ? Vector3.down : Vector3.up;
     }
 
-    protected override void MoreSpecificDetectAction()
+    protected override void SpecificDetectAction()
     {
+        StartCoroutine(RecognizeBlack());
+    }
+    
+    #endregion
+ 
+    #region Coroutines
+    
+    private IEnumerator RecognizeBlack()
+    {
+        yield return new WaitForSeconds(RecognizeDelay);
+        Run = true;
         GetComponent<SpriteRenderer>().sprite = runningSprite;
     }
     
     #endregion
-
+    
 }
