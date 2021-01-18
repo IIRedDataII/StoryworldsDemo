@@ -4,6 +4,8 @@ public class DetectBlack : DetectRun
 {
     
     private const float SpeedBlack = 0.1f;
+
+    [SerializeField] private Sprite runningSprite;
     
     protected override void SpecificStart()
     {
@@ -19,7 +21,7 @@ public class DetectBlack : DetectRun
 
     protected override void MoreSpecificDetectAction()
     {
-        // Change sprite
+        GetComponent<SpriteRenderer>().sprite = runningSprite;
     }
 
 }

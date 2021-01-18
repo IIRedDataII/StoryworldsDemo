@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class DetectGray : DetectPlayer
@@ -6,6 +7,8 @@ public class DetectGray : DetectPlayer
 
     private const float DelayShoot = 3f;
     
+    [SerializeField] private Sprite shootingSprite;
+    [SerializeField] private GameObject projectile;
     private bool _trackPlayer;
     
     protected override void SpecificStart()
@@ -23,7 +26,7 @@ public class DetectGray : DetectPlayer
     {
         Debug.Log("Enemy spotted! Preferred action: Shoot! (Gray)");
         _trackPlayer = true;
-        // Change sprite
+        GetComponent<SpriteRenderer>().sprite = shootingSprite;
         StartCoroutine(Shoot());
     }
 
@@ -31,9 +34,23 @@ public class DetectGray : DetectPlayer
     {
         while (true)
         {
-            Debug.Log("Shoot!");
             yield return new WaitForSeconds(DelayShoot);
+            Vector3 position = transform.position;
+            Vector3 shootDirection = Player.transform.position - position;
+            Instantiate(projectile, position, Quaternion.Euler(0, 0, (float) VectorToAngle(shootDirection)));
         }
     }
     
+    private double VectorToAngle(Vector2 vector)
+    {
+        double angleDeg = 180 / Math.PI * Math.Asin(Math.Abs(vector.y) / vector.magnitude);
+        
+        if (vector.x < 0)
+            angleDeg = 180 - angleDeg;
+        if (vector.y < 0)
+            angleDeg *= -1;
+
+        return angleDeg;
+    }
+
 }
