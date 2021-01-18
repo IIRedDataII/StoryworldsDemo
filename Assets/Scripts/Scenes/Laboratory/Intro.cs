@@ -1,28 +1,34 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Intro : MonoBehaviour
 {
+    
     #region DebugBools
 
-    public bool FadeImageOne;
-    public bool FadeImageTwo;
-    public bool FadeImageThree;
+    public bool fadeImageOne;
+    public bool fadeImageTwo;
+    public bool fadeImageThree;
 
     #endregion
-
+    
     #region Variables
 
-    [SerializeField][Tooltip("Blackscreen")] private Image imageZero;
+    [SerializeField] private GameObject player;
+
+    private PlayerLabPos _playerLabPos;
     
+    #region Images
+
+    [SerializeField][Tooltip("Blackscreen")] private Image imageZero;
     [SerializeField] private Image imageOne;
     [SerializeField] private Image imageTwo;
     [SerializeField] private Image imageThree;
 
-    [SerializeField][Tooltip("If smaller than 2, Image 2 wont fade out properly")] private int time;
+    #endregion
+
+    #region boolean
 
     [SerializeField] private bool imageZeroDone;
     [SerializeField] private bool imageOneDone;
@@ -31,10 +37,15 @@ public class Intro : MonoBehaviour
 
     //AllDone, Supposed to end the intro scene, set true if everything is over. Will start Blackscreen fade in and reset to beginn Gameplay
     private bool _allDone;
+    private bool _fadeInZero;
     
     private bool _coroutineImageOneRunning;
     private bool _coroutineImageTwoRunning;
     private bool _coroutineImageThreeRunning;
+
+    #endregion
+
+    [SerializeField][Tooltip("If smaller than 2, Image 2 wont fade out properly")] private int time;
     
     #endregion
 
@@ -42,13 +53,20 @@ public class Intro : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        imageZero.enabled = true;
+        player.transform.position = transform.position;
+        _playerLabPos = player.GetComponent<PlayerLabPos>();
         //Transparency of Images
-        Color c = new Color(imageOne.color.r, imageOne.color.g, imageOne.color.b,0);
-        imageOne.color = c;
-        c = new Color(imageTwo.color.r, imageTwo.color.g, imageTwo.color.b,0);
-        imageTwo.color = c;
-        c = new Color(imageThree.color.r, imageThree.color.g, imageThree.color.b,0);
-        imageThree.color = c;
+
+        var color = imageOne.color;
+        color = new Color(color.r, color.g, color.b,0);
+        imageOne.color = color;
+        color = imageTwo.color;
+        color = new Color(color.r, color.g, color.b,0);
+        imageTwo.color = color;
+        color = imageThree.color;
+        color = new Color(color.r, color.g, color.b,0);
+        imageThree.color = color;
     }
 
     // Update is called once per frame
@@ -68,9 +86,11 @@ public class Intro : MonoBehaviour
 
         #region ImageOne
         //Fade In
-        if (FadeImageOne && imageOne.color.a < 1)
+        if (fadeImageOne && imageOne.color.a < 1)
         {
-            imageOne.color = new Color(imageOne.color.r, imageOne.color.g, imageOne.color.b, imageOne.color.a + 0.5f * Time.deltaTime);
+            var color = imageOne.color;
+            color = new Color(color.r, color.g, color.b, color.a + 0.5f * Time.deltaTime);
+            imageOne.color = color;
         }
         
         //Hold Image
@@ -83,7 +103,9 @@ public class Intro : MonoBehaviour
         //Fade Out 
         if (imageOneDone && imageOne.color.a > 0)
         {
-            imageOne.color = new Color(imageOne.color.r, imageOne.color.g, imageOne.color.b, imageOne.color.a - Time.deltaTime);
+            var color = imageOne.color;
+            color = new Color(color.r, color.g, color.b, color.a - Time.deltaTime);
+            imageOne.color = color;
         }
         #endregion
 
@@ -91,7 +113,9 @@ public class Intro : MonoBehaviour
         //Fade In
         if (!imageTwoDone && imageOne.color.a > 0.75f && imageTwo.color.a < 1)
         {
-            imageTwo.color = new Color(imageTwo.color.r, imageTwo.color.g, imageTwo.color.b, imageTwo.color.a + 0.5f * Time.deltaTime);
+            var color = imageTwo.color;
+            color = new Color(color.r, color.g, color.b, color.a + 0.5f * Time.deltaTime);
+            imageTwo.color = color;
         }
     
         //Hold Image
@@ -104,7 +128,9 @@ public class Intro : MonoBehaviour
         //Fade Out
         if (imageTwoDone && imageTwo.color.a > 0)
         {
-            imageTwo.color = new Color(imageTwo.color.r, imageTwo.color.g, imageTwo.color.b, imageTwo.color.a - Time.deltaTime);
+            var color = imageTwo.color;
+            color = new Color(color.r, color.g, color.b, color.a - Time.deltaTime);
+            imageTwo.color = color;
         }
         
         #endregion
@@ -113,7 +139,9 @@ public class Intro : MonoBehaviour
         //Fade In
         if (!imageThreeDone && imageTwo.color.a > 0.75f && imageThree.color.a < 1)
         {
-            imageThree.color = new Color(imageThree.color.r, imageThree.color.g, imageThree.color.b, imageThree.color.a + 0.5f * Time.deltaTime);
+            var color = imageThree.color;
+            color = new Color(color.r, color.g, color.b, color.a + 0.5f * Time.deltaTime);
+            imageThree.color = color;
         }
     
         //Hold Image
@@ -126,7 +154,9 @@ public class Intro : MonoBehaviour
         //Fade Out
         if (imageThreeDone && imageThree.color.a > 0)
         {
-            imageThree.color = new Color(imageThree.color.r, imageThree.color.g, imageThree.color.b, imageThree.color.a - Time.deltaTime);
+            var color = imageThree.color;
+            color = new Color(color.r, color.g, color.b, color.a - Time.deltaTime);
+            imageThree.color = color;
             if (imageThree.color.a <= 0)
             {
                 _allDone = true;
@@ -136,7 +166,15 @@ public class Intro : MonoBehaviour
 
         if (_allDone)
         {
-            //Fade in Blackscreen, Reset Player, activate Player etc
+            //Reset Player Pos;
+            _playerLabPos.enabled = true;
+            //Start Blackscreen Fade in;
+            _fadeInZero = true;
+        }
+
+        if (imageZeroDone && _fadeInZero && imageZero.color.a <= 1)
+        {
+            
         }
     }
 
@@ -145,7 +183,9 @@ public class Intro : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(time * 2);
-        FadeImageOne = true;
+        StartCoroutine(Test());
+        Debug.Log("Wait: "+Time.time);
+        fadeImageOne = true;
     }
     
     IEnumerator HoldImageOne()
@@ -153,7 +193,7 @@ public class Intro : MonoBehaviour
         yield return new WaitForSeconds(time);
         Debug.Log("Image One Done");
         imageOneDone= true;
-        FadeImageOne = false;
+        fadeImageOne = false;
     }
     
     IEnumerator HoldImageTwo()
@@ -170,5 +210,10 @@ public class Intro : MonoBehaviour
         imageThreeDone = true;
     }
 
+    IEnumerator Test()
+    {
+        Debug.Log("Test: "+ Time.time);
+        yield return this;
+    }
     #endregion
 }
