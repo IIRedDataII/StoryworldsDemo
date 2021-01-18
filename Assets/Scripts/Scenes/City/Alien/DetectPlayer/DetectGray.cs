@@ -64,19 +64,18 @@ public class DetectGray : DetectPlayer
     
     private IEnumerator Shoot()
     {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(DelayShoot / 3, DelayShoot));
         while (true)
         {
-            yield return new WaitForSeconds(DelayShoot);
             Transform thisTransform = transform;
             Vector3 position = thisTransform.position;
             Vector3 shootDirection = Player.transform.position - position;
             Vector3 projectileOffset = new Vector3(thisTransform.rotation.y == 0 ? 0.75f : -0.75f, 0.215f, 0f);
             Instantiate(projectile, position + projectileOffset, Quaternion.Euler(0, 0, (float) VectorToAngle(shootDirection)));
+            yield return new WaitForSeconds(DelayShoot);
         }
     }
     
     #endregion
     
-    
-
 }
