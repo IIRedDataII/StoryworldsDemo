@@ -27,7 +27,6 @@ public abstract class DetectRun : DetectPlayer
     #region Override Functions
     protected override void SpecificDetectAction()
     {
-        Debug.Log("Enemy spotted! Running (" + Direction + ")...");
         Run = true;
 
         MoreSpecificDetectAction();
@@ -43,7 +42,6 @@ public abstract class DetectRun : DetectPlayer
 
     #region Public Functions
     
-    // nessecary to test for relevant collision with the tilemap, see TilemapCollision script
     public bool GetRun()
     {
         return Run;

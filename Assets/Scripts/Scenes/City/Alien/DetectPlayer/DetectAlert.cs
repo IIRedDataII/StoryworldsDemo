@@ -30,7 +30,6 @@ public abstract class DetectAlert : DetectPlayer
 
     protected override void SpecificDetectAction()
     {
-        Debug.Log("Enemy spotted! Alerting (" + Delay + "s)...");
         _trackPlayer = true;
         StartCoroutine(Alert());
     }
@@ -41,6 +40,7 @@ public abstract class DetectAlert : DetectPlayer
     
     private void Surround()
     {
+        // TODO MH: surround animation + respawn mechanic
         Debug.Log("You were spotted and the Laboratory Security was alerted. They surrounded you. You lost.");
         PlayerMovement.CanMove = false;
         PlayerInteract.CanInteract = false;

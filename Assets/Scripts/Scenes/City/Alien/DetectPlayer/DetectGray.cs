@@ -37,7 +37,6 @@ public class DetectGray : DetectPlayer
 
     protected override void SpecificDetectAction()
     {
-        Debug.Log("Enemy spotted! Preferred action: Shoot! (Gray)");
         _trackPlayer = true;
         GetComponent<SpriteRenderer>().sprite = shootingSprite;
         StartCoroutine(Shoot());
