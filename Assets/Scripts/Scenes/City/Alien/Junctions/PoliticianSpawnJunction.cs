@@ -36,9 +36,9 @@ public class PoliticianSpawnJunction : MonoBehaviour
         Vector3 position = transform.position;
         while (true)
         {
-            Instantiate(alienSoldier, position, Quaternion.Euler(0.0f, 180.0f, 0.0f));
-            yield return new WaitForSeconds(SpawnDelay);
             Instantiate(alienPolitician, position, Quaternion.Euler(0.0f, 180.0f, 0.0f));
+            yield return new WaitForSeconds(SpawnDelay);
+            Instantiate(alienSoldier, position, Quaternion.Euler(0.0f, 180.0f, 0.0f));
             yield return new WaitForSeconds(SpawnDelay);
             Instantiate(alienSoldier, position, Quaternion.Euler(0.0f, 180.0f, 0.0f));
             yield return new WaitForSeconds(GroupSpawnDelay);
