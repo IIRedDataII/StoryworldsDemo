@@ -7,6 +7,9 @@ public class PlayerDeath : MonoBehaviour
     public MessageBox messageBox;
     public GameObject Weapon;
     public GameObject bernd;
+    public GameObject translator;
+    public GameObject door;
+    public GameObject terminal;
 
     public void kill()
     {
@@ -32,6 +35,13 @@ public class PlayerDeath : MonoBehaviour
         bernd.transform.position = new Vector3(-19.75f,-2.84f,0);
         bernd.gameObject.GetComponent<SpriteRenderer>().sprite = bernd.GetComponent<Bernd>().alive;
         GameData.Instance.BerndDead = false;
+        if (GameData.Instance.CanTranslate)
+        {
+            GameData.Instance.CanTranslate = false;
+            Instantiate(translator);
+            
+        }
+       // door
     }
     
     
