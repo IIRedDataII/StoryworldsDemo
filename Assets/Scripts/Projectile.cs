@@ -13,7 +13,6 @@ public class Projectile : MonoBehaviour
             other.CompareTag("Interactable") && !other.name.Equals("Bernd") ||
             other.CompareTag("Object"))
         {
-            Debug.Log("fff");
             return;
         }
             

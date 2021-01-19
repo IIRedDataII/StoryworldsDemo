@@ -51,10 +51,6 @@ public class Weapon : Interactable
         };
         messageBox.ShowDialogue("Jordan", "Bernd", messages);
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
-        Debug.Log("1");
-        Bernd.moveToWeapon = false;
-        PlayerMovement.CanMove = false;
-        PlayerShoot.AllowInput = false;
         Vector2 projectileDir = bernd.position - playerPos.position;
         float angle = Mathf.Acos(Vector2.Dot(projectileDir, Vector2.up) / projectileDir.magnitude) * Mathf.Rad2Deg;
         if (projectileDir.x > 0)
