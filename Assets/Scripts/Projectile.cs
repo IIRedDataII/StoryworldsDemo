@@ -10,22 +10,26 @@ public class Projectile : MonoBehaviour
             other.CompareTag("Alien") && !other.GetComponent<AlienBehaviour>().CompareInnerCollider(other) ||
             other.CompareTag("Junction") ||
             other.CompareTag("SceneChange") ||
-            other.CompareTag("Interactable") && !other.name.Equals("Bernd")||
+            other.CompareTag("Interactable") && !other.name.Equals("Bernd") ||
             other.CompareTag("Object"))
+        {
+            Debug.Log("fff");
             return;
+        }
+            
         
-        if (other.name.Equals("Bernd") && !GameData.Instance.BerndDead)
+        if (other.name.Equals("Bernd") && !GameData.Instance.BerndDead && Bernd.canBeKilled)
         {
             Destroy(gameObject);
             other.GetComponent<Bernd>().Kill();
         }
-        
+
         else if (other.CompareTag("Alien"))
         {
             Destroy(gameObject);
             other.GetComponent<AlienBehaviour>().Die();
         }
-
+        
         else 
         {
             Debug.Log("Shot! \"" + other + "\" got hit!");
