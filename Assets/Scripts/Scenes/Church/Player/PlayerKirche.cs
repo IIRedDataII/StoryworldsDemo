@@ -26,14 +26,11 @@ public class PlayerKirche : MonoBehaviour
             Rebell.transform.Translate(new Vector3(0,5,0)*Time.deltaTime);
             yield return new WaitForSeconds(0.003f);
         }
-        LinkedList<string> authors = new LinkedList<string>();
-        authors.AddLast("Rebell");
-        authors.AddLast("Jordan");
-        LinkedList<string> messages = new LinkedList<string>();
-        messages.AddLast("jo lass mal die Regierung stürzen");
-        messages.AddLast("sPrICh DeUTsch dU HUso");
+
         yield return new WaitForSeconds(1);
-        messageBox.ShowMessages(authors, messages);
+        string[] speakers = {"Rebell", "Jordan"};
+        string[] messages = {"jo lass mal die Regierung stürzen", "sPrICh DeUTsch dU HUso"};
+        messageBox.ShowMessages(speakers, messages);
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
         PlayerMovement.CanMove = false;
         yield return new WaitForSeconds(1);

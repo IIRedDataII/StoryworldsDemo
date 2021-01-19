@@ -23,7 +23,7 @@ public class Computer_Nav : Interactable
             "Ach Mensch!",
             "Desch' ja blöd."
         };
-        messageBox.ShowMonologue("Jordan", new LinkedList<string>(messages));
+        messageBox.ShowMonologue("Jordan", messages);
     }
 
     protected override void SpecificUpdate()

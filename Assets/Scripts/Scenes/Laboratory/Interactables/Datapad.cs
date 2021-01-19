@@ -17,30 +17,27 @@ public class Datapad : Interactable
     protected override void UndoSpecificAction()
     {
         datapadImage.enabled = false;
-        LinkedList<string> speakers = new LinkedList<string>();
-        LinkedList<string> messages = new LinkedList<string>();
         if (GameData.Instance.CanTranslate)
         {
-            speakers.AddLast("Translator");
-            messages.AddLast(" ...Spezies scheint durch Bahnen mit roter Flüssigkeit versorgt zu werden...");
-            speakers.AddLast("Translator");
-            messages.AddLast(
-                "... oberer Teil enthält Hauptsteuerzentrale...\n ...benötigen gleiche Umgebung zum leben...");
-            speakers.AddLast("Translator");
-            messages.AddLast("... zeigen Empfindlichkeit zu ...");
-            speakers.AddLast("Jordan");
-            messages.AddLast(
-                "Dieser Bericht meint bestimmt uns Menschen. Aber wie sind sie an all diese Daten gekommen?");
+            string[] messages =
+            {
+                " ...Spezies scheint durch Bahnen mit roter Flüssigkeit versorgt zu werden...",
+                "... oberer Teil enthält Hauptsteuerzentrale...\n...benötigen gleiche Umgebung zum leben...",
+                "... zeigen Empfindlichkeit zu ...,",
+                "Dieser Bericht meint bestimmt uns Menschen. Aber wie sind sie an all diese Daten gekommen?"
+            };
+            box.ShowMonologue("Translator", messages);
         }
         else
         {
-            speakers.AddLast("Jordan");
-            messages.AddLast(
-                "Hmm.. dieses Tablet zeigt eine Skizze eines Menschen, aber ich kann den Text daneben nicht verstehen.");
-            speakers.AddLast("Jordan");
-            messages.AddLast("Wir haben doch einen Translator bekommen. Vielleicht hilft der mir weiter.");
+            string[] messages =
+            {
+                "Hmm.. dieses Tablet zeigt eine Skizze eines Menschen, aber ich kann den Text daneben nicht verstehen.",
+                "Wir haben doch einen Translator bekommen. Vielleicht hilft der mir weiter."
+            };
+            box.ShowMonologue("Jordan", messages);
         }
-        box.ShowMessages(speakers, messages);
+        
     }
 
     protected override void SpecificUpdate()

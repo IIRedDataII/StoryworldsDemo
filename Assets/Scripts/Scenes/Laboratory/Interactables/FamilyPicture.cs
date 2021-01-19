@@ -16,11 +16,13 @@ public class FamilyPicture : Interactable
     protected override void UndoSpecificAction()
     {
         familyImage.enabled = false;
-        LinkedList<string> messages = new LinkedList<string>();
-        messages.AddLast("Wie kommt das denn hier her?");
-        messages.AddLast("Das letzte mal das wir uns in den Armen halten konnten. Ava war so traurig das ich weg musste.");
-        messages.AddLast("Alice, babe, ich hoffe es geht euch gut. * Visible Sadness *");
-        box.ShowMonologue("Jordan",messages);
+        string[] messages =
+        {
+            "Wie kommt das denn hier her?!",
+            "Das letzte mal das wir uns in den Armen halten konnten. Ava war so traurig, dass ich weg musste.",
+            "Alice, babe, ich hoffe es geht euch gut. *visible sadness*"
+        };
+        box.ShowMonologue("Jordan", messages);
     }
     
     protected override void SpecificUpdate()

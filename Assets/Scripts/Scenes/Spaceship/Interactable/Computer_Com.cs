@@ -23,7 +23,7 @@ public class Computer_Com : Interactable
             "Ach Mensch!",
             "Desch' ja supi."
         };
-        messageBox.ShowMonologue("Jordan", new LinkedList<string>(messages));
+        messageBox.ShowMonologue("Jordan", messages);
     }
 
     protected override void SpecificUpdate()

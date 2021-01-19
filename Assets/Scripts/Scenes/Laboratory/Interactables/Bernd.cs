@@ -35,7 +35,7 @@ public class Bernd : Interactable
             "halts maul wir haben größere Probleme, wir kommen hier nie wieder weg deswegen bring ich dich jetzt um",
             "oh nein jetzt bin ich gezwungen dich zu erschießen"
         };
-        messageBox.ShowDialogue("Jordan", "Bernd", new LinkedList<string>(messages));
+        messageBox.ShowDialogue("Jordan", "Bernd", messages);
         StartCoroutine(startBernd());
     }
 

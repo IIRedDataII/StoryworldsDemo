@@ -14,7 +14,7 @@ public class PlayerDeath : MonoBehaviour
         string[] messages = {
             "Bernd hat die Waffe vor dir erreicht und dich erschossen du startest das Spiel jetzt von Beginn ",
         };
-        messageBox.ShowMonologue("",new LinkedList<string>(messages));
+        messageBox.ShowMonologue("",messages);
         StartCoroutine(waitForMessageBox());
     }
 

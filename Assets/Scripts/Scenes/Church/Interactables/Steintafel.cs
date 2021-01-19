@@ -28,29 +28,32 @@ public class Steintafel : Interactable
                     ersteVision.enabled = true;
                     PlayerKirche.letztesBildWasEnabled = true;
                     break;
-                default: throw new NullReferenceException("no Number");
+                default: throw new NullReferenceException("no number");
             }
         }
     }
 
     protected override void UndoSpecificAction()
     {
-        LinkedList<string> messages = new LinkedList<string>();
+        string[] messages;
         switch (number)
         {
             case 0: zweiteVision.enabled = false;
-                messages.AddLast("Sieht aus als wären alle tot!");
+                messages = new string[1];
+                messages[0] = "Sieht aus als wären alle tot!";
                 messageBox.ShowMonologue("Jordan", messages);
                 break;
             case 1: dritteVision.enabled = false;
-                messages.AddLast("jo des bin ja ich auf dem bild");
+                messages = new string[1];
+                messages[0] = "jo des bin ja ich auf dem bild";
                 messageBox.ShowMonologue("Jordan", messages);
                 break;
             case 2: ersteVision.enabled = false;
-                messages.AddLast("Erlösung!");
+                messages = new string[1];
+                messages[0] = "Erlösung!";
                 messageBox.ShowMonologue("Jordan", messages);
                 break;
-            default: throw new NullReferenceException("no Number");  
+            default: throw new NullReferenceException("no number");  
         }
     }
 

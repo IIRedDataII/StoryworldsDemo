@@ -8,23 +8,18 @@
  *
  * Show a monologue with only one person speaking by calling:
  * messageBox.ShowMonologue("speaker", messages);
- * where messages is a LinkedList of strings
+ * where messages is an Array of strings
  *
  * Show a dialogue with two persons speaking by calling:
  * messageBox.ShowDialogue("speakerFirst", "speakerSecond", messages);
- * where messages is a LinkedList of strings. speakerFirst and speakerSecond alternate in the MessageBoxes with speakerFirst beginning.
+ * where messages is an Array of strings. speakerFirst and speakerSecond alternate in the MessageBoxes with speakerFirst beginning.
  *
  * Show one message by calling:
  * messageBox.ShowMessage("speaker", "message");
  * 
  * Show mutiple messages one after another by calling:
  * messageBox.ShowMessages(speakers, messages);
- * where speakers & messages are LinkedLists of strings. They cannot be empty and must be of the same size (speaker i is shown for message i).
- * 
- * In any case, use strings to initialize LinkedLists inside the function parameter brackets:
- * string[] messages = {"Message 1", "Message 2", ..., "Message n"};
- * string[] speakers = {"Speaker 1", "Speaker 2", ..., "Speaker n"};
- * messageBox.showMessages(new LinkedList<string>(speakers), new LinkedList<string>(messages));
+ * where speakers & messages are Arrays of strings. They cannot be empty and must be of the same size (speaker i is shown for message i).
  * 
  * To check wether there's a message box showing at the moment, use the fuction
  * messageBox.GetMessageActive();
@@ -51,10 +46,11 @@ public class MessageBox : MonoBehaviour
     private Image _box;
     private Text _text;
 
-    private LinkedList<string> _messages;
-    private LinkedList<string> _speakers;
+    private string[] _messages;
+    private string[] _speakers;
     
-    private int _messagesLeft;
+    private int _messageCounter;
+    private int _messageCount;
     
     private bool _messageBusy;
     private bool _messageDone;
@@ -70,7 +66,6 @@ public class MessageBox : MonoBehaviour
         _text = GetComponentInChildren<Text>();
         _box.enabled = false;
         _text.enabled = false;
-        _messagesLeft = 0;
         
         #endregion
         
@@ -85,7 +80,7 @@ public class MessageBox : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (_messagesLeft > 0)
+                if (_messageCounter < _messageCount)
                 {
                     ShowNextMessage();
                 }
@@ -110,39 +105,37 @@ public class MessageBox : MonoBehaviour
         return _messageBusy || _messageDone;
     }
     
-    public void ShowMonologue(string speaker, LinkedList<string> messages)
+    public void ShowMonologue(string speaker, string[] messages)
     {
-        LinkedList<string> speakers = new LinkedList<string>();
-        for (int i = 0; i < messages.Count; i++)
-            speakers.AddLast(speaker);
+        string[] speakers = new string[messages.Length];
+        for (int i = 0; i < speakers.Length; i++)
+            speakers[i] = speaker;
         ShowMessages(speakers, messages);
     }
     
-    public void ShowDialogue(string speakerFirst, string speakerSecond, LinkedList<string> messages)
+    public void ShowDialogue(string speakerFirst, string speakerSecond, string[] messages)
     {
-        LinkedList<string> speakers = new LinkedList<string>();
-        for (int i = 0; i < messages.Count; i++)
-            speakers.AddLast(i % 2 == 0 ? speakerFirst : speakerSecond);
+        string[] speakers = new string[messages.Length];
+        for (int i = 0; i < speakers.Length; i++)
+            speakers[i] = (i % 2 == 0 ? speakerFirst : speakerSecond);
         ShowMessages(speakers, messages);
     }
 
     public void ShowMessage(string speaker, string message)
     {
-        LinkedList<string> speakers = new LinkedList<string>();
-        speakers.AddLast(speaker);
-        LinkedList<string> messages = new LinkedList<string>();
-        messages.AddLast(message);
+        string[] speakers = {speaker};
+        string[] messages = {message};
         ShowMessages(speakers, messages);
     }
     
-    public void ShowMessages(LinkedList<string> speakers, LinkedList<string> messages)
+    public void ShowMessages(string[] speakers, string[] messages)
     {
         
-        if (speakers.Count < 1 || messages.Count < 1)
+        if (speakers.Length < 1 || messages.Length < 1)
         {
             throw new ArgumentException("@speakers and @messages cannot be zero");
         }
-        if (speakers.Count != messages.Count)
+        if (speakers.Length != messages.Length)
         {
             throw new ArgumentException("@speakers and @messages cannot be of different size");
         }
@@ -154,7 +147,8 @@ public class MessageBox : MonoBehaviour
             _text.enabled = true;
             _speakers = speakers;
             _messages = messages;
-            _messagesLeft = messages.Count;
+            _messageCount = messages.Length;
+            _messageCounter = 0;
             ShowNextMessage();
         }
         else
@@ -171,17 +165,11 @@ public class MessageBox : MonoBehaviour
 
     private void ShowNextMessage()
     {
-        string speaker = _speakers.First.Value;
-        _speakers.RemoveFirst();
-        string message = _messages.First.Value;
-        _messages.RemoveFirst();
-
         _messageBusy = true;
         _messageDone = false;
-        _messagesLeft--;
         
-        _text.text = speaker + ": ";
-        StartCoroutine(ShowMessage(message));
+        _text.text = _speakers[_messageCounter] + ": ";
+        StartCoroutine(ShowMessage(_messages[_messageCounter++]));
     }
     
     private void SetPlayerControls(bool active)

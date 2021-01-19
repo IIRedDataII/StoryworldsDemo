@@ -56,7 +56,7 @@ public class GameData
     #endregion
     
     #region Church
-    
+
     public bool WasInChurch = false;
     public bool RebelTriggered = false;
     

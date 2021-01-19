@@ -42,9 +42,11 @@ public class DoorTerminal : Interactable
         keypad.SetActive(false);
         if (!_open)
         {
-            LinkedList<string> messages = new LinkedList<string>();
-            messages.AddLast("Verdammt, irgendwas stimmt nicht. Ich sollte mich mal umschauen.");
-            messages.AddLast("Vielleicht finde ich etwas, das wie der Code aussieht?");
+            string[] messages =
+            {
+                "Verdammt, irgendwas stimmt nicht. Ich sollte mich mal umschauen.",
+                "Vielleicht finde ich etwas, das wie der Code aussieht?"
+            };
             box.ShowMonologue("Jordan", messages);
         }
 

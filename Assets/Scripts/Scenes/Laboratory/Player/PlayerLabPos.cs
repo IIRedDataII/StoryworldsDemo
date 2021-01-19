@@ -24,15 +24,14 @@ public class PlayerLabPos : MonoBehaviour
 
     private void Monologue()
     {
-        LinkedList<string> messages = new LinkedList<string>();
-        messages.AddLast("Ohh Mann, F*ck mein Kopf. Wo hab ich den das Asperi..?");
-        messages.AddLast("Moment.\n Wo bin ich denn bitte? Das ist nicht unser Schiff.");
-        messages.AddLast("Das ist auf jeden Fall nicht unser Schiff. Diese Behälter schauen sehr seltsam aus.");
-        messages.AddLast(
-            "Und an was erinnere ich mich? Ich lag auf einem Tisch, und ich hab irgendwelche Dinger gesehen.");
-        messages.AddLast(
-            "Vermischt mit meinen Erinnerungen. Sehr seltsam. Auf jeden Fall steht eins Fest:");
-        messages.AddLast("ICH SOLLTE HIER SCHLEUNIGST RAUS!");
+        string[] messages = {
+            "Ohh Mann, F*ck mein Kopf. Wo hab ich den das Asperi..?",
+            "Moment.\nWo bin ich denn bitte? Das ist nicht unser Schiff.",
+            "Das ist auf jeden Fall nicht unser Schiff. Diese Behälter schauen sehr seltsam aus.",
+            "Und an was erinnere ich mich? Ich lag auf einem Tisch, und ich hab irgendwelche Dinger gesehen.",
+            "Vermischt mit meinen Erinnerungen. Sehr seltsam. Auf jeden Fall steht eins Fest:",
+            "ICH SOLLTE HIER SCHLEUNIGST RAUS!",
+        };
         _box.ShowMonologue("Jordan",messages);
     }
     
