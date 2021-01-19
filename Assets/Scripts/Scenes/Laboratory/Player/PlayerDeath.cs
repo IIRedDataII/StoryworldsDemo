@@ -31,7 +31,6 @@ public class PlayerDeath : MonoBehaviour
         gameObject.transform.position = new Vector3(-3, 2, 0);
         bernd.transform.position = new Vector3(-19.75f,-2.84f,0);
         bernd.gameObject.GetComponent<SpriteRenderer>().sprite = bernd.GetComponent<Bernd>().alive;
-        Bernd.canBeKilled = false;
         GameData.Instance.BerndDead = false;
     }
     

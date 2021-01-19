@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
         }
             
         
-        if (other.name.Equals("Bernd") && !GameData.Instance.BerndDead && Bernd.canBeKilled)
+        if (other.name.Equals("Bernd") && !GameData.Instance.BerndDead)
         {
             Destroy(gameObject);
             other.GetComponent<Bernd>().Kill();

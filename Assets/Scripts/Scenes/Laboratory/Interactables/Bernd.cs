@@ -9,9 +9,8 @@ public class Bernd : Interactable
     public MessageBox messageBox;
     public Sprite alive;
     public Sprite dead;
-    public Transform WeaponPos;
+    public GameObject WeaponPos;
     public Transform PlayerPos;
-    public static bool canBeKilled = false;
     public static bool moveToWeapon;
 
     private void Awake()
@@ -25,7 +24,8 @@ public class Bernd : Interactable
 
     protected override void SpecificAction()
     {
-       UndoAction();
+        WeaponPos.tag = "Interactable";
+        UndoAction();
     }
 
     protected override void UndoSpecificAction()
@@ -33,7 +33,6 @@ public class Bernd : Interactable
         string[] messages = {
             "jo du wichser wegen dir bin ich hier",
             "halts maul wir haben größere Probleme, wir kommen hier nie wieder weg deswegen bring ich dich jetzt um",
-            "oh nein jetzt bin ich gezwungen dich zu erschießen"
         };
         messageBox.ShowDialogue("Jordan", "Bernd", messages);
         StartCoroutine(startBernd());
@@ -43,9 +42,9 @@ public class Bernd : Interactable
     {
         if (moveToWeapon)
         {
-            Vector3 dir = WeaponPos.position - gameObject.transform.position;
+            Vector3 dir = WeaponPos.transform.position - gameObject.transform.position;
             dir = dir.normalized;
-            Vector2 weapon = new Vector2(WeaponPos.position.x, WeaponPos.position.y);
+            Vector2 weapon = new Vector2(WeaponPos.transform.position.x, WeaponPos.transform.position.y);
             if (gameObject.transform.position.x < weapon.x && gameObject.transform.position.y > weapon.y)
             {
                 gameObject.transform.Translate(dir * 5 *Time.deltaTime);
@@ -69,7 +68,12 @@ public class Bernd : Interactable
 
     IEnumerator killPlayer()
     {
-        yield return new WaitForSeconds(0.5f); 
+        string[] messages = {
+            "stirb du scheiß Alien",
+            "jo warte wir sind Kollegen"
+        };
+        messageBox.ShowDialogue("Bernd","Jordan",messages);
+        yield return new WaitWhile(()=>messageBox.GetMessageActive());
         Vector2 projectileDir = PlayerPos.position - transform.position;
         float angle = Mathf.Acos(Vector2.Dot(projectileDir, Vector2.up) / projectileDir.magnitude) * Mathf.Rad2Deg;
         if (projectileDir.x > 0)
