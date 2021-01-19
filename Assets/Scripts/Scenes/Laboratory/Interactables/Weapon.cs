@@ -38,6 +38,7 @@ public class Weapon : Interactable
 
     IEnumerator killBernd()
     {
+        
         Debug.Log("1");
         Bernd.moveToWeapon = false;
         PlayerMovement.CanMove = false;
