@@ -69,4 +69,18 @@ public class GameData
     
     #endregion
 
+    #region Laboratory
+
+    public static bool[] WardenAlive =  {true,true};
+
+    #region Helperfunctions
+
+    public bool GetWardenAliveByIndex(int index)
+    {
+        return WardenAlive[index];
+    }
+
+    #endregion
+
+    #endregion
 }
