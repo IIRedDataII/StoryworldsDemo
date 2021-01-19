@@ -43,14 +43,25 @@ public class CameraFollow : MonoBehaviour
         _atTopBorder = (_playerPosition.y + (_camHalfDim.y * _orthographicSize)) >= room.center.y + (room.height / 2);
         _atBottomBorder = (_playerPosition.y - (_camHalfDim.y * _orthographicSize)) <= room.center.y - (room.height / 2);
         
-        if ((_atLeftBorder || _atRightBorder) && (_atTopBorder || _atBottomBorder))
-            _cameraPosition = new Vector3(_cameraPosition.x, _cameraPosition.y, -10);
-        else if (_atLeftBorder || _atRightBorder)
-            _cameraPosition = new Vector3(_cameraPosition.x, _playerPosition.y, -10);
-        else if (_atTopBorder || _atBottomBorder)
-            _cameraPosition = new Vector3(_playerPosition.x, _cameraPosition.y, -10);
-        else
-            _cameraPosition = new Vector3(_playerPosition.x, _playerPosition.y, -10);
+        Vector3 pos = new Vector3(_playerPosition.x,_playerPosition.y,-10);
+        if (_atLeftBorder)
+        {
+            pos.x = room.center.x - (room.width / 2) + (_camHalfDim.x * _orthographicSize);
+        }
+        else if (_atRightBorder)
+        {
+            pos.x = room.center.x + (room.width / 2) - (_camHalfDim.x * _orthographicSize);
+        }
+
+        if (_atBottomBorder)
+        {
+            pos.y = room.center.y - (room.height / 2) + (_camHalfDim.y * _orthographicSize);
+        }
+        else if (_atTopBorder)
+        {
+            pos.y = room.center.y + (room.height / 2) - (_camHalfDim.y * _orthographicSize);
+        }
+        _cameraPosition = pos;
         transform.position = _cameraPosition;
     }
 }
