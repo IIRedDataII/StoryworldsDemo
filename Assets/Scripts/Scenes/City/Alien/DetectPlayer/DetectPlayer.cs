@@ -58,7 +58,7 @@ public abstract class DetectPlayer : MonoBehaviour
                 Debug.DrawLine(position, position + (Vector3) alienToPlayerVector * ViewDistance, Color.red);
             
                 RaycastHit2D hit = Physics2D.Raycast(position, alienToPlayerVector, ViewDistance);
-                if (hit && hit.collider.gameObject.tag.Equals("Player"))
+                if (hit && hit.collider.CompareTag("Player"))
                 {
                     DetectAction();
                     _detectedPlayer = true;
@@ -127,7 +127,7 @@ public abstract class DetectPlayer : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             Player = other.gameObject;
             _check = true;
@@ -136,7 +136,7 @@ public abstract class DetectPlayer : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             if (!_detectedPlayer)
                 Player = null;
