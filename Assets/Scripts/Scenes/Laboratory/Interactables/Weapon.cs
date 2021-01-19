@@ -28,8 +28,9 @@ public class Weapon : Interactable
 
     protected override void UndoSpecificAction()
     {
-        Destroy(gameObject);
-        StartCoroutine(killBernd());
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+      gameObject.tag = "Untagged";
+      StartCoroutine(killBernd());
     }
 
     protected override void SpecificUpdate()
@@ -44,7 +45,7 @@ public class Weapon : Interactable
         PlayerShoot.AllowInput = false;
         string[] messages = {
             "jo wtf",
-            "ich wusste du Veräter gehörst zu den Alien \n Hiiielfe",
+            "ich wusste du Veräter gehörst zu den Alien \nHiiielfe",
             "Halts Maul sonst bekommen des noch die Wächter da draußen mit",
             "AHHHHH"
         };
@@ -63,6 +64,7 @@ public class Weapon : Interactable
         GameObject temp = Instantiate(projectile, playerPos);
         temp.transform.Rotate(0f,0f,angle);
         temp.GetComponent<Rigidbody2D>().AddForce(projectileDir.normalized * 15, ForceMode2D.Impulse);
+        Destroy(gameObject);
     }
     
 }
