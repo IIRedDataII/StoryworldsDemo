@@ -51,7 +51,7 @@ public class GameData
     
     #region City
     
-    public bool[] DeadAliens = new bool[20];
+    public bool[] DeadAliens = new bool[21];
     
     #endregion
     
