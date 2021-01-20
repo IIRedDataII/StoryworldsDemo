@@ -46,7 +46,7 @@ public class GameData
 
     #region Laboratory
 
-    public bool Respawned = true;
+    public bool Respawned;
     public bool BerndDead;
     public bool CanTranslate;
     public bool[] DeadWardens = new bool[3];
