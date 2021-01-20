@@ -157,8 +157,7 @@ public class Warden : DetectPlayer
             Vector3 position = thisTransform.position;
             Vector3 projectileOffset = new Vector3(thisTransform.rotation.y == 0 ? 0.75f : -0.75f, 0.215f, 0f);
             Vector3 shootDirection = Player.transform.position - (position + projectileOffset);
-            GameObject temp = Instantiate(projectile, position + projectileOffset, Quaternion.Euler(0, 0,(float) VectorToAngle(shootDirection) - 90));
-            temp.GetComponent<Rigidbody2D>().AddForce(shootDirection * projectileVelocity,ForceMode2D.Impulse);
+            GameObject temp = Instantiate(projectile, position + projectileOffset, Quaternion.Euler(0, 0,(float) VectorToAngle(shootDirection)));
             yield return new WaitForSeconds(DelayShoot);
         }
     }

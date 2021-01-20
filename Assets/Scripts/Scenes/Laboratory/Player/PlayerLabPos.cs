@@ -25,7 +25,7 @@ public class PlayerLabPos : MonoBehaviour
     private void Monologue()
     {
         string[] messages = {
-            "Ohh Mann, F*ck mein Kopf. Wo hab ich den das Asperi..?",
+            "Ohh Mann, Alter mein Kopf. Wo hab ich den das Asperi..?",
             "Moment.\nWo bin ich denn bitte? Das ist nicht unser Schiff.",
             "Das ist auf jeden Fall nicht unser Schiff. Diese Behälter schauen sehr seltsam aus.",
             "Und an was erinnere ich mich? Ich lag auf einem Tisch, und ich hab irgendwelche Dinger gesehen.",

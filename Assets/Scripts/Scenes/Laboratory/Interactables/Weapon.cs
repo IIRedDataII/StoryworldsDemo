@@ -10,7 +10,7 @@ public class Weapon : Interactable
     public Transform bernd;
     public Transform playerPos;
     public MessageBox messageBox;
-    public void Start()
+    public void Awake()
     {
         if (GameData.Instance.CanShoot)
         {
