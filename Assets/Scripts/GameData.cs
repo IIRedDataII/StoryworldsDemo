@@ -71,7 +71,7 @@ public class GameData
 
     #region Laboratory
 
-    public static bool[] WardenAlive =  {true,true};
+    public static bool[] WardenAlive =  {true,true,true};
 
     #region Helperfunctions
 

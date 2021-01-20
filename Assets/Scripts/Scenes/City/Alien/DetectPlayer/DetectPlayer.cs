@@ -15,7 +15,7 @@ public abstract class DetectPlayer : MonoBehaviour
     
     protected GameObject Player;
     
-    private bool _detectedPlayer;
+    protected bool DetectedPlayer;
     private bool _check;
     
     #endregion
@@ -38,7 +38,7 @@ public abstract class DetectPlayer : MonoBehaviour
         
         #region Field of View
         
-        if (_check && !_detectedPlayer)
+        if (_check && !DetectedPlayer)
         {
             
             Transform thisTransform = transform;
@@ -61,7 +61,7 @@ public abstract class DetectPlayer : MonoBehaviour
                 if (hit && hit.collider.CompareTag("Player"))
                 {
                     DetectAction();
-                    _detectedPlayer = true;
+                    DetectedPlayer = true;
                 }
             }
             
@@ -138,7 +138,7 @@ public abstract class DetectPlayer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (!_detectedPlayer)
+            if (!DetectedPlayer)
                 Player = null;
             _check = false;
         }

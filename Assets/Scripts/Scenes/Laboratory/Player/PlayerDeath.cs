@@ -30,8 +30,9 @@ public class PlayerDeath : MonoBehaviour
     public void resetGame()
     {
         //Default Warden Alive state;
-       // GameData.Instance.SetWardenAliveByIndex(0, true);
-       // GameData.Instance.SetWardenAliveByIndex(1, true);
+        GameData.Instance.SetWardenAliveByIndex(0, true);
+        GameData.Instance.SetWardenAliveByIndex(1, true);
+        GameData.Instance.SetWardenAliveByIndex(2, true);
         PlayerMovement.CanMove = true;
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         Weapon.GetComponent<SpriteRenderer>().enabled = true;

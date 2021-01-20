@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 //Warden Objects require a SpriteRenderer
 [RequireComponent(typeof(SpriteRenderer))]
@@ -18,12 +19,16 @@ public class Warden : DetectPlayer
     #region Variables
 
     [SerializeField] private int index;
-    private SpriteRenderer _spriteRenderer;
     [SerializeField] private Sprite dead;
     [SerializeField] private Sprite alive;
-
+    [SerializeField] private float projectileVelocity;
     [SerializeField] private MessageBox box;
     [SerializeField] private GameObject projectile;
+    [SerializeField] private Light2D viewLight;
+    [SerializeField] private SpriteRenderer stateRenderer;
+    
+    
+    private SpriteRenderer _spriteRenderer;
     
     public Collider2D innerCollider;
     
@@ -39,11 +44,14 @@ public class Warden : DetectPlayer
         {
             //Show dead sprite
             _spriteRenderer.sprite = dead;
+            stateRenderer.enabled = false;
+            viewLight.enabled = false;
             //Disable Script to avoid further actions
             this.enabled = false;
         }
         else
         {
+            viewLight.enabled = true;
             _spriteRenderer.sprite = alive;
         }
     }
@@ -90,8 +98,11 @@ public class Warden : DetectPlayer
         GameData.Instance.SetWardenAliveByIndex(index, false);
         //Change Sprite to dead state;
         _spriteRenderer.sprite = dead;
+        stateRenderer.enabled = false;
+        viewLight.enabled = false;
         //Disable Script to avoid further actions
         enabled = false;
+        
     }
 
     #endregion
@@ -123,8 +134,18 @@ public class Warden : DetectPlayer
     {
         //Wait for player to read that hes been detected
         yield return new WaitWhile(box.GetMessageActive);
+        DetectedPlayer = false;
+        stateRenderer.enabled = false;
+        viewLight.enabled = true;
+        //restart idle action
+        Idle idle = GetComponent<Idle>();
+        if (idle)
+        {
+            idle.StartCoroutine(idle.LookAround());
+        }
         //Initiate Player Reset
         Player.GetComponent<PlayerDeath>()?.resetGame();
+
     }
     
     private IEnumerator Shoot()
@@ -136,7 +157,8 @@ public class Warden : DetectPlayer
             Vector3 position = thisTransform.position;
             Vector3 projectileOffset = new Vector3(thisTransform.rotation.y == 0 ? 0.75f : -0.75f, 0.215f, 0f);
             Vector3 shootDirection = Player.transform.position - (position + projectileOffset);
-            Instantiate(projectile, position + projectileOffset, Quaternion.Euler(0, 0, (float) VectorToAngle(shootDirection)));
+            GameObject temp = Instantiate(projectile, position + projectileOffset, Quaternion.Euler(0, 0,(float) VectorToAngle(shootDirection)));
+            temp.GetComponent<Rigidbody2D>().AddForce(shootDirection * projectileVelocity,ForceMode2D.Impulse);
             yield return new WaitForSeconds(DelayShoot);
         }
     }

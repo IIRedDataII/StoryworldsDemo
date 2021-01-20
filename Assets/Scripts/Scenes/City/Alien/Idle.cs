@@ -9,7 +9,7 @@ public class Idle : MonoBehaviour
         StartCoroutine(LookAround());
     }
 
-    private IEnumerator LookAround()
+    public IEnumerator LookAround()
     {
         bool looksRight = transform.rotation.y == 0; 
         while (true)
