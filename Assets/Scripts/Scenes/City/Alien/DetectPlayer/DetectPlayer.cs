@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public abstract class DetectPlayer : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public abstract class DetectPlayer : MonoBehaviour
         #region Initialization
         
         GetComponent<CapsuleCollider2D>().size = new Vector2(ViewDistance / 2, 1f);
+        Light2D coneLight = GetComponentsInChildren<Light2D>()[0];
+        coneLight.pointLightOuterRadius = ViewDistance;
+        coneLight.pointLightInnerAngle = 2 * ViewRange;
+        coneLight.pointLightOuterAngle = 2 * ViewRange;
         
         #endregion
 
