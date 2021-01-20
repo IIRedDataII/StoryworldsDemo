@@ -54,3 +54,6 @@ TagManager:
   - name: BlockAlienCone
     uniqueID: 1802859651
     locked: 0
+  - name: Overlay
+    uniqueID: 3663145073
+    locked: 0
