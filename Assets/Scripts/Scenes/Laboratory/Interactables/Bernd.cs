@@ -31,7 +31,7 @@ public class Bernd : Interactable
     protected override void UndoSpecificAction()
     {
         string[] messages = {
-            "jo du wichser wegen dir bin ich hier",
+            "jo wegen dir bin ich hier",
             "halts maul wir haben größere Probleme, wir kommen hier nie wieder weg deswegen bring ich dich jetzt um",
         };
         messageBox.ShowDialogue("Jordan", "Bernd", messages);

@@ -29,7 +29,7 @@ public class PlayerKirche : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         string[] speakers = {"Rebell", "Jordan"};
-        string[] messages = {"jo lass mal die Regierung stürzen", "sPrICh DeUTsch dU HUso"};
+        string[] messages = {"jo lass mal die Regierung stürzen", "Und wer bist jetzt du?"};
         messageBox.ShowMessages(speakers, messages);
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
         PlayerMovement.CanMove = false;
