@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
 public abstract class DetectPlayer : MonoBehaviour
@@ -50,12 +49,12 @@ public abstract class DetectPlayer : MonoBehaviour
             Vector3 position = thisTransform.position;
             Quaternion rotation = thisTransform.rotation;
             
-            Debug.DrawLine(position, (Vector2) position + AngleToVector(rotation.y == 0 ? -ViewRange : 180 + ViewRange) * ViewDistance, Color.yellow);
-            Debug.DrawLine(position, (Vector2) position + AngleToVector(rotation.y == 0 ? 0 : 180) * ViewDistance, Color.yellow);
-            Debug.DrawLine(position, (Vector2) position + AngleToVector(rotation.y == 0 ? ViewRange : 180 - ViewRange) * ViewDistance, Color.yellow);
+            Debug.DrawLine(position, (Vector2) position + Utils.AngleToVector(rotation.y == 0 ? -ViewRange : 180 + ViewRange) * ViewDistance, Color.yellow);
+            Debug.DrawLine(position, (Vector2) position + Utils.AngleToVector(rotation.y == 0 ? 0 : 180) * ViewDistance, Color.yellow);
+            Debug.DrawLine(position, (Vector2) position + Utils.AngleToVector(rotation.y == 0 ? ViewRange : 180 - ViewRange) * ViewDistance, Color.yellow);
         
             Vector2 alienToPlayerVector = ((Vector2) Player.transform.position - (Vector2) position).normalized;
-            double alienToPlayerAngle = VectorToAngle(alienToPlayerVector);
+            double alienToPlayerAngle = Utils.VectorToAngle(alienToPlayerVector);
             bool looksRight = rotation.y == 0;
         
             if (looksRight ? (alienToPlayerAngle >= -ViewRange && alienToPlayerAngle <= ViewRange) : (alienToPlayerAngle >= 180 - ViewRange || alienToPlayerAngle <= - 180 + ViewRange))
@@ -106,24 +105,6 @@ public abstract class DetectPlayer : MonoBehaviour
             
         SpecificDetectAction();
         
-    }
-   
-    private double VectorToAngle(Vector2 vector)
-    {
-        double angleDeg = 180 / Math.PI * Math.Asin(Math.Abs(vector.y) / vector.magnitude);
-        
-        if (vector.x < 0)
-            angleDeg = 180 - angleDeg;
-        if (vector.y < 0)
-            angleDeg *= -1;
-
-        return angleDeg;
-    }
-    
-    private Vector2 AngleToVector(double angleDeg)
-    {
-        double angleRad = angleDeg * Math.PI / 180;
-        return new Vector2((float) Math.Cos(angleRad), (float) Math.Sin(angleRad)).normalized;
     }
     
     #endregion

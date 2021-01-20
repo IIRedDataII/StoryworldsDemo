@@ -40,40 +40,16 @@ public class GameData
 
     public int Ammunition = 30;
     public int RoundsInMagazine = 7;
-    public bool CanShoot = false;
+    public bool CanShoot;
     
     #endregion
 
     #region Laboratory
 
-    public bool BerndDead = false;
-    public bool CanTranslate = false;
-
-    #endregion
-    
-    #region City
-    
-    public bool[] DeadAliens = new bool[21];
-    
-    #endregion
-    
-    #region Church
-
-    public bool WasInChurch = false;
-    public bool RebelTriggered = false;
-    
-    #endregion
-    
-    #region Spaceship
-
-    public bool ReadFamilyLog = false;
-    public bool ReadEarthLog = false;
-    
-    #endregion
-
-    #region Laboratory
-
-    public static bool[] WardenAlive =  {true,true,true};
+    public bool SeenIntro;
+    public bool BerndDead;
+    public bool CanTranslate;
+    public bool[] WardenAlive =  {true, true, true};
 
     #region Helperfunctions
 
@@ -90,34 +66,88 @@ public class GameData
     #endregion
 
     #endregion
+    
+    #region City
+    
+    public bool[] DeadAliens = new bool[21];
+    
+    #endregion
+    
+    #region Church
 
+    public bool WasInChurch;
+    public bool RebelTriggered;
+    
+    #endregion
+    
+    #region Spaceship
+
+    public bool ReadFamilyLog;
+    public bool ReadEarthLog;
+    
+    #endregion
+    
     public void ResetGame()
     {
     
+        #region Scene
+        
         SetGetlastRoom = LastRoom.Start;
+        
+        #endregion
 
+        #region Weapon
+        
         Ammunition = 30;
         RoundsInMagazine = 7;
         CanShoot = false;
+        
+        #endregion
+        
+        #region Laboratory
+        
+        // do NOT reset SeenIntro
         BerndDead = false;
         CanTranslate = false;
+        for (int i = 0; i < WardenAlive.Length; i++)
+        {
+            WardenAlive[i] = true;
+        }
+        
+        #endregion 
 
-        for (int i = 0; i < 21; i++)
+        #region City
+        
+        for (int i = 0; i < DeadAliens.Length; i++)
         {
             DeadAliens[i] = false;
         }
+        
+        #endregion
+        
+        #region Church
+        
         WasInChurch = false;
         RebelTriggered = false;
+        
+        #endregion
 
+        #region Spaceship
+        
         ReadFamilyLog = false;
         ReadEarthLog = false;
         
-        WardenAlive[0] = true;
-        WardenAlive[1] = true;
-        WardenAlive[2] = true;
+        #endregion
+        
+        #region WTF
+
+        // no clue why, but this guy doesn't reset upon reloading the city
+        Surround.Trigger = false;
+        
+        #endregion
     
         SceneManager.LoadScene("Laboratory");
         
     }
-    
+
 }

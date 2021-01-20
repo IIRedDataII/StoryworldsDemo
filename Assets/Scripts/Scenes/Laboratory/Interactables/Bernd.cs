@@ -47,7 +47,7 @@ public class Bernd : Interactable
             Vector2 weapon = new Vector2(WeaponPos.transform.position.x, WeaponPos.transform.position.y);
             if (gameObject.transform.position.x < weapon.x && gameObject.transform.position.y > weapon.y)
             {
-                gameObject.transform.Translate(dir * 5 *Time.deltaTime);
+                gameObject.transform.Translate(dir * (5 * Time.deltaTime));
             }
         }
     }

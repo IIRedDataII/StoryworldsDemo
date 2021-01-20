@@ -45,8 +45,13 @@ public class MessageBox : MonoBehaviour
     private Image _box;
     private Text _text;
 
+    private IEnumerator _spellMessage;
+
     private string[] _messages;
     private string[] _speakers;
+
+    private string _activeMessage;
+    private string _activeSpeaker;
     
     private int _messageCounter;
     private int _messageCount;
@@ -63,6 +68,7 @@ public class MessageBox : MonoBehaviour
         
         _box = GetComponentInChildren<Image>();
         _text = GetComponentInChildren<Text>();
+        _spellMessage = SpellMessage();
         _box.enabled = false;
         _text.enabled = false;
         
@@ -75,7 +81,15 @@ public class MessageBox : MonoBehaviour
         
         #region Message Queueing
 
-        if (_messageDone && Input.GetKeyDown(KeyCode.Space))
+        if (_messageBusy && Input.GetKeyDown(KeyCode.Space))
+        {
+            StopCoroutine(_spellMessage);
+            _text.text = _activeSpeaker + ": " + _activeMessage;
+        
+            _messageDone = true;
+            _messageBusy = false;
+        }
+        else if (_messageDone && Input.GetKeyDown(KeyCode.Space))
         {
             if (_messageCounter < _messageCount)
             {
@@ -86,7 +100,7 @@ public class MessageBox : MonoBehaviour
                 _box.enabled = false;
                 _text.enabled = false;
                 _messageDone = false;
-                SetPlayerControls(true);
+                Utils.SetPlayerControls(true);
             }
         }
         
@@ -138,7 +152,7 @@ public class MessageBox : MonoBehaviour
 
         if (!GetMessageActive())
         {
-            SetPlayerControls(false);
+            Utils.SetPlayerControls(false);
             _box.enabled = true;
             _text.enabled = true;
             _speakers = speakers;
@@ -163,26 +177,24 @@ public class MessageBox : MonoBehaviour
     {
         _messageBusy = true;
         _messageDone = false;
+
+        _activeMessage = _messages[_messageCounter];
+        _activeSpeaker = _speakers[_messageCounter];
+        _messageCounter++;
         
-        _text.text = _speakers[_messageCounter] + ": ";
-        StartCoroutine(ShowMessage(_messages[_messageCounter++]));
+        _spellMessage = SpellMessage();
+        StartCoroutine(_spellMessage);
     }
-    
-    private void SetPlayerControls(bool active)
-    {
-        PlayerMovement.CanMove = active;
-        PlayerInteract.CanInteract = active;
-        PlayerShoot.AllowInput = active;
-    }
-    
+  
     #endregion
     
     #region Coroutines
     
-    private IEnumerator ShowMessage(string message)
+    private IEnumerator SpellMessage()
     {
-        foreach (char character in message)
-        { 
+        _text.text = _activeSpeaker + ": ";
+        foreach (char character in _activeMessage)
+        {
             _text.text += character;
             yield return new WaitForSeconds(1 / Speed);
         }

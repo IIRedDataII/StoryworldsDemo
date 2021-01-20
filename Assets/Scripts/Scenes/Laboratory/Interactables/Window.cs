@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class Window : Interactable
 {
+    
     [SerializeField] private Image cityImage;
 
     private void Awake()

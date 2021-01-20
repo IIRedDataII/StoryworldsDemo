@@ -2,20 +2,20 @@
 
 public class Projectile : MonoBehaviour
 {
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         
-        // ignore the player, outer colliders of aliens, junctions in city, scene changers, interactables (except Bernd) & "objects"
+        // ignore the player, outer colliders of aliens, warden aliens, junctions in city, scene changers, interactables (except Bernd) & "objects"
         if (other.CompareTag("Player") ||
             other.CompareTag("Alien") && !other.GetComponent<AlienBehaviour>().CompareInnerCollider(other) ||
+            other.CompareTag("Warden") && !other.GetComponent<Warden>().CompareInnerCollider(other) ||
+            other.CompareTag("Projectile") ||
             other.CompareTag("Junction") ||
             other.CompareTag("SceneChange") ||
             other.CompareTag("Interactable") && !other.name.Equals("Bernd") ||
-            other.CompareTag("Object") ||
-            other.CompareTag("Warden") && !other.GetComponent<Warden>().CompareInnerCollider(other))
-        {
+            other.CompareTag("Object"))
             return;
-        }
             
         
         if (other.name.Equals("Bernd") && !GameData.Instance.BerndDead)
@@ -32,15 +32,16 @@ public class Projectile : MonoBehaviour
         
         else if (other.CompareTag("Warden"))
         {
-            other.GetComponent<Warden>().Kill();
             Destroy(gameObject);
+            other.GetComponent<Warden>().Kill();
         }
         
         else 
         {
-            Debug.Log("Shot! \"" + other + "\" got hit!");
+            Debug.Log("You shot and hit \"" + other + "\"!");
             Destroy(gameObject);
         }
         
     }
+    
 }

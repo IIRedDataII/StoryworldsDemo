@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Surround : MonoBehaviour
@@ -71,25 +70,9 @@ public class Surround : MonoBehaviour
         
         Vector3 projectileOffset = new Vector3(thisTransform.rotation.y == 0 ? 0.75f : -0.75f, 0.215f, 0f);
         Vector3 shootDirection = (player.transform.position - (newPosition + projectileOffset)).normalized;
-        Instantiate(projectile, newPosition + projectileOffset, Quaternion.Euler(0, 0, (float) VectorToAngle(shootDirection)));
+        Instantiate(projectile, newPosition + projectileOffset, Quaternion.Euler(0, 0, (float) Utils.VectorToAngle(shootDirection)));
     }
 
-    #endregion
-
-    #region Helper Functions
-    
-    private double VectorToAngle(Vector2 vector)
-    {
-        double angleDeg = 180 / Math.PI * Math.Asin(Math.Abs(vector.y) / vector.magnitude);
-        
-        if (vector.x < 0)
-            angleDeg = 180 - angleDeg;
-        if (vector.y < 0)
-            angleDeg *= -1;
-
-        return angleDeg;
-    }
-    
     #endregion
     
 }

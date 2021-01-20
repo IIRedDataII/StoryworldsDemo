@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Button : Interactable
@@ -57,7 +56,7 @@ public class Button : Interactable
     {
         if (_readEnd && !messageBox.GetMessageActive())
         {
-            SetPlayerControls(false);
+            Utils.SetPlayerControls(false);
             SetButtons(true);
             _readEnd = false;
         }
@@ -68,17 +67,12 @@ public class Button : Interactable
     private void SetButtons(bool active)
     {
         leaveButton.gameObject.SetActive(active);
-        stayButton.gameObject.SetActive(active && GameData.Instance.WasInChurch);
+        if (GameData.Instance.WasInChurch)
+            stayButton.gameObject.GetComponentInChildren<Text>().text = "stay on this planet and help the rebels";
+        stayButton.gameObject.SetActive(active);
         deferButton.gameObject.SetActive(active);
     }
-    
-    private void SetPlayerControls(bool active)
-    {
-        PlayerMovement.CanMove = active;
-        PlayerInteract.CanInteract = active;
-        PlayerShoot.AllowInput = active;
-    }
-    
+  
     #endregion
 
     #region Button Functions
@@ -86,20 +80,20 @@ public class Button : Interactable
     public void Stay()
     {
         Debug.Log("End: Stay");
-        SetPlayerControls(true);
+        Utils.SetPlayerControls(true);
         SetButtons(false);
     }
     
     public void Leave()
     {
         Debug.Log("End: Leave");
-        SetPlayerControls(true);
+        Utils.SetPlayerControls(true);
         SetButtons(false);
     }
 
     public void Defer()
     {
-        SetPlayerControls(true);
+        Utils.SetPlayerControls(true);
         SetButtons(false);
     }
     

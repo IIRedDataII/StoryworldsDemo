@@ -17,7 +17,7 @@ public class AlienBehaviour : MonoBehaviour
         #region Initialization
 
         if (id >= 0 && GameData.Instance.DeadAliens[id])
-            MakeDead();
+            Destroy(gameObject);
         
         #endregion
 
@@ -27,7 +27,7 @@ public class AlienBehaviour : MonoBehaviour
 
     private void MakeDead()
     {
-        // Just destroy game object? Or give it exploding animation? Or change sprite to a dead version? Or...?
+        // TODO NTH: Just destroy game object? Or give it exploding animation? Or change sprite to a dead version? Or...?
         Destroy(gameObject);
     }
     

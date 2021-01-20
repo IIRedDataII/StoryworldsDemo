@@ -39,13 +39,8 @@ public abstract class DetectAlert : DetectPlayer
     #region Helper Functions
     
     private void SurroundPlayer()
-    {
-        PlayerMovement.CanMove = false;
-        PlayerInteract.CanInteract = false;
-        PlayerShoot.AllowInput = false;
-        
-        // TODO MH: respawn mechanic
-        //Debug.Log("You were spotted and the Laboratory Security was alerted. They surrounded you. You lost.");
+    { 
+        Utils.SetPlayerControls(false);
         Surround.Trigger = true;
     }
     

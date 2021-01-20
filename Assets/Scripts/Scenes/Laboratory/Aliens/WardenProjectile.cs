@@ -9,10 +9,10 @@ public class WardenProjectile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerDeath>()?.kill();
+            other.GetComponent<PlayerDeath>()?.Die("u got shot by some weird ass space insect, boiii");
             Destroy(gameObject);
         }
-        else if(other.CompareTag("Warden"))
+        else if (other.CompareTag("Warden"))
         {
             return;
         }

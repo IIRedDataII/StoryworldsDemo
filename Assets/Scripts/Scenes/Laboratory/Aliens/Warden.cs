@@ -3,10 +3,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-//Warden Objects require a SpriteRenderer
+// Warden Objects require a SpriteRenderer
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(CapsuleCollider2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
+
 public class Warden : DetectPlayer
 {
     
@@ -42,11 +43,11 @@ public class Warden : DetectPlayer
         if(!_spriteRenderer) throw new MissingMemberException();
         if (!GameData.Instance.GetWardenAliveByIndex(index))
         {
-            //Show dead sprite
+            // Show dead sprite
             _spriteRenderer.sprite = dead;
             stateRenderer.enabled = false;
             viewLight.enabled = false;
-            //Disable Script to avoid further actions
+            // Disable Script to avoid further actions
             this.enabled = false;
         }
         else
@@ -58,20 +59,20 @@ public class Warden : DetectPlayer
 
     protected override void SpecificUpdate()
     {
-        //Dont need that
+        // Dont need that
     }
 
     protected override void SpecificDetectAction()
     {
         if (GameData.Instance.CanShoot)
         {
-            //Player has Weapon -> Attack
-            //Player gets a chance to defend himself
+            // Player has Weapon -> Attack
+            // Player gets a chance to defend himself
             ShootPlayer();
         }
         else
         {
-            //Player has no Weapon -> Arrest
+            // Player has no Weapon -> Arrest
             ArrestPlayer();
         }
     }
@@ -85,22 +86,22 @@ public class Warden : DetectPlayer
 
     private void ArrestPlayer()
     {
-        //Disable PlayerMovement
+        // Disable PlayerMovement
         PlayerMovement.CanMove = false;
-        //Tell the player what happend
+        // Tell the player what happend
         box.ShowMessage("Jordan","Verdammt ich wurde entdeckt!");
         StartCoroutine(Reset());
     }
 
     public void Kill()
     {
-        //Log Death in GameData
+        // Log Death in GameData
         GameData.Instance.SetWardenAliveByIndex(index, false);
-        //Change Sprite to dead state;
+        // Change Sprite to dead state;
         _spriteRenderer.sprite = dead;
         stateRenderer.enabled = false;
         viewLight.enabled = false;
-        //Disable Script to avoid further actions
+        // Disable Script to avoid further actions
         enabled = false;
         
     }
@@ -130,22 +131,22 @@ public class Warden : DetectPlayer
 
     #region Coroutines
     
-    IEnumerator Reset()
+    private IEnumerator Reset()
     {
-        //Wait for player to read that hes been detected
+        // Wait for player to read that hes been detected
         yield return new WaitWhile(box.GetMessageActive);
         DetectedPlayer = false;
         stateRenderer.enabled = false;
         viewLight.enabled = true;
-        //restart idle action
+        // restart idle action
         Idle idle = GetComponent<Idle>();
         if (idle)
         {
             idle.StartCoroutine(idle.LookAround());
         }
-        //Initiate Player Reset
-        Player.GetComponent<PlayerDeath>()?.resetGame();
-
+        // Initiate Player Reset
+        GameData.Instance.ResetGame();
+        //Player.GetComponent<PlayerDeath>()?.ResetGame();
     }
     
     private IEnumerator Shoot()
