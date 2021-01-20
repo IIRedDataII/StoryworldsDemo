@@ -38,13 +38,15 @@ public abstract class DetectAlert : DetectPlayer
 
     #region Helper Functions
     
-    private void Surround()
+    private void SurroundPlayer()
     {
-        // TODO MH: surround animation + respawn mechanic
-        Debug.Log("You were spotted and the Laboratory Security was alerted. They surrounded you. You lost.");
         PlayerMovement.CanMove = false;
         PlayerInteract.CanInteract = false;
         PlayerShoot.AllowInput = false;
+        
+        // TODO MH: respawn mechanic
+        //Debug.Log("You were spotted and the Laboratory Security was alerted. They surrounded you. You lost.");
+        Surround.Trigger = true;
     }
     
     #endregion
@@ -62,7 +64,7 @@ public abstract class DetectAlert : DetectPlayer
         stateSpriteRenderer.sprite = dot3;
         yield return new WaitForSeconds(Delay / 4);
         stateSpriteRenderer.sprite = exclamationMark3;
-        Surround();
+        SurroundPlayer();
     }
     
     #endregion
