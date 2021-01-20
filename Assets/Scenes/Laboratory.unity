@@ -28344,7 +28344,7 @@ MonoBehaviour:
   text: {fileID: 1409689939}
   keypad: {fileID: 238405004}
   WaitTime: 1
-  code: 1234
+  code: 5401
   _input: 0
 --- !u!61 &1723294496
 BoxCollider2D:
