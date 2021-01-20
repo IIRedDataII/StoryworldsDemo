@@ -14,7 +14,7 @@ public class PlayerLabPos : MonoBehaviour
 
         // Former Starting Position: new Vector3(-6.14f,1.77f,0)
         transform.position = GameData.Instance.SetGetlastRoom == GameData.LastRoom.Start ? start.position : new Vector3(46.74f,-13,0);
-        if (GameData.Instance.SetGetlastRoom == GameData.LastRoom.Start)
+        if (!GameData.Instance.Respawned && GameData.Instance.SetGetlastRoom == GameData.LastRoom.Start)
         {
             StartCoroutine(Wait());
         }

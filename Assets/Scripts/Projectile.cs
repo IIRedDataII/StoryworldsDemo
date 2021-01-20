@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
         // ignore the player, outer colliders of aliens, warden aliens, junctions in city, scene changers, interactables (except Bernd) & "objects"
         if (other.CompareTag("Player") ||
             other.CompareTag("Alien") && !other.GetComponent<AlienBehaviour>().CompareInnerCollider(other) ||
-            other.CompareTag("Warden") && !other.GetComponent<Warden>().CompareInnerCollider(other) ||
+            other.CompareTag("Warden") && !other.GetComponent<WardenBehaviour>().CompareInnerCollider(other) ||
             other.CompareTag("Projectile") ||
             other.CompareTag("Junction") ||
             other.CompareTag("SceneChange") ||
@@ -33,7 +33,7 @@ public class Projectile : MonoBehaviour
         else if (other.CompareTag("Warden"))
         {
             Destroy(gameObject);
-            other.GetComponent<Warden>().Kill();
+            other.GetComponent<WardenBehaviour>().Die();
         }
         
         else 

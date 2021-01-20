@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class DetectGray : DetectPlayer
+public class DetectWarden : DetectPlayer
 {
 
     #region Constants
@@ -13,7 +13,6 @@ public class DetectGray : DetectPlayer
     #region Variables
     
     // Unity variables
-    [SerializeField] private Sprite shootingSprite;
     [SerializeField] private GameObject projectile;
     
     // private variables
@@ -36,15 +35,22 @@ public class DetectGray : DetectPlayer
 
     protected override void SpecificDetectAction()
     {
-        _trackPlayer = true;
-        GetComponent<SpriteRenderer>().sprite = shootingSprite;
-        StartCoroutine(Shoot());
+        if (GameData.Instance.CanShoot)
+        {
+            _trackPlayer = true;
+            StartCoroutine(Shoot());
+        }
+        else
+        {
+            Utils.SetPlayerControls(false);
+            SpawnProjectile();
+        }
     }
     
     #endregion
     
-    #region Helper Functions
-    
+    #region HelperFunctions
+
     private void SpawnProjectile()
     {
         Transform thisTransform = transform;
@@ -67,7 +73,7 @@ public class DetectGray : DetectPlayer
             yield return new WaitForSeconds(DelayShoot);
         }
     }
-    
+
     #endregion
     
 }

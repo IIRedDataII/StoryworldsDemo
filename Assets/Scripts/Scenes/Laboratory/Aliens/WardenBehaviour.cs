@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class AlienBehaviour : MonoBehaviour
+public class WardenBehaviour : MonoBehaviour
 {
     
     #region Variables
@@ -16,7 +16,7 @@ public class AlienBehaviour : MonoBehaviour
         
         #region Initialization
 
-        if (id >= 0 && GameData.Instance.DeadAliens[id])
+        if (GameData.Instance.DeadWardens[id])
             Destroy(gameObject);
         
         #endregion
@@ -37,8 +37,7 @@ public class AlienBehaviour : MonoBehaviour
 
     public void Die()
     {
-        if (id >= 0)
-            GameData.Instance.DeadAliens[id] = true;
+        GameData.Instance.DeadAliens[id] = true;
         MakeDead();
     }
     

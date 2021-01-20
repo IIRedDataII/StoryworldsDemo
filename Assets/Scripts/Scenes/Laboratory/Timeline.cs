@@ -9,7 +9,7 @@ public class Timeline : MonoBehaviour
     
     private void Start()
     {
-        if (GameData.Instance.SeenIntro)
+        if (GameData.Instance.Respawned)
         {
             timeline.GetComponent<PlayableDirector>().time = 20;
             player.GetComponent<PlayerLabPos>().enabled = true;
@@ -19,7 +19,7 @@ public class Timeline : MonoBehaviour
     // called by timeline
     public void SetSeenIntro()
     {
-        GameData.Instance.SeenIntro = true;
+        GameData.Instance.Respawned = true;
     }
     
 }

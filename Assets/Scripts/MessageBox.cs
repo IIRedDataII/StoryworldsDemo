@@ -68,7 +68,6 @@ public class MessageBox : MonoBehaviour
         
         _box = GetComponentInChildren<Image>();
         _text = GetComponentInChildren<Text>();
-        _spellMessage = SpellMessage();
         _box.enabled = false;
         _text.enabled = false;
         
@@ -81,29 +80,32 @@ public class MessageBox : MonoBehaviour
         
         #region Message Queueing
 
-        if (_messageBusy && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            StopCoroutine(_spellMessage);
-            _text.text = _activeSpeaker + ": " + _activeMessage;
-        
-            _messageDone = true;
-            _messageBusy = false;
-        }
-        else if (_messageDone && Input.GetKeyDown(KeyCode.Space))
-        {
-            if (_messageCounter < _messageCount)
+            if (_messageBusy)
             {
-                ShowNextMessage();
+                StopCoroutine(_spellMessage);
+                _text.text = _activeSpeaker + ": " + _activeMessage;
+        
+                _messageDone = true;
+                _messageBusy = false;
             }
-            else
+            else if (_messageDone)
             {
-                _box.enabled = false;
-                _text.enabled = false;
-                _messageDone = false;
-                Utils.SetPlayerControls(true);
+                if (_messageCounter < _messageCount)
+                {
+                    ShowNextMessage();
+                }
+                else
+                {
+                    _box.enabled = false;
+                    _text.enabled = false;
+                    _messageDone = false;
+                    Utils.SetPlayerControls(true);
+                }
             }
         }
-        
+
         #endregion
 
     }

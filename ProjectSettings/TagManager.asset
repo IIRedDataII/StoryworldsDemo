@@ -48,9 +48,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: BlockAlienCone
     uniqueID: 1802859651
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

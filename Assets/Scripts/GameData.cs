@@ -46,9 +46,10 @@ public class GameData
 
     #region Laboratory
 
-    public bool SeenIntro;
+    public bool Respawned = true;
     public bool BerndDead;
     public bool CanTranslate;
+    public bool[] DeadWardens = new bool[3];
     public bool[] WardenAlive =  {true, true, true};
 
     #region Helperfunctions
@@ -109,6 +110,10 @@ public class GameData
         // do NOT reset SeenIntro
         BerndDead = false;
         CanTranslate = false;
+        for (int i = 0; i < DeadWardens.Length; i++)
+        {
+            WardenAlive[i] = false;
+        }
         for (int i = 0; i < WardenAlive.Length; i++)
         {
             WardenAlive[i] = true;
