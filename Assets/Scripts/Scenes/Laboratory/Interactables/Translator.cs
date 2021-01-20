@@ -7,7 +7,7 @@ public class Translator : Interactable
 {
     [SerializeField] private MessageBox box;
 
-    public void Start()
+    public void Awake()
     {
         if (GameData.Instance.CanTranslate)
         {
