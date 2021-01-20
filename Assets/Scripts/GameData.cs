@@ -5,6 +5,8 @@
  * MH: must have
  */
 
+using UnityEngine.SceneManagement;
+
 public class GameData
 {
     
@@ -88,4 +90,34 @@ public class GameData
     #endregion
 
     #endregion
+
+    public void ResetGame()
+    {
+    
+        SetGetlastRoom = LastRoom.Start;
+
+        Ammunition = 30;
+        RoundsInMagazine = 7;
+        CanShoot = false;
+        BerndDead = false;
+        CanTranslate = false;
+
+        for (int i = 0; i < 21; i++)
+        {
+            DeadAliens[i] = false;
+        }
+        WasInChurch = false;
+        RebelTriggered = false;
+
+        ReadFamilyLog = false;
+        ReadEarthLog = false;
+        
+        WardenAlive[0] = true;
+        WardenAlive[1] = true;
+        WardenAlive[2] = true;
+    
+        SceneManager.LoadScene("Laboratory");
+        
+    }
+    
 }

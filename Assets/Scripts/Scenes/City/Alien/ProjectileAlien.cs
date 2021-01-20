@@ -66,6 +66,7 @@ public class ProjectileAlien : MonoBehaviour
         {
             // TODO MH: respawn mechanic
             Debug.Log("You were shot! You lost!");
+            GameData.Instance.ResetGame();
             PlayerMovement.CanMove = false;
             PlayerInteract.CanInteract = false;
             PlayerShoot.AllowInput = false;
