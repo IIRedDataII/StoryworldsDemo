@@ -28,7 +28,6 @@
 
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -76,21 +75,18 @@ public class MessageBox : MonoBehaviour
         
         #region Message Queueing
 
-        if (_messageDone)
+        if (_messageDone && Input.GetKeyDown(KeyCode.Space))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (_messageCounter < _messageCount)
             {
-                if (_messageCounter < _messageCount)
-                {
-                    ShowNextMessage();
-                }
-                else
-                {
-                    _box.enabled = false;
-                    _text.enabled = false;
-                    _messageDone = false;
-                    SetPlayerControls(true);
-                }
+                ShowNextMessage();
+            }
+            else
+            {
+                _box.enabled = false;
+                _text.enabled = false;
+                _messageDone = false;
+                SetPlayerControls(true);
             }
         }
         
