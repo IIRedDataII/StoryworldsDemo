@@ -13,6 +13,7 @@ TagManager:
   - Junction
   - Building
   - Projectile
+  - Warden
   layers:
   - Default
   - TransparentFX

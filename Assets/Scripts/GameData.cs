@@ -80,6 +80,11 @@ public class GameData
         return WardenAlive[index];
     }
 
+    public void SetWardenAliveByIndex(int index, bool state)
+    {
+        WardenAlive[index] = state;
+    }
+
     #endregion
 
     #endregion
