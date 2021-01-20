@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerLabPos : MonoBehaviour
 {
@@ -12,11 +10,12 @@ public class PlayerLabPos : MonoBehaviour
     public void Start()
     {
 
-        // Former Starting Position: new Vector3(-6.14f,1.77f,0)
-        transform.position = GameData.Instance.SetGetlastRoom == GameData.LastRoom.Start ? start.position : new Vector3(46.74f,-13,0);
-        if (!GameData.Instance.Respawned && GameData.Instance.SetGetlastRoom == GameData.LastRoom.Start)
+        Utils.SetPlayerControls(false);
+        // Former Starting Position: new Vector3(-6.14f, 1.77f, 0)
+        transform.position = GameData.Instance.SetGetlastRoom == GameData.LastRoom.Start ? start.position : new Vector3(46.74f, -13, 0);
+        if (GameData.Instance.SetGetlastRoom == GameData.LastRoom.Start)
         {
-            StartCoroutine(Wait());
+            StartCoroutine(InitialDelay());
         }
         
     }
@@ -34,10 +33,12 @@ public class PlayerLabPos : MonoBehaviour
         messageBox.ShowMonologue("Jordan", messages);
     }
     
-    private IEnumerator Wait()
+    private IEnumerator InitialDelay()
     {
         yield return new WaitForSeconds(1.5f);
-        Monologue();
+        Utils.SetPlayerControls(true);
+        if (!GameData.Instance.Respawned)
+            Monologue();
     }
     
 }

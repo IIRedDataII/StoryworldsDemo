@@ -46,7 +46,7 @@ public class GameData
 
     #region Laboratory
 
-    public bool Respawned;
+    public bool Respawned = true;
     public bool BerndDead;
     public bool CanTranslate;
     public bool[] DeadWardens = new bool[3];
@@ -107,7 +107,7 @@ public class GameData
         
         #region Laboratory
         
-        // do NOT reset SeenIntro
+        // do NOT reset Respawned
         BerndDead = false;
         CanTranslate = false;
         for (int i = 0; i < DeadWardens.Length; i++)
@@ -146,7 +146,7 @@ public class GameData
         
         #region WTF
 
-        // no clue why, but this guy doesn't reset upon reloading the city
+        // no clue why, but this one doesn't reset upon reloading the city
         Surround.Trigger = false;
         
         #endregion
