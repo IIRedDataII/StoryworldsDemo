@@ -2201,7 +2201,7 @@ MonoBehaviour:
   alive: {fileID: 21300000, guid: c854bf2fd5eb51442acceada4aa3fcc3, type: 3}
   projectileVelocity: 2
   box: {fileID: 148476098}
-  projectile: {fileID: 657484398884308695, guid: 2102a44b1379b2444bd8f386cfb42f6f, type: 3}
+  projectile: {fileID: 4540809503563460004, guid: e25a5f6a91bf1ce4585dca260afdcc37, type: 3}
   viewLight: {fileID: 1666047207}
   stateRenderer: {fileID: 312866428}
   innerCollider: {fileID: 335545040}
@@ -2398,13 +2398,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357757658}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: -0.7071068, z: 0.00000003090862, w: 0.00000003090862}
   m_LocalPosition: {x: 0.017, y: 0.047, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1880265284}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
 --- !u!1 &381257878
 GameObject:
   m_ObjectHideFlags: 0
@@ -7076,7 +7076,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: d4c41af567fb0814b90e81a9b2a794df, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -20510,7 +20510,7 @@ MonoBehaviour:
   alive: {fileID: 21300000, guid: c854bf2fd5eb51442acceada4aa3fcc3, type: 3}
   projectileVelocity: 2
   box: {fileID: 148476098}
-  projectile: {fileID: 657484398884308695, guid: 2102a44b1379b2444bd8f386cfb42f6f, type: 3}
+  projectile: {fileID: 4540809503563460004, guid: e25a5f6a91bf1ce4585dca260afdcc37, type: 3}
   viewLight: {fileID: 327293562}
   stateRenderer: {fileID: 1771334640}
   innerCollider: {fileID: 1240503929}
@@ -29092,7 +29092,7 @@ MonoBehaviour:
   alive: {fileID: 21300000, guid: c854bf2fd5eb51442acceada4aa3fcc3, type: 3}
   projectileVelocity: 2
   box: {fileID: 148476098}
-  projectile: {fileID: 657484398884308695, guid: 2102a44b1379b2444bd8f386cfb42f6f, type: 3}
+  projectile: {fileID: 4540809503563460004, guid: e25a5f6a91bf1ce4585dca260afdcc37, type: 3}
   viewLight: {fileID: 357757659}
   stateRenderer: {fileID: 602667936}
   innerCollider: {fileID: 1880265281}
