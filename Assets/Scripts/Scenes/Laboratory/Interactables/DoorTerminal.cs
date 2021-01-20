@@ -102,6 +102,13 @@ public class DoorTerminal : Interactable
 
     #endregion
 
+    public void reset()
+    {
+        _input = 0;
+        _open = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+    }
+
     private void Sucess()
     {
         door.Open();

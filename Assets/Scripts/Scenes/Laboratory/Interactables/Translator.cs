@@ -6,12 +6,12 @@ using UnityEngine;
 public class Translator : Interactable
 {
     [SerializeField] private MessageBox box;
-    
+
     public void Start()
     {
         if (GameData.Instance.CanTranslate)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
     
@@ -30,7 +30,7 @@ public class Translator : Interactable
             "Es sollte auf jeden Fall einfacher sein, wenn ich einen Teil dieser Texte verstehen kann.",
         };
         box.ShowMonologue("Jordan", messages);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     protected override void SpecificUpdate()

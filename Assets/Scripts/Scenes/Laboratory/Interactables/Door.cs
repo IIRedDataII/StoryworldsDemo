@@ -29,4 +29,9 @@ public class Door : MonoBehaviour
     {
         _open = true;
     }
+
+    public void Close()
+    {
+        _open = false;
+    }
 }

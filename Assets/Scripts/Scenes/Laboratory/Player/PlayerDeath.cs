@@ -29,19 +29,25 @@ public class PlayerDeath : MonoBehaviour
     
     public void resetGame()
     {
+        //Default Warden Alive state;
+       // GameData.Instance.SetWardenAliveByIndex(0, true);
+       // GameData.Instance.SetWardenAliveByIndex(1, true);
+        PlayerMovement.CanMove = true;
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         Weapon.GetComponent<SpriteRenderer>().enabled = true;
         gameObject.transform.position = new Vector3(-3, 2, 0);
-        bernd.transform.position = new Vector3(-19.75f,-2.84f,0);
+        bernd.transform.position = new Vector3(-3.78164f,-7.73f,0);
         bernd.gameObject.GetComponent<SpriteRenderer>().sprite = bernd.GetComponent<Bernd>().alive;
         GameData.Instance.BerndDead = false;
         if (GameData.Instance.CanTranslate)
         {
             GameData.Instance.CanTranslate = false;
-            Instantiate(translator);
-            
+            translator.SetActive(true);
         }
-       // door
+        door.GetComponent<Door>().Close();
+        door.transform.position = new Vector3(11,-13,0);
+        terminal.GetComponent<DoorTerminal>().reset();
+        Weapon.tag = "Untagged";
     }
     
     
