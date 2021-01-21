@@ -229,10 +229,13 @@
     
     #endregion
     
+    #region Template
     
     public static readonly string[] Template =
     {
         "",
     };
+    
+    #endregion
 
 }
