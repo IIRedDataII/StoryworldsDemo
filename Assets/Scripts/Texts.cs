@@ -4,7 +4,7 @@
     #region Laboratory
 
     #region Start
-    
+
     // done candidate
     public static readonly string[] StartMonologue =
     {
@@ -23,11 +23,11 @@
         "Irgendetwas muss schiefgelaufen sein. Wo bin ich?? Das hier ist alles so fremdartig.",
         "Das ist nicht gut. Ich muss hier raus! Sofort!",
     };
-    
+
     #endregion
 
     #region Interactables
-    
+
     public static readonly string[] DatapadRawMonologue =
     {
         "Hmm.. dieses Tablet zeigt eine Skizze eines Menschen, aber ich kann den Text daneben nicht verstehen.",
@@ -38,14 +38,14 @@
     {
         " ...Spezies scheint durch Bahnen mit roter Flüssigkeit versorgt zu werden...",
         "... oberer Teil enthält Hauptsteuerzentrale...\n...benötigen gleiche Umgebung zum leben...",
-        "... zeigen Empfindlichkeit zu ...",
-        "Dieser Bericht meint bestimmt uns Menschen. Aber wie sind sie an all diese Daten gekommen?"
+        "... zeigen Empfindlichkeit zu ..."
+        //"Dieser Bericht meint bestimmt uns Menschen. Aber wie sind sie an all diese Daten gekommen?"
     };
 
     public static readonly string[] FamilyPictureMonologue =
     {
         "Wie kommt das denn hier her?!",
-        "Das letzte mal das wir uns in den Armen halten konnten. Ava war so traurig, dass ich weg musste.",
+        "Das letzte mal, dass wir uns in den Armen halten konnten. Ava war so traurig, dass ich weg musste.",
         "Alice, babe, ich hoffe es geht euch gut. *visible sadness*"
     };
 
@@ -67,24 +67,24 @@
         "Verdammt, irgendwas stimmt nicht. Ich sollte mich mal umschauen.",
         "Vielleicht finde ich etwas, das wie der Code aussieht?"
     };
-    
+
     #endregion
 
     #region Bernd
-    
+
     public static readonly string[] BerndDialogueSpeakers =
     {
         "Jordan",
         "Bernd"
     };
-    
+
     public static readonly string[] BerndDialogue =
     {
         "jo wegen dir bin ich hier",
         "halts maul wir haben größere Probleme, wir kommen hier nie wieder weg deswegen bring ich dich jetzt um",
     };
 
-    
+
     public static readonly string[] KillBerndDialogueSpeakers =
     {
         "Jordan",
@@ -92,7 +92,7 @@
         "Jordan",
         "Bernd"
     };
-    
+
     public static readonly string[] KillBerndDialogue =
     {
         "jo wtf",
@@ -101,19 +101,19 @@
         "AHHHHH"
     };
 
-    
+
     public static readonly string[] KilledByBerndDialogueSpeakers =
     {
         "Bernd",
         "Jordan"
     };
-    
+
     public static readonly string[] KilledByBerndDialogue =
     {
         "stirb du scheiß Alien",
         "jo warte wir sind Kollegen"
     };
-    
+
     #endregion
 
     #endregion
@@ -134,7 +134,7 @@
         "Ich bin ein Alien für sie, genau so wie sie für mich, aber man könnte meinen, es gäbe hier IRGENDWEN, der mir nicht sofort feindlich begegnet.",
         "Ich muss hier weg! Der Planet ist bewohnbar aber diese Wesen hassen Fremdlinge! Sie werden mich früher oder später umbringen!"
     };
-    
+
     // done candidate
     public static readonly string[] TriggerLogisticianSecondMonologue =
     {
@@ -143,9 +143,9 @@
     };
 
     #endregion
-    
+
     #region Church
-    
+
     public static readonly string[] VisionOneMonologue =
     {
         "Erlösung!"
@@ -161,19 +161,19 @@
         "jo des bin ja ich auf dem bild"
     };
 
-    
+
     public static readonly string[] RebelDialogueSpeakers =
     {
         "Rebell",
         "Jordan"
     };
-    
+
     public static readonly string[] RebelDialogue =
     {
         "jo lass mal die Regierung stürzen",
         "Und wer bist jetzt du?"
     };
-    
+
     #endregion
 
     #region Spaceship

@@ -4,10 +4,10 @@
  * NTH: "nice to have"
  * MH: "must have"
  *
- * Alreay in use One-Time-Message IDs:
+ * Already in use One-Time-Message IDs:
  * {0}
  * 
- * Alreay in use Message-Node-IDs IDs:
+ * Already in use Message-Node-IDs IDs:
  * {0}
  * 
  */
