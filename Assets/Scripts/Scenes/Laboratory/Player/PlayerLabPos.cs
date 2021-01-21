@@ -10,25 +10,29 @@ public class PlayerLabPos : MonoBehaviour
     
     public void Start()
     {
-
-        Utils.SetPlayerControls(false);
-        // Former Starting Position: new Vector3(-6.14f, 1.77f, 0)
-        // TODO MH: player doesnt spawn at start
-        transform.position = GameData.Instance.SetGetlastRoom == GameData.LastRoom.Start ? start.position : new Vector3(46.74f, -13, 0);
+        
         if (GameData.Instance.SetGetlastRoom == GameData.LastRoom.Start)
         {
-            StartCoroutine(InitialDelay());
+            // TODO MH: player position is externally managed by timeline and overwrites this
+            transform.position = start.position;
+            if (GameData.Instance.Respawned)
+                Destroy(alienRebel);
+            else
+                StartCoroutine(InitialDelay());
+        }
+        else
+        {
+            // TODO MH: player position is externally managed by timeline and overwrites this
+            transform.position = new Vector3(46.74f, -13, 0);    //new Vector3(-6.14f, 1.77f, 0)
+            Destroy(alienRebel);
         }
         
-    }
-
-    private void Monologue()
-    {
-        messageBox.ShowMonologue("Jordan", Texts.StartMonologue);
     }
     
     private IEnumerator InitialDelay()
     {
+        Utils.SetPlayerControls(false);
+        
         // rebel flee animation
         yield return new WaitForSeconds(1);
         for (int i = 0; i < 150; i++)
@@ -37,9 +41,9 @@ public class PlayerLabPos : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         Destroy(alienRebel);
+    
         Utils.SetPlayerControls(true);
-        if (!GameData.Instance.Respawned)
-            Monologue();
+        messageBox.ShowMonologue("Jordan", Texts.StartMonologue);
     }
     
 }
