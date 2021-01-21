@@ -7,6 +7,9 @@
  * Alreay in use One-Time-Message IDs:
  * {0}
  * 
+ * Alreay in use Message-Node-IDs IDs:
+ * {0}
+ * 
  */
 
 using System.Collections;
@@ -38,6 +41,7 @@ public class GameData
     };
 
     public LastRoom SetGetlastRoom { get; set; } = LastRoom.Start;
+    public ArrayList TriggeredMonologueNodes = new ArrayList();
     public ArrayList TriggeredMessages = new ArrayList();
     
     #endregion
@@ -100,6 +104,7 @@ public class GameData
         #region Global
         
         SetGetlastRoom = LastRoom.Start;
+        TriggeredMonologueNodes.Clear();
         TriggeredMessages.Clear();
         
         #endregion
