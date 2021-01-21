@@ -43,13 +43,7 @@ public class Weapon : Interactable
         Bernd.moveToWeapon = false;
         PlayerMovement.CanMove = false;
         PlayerShoot.AllowInput = false;
-        string[] messages = {
-            "jo wtf",
-            "ich wusste du Veräter gehörst zu den Alien \nHiiielfe",
-            "Halts Maul sonst bekommen des noch die Wächter da draußen mit",
-            "AHHHHH"
-        };
-        messageBox.ShowDialogue("Jordan", "Bernd", messages);
+        messageBox.ShowDialogue("Jordan", "Bernd", Texts.KillBerndDialogue);
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
         Vector2 projectileDir = bernd.position - playerPos.position;
         float angle = Mathf.Acos(Vector2.Dot(projectileDir, Vector2.up) / projectileDir.magnitude) * Mathf.Rad2Deg;

@@ -30,11 +30,7 @@ public class Bernd : Interactable
 
     protected override void UndoSpecificAction()
     {
-        string[] messages = {
-            "jo wegen dir bin ich hier",
-            "halts maul wir haben größere Probleme, wir kommen hier nie wieder weg deswegen bring ich dich jetzt um",
-        };
-        messageBox.ShowDialogue("Jordan", "Bernd", messages);
+        messageBox.ShowDialogue("Jordan", "Bernd", Texts.BerndDialogue);
         StartCoroutine(startBernd());
     }
 
@@ -68,11 +64,7 @@ public class Bernd : Interactable
 
     IEnumerator killPlayer()
     {
-        string[] messages = {
-            "stirb du scheiß Alien",
-            "jo warte wir sind Kollegen"
-        };
-        messageBox.ShowDialogue("Bernd","Jordan",messages);
+        messageBox.ShowDialogue("Bernd","Jordan", Texts.KilledByBerndDialogue);
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
         Vector2 projectileDir = PlayerPos.position - transform.position;
         float angle = Mathf.Acos(Vector2.Dot(projectileDir, Vector2.up) / projectileDir.magnitude) * Mathf.Rad2Deg;

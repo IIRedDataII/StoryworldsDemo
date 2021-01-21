@@ -16,13 +16,7 @@ public class FamilyPicture : Interactable
     protected override void UndoSpecificAction()
     {
         familyImage.enabled = false;
-        string[] messages =
-        {
-            "Wie kommt das denn hier her?!",
-            "Das letzte mal das wir uns in den Armen halten konnten. Ava war so traurig, dass ich weg musste.",
-            "Alice, babe, ich hoffe es geht euch gut. *visible sadness*"
-        };
-        box.ShowMonologue("Jordan", messages);
+        box.ShowMonologue("Jordan", Texts.FamilyPictureMonologue);
     }
     
     protected override void SpecificUpdate()

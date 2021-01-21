@@ -23,13 +23,7 @@ public class Translator : Interactable
 
     protected override void UndoSpecificAction()
     {
-        string[] messages =
-        {
-            "Moment, ist das...? Nein, das kann ich nicht glauben!",
-            "Doch, das ist unser Translator. Vielleicht kann ich ihn benutzen um hier raus zu kommen.",
-            "Es sollte auf jeden Fall einfacher sein, wenn ich einen Teil dieser Texte verstehen kann.",
-        };
-        box.ShowMonologue("Jordan", messages);
+        box.ShowMonologue("Jordan", Texts.TranslatorPickupMonologue);
         gameObject.SetActive(false);
     }
 
