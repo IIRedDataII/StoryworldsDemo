@@ -8,7 +8,7 @@ public class BerndsProjectile : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
-            other.GetComponent<PlayerDeath>().Die("Bernd hat die Waffe vor dir erreicht und dich erschossen. Du startest das Spiel jetzt von Beginn.");
+            other.GetComponent<PlayerDeath>().Die(Texts.BerndDeathMessages);
         }
     }
     

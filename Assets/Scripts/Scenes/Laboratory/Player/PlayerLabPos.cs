@@ -22,11 +22,6 @@ public class PlayerLabPos : MonoBehaviour
         
     }
 
-    private void Update()
-    {
-        Debug.Log(transform.position);
-    }
-
     private void Monologue()
     {
         messageBox.ShowMonologue("Jordan", Texts.StartMonologue);

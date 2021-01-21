@@ -89,7 +89,8 @@ public class Warden : DetectPlayer
         // Disable PlayerMovement
         PlayerMovement.CanMove = false;
         // Tell the player what happend
-        box.ShowMessage("Jordan","Verdammt ich wurde entdeckt!");
+        string[] messages = {"Verdammt ich wurde entdeckt!"};
+        box.ShowMonologue("Jordan",messages);
         StartCoroutine(Reset());
     }
 

@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Bernd : Interactable
 {
+    
     public GameObject projectile;
     public MessageBox messageBox;
     public Sprite alive;
     public Sprite dead;
     public GameObject WeaponPos;
     public Transform PlayerPos;
-    public static bool moveToWeapon;
+    public static bool MoveToWeapon;
 
     private void Awake()
     {
@@ -30,13 +29,13 @@ public class Bernd : Interactable
 
     protected override void UndoSpecificAction()
     {
-        messageBox.ShowDialogue("Jordan", "Bernd", Texts.BerndDialogue);
-        StartCoroutine(startBernd());
+        messageBox.ShowMessages(Texts.BerndDialogueSpeakers, Texts.BerndDialogue);
+        StartCoroutine(StartBernd());
     }
 
     protected override void SpecificUpdate()
     {
-        if (moveToWeapon)
+        if (MoveToWeapon)
         {
             Vector3 dir = WeaponPos.transform.position - gameObject.transform.position;
             dir = dir.normalized;
@@ -57,14 +56,14 @@ public class Bernd : Interactable
         PlayerShoot.AllowInput = true;
     }
 
-    IEnumerator startBernd()
+    private IEnumerator StartBernd()
     {   yield return new WaitWhile(()=>messageBox.GetMessageActive());
-        moveToWeapon = true;
+        MoveToWeapon = true;
     }
 
-    IEnumerator killPlayer()
+    private IEnumerator KillPlayer()
     {
-        messageBox.ShowDialogue("Bernd","Jordan", Texts.KilledByBerndDialogue);
+        messageBox.ShowMessages(Texts.KilledByBerndDialogueSpeakers, Texts.KilledByBerndDialogue);
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
         Vector2 projectileDir = PlayerPos.position - transform.position;
         float angle = Mathf.Acos(Vector2.Dot(projectileDir, Vector2.up) / projectileDir.magnitude) * Mathf.Rad2Deg;
@@ -77,15 +76,17 @@ public class Bernd : Interactable
         temp.transform.Rotate(0f,0f,angle);
         temp.GetComponent<Rigidbody2D>().AddForce(projectileDir.normalized * 15, ForceMode2D.Impulse);
     }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         
         if(other.name.Equals("Weapon"))
         {
-            moveToWeapon = false;
+            MoveToWeapon = false;
             PlayerMovement.CanMove = false;
             WeaponPos.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            StartCoroutine(killPlayer());
+            StartCoroutine(KillPlayer());
         }
     }
+    
 }

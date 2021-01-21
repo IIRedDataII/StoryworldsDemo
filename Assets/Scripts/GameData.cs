@@ -1,5 +1,5 @@
 ﻿/*
- * Suffixes:
+ * T0d0 Suffixes:
  * DF: don't forget
  * NTH: nice to have
  * MH: must have
@@ -56,7 +56,7 @@ public class GameData
     public bool BerndDead;
     public bool CanTranslate;
     public bool[] DeadWardens = new bool[3];
-    public bool[] WardenAlive =  {true, true, true};
+    public bool[] WardenAlive =  {true, true, true};    // obsolete
 
     #region Helperfunctions
 

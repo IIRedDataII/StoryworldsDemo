@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,7 +27,7 @@ public class Steintafel : Interactable
                     break;
                 case 2:
                     ersteVision.enabled = true;
-                    PlayerKirche.letztesBildWasEnabled = true;
+                    PlayerKirche.LetztesBildWasEnabled = true;
                     break;
                 default: throw new NullReferenceException("no number");
             }
@@ -35,23 +36,16 @@ public class Steintafel : Interactable
 
     protected override void UndoSpecificAction()
     {
-        string[] messages;
         switch (number)
         {
             case 0: zweiteVision.enabled = false;
-                messages = new string[1];
-                messages[0] = "Sieht aus als wären alle tot!";
-                messageBox.ShowMonologue("Jordan", messages);
+                messageBox.ShowMonologue("Jordan", Texts.VisionTwoMonologue);
                 break;
             case 1: dritteVision.enabled = false;
-                messages = new string[1];
-                messages[0] = "jo des bin ja ich auf dem bild";
-                messageBox.ShowMonologue("Jordan", messages);
+                messageBox.ShowMonologue("Jordan", Texts.VisionThreeMonologue);
                 break;
             case 2: ersteVision.enabled = false;
-                messages = new string[1];
-                messages[0] = "Erlösung!";
-                messageBox.ShowMonologue("Jordan", messages);
+                messageBox.ShowMonologue("Jordan", Texts.VisionOneMonologue);
                 break;
             default: throw new NullReferenceException("no number");  
         }

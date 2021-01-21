@@ -18,12 +18,7 @@ public class Computer_Com : Interactable
     protected override void UndoSpecificAction()
     {
         familyMessageLog.enabled = false;
-                        
-        string[] messages = {
-            "Ach Mensch!",
-            "Desch' ja supi."
-        };
-        messageBox.ShowMonologue("Jordan", messages);
+        messageBox.ShowMonologue("Jordan", Texts.FamilyMessageLogMonologue);
     }
 
     protected override void SpecificUpdate()

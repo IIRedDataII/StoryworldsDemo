@@ -66,7 +66,7 @@ public class DetectWarden : DetectPlayer
     
     private IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(UnityEngine.Random.Range(DelayShoot / 3, DelayShoot));
+        yield return new WaitForSeconds(Random.Range(DelayShoot / 3, DelayShoot));
         while (true)
         {
             SpawnProjectile();

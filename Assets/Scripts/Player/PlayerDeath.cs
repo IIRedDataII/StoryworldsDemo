@@ -57,10 +57,10 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] private MessageBox messageBox;
     [SerializeField] private Sprite playerDead;
 
-    public void Die(string deathMessage)
+    public void Die(string[] deathMessages)
     {
         GetComponent<SpriteRenderer>().sprite = playerDead;
-        messageBox.ShowMessage("Game", deathMessage);
+        messageBox.ShowDeathMessages(deathMessages);
         StartCoroutine(DelayedResetGame());
     }
     

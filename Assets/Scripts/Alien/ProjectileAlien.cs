@@ -56,7 +56,7 @@ public class ProjectileAlien : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
-            other.GetComponent<PlayerDeath>().Die("u got shot by some weird ass space insect, boiii");
+            other.GetComponent<PlayerDeath>().Die(Texts.AlienDeathMessages);
         }
         
         else

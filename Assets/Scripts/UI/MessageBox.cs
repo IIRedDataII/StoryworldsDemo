@@ -116,6 +116,14 @@ public class MessageBox : MonoBehaviour
     {
         return _messageBusy || _messageDone;
     }
+
+    public void ShowDeathMessages(string[] messages)
+    {
+        string[] speakers = new string[messages.Length];
+        for (int i = 0; i < speakers.Length; i++)
+            speakers[i] = "Game";
+        ShowMessages(speakers, messages);
+    }
     
     
     public void ShowMonologueOnce(string speaker, string[] messages, int id)
@@ -148,18 +156,18 @@ public class MessageBox : MonoBehaviour
     }
     
     
-    public void ShowMessageOnce(string speaker, string message, int id)
+    /*public void ShowMessageOnce(string speaker, string message, int id)
     {
         if (Utils.CheckOneTimeMessage(id))
             ShowMessage(speaker, message);
-    }
+    }*/
 
-    public void ShowMessage(string speaker, string message)
+    /*public void ShowMessage(string speaker, string message)
     {
         string[] speakers = {speaker};
         string[] messages = {message};
         ShowMessages(speakers, messages);
-    }
+    }*/
     
     
     public void ShowMessagesOnce(string[] speakers, string[] messages, int id)

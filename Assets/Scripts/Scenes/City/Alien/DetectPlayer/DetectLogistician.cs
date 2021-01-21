@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class DetectLogistician : DetectRun
 {
@@ -51,22 +52,11 @@ public class DetectLogistician : DetectRun
 
         if (GameData.Instance.RebelTriggered)
         {
-            string[] messages =
-            {
-                "Bis auf diese Rebellengruppierung scheinen mich wirklich alle zu fürchten oder umbringen zu wollen.",
-                "Vielleicht kann ich mit meinem Status in ihrer Religion tatsächlich etwas bewirken?"
-            };
-            messageBox.ShowMonologueOnce("Jordan", messages, 0);
+            messageBox.ShowMonologueOnce("Jordan", Texts.TriggerLogisticianSecondMonologue, 0);
         }
         else
         {
-            string[] messages =
-            {
-                "Warum wollen mich alle entweder umbringen, oder haben Angst vor mir?",
-                "Ich bin ein Alien für sie, genau so wie sie für mich, aber man könnte meinen, es gäbe hier IRGENDWEN, der mir nicht sofort feindlich begegnet.",
-                "Ich muss hier weg! Der Planet ist bewohnbar aber diese Wesen hassen Fremdlinge! Sie werden mich früher oder später umbringen!"
-            };
-            messageBox.ShowMonologueOnce("Jordan", messages, 0);
+            messageBox.ShowMonologueOnce("Jordan", Texts.TriggerLogisticianFirstMonologue, 0);
         }
         
     }

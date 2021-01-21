@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : Interactable
-
-
 {
+    
     public GameObject projectile;
     public Transform bernd;
     public Transform playerPos;
     public MessageBox messageBox;
+    
     public void Awake()
     {
         if (GameData.Instance.CanShoot)
@@ -22,28 +22,27 @@ public class Weapon : Interactable
     {
         GameData.Instance.CanShoot = true;
         UndoAction();
-        //Enter TextBox Stuff for weapon, Maybe enable Weapon GUI Stuff
-       
+        // Enter TextBox Stuff for weapon, Maybe enable Weapon GUI Stuff
     }
 
     protected override void UndoSpecificAction()
-    {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-      gameObject.tag = "Untagged";
-      StartCoroutine(killBernd());
+    { 
+        GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.tag = "Untagged";
+        StartCoroutine(KillBernd());
     }
 
     protected override void SpecificUpdate()
     {
-        //Not necessary, but it has to be there, cause abstract class n stuff
+        // Not necessary, but it has to be there, cause abstract class n stuff
     }
 
-    IEnumerator killBernd()
+    private IEnumerator KillBernd()
     {
-        Bernd.moveToWeapon = false;
+        Bernd.MoveToWeapon = false;
         PlayerMovement.CanMove = false;
         PlayerShoot.AllowInput = false;
-        messageBox.ShowDialogue("Jordan", "Bernd", Texts.KillBerndDialogue);
+        messageBox.ShowMessages(Texts.KillBerndDialogueSpeakers, Texts.KillBerndDialogue);
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
         Vector2 projectileDir = bernd.position - playerPos.position;
         float angle = Mathf.Acos(Vector2.Dot(projectileDir, Vector2.up) / projectileDir.magnitude) * Mathf.Rad2Deg;

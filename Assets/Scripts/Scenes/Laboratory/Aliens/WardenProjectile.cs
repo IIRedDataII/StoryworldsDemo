@@ -9,7 +9,8 @@ public class WardenProjectile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerDeath>()?.Die("u got shot by some weird ass space insect, boiii");
+            string[] messages = {"u got shot by some weird ass space insect, boiii"};
+            other.GetComponent<PlayerDeath>()?.Die(messages);
             Destroy(gameObject);
         }
         else if (other.CompareTag("Warden"))
