@@ -1,8 +1,8 @@
 ﻿/*
  * T0d0 Suffixes:
- * DF: don't forget
- * NTH: nice to have
- * MH: must have
+ * DF: "don't forget"
+ * NTH: "nice to have"
+ * MH: "must have"
  *
  * Alreay in use One-Time-Message IDs:
  * {0}
@@ -52,7 +52,7 @@ public class GameData
 
     #region Laboratory
 
-    public bool Respawned = true;
+    public bool Respawned = false;
     public bool BerndDead;
     public bool CanTranslate;
     public bool[] DeadWardens = new bool[3];

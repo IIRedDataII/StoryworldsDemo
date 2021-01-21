@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class PlayerLabPos : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class PlayerLabPos : MonoBehaviour
     
     public void Start()
     {
+
+        GetComponentInChildren<Light2D>().enabled = true;
         
         if (GameData.Instance.SetGetlastRoom == GameData.LastRoom.Start)
         {
-            // TODO MH: player position is externally managed by timeline and overwrites this
+            // TODO MH: timeline overwrites the player position
             transform.position = start.position;
             if (GameData.Instance.Respawned)
                 Destroy(alienRebel);
@@ -22,8 +25,7 @@ public class PlayerLabPos : MonoBehaviour
         }
         else
         {
-            // TODO MH: player position is externally managed by timeline and overwrites this
-            transform.position = new Vector3(46.74f, -13, 0);    //new Vector3(-6.14f, 1.77f, 0)
+            transform.position = new Vector3(47f, -13f, 0);    //new Vector3(-6.14f, 1.77f, 0)
             Destroy(alienRebel);
         }
         
