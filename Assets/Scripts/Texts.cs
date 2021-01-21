@@ -120,12 +120,14 @@
 
     #region City
 
+    // done candidate
     public static readonly string[] ExploreCityMonologue =
     {
-        "Hier ist alles so farblich abgegrenzt. Selbst die Wesen tragen farbige Uniformen.",
+        "Hier ist alles so farblich aufgeteilt. Selbst die Wesen tragen farbige Uniformen.",
         "Unheimlich. Wie Bienen in einer Wabe."
     };
 
+    // done candidate
     public static readonly string[] TriggerLogisticianFirstMonologue =
     {
         "Warum wollen mich alle entweder umbringen, oder haben Angst vor mir?",
@@ -133,6 +135,7 @@
         "Ich muss hier weg! Der Planet ist bewohnbar aber diese Wesen hassen Fremdlinge! Sie werden mich früher oder später umbringen!"
     };
     
+    // done candidate
     public static readonly string[] TriggerLogisticianSecondMonologue =
     {
         "Bis auf diese Rebellengruppierung scheinen mich wirklich alle zu fürchten oder umbringen zu wollen.",
@@ -212,14 +215,16 @@
 
     #region DeathMessages
 
+    // done candidate
     public static readonly string[] BerndDeathMessages =
     {
-        "Bernd hat die Waffe vor dir erreicht und dich erschossen. Du startest das Spiel jetzt von Beginn."
+        "He shot you! You died!"
     };
 
+    // done candidate
     public static readonly string[] AlienDeathMessages =
     {
-        "u got shot by some weird ass space insect, boiii"
+        "You died!"
     };
     
     #endregion
