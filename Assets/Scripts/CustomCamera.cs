@@ -16,5 +16,5 @@ public class CustomCamera : MonoBehaviour
         Vector2 playerPosition = player.transform.position;
         _cameraTransform.position = new Vector3(playerPosition.x, playerPosition.y, _cameraTransform.position.z);
     }
-    
+
 }
