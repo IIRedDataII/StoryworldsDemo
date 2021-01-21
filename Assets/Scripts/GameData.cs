@@ -3,8 +3,13 @@
  * DF: don't forget
  * NTH: nice to have
  * MH: must have
+ *
+ * Alreay in use One-Time-Message IDs:
+ * {0}
+ * 
  */
 
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class GameData
@@ -25,7 +30,7 @@ public class GameData
 
     #endregion
     
-    #region Scene
+    #region Global
     
     public enum LastRoom
     {
@@ -33,6 +38,7 @@ public class GameData
     };
 
     public LastRoom SetGetlastRoom { get; set; } = LastRoom.Start;
+    public ArrayList TriggeredMessages = new ArrayList();
     
     #endregion
     
@@ -91,9 +97,10 @@ public class GameData
     public void ResetGame()
     {
     
-        #region Scene
+        #region Global
         
         SetGetlastRoom = LastRoom.Start;
+        TriggeredMessages.Clear();
         
         #endregion
 

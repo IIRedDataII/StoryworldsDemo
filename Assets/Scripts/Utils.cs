@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public static class Utils
@@ -31,5 +32,14 @@ public static class Utils
         double angleRad = angleDeg * Math.PI / 180;
         return new Vector2((float) Math.Cos(angleRad), (float) Math.Sin(angleRad)).normalized;
     }
-    
+
+    // checks wether the passed id is already used. returns false is yes, stores the new id and returns true is no.
+    public static bool CheckOneTimeMessage(int messageId)
+    {
+        if (GameData.Instance.TriggeredMessages.Contains(messageId))
+            return false;
+        GameData.Instance.TriggeredMessages.Add(messageId);
+        return true;
+    }
+
 }
