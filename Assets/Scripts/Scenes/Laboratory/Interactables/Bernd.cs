@@ -54,6 +54,7 @@ public class Bernd : Interactable
         gameObject.GetComponent<SpriteRenderer>().sprite = dead;
         PlayerMovement.CanMove = true;
         PlayerShoot.AllowInput = true;
+        messageBox.ShowMonologue("Jordan", Texts.SurvivedBerndMonologue);
     }
 
     private IEnumerator StartBernd()
