@@ -56,7 +56,7 @@ public class GameData
 
     #region Laboratory
 
-    public bool Respawned = true;
+    public bool Respawned = false;
     public bool BerndDead;
     public bool CanTranslate;
     public bool[] DeadWardens = new bool[3];
@@ -119,7 +119,7 @@ public class GameData
         
         #region Laboratory
         
-        Respawned = false;   // default value: false
+        Respawned = true;   // default value: false
         BerndDead = false;
         CanTranslate = false;
         for (int i = 0; i < DeadWardens.Length; i++)

@@ -17,7 +17,7 @@ public class PreTimeline : MonoBehaviour
     
     private void Start()
     {
-        if (GameData.Instance.SetGetlastRoom == GameData.LastRoom.City || GameData.Instance.Respawned)
+        if (GameData.Instance.Respawned || GameData.Instance.SetGetlastRoom == GameData.LastRoom.City)
         {
             timeline.SetActive(false);
             Destroy(alienAcademic1);

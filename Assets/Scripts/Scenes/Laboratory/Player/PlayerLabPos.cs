@@ -11,7 +11,6 @@ public class PlayerLabPos : MonoBehaviour
     
     public void Start()
     {
-
         GetComponentInChildren<Light2D>().enabled = true;
         
         if (GameData.Instance.SetGetlastRoom == GameData.LastRoom.Start)
