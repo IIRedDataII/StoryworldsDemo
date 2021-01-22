@@ -60,7 +60,7 @@ public class GameData
     public bool BerndDead;
     public bool CanTranslate;
     public bool[] DeadWardens = new bool[3];
-    public bool[] WardenAlive =  {true, true, true};    // obsolete
+    public bool[] WardenAlive = {true, true, true};    // obsolete
 
     #region Helperfunctions
 
@@ -124,7 +124,7 @@ public class GameData
         CanTranslate = false;
         for (int i = 0; i < DeadWardens.Length; i++)
         {
-            WardenAlive[i] = false;
+            DeadWardens[i] = false;
         }
         
         #endregion 

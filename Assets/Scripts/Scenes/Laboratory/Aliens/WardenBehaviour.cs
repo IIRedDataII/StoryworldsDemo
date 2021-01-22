@@ -37,7 +37,7 @@ public class WardenBehaviour : MonoBehaviour
 
     public void Die()
     {
-        GameData.Instance.DeadAliens[id] = true;
+        GameData.Instance.DeadWardens[id] = true;
         MakeDead();
     }
     
