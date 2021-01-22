@@ -8,7 +8,7 @@
  * {0}
  * 
  * Already in use Message-Node-IDs IDs:
- * {0}
+ * {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
  * 
  */
 
@@ -32,7 +32,7 @@ public class GameData
     public static GameData Instance => _instance ?? (_instance = new GameData());
 
     #endregion
-    
+ 
     #region Global
     
     public enum LastRoom
@@ -41,8 +41,8 @@ public class GameData
     };
 
     public LastRoom SetGetlastRoom { get; set; } = LastRoom.Start;
-    public ArrayList TriggeredMonologueNodes = new ArrayList();
     public ArrayList TriggeredMessages = new ArrayList();
+    public ArrayList TriggeredMonologueNodes = new ArrayList();
     
     #endregion
     
@@ -56,7 +56,7 @@ public class GameData
 
     #region Laboratory
 
-    public bool Respawned = false;
+    public bool Respawned = true;
     public bool BerndDead;
     public bool CanTranslate;
     public bool[] DeadWardens = new bool[3];
@@ -104,8 +104,8 @@ public class GameData
         #region Global
         
         SetGetlastRoom = LastRoom.Start;
-        TriggeredMonologueNodes.Clear();
         TriggeredMessages.Clear();
+        TriggeredMonologueNodes.Clear();
         
         #endregion
 
@@ -119,7 +119,7 @@ public class GameData
         
         #region Laboratory
         
-        Respawned = true;   // default value: false
+        Respawned = false;   // default value: false
         BerndDead = false;
         CanTranslate = false;
         for (int i = 0; i < DeadWardens.Length; i++)

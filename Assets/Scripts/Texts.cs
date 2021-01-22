@@ -3,8 +3,6 @@
 
     #region Laboratory
 
-    #region Start
-
     // done candidate
     public static readonly string[] StartMonologue =
     {
@@ -23,11 +21,7 @@
         "Irgendetwas muss schiefgelaufen sein. Wo bin ich?? Das hier ist alles so fremdartig.",
         "Das ist nicht gut. Ich muss hier raus! Sofort!",
     };
-
-    #endregion
-
-    #region Interactables
-
+    
     public static readonly string[] DatapadRawMonologue =
     {
         "Hmm.. dieses Tablet zeigt eine Skizze eines Menschen, aber ich kann den Text daneben nicht verstehen.",
@@ -56,35 +50,82 @@
         "Es sollte auf jeden Fall einfacher sein, wenn ich einen Teil dieser Texte verstehen kann.",
     };
 
-    public static readonly string[] WindowSkylineMonologue =
+    // done candidate
+    public static readonly string[] WindowBerndMonologue =
     {
-        "Ich sehe mein Schiff!",
-        "Ich kann es schaffen!"
+        "Da ist jemand! Ein Mensch!",
+        "*poch poch* Heey! Hallo!",
+        "Er hört mich nicht! Wie komme ich bloß in diesen Raum?!"
+    };
+    
+    public static readonly string[] HallwayCapsulesMonologue =
+    {
+        "*hallway capsule monologue*",
+    };
+    
+    public static readonly string[] ExperimentTableMonologue =
+    {
+        "*experiment table monologue*",
+    };
+    
+    public static readonly string[] OpenDoorTerminalMonologue =
+    {
+        "*open door terminal monologue*",
+    };
+    
+    public static readonly string[] PasswordScreenMonologue =
+    {
+        "*password screen monologue*",
+    };
+    
+    public static readonly string[] MainRoomCapsulesMonologue =
+    {
+        "*main room capsules monologue*",
     };
 
+    public static readonly string[] EnterWardenRoomMonologue =
+    {
+        "*enter warden room monologue*",
+    };
+    
+    public static readonly string[] WindowSkylineMonologue =
+    {
+        "*windows skyline monologue*",
+    };
+
+    public static readonly string[] DoorTerminalOpenMonologue =
+    {
+        "*door terminal open monologue*",
+    };
+    
     public static readonly string[] DoorTerminalFailureMonologue =
     {
         "Verdammt, irgendwas stimmt nicht. Ich sollte mich mal umschauen.",
         "Vielleicht finde ich etwas, das wie der Code aussieht?"
     };
 
-    #endregion
-
-    #region Bernd
-
     public static readonly string[] BerndDialogueSpeakers =
     {
         "Jordan",
         "Bernd"
     };
-
     public static readonly string[] BerndDialogue =
     {
         "jo wegen dir bin ich hier",
         "halts maul wir haben größere Probleme, wir kommen hier nie wieder weg deswegen bring ich dich jetzt um",
     };
-
-
+    
+    public static readonly string[] KilledByBerndDialogueSpeakers =
+    {
+        "Bernd",
+        "Jordan"
+    };
+    public static readonly string[] KilledByBerndDialogue =
+    {
+        "stirb du scheiß Alien",
+        "jo warte wir sind Kollegen"
+    };
+    
     public static readonly string[] KillBerndDialogueSpeakers =
     {
         "Jordan",
@@ -92,7 +133,6 @@
         "Jordan",
         "Bernd"
     };
-
     public static readonly string[] KillBerndDialogue =
     {
         "jo wtf",
@@ -100,33 +140,33 @@
         "Halts Maul sonst bekommen des noch die Wächter da draußen mit",
         "AHHHHH"
     };
-
-
-    public static readonly string[] KilledByBerndDialogueSpeakers =
+    
+    public static readonly string[] SurvivedBerndMonologue =
     {
-        "Bernd",
-        "Jordan"
+        "*survived bernd monologue*",
     };
-
-    public static readonly string[] KilledByBerndDialogue =
-    {
-        "stirb du scheiß Alien",
-        "jo warte wir sind Kollegen"
-    };
-
-    #endregion
 
     #endregion
 
     #region City
-
+    
+    public static readonly string[] EnterCityMonologue =
+    {
+        "*first time city monologue*",
+    };
+    
     // done candidate
-    public static readonly string[] ExploreCityMonologue =
+    public static readonly string[] AtSoldierAreaMonologue =
     {
         "Hier ist alles so farblich aufgeteilt. Selbst die Wesen tragen farbige Uniformen.",
         "Unheimlich. Wie Bienen in einer Wabe."
     };
-
+    
+    public static readonly string[] AtSpaceshipMonologue =
+    {
+        "*at spaceship monologue*",
+    };
+    
     // done candidate
     public static readonly string[] TriggerLogisticianFirstMonologue =
     {
@@ -141,11 +181,26 @@
         "Bis auf diese Rebellengruppierung scheinen mich wirklich alle zu fürchten oder umbringen zu wollen.",
         "Vielleicht kann ich mit meinem Status in ihrer Religion tatsächlich etwas bewirken?"
     };
-
+    
+    public static readonly string[] AtCityAltarMonologue =
+    {
+        "*city altar monologue*",
+    };
+    
     #endregion
 
     #region Church
-
+    
+    public static readonly string[] EnterChurchMonologue =
+    {
+        "*first time church monologue*",
+    };
+    
+    public static readonly string[] AtAltarMonologue =
+    {
+        "*at church altar monologue*",
+    };
+    
     public static readonly string[] VisionOneMonologue =
     {
         "Erlösung!"
@@ -160,24 +215,32 @@
     {
         "jo des bin ja ich auf dem bild"
     };
-
-
+    
     public static readonly string[] RebelDialogueSpeakers =
     {
         "Rebell",
         "Jordan"
     };
-
     public static readonly string[] RebelDialogue =
     {
         "jo lass mal die Regierung stürzen",
         "Und wer bist jetzt du?"
     };
-
+    
     #endregion
 
     #region Spaceship
-
+    
+    public static readonly string[] EnterSpaceshipMonologue =
+    {
+        "*first time spaceship monologue*",
+    };
+    
+    public static readonly string[] EnterMainRoomMonologue =
+    {
+        "*spaceship main room monologue*",
+    };
+    
     public static readonly string[] EarthMessageLogMonologue =
     {
         "Ach Mensch!",
@@ -210,7 +273,7 @@
         "Oder soll ich hierbleiben? Ich verdanke den Rebellen mein Leben. Möglicherweise kann ich ihnen wirklich helfen...",
         "Vielleicht finde ich in ihnen sogar eine neue Familie? Ein neues Leben? Wer weiß, ob ich je wieder einen so bewohnbaren Planeten finde?"
     };
-
+    
     #endregion
 
     #region DeathMessages

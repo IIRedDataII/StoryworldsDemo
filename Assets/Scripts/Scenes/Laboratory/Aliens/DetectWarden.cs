@@ -38,13 +38,13 @@ public class DetectWarden : DetectPlayer
         if (GameData.Instance.CanShoot)
         {
             _trackPlayer = true;
-            StartCoroutine(Shoot());
         }
         else
         {
             Utils.SetPlayerControls(false);
             SpawnProjectile();
         }
+        StartCoroutine(Shoot());
     }
     
     #endregion
