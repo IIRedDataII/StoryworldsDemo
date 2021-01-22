@@ -33,7 +33,11 @@ public abstract class Interactable : MonoBehaviour
             PlayerCollider.enabled = false;
             SpecificAction();
         }
-        
+        else
+        {
+            Debug.Log("Error");
+        }
+
     }
 
     protected void UndoAction()

@@ -68,9 +68,9 @@
         "*experiment table monologue*",
     };
     
-    public static readonly string[] OpenDoorTerminalMonologue =
+    public static readonly string[] BloodyTerminalMonologue =
     {
-        "*open door terminal monologue*",
+        "*bloody terminal monologue*",
     };
     
     public static readonly string[] PasswordScreenMonologue =
@@ -91,11 +91,6 @@
     public static readonly string[] WindowSkylineMonologue =
     {
         "*windows skyline monologue*",
-    };
-
-    public static readonly string[] DoorTerminalOpenMonologue =
-    {
-        "*door terminal open monologue*",
     };
     
     public static readonly string[] DoorTerminalFailureMonologue =
