@@ -4,7 +4,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class PlayerLabPos : MonoBehaviour
 {
-    
+
     [SerializeField] private Transform start;
     [SerializeField] private MessageBox messageBox;
     [SerializeField] private GameObject alienRebel;
@@ -16,7 +16,6 @@ public class PlayerLabPos : MonoBehaviour
         
         if (GameData.Instance.SetGetlastRoom == GameData.LastRoom.Start)
         {
-            // TODO MH: timeline overwrites the player position
             transform.position = start.position;
             if (GameData.Instance.Respawned)
                 Destroy(alienRebel);
