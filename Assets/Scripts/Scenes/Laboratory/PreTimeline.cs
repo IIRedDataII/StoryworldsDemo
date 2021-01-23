@@ -13,6 +13,7 @@ public class PreTimeline : MonoBehaviour
     [SerializeField] private GameObject alienAcademic2;
     [SerializeField] private GameObject alienAcademic3;
     [SerializeField] private GameObject lampLight;
+    [SerializeField] private BoxCollider2D table;
     
     private void Start()
     {
@@ -25,6 +26,7 @@ public class PreTimeline : MonoBehaviour
             Destroy(alienCleric1);
             lampLight.GetComponent<Light2D>().enabled = false;
             GetComponent<PlayerLabPos>().enabled = true;
+            table.enabled = true;
         }
     }
     
