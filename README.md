@@ -42,9 +42,7 @@ Layer Structure
 SPRITES
 
 MUST HAVE:
-
 Player
-Intro Table
 Opened Door after Start Room
 Bloody Terminal
 Blood Trace to Screen
@@ -60,16 +58,13 @@ Earth Messag Log Big
 
 
 VERY VERY NICE TO HAVE:
-
 [AlienPod Rework (perspective)]
 [City Buildings]
 [City Deco]
 [Spaceship Deco]
 
 
-
 NICE TO HAVE:
-
 Aliens
 Player/Aliens from Top in City
 Church Deco
@@ -84,4 +79,4 @@ Church Deco
 
 
 
-TEXTS:
+TEXTS
