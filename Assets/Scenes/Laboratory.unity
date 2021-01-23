@@ -2381,7 +2381,6 @@ GameObject:
   - component: {fileID: 335545045}
   - component: {fileID: 335545039}
   - component: {fileID: 335545044}
-  - component: {fileID: 335545037}
   m_Layer: 2
   m_Name: Warden1
   m_TagString: Warden
@@ -2389,27 +2388,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &335545037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335545036}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b00005f36bedff345a47e9fc8562377c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: 1
-  dead: {fileID: 21300000, guid: aa9b210f9386ee44290292e09162963b, type: 3}
-  alive: {fileID: 21300000, guid: c854bf2fd5eb51442acceada4aa3fcc3, type: 3}
-  projectileVelocity: 2
-  box: {fileID: 148476098}
-  projectile: {fileID: 2166973343076397504, guid: 53b58ee4d5c543a4e9fcf3787bf3166c, type: 3}
-  viewLight: {fileID: 1666047207}
-  stateRenderer: {fileID: 312866428}
-  innerCollider: {fileID: 335545040}
 --- !u!50 &335545038
 Rigidbody2D:
   serializedVersion: 4
@@ -18702,7 +18680,6 @@ GameObject:
   - component: {fileID: 1240503933}
   - component: {fileID: 1240503927}
   - component: {fileID: 1240503928}
-  - component: {fileID: 1240503925}
   m_Layer: 2
   m_Name: Warden0
   m_TagString: Warden
@@ -18710,27 +18687,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1240503925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240503924}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b00005f36bedff345a47e9fc8562377c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: 0
-  dead: {fileID: 21300000, guid: aa9b210f9386ee44290292e09162963b, type: 3}
-  alive: {fileID: 21300000, guid: c854bf2fd5eb51442acceada4aa3fcc3, type: 3}
-  projectileVelocity: 2
-  box: {fileID: 148476098}
-  projectile: {fileID: 2166973343076397504, guid: 53b58ee4d5c543a4e9fcf3787bf3166c, type: 3}
-  viewLight: {fileID: 327293562}
-  stateRenderer: {fileID: 1771334640}
-  innerCollider: {fileID: 1240503929}
 --- !u!50 &1240503926
 Rigidbody2D:
   serializedVersion: 4
@@ -30878,7 +30834,6 @@ GameObject:
   - component: {fileID: 1880265286}
   - component: {fileID: 1880265280}
   - component: {fileID: 1880265285}
-  - component: {fileID: 1880265278}
   m_Layer: 2
   m_Name: Warden2
   m_TagString: Warden
@@ -30886,27 +30841,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1880265278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880265277}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b00005f36bedff345a47e9fc8562377c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: 2
-  dead: {fileID: 21300000, guid: aa9b210f9386ee44290292e09162963b, type: 3}
-  alive: {fileID: 21300000, guid: c854bf2fd5eb51442acceada4aa3fcc3, type: 3}
-  projectileVelocity: 2
-  box: {fileID: 148476098}
-  projectile: {fileID: 2166973343076397504, guid: 53b58ee4d5c543a4e9fcf3787bf3166c, type: 3}
-  viewLight: {fileID: 357757659}
-  stateRenderer: {fileID: 602667936}
-  innerCollider: {fileID: 1880265281}
 --- !u!50 &1880265279
 Rigidbody2D:
   serializedVersion: 4
