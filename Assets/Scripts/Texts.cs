@@ -75,7 +75,13 @@
     
     public static readonly string[] PasswordScreenMonologue =
     {
-        "*password screen monologue*",
+        "Da sin komische Zeichen drauf.",
+    };
+    
+    public static readonly string[] PasswordScreenTranslatorMonologue =
+    {
+        "Da sin komische Zeichen drauf.",
+        "Der Translator kann sie nicht übersetzen",
     };
     
     public static readonly string[] MainRoomCapsulesMonologue =
@@ -195,6 +201,17 @@
     {
         "*at church altar monologue*",
     };
+
+    public static readonly string[] VisionPreMonologue =
+    {
+        "Hö? Hier sin so Steintafelns mit Text drauf und Bildern darüber."
+    };
+
+    public static readonly string[] VisionPreTranslatorMonologue =
+    {
+        "Hö? Hier sin so Steintafelns mit Text drauf und Bildern darüber.",
+        "Nichtmal der Translator kann den Tafeltext übersetzen."
+    };
     
     public static readonly string[] VisionOneMonologue =
     {
@@ -211,17 +228,6 @@
         "jo des bin ja ich auf dem bild"
     };
     
-    public static readonly string[] RebelDialogueTranslatedSpeakers =
-    {
-        "Rebell",
-        "Jordan"
-    };
-    public static readonly string[] RebelDialogueTranslated =
-    {
-        "jo lass mal die Regierung stürzen",
-        "Und wer bist jetzt du?"
-    };
-    
     public static readonly string[] RebelAurebeshMonologue =
     {
         "jo lass mal die Regierung stürzen",
@@ -230,6 +236,17 @@
     public static readonly string[] ShotRebelMonologue =
     {
         "Weg mit dem. Was wollte der denn?"
+    };
+    
+    public static readonly string[] RebelDialogueTranslatedSpeakers =
+    {
+        "Chia",
+        "Jordan"
+    };
+    public static readonly string[] RebelDialogueTranslated =
+    {
+        "jo lass mal die Regierung stürzen",
+        "Und wer bist jetzt du?"
     };
 
     #endregion
@@ -246,16 +263,32 @@
         "*spaceship main room monologue*",
     };
     
-    public static readonly string[] EarthMessageLogMonologue =
+    public static readonly string[] EarthMessageLogHalfMonologue =
     {
         "Ach Mensch!",
-        "Desch ja blöd!"
+        "Desch ja blöd!",
+        "Wo isn dann meine Family?"
+    };
+    
+    public static readonly string[] EarthMessageLogFullMonologue =
+    {
+        "Ach Mensch!",
+        "Desch ja blöd!",
+        "Das erklärt einiges."
     };
 
-    public static readonly string[] FamilyMessageLogMonologue =
+    public static readonly string[] FamilyMessageLogHalfMonologue =
     {
         "Ach Mensch!",
-        "Desch ja supi!"
+        "Desch ja supi!",
+        "Ja aber warum sind die denn überhaupt von der Erde weggegangen?"
+    };
+    
+    public static readonly string[] FamilyMessageLogFullMonologue =
+    {
+        "Ach Mensch!",
+        "Desch ja supi!",
+        "..."
     };
 
     public static readonly string[] StartButtonPreMonologue =

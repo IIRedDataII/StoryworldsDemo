@@ -12,7 +12,7 @@ public class PasswordScreen : Interactable
 
     protected override void UndoSpecificAction()
     {
-        messageBox.ShowMonologue("Jordan", Texts.PasswordScreenMonologue);
+        messageBox.ShowMonologue("Jordan", GameData.Instance.CanTranslate ? Texts.PasswordScreenTranslatorMonologue : Texts.PasswordScreenMonologue);
     }
 
     protected override void SpecificUpdate()

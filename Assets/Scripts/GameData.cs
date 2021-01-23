@@ -5,7 +5,7 @@
  * MH: "must have"
  *
  * Already in use One-Time-Message IDs:
- * {0}
+ * {0, 1}
  * 
  * Already in use Message-Node-IDs IDs:
  * {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
