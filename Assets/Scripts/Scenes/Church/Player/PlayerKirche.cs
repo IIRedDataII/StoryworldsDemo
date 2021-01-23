@@ -39,7 +39,7 @@ public class PlayerKirche : MonoBehaviour
         }
         rebell.GetComponent<SpriteRenderer>().enabled = false;
         rebell.transform.position = new Vector3(rebell.transform.position.x,-6.34f, 0);
-        PlayerMovement.CanMove = true;
+        Utils.SetPlayerControls(true);
     }
     #endregion
 
@@ -49,7 +49,7 @@ public class PlayerKirche : MonoBehaviour
         if (other.tag.Equals("RebellenTrigger") && LetztesBildWasEnabled && !GameData.Instance.RebelTriggered)
         {
             GameData.Instance.RebelTriggered = true;
-            PlayerMovement.CanMove = false;
+            Utils.SetPlayerControls(false);
             rebell.GetComponent<SpriteRenderer>().enabled = true;
             GameData.Instance.WasInChurch = true;
             StartCoroutine(RebellenSequence());
