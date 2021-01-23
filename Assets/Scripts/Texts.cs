@@ -211,6 +211,17 @@
         "jo des bin ja ich auf dem bild"
     };
     
+    public static readonly string[] RebelDialogueTranslatedSpeakers =
+    {
+        "Rebell",
+        "Jordan"
+    };
+    public static readonly string[] RebelDialogueTranslated =
+    {
+        "jo lass mal die Regierung stürzen",
+        "Und wer bist jetzt du?"
+    };
+    
     public static readonly string[] RebelDialogueSpeakers =
     {
         "Rebell",
@@ -218,10 +229,15 @@
     };
     public static readonly string[] RebelDialogue =
     {
-        "jo lass mal die Regierung stürzen",
-        "Und wer bist jetzt du?"
+        "*unidentifizierbares kauderwelsch*",
+        "Hielfe ich wurde entdeckt!"
     };
-    
+
+    public static readonly string[] ShotRebelMonologue =
+    {
+        "puh das war knapp."
+    };
+
     #endregion
 
     #region Spaceship

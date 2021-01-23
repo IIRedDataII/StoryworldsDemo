@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
             other.CompareTag("Warden") && !other.GetComponent<WardenBehaviour>().CompareInnerCollider(other) ||
             other.CompareTag("Projectile") ||
             other.CompareTag("Junction") ||
+            other.CompareTag("RebellenTrigger") ||
             other.CompareTag("SceneChange") ||
             other.CompareTag("Interactable") && !other.name.Equals("Bernd") ||
             other.CompareTag("Object"))
@@ -22,6 +23,12 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
             other.GetComponent<Bernd>().Kill();
+        }
+        
+        else if (other.CompareTag("Rebel"))
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
         }
 
         else if (other.CompareTag("Alien"))
