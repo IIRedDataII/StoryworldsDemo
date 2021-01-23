@@ -3735,7 +3735,6 @@ MonoBehaviour:
   alienAcademic2: {fileID: 1537483176}
   alienAcademic3: {fileID: 1343187612}
   lampLight: {fileID: 46854315}
-  bloodTrace: {fileID: 1312538800}
 --- !u!4 &534215465 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6345575164714276490, guid: 652a509894649fe49bb851a1ee99779d, type: 3}
@@ -8259,7 +8258,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 9ca4901e805e569428b943481978f9a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -18380,7 +18379,7 @@ Transform:
   - {fileID: 1743397775}
   - {fileID: 1660395248}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1240503924
 GameObject:
@@ -19134,7 +19133,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 0332e2ae30b2c3b4a8cca5437e05c70e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -19928,7 +19927,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ded0bdfdae9de334ba73d4477045a51b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -27455,7 +27454,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 2cbe8211fd0f2c644924f210e6cf2356, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -27615,7 +27614,7 @@ Transform:
   - {fileID: 2033277217}
   - {fileID: 189977569}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1592382408
 GameObject:
@@ -29290,10 +29289,27 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -0.047962427, y: -0.095620155, z: 0}
-  - {x: 0.03250885, y: -0.10255182, z: 0}
-  - {x: 0.027003527, y: 0.06181574, z: 0}
-  - {x: -0.058744192, y: 0.06679988, z: 0}
+  - {x: -0.026590245, y: 0.12284952, z: 0}
+  - {x: -0.022474773, y: -0.21051028, z: 0}
+  - {x: -0.14833246, y: -0.32449454, z: 0}
+  - {x: -0.115087, y: -0.35773998, z: 0}
+  - {x: 0.0060211993, y: -0.2413811, z: 0}
+  - {x: 0.12712923, y: -0.36486357, z: 0}
+  - {x: 0.1580002, y: -0.3292442, z: 0}
+  - {x: 0.037258618, y: -0.2141614, z: 0}
+  - {x: 0.034517355, y: 0.11956924, z: 0}
+  - {x: 0.26248568, y: 0.12194389, z: 0}
+  - {x: 0.2648605, y: 0.17656119, z: 0}
+  - {x: 0.029767875, y: 0.17656119, z: 0}
+  - {x: 0.029767875, y: 0.24542674, z: 0}
+  - {x: 0.10813221, y: 0.2478014, z: 0}
+  - {x: 0.10533556, y: 0.40451136, z: 0}
+  - {x: -0.107576266, y: 0.40745527, z: 0}
+  - {x: -0.10558841, y: 0.25017604, z: 0}
+  - {x: -0.024849605, y: 0.24542674, z: 0}
+  - {x: -0.020100124, y: 0.17656119, z: 0}
+  - {x: -0.22194731, y: 0.17418654, z: 0}
+  - {x: -0.22432196, y: 0.12431854, z: 0}
 --- !u!4 &1746074013
 Transform:
   m_ObjectHideFlags: 0
@@ -29684,7 +29700,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 5519111612c24374fab57d7e5517cc2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -31276,7 +31292,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.05
+  m_Intensity: 0.25
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 000000008374756b712857da
   m_LightCookieSprite: {fileID: 0}
