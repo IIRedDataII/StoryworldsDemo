@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9fe470cc6a8007148ab9aa3243f15139
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Aurebesh
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ad0c9543711a90e46b599a398573e5be, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

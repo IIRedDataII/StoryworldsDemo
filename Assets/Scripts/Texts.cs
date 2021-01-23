@@ -222,20 +222,14 @@
         "Und wer bist jetzt du?"
     };
     
-    public static readonly string[] RebelDialogueSpeakers =
+    public static readonly string[] RebelAurebeshMonologue =
     {
-        "Rebell",
-        "Jordan"
-    };
-    public static readonly string[] RebelDialogue =
-    {
-        "*unidentifizierbares kauderwelsch*",
-        "Hielfe ich wurde entdeckt!"
+        "jo lass mal die Regierung stürzen",
     };
 
     public static readonly string[] ShotRebelMonologue =
     {
-        "puh das war knapp."
+        "Weg mit dem. Was wollte der denn?"
     };
 
     #endregion

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class PlayerKirche : MonoBehaviour
@@ -8,6 +9,8 @@ public class PlayerKirche : MonoBehaviour
     #region Variables
     
     public MessageBox messageBox;
+    public Font aurebeshFont;
+    public Font translatedFont;
     public GameObject rebell;
     public GameObject projectile;
     public static bool LetztesBildWasEnabled = false;
@@ -50,8 +53,10 @@ public class PlayerKirche : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1);
-        messageBox.ShowMessages(Texts.RebelDialogueSpeakers, Texts.RebelDialogue);
+        messageBox.GetComponentInChildren<Text>().font = aurebeshFont;
+        messageBox.ShowMonologue("Chia", Texts.RebelAurebeshMonologue);
         yield return new WaitWhile(() => messageBox.GetMessageActive());
+        messageBox.GetComponentInChildren<Text>().font = translatedFont;
         Utils.SetPlayerControls(false);
 
         Vector3 playerPosition = transform.position;
@@ -59,7 +64,6 @@ public class PlayerKirche : MonoBehaviour
         GameObject shotProjectile = Instantiate(projectile, playerPosition, Quaternion.Euler(0f, 0f, (float) Utils.VectorToAngle(playerToAlien) - 90));
         shotProjectile.GetComponent<Rigidbody2D>().AddForce(playerToAlien * 15, ForceMode2D.Impulse);
         yield return new WaitForSeconds(1);
-        
         messageBox.ShowMonologue("Jordan", Texts.ShotRebelMonologue);
         
         Utils.SetPlayerControls(true);
