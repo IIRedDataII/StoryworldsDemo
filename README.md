@@ -22,7 +22,7 @@ Assests
 
 Layer Structure
 0: Floor
-1: Wall
+1: Wall (+ blood trace yey i love exceptions)
 2: ObjectsBackground
 3: Aliens
 4: Player
@@ -50,6 +50,7 @@ Blood Trace to Screen
 Bloody Password Screen
 Ventilation Shaft
 More AlienPods in Experiment Room
+!NeverGonnaGiveYouUp
 Bernd
 Church Paintings
 Family Message Log Small
@@ -81,3 +82,20 @@ Church Deco
 
 
 TEXTS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GameLogic:
+
