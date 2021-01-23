@@ -18,7 +18,7 @@ public class Computer_Com : Interactable
     protected override void UndoSpecificAction()
     {
         familyMessageLog.enabled = false;
-        messageBox.ShowMonologue("Jordan", Texts.FamilyMessageLogMonologue);
+        messageBox.ShowMonologue("Jordan", GameData.Instance.ReadEarthLog ? Texts.FamilyMessageLogFullMonologue : Texts.FamilyMessageLogHalfMonologue);
     }
 
     protected override void SpecificUpdate()

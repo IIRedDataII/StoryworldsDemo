@@ -18,7 +18,7 @@ public class Computer_Nav : Interactable
     protected override void UndoSpecificAction()
     {
         earthMessageLog.enabled = false;
-        messageBox.ShowMonologue("Jordan", Texts.EarthMessageLogMonologue);
+        messageBox.ShowMonologue("Jordan", GameData.Instance.ReadFamilyLog ? Texts.EarthMessageLogFullMonologue : Texts.EarthMessageLogHalfMonologue);
     }
 
     protected override void SpecificUpdate()
