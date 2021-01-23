@@ -6,6 +6,12 @@ using UnityEngine.UI;
 public class PlayerKirche : MonoBehaviour
 {
     
+    #region Constants
+
+    private const float RebelHeight = 11.9f;
+    
+    #endregion
+    
     #region Variables
     
     public MessageBox messageBox;
@@ -22,9 +28,9 @@ public class PlayerKirche : MonoBehaviour
     private IEnumerator RebelSequenceTranslated()
     {
         rebell.transform.position = new Vector3(rebell.transform.position.x,7.9f,0);
-        while (rebell.transform.position.y < 12.25)
+        while (rebell.transform.position.y < RebelHeight)
         {
-            rebell.transform.Translate(new Vector3(0,5,0)*Time.deltaTime);
+            rebell.transform.Translate(new Vector3(0,5,0) * Time.deltaTime);
             yield return new WaitForSeconds(0.003f);
         }
 
@@ -46,9 +52,9 @@ public class PlayerKirche : MonoBehaviour
     private IEnumerator RebelSequence()
     {
         rebell.transform.position = new Vector3(rebell.transform.position.x,7.9f,0);
-        while (rebell.transform.position.y < 12.25)
+        while (rebell.transform.position.y < RebelHeight)
         {
-            rebell.transform.Translate(new Vector3(0,5,0)*Time.deltaTime);
+            rebell.transform.Translate(new Vector3(0,5,0) * Time.deltaTime);
             yield return new WaitForSeconds(0.003f);
         }
 
@@ -70,7 +76,8 @@ public class PlayerKirche : MonoBehaviour
     }
     
     #endregion
-
+    
+    #region Event Functions
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -85,4 +92,7 @@ public class PlayerKirche : MonoBehaviour
         }
         
     }
+    
+    #endregion
+    
 }
