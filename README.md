@@ -22,12 +22,13 @@ Assests
 
 Layer Structure
 0: Floor
-1: ObjectsBackground
-2: Aliens
-3: Player
-4: ObjectsForeground
-5: Wall
-6: Overlay
+1: Wall
+2: ObjectsBackground
+3: Aliens
+4: Player
+5: ObjectsForeground
+6: Ceiling
+7: Overlay
 
 
 
@@ -57,7 +58,7 @@ Earth Messag Log Small
 Earth Messag Log Big
 
 
-VERY VERY NICE TO HAVE:
+COULD HAVE:
 [AlienPod Rework (perspective)]
 [City Buildings]
 [City Deco]

@@ -68,7 +68,7 @@ public class PlayerKirche : MonoBehaviour
         Vector3 playerPosition = transform.position;
         Vector2 playerToAlien = (rebell.transform.position - playerPosition).normalized;
         GameObject shotProjectile = Instantiate(projectile, playerPosition, Quaternion.Euler(0f, 0f, (float) Utils.VectorToAngle(playerToAlien) - 90));
-        shotProjectile.GetComponent<Rigidbody2D>().AddForce(playerToAlien * 15, ForceMode2D.Impulse);
+        shotProjectile.GetComponent<Rigidbody2D>().AddForce(playerToAlien * 10, ForceMode2D.Impulse);
         yield return new WaitForSeconds(1);
         messageBox.ShowMonologue("Jordan", Texts.ShotRebelMonologue);
         
