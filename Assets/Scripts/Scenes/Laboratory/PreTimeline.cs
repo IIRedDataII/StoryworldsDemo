@@ -14,6 +14,7 @@ public class PreTimeline : MonoBehaviour
     [SerializeField] private GameObject alienAcademic3;
     [SerializeField] private GameObject lampLight;
     [SerializeField] private BoxCollider2D table;
+    [SerializeField] private Door door;
     
     private void Start()
     {
@@ -27,6 +28,7 @@ public class PreTimeline : MonoBehaviour
             lampLight.GetComponent<Light2D>().enabled = false;
             GetComponent<PlayerLabPos>().enabled = true;
             table.enabled = true;
+            door.Open();
         }
     }
     
