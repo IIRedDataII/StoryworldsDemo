@@ -60,21 +60,6 @@ public class GameData
     public bool BerndDead;
     public bool CanTranslate;
     public bool[] DeadWardens = new bool[3];
-    public bool[] WardenAlive = {true, true, true};    // obsolete
-
-    #region Helperfunctions
-
-    public bool GetWardenAliveByIndex(int index)
-    {
-        return WardenAlive[index];
-    }
-
-    public void SetWardenAliveByIndex(int index, bool state)
-    {
-        WardenAlive[index] = state;
-    }
-
-    #endregion
 
     #endregion
     
