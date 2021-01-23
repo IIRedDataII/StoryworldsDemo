@@ -273,13 +273,11 @@
 
     #region DeathMessages
 
-    // done candidate
     public static readonly string[] BerndDeathMessages =
     {
         "He shot you! You died!"
     };
 
-    // done candidate
     public static readonly string[] AlienDeathMessages =
     {
         "You died!"

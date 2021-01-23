@@ -35,7 +35,7 @@ public class PlayerLabPos : MonoBehaviour
         
         // rebel flee animation
         yield return new WaitForSeconds(1);
-        for (int i = 0; i < 150; i++)
+        for (int i = 0; i < 100; i++)
         {
             alienRebel.transform.position += new Vector3(0.12f, 0, 0);
             yield return new WaitForSeconds(0.01f);

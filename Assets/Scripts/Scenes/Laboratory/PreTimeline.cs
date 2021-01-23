@@ -13,7 +13,6 @@ public class PreTimeline : MonoBehaviour
     [SerializeField] private GameObject alienAcademic2;
     [SerializeField] private GameObject alienAcademic3;
     [SerializeField] private GameObject lampLight;
-    [SerializeField] private GameObject bloodTrace;
     
     private void Start()
     {
@@ -25,7 +24,6 @@ public class PreTimeline : MonoBehaviour
             Destroy(alienAcademic3);
             Destroy(alienCleric1);
             lampLight.GetComponent<Light2D>().enabled = false;
-            bloodTrace.GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<PlayerLabPos>().enabled = true;
         }
     }
