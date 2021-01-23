@@ -1,6 +1,6 @@
 ﻿public static class Texts
 {
-
+    
     #region Laboratory
 
     // done candidate
@@ -191,7 +191,7 @@
         "*first time church monologue*",
     };
     
-    public static readonly string[] AtAltarMonologue =
+    public static readonly string[] AtChurchAltarMonologue =
     {
         "*at church altar monologue*",
     };
