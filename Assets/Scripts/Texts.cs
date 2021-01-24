@@ -145,7 +145,14 @@ public static class Texts
     public static readonly string[] BerndDialogueSpeakers =
     {
         "Jordan",
-        "Bernd"
+        "Jordan",
+        "Jordan",
+        "Benrd",
+        "Jordan",
+        "Bernd",
+        "Jordan",
+        "Bernd",
+        "Jordan"
         // more...
     };
     public static readonly string[] BerndDialogue =
@@ -178,8 +185,7 @@ public static class Texts
     {
         "Jordan",
         "Bernd",
-        "Jordan",
-        "Bernd"
+        "Jordan"
     };
     public static readonly string[] KillBerndDialogue =
     {
@@ -306,7 +312,13 @@ public static class Texts
     public static readonly string[] RebelDialogueTranslatedSpeakers =
     {
         "Chia",
-        "Jordan"
+        "Jordan",
+        "Chia",
+        "Chia",
+        "Chia",
+        "Chia",
+        "Jordan",
+        "Chia"
     };
     public static readonly string[] RebelDialogueTranslated =
     {
