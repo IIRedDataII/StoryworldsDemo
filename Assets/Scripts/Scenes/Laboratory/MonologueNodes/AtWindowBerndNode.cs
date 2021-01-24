@@ -3,7 +3,7 @@
     
     protected override void SpecificStart()
     {
-        ID = 0;
+        ID = 2;
         Messages = Texts.WindowBerndMonologue;
     }
     

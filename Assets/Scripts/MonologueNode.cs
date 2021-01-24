@@ -14,7 +14,6 @@ public abstract class MonologueNode : MonoBehaviour
         
         if (GameData.Instance.TriggeredMonologueNodes.Contains(ID))
             Destroy(gameObject);
-        GameData.Instance.TriggeredMonologueNodes.Add(ID);
     }
 
     protected abstract void SpecificStart();
@@ -31,6 +30,7 @@ public abstract class MonologueNode : MonoBehaviour
     private IEnumerator WaitForMessageBox()
     {
         yield return new WaitWhile(() => messageBox.GetMessageActive());
+        GameData.Instance.TriggeredMonologueNodes.Add(ID);
         Destroy(gameObject);
     }
     
