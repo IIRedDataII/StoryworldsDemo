@@ -44,6 +44,7 @@ SPRITES
 
 MUST HAVE:
 Player
+Intro-Memories 1-3
 Opened Door after Start Room
 Bloody Terminal
 Blood Trace to Screen
