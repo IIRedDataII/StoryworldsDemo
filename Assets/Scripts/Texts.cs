@@ -107,16 +107,20 @@ public static class Texts
     // done candidate
     public static readonly string[] ExperimentTableMonologue =
     {
-        "Diesen Labortisch hab ich schon mal gesehen, ich war schonmal hier aber wo sind diese komisch aussehenden Forscher hin?",
-        "Die haben hier irgendwas an meinem Kopf gemacht aber was?",
+        "Diesen Labortisch hab ich schon mal gesehen, ich war schonmal hier",
+        "Aber wo sind diese komisch aussehenden Forscher hin?, Sind die für den Tod meiner Crew verantwortlich?",
+        "Ich kann mich noch erinneren, dass die hier irgendwas an meinem Kopf gemacht haben aber was?",
         /*"*erkennt er war hier*",
         "was ham die mit mir gemacht?"*/
     };
     
+    // done candidate
     public static readonly string[] BloodyTerminalMonologue =
     {
-        "wasn des? scheiße ich bin auf Aphelios hier sind aliens!",
-        "was hier passiert?"
+        "Wir sind wohl tatsächlich auf Aphelios gelandet aber nicht aufgewacht",
+        "Shit hier liegt ein totes Alien! Hat ein Crewmitglied geschaft zu entkommen?",
+        /*"wasn des? scheiße ich bin auf Aphelios hier sind aliens!",
+        "was hier passiert?"*/
     };
     
     public static readonly string[] PasswordScreenMonologue =
