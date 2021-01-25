@@ -104,10 +104,13 @@ public static class Texts
         "ok hier ist offenbar was ganz mieses am abgehen. *angst*"*/
     };
     
+    // done candidate
     public static readonly string[] ExperimentTableMonologue =
     {
-        "*erkennt er war hier*",
-        "was ham die mit mir gemacht?"
+        "Diesen Labortisch hab ich schon mal gesehen, ich war schonmal hier aber wo sind diese komisch aussehenden Forscher hin?",
+        "Die haben hier irgendwas an meinem Kopf gemacht aber was?",
+        /*"*erkennt er war hier*",
+        "was ham die mit mir gemacht?"*/
     };
     
     public static readonly string[] BloodyTerminalMonologue =
