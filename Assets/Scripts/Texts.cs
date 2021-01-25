@@ -88,12 +88,20 @@ public static class Texts
         "Er hört mich nicht! Ich muss zu ihm!"
     };
     
+    // done candidate
     public static readonly string[] HallwayCapsulesMonologue =
     {
+        "Was ist das für ein Raum?",
+        "Diese Kapsel hab ich schon mal gesehen, in so einer bin ich aufgewacht",
+        "Hey da ist jemand drin",
+        "Das ist ja Jack und die anderen Crewmates sind auch hier",
+        "aber wieso sind die alle tot und wieso bin ich aufgewacht?",
+        "Irgendwer hat unsere Crew umgebracht, ich sollte hier erstmal weg, vielleicht weiß der andere Mensch mehr",
+        /*
         "*schreck* ey hier sind leichen",
         "*erkennt wer das ist*",
         "ich war selbst in einer gleichen kapsel",
-        "ok hier ist offenbar was ganz mieses am abgehen. *angst*"
+        "ok hier ist offenbar was ganz mieses am abgehen. *angst*"*/
     };
     
     public static readonly string[] ExperimentTableMonologue =
