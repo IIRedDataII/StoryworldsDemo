@@ -276,11 +276,15 @@ public static class Texts
 
     #region Church
     
+    // done candidate
     public static readonly string[] EnterChurchMonologue =
     {
-        "hell!",
+        "Wo bin ich jetzt gelandet",
+        "So hell beleuchtet und dekoriert wie es hier ist erinnert es mich an eine Kirche",
+        "vielleicht erfahr ich hier was hier los ist",
+        /*"hell!",
         "okkult",
-        "wow *ehrfurcht* *neugier*"
+        "wow *ehrfurcht* *neugier*"*/
     };
     
     public static readonly string[] AtChurchAltarMonologue =
@@ -288,20 +292,25 @@ public static class Texts
         "scheint ja ECHT wichtig zu sein"
     };
 
+    // done candidate
     public static readonly string[] VisionPreMonologue =
     {
-        "steintafeln? die sin ja uralt, wasmachensachen"
+        "Irgendwas wurde auf diese antike Steintafel geschrieben, aber keine Ahnung was das bedeutet"
+        //"steintafeln? die sin ja uralt, wasmachensachen"
     };
 
+    // done candidate
     public static readonly string[] VisionPreTranslatorMonologue =
     {
-        "steintafeln? die sin ja uralt, wasmachensachen",
-        "Nichtmal der Translator kann den Tafeltext übersetzen."
+        "Irgendwas wurde auf diese antike Steintafel geschrieben, aber nichtmal mein Translator kann es übersetzen. Scheint wohl echt alt zu sein."
+        /*"steintafeln? die sin ja uralt, wasmachensachen",
+        "Nichtmal der Translator kann den Tafeltext übersetzen."*/
     };
     
     public static readonly string[] VisionOneMonologue =
     {
-        "balance between neugier/interesse und angst/unheimlich/nachhauuuse"
+        ""
+        //"balance between neugier/interesse und angst/unheimlich/nachhauuuse"
     };
 
     public static readonly string[] VisionTwoMonologue =
@@ -321,6 +330,7 @@ public static class Texts
 
     public static readonly string[] ShotRebelMonologue =
     {
+        
         "das war knapp, fast wurd ich erwischt. so eine farbe hab ich noch nie gesehen."
     };
     
@@ -329,14 +339,43 @@ public static class Texts
         "Chia",
         "Jordan",
         "Chia",
+        "Jordan",
+        "Chia",
+        "Chia",
+        "Chia",
+        "Chia",
+        "Chia",
         "Chia",
         "Chia",
         "Chia",
         "Jordan",
         "Chia"
     };
+    // done candidate
     public static readonly string[] RebelDialogueTranslated =
     {
+        "Warte! Ich greif dich nicht an",
+        "Wer bist du und was willst du?",
+        "Ich hab dir bis hierher geholfen",
+        "Dann erklär mir mal warum alle meine Crewmitglieder tot sind und wieso mich alle umbringen wollen",
+        1"Der Grund ist die Gesellschaft und das aktuelle System in dem wir hier leben"
+        2"Das Leben der Chia ist von der hier herrschenden Religion bestimmt, diese stützt sich auf drei Prophezeiungen und in einer davon wird ein fremdes Lebewesen "+
+        "als der Grund für den Untergang der Rasse beschrieben.",
+        3"Die Chia hier glauben, dass wenn einer von euch diesen Planeten verlässt ihr zu tausend zurückkehrt und das Leben der chia beendet, deswegen haben alle Angst vor dir " +
+        "und die Regierung will dich töten",
+        4"Dir ist vielleicht schon die Hierarchie hier aufgefallen und dass die weiß gekleideten Priester das Sagen haben",
+        5"Eine weitere Prophezeiung sagt, wenn die Spezies der Chia bis zu einem bestimmten Zeitpunkt überlebt werden alle die Erlösung finden",
+        6"Deswegen ist in der Gesellschaft alles darauf ausgerichtet möglichst lang zu überleben. Dies wird erzielt indem nur das Wohl der Spezies von Bedeutung ist und das " +
+        "Individuum bedeutungslos ist",
+        7"Ich gehöre deswegen einer Rebellengruppe an, deren Ziel es ist die Hierarchie und den Glauben aufzubrechen und die Bevölkerung davon zu überzeugen das Individuum wertzuschätzen",
+        8"Du könntest der Schlüssel dafür sein, wenn wir der Bevölkerung zeigen, dass du nicht den Untergang herbeiführst haben wir eine Chance unser Ziel zu erreichen, aber dafür musst du " +
+        "uns helfen",
+        "Das erklärt einiges, danke für deine Hilfe bis hierher aber ich muss zurück zur Erde und zu meiner Familie, deswegen kann ich euch nicht helfen",
+        "Dein Schiff ist im Norden der Stadt, aber falls du doch helfen willst komm zurück"
+        
+        
+        
+        /*
         // translated, lückenhaft
         "dont kill me plz. im Friedrich. im the one who helped you escape.",
         "Hi Friedrich im Jordan",
@@ -345,7 +384,7 @@ public static class Texts
         "Rebellengrupperung (Farblos)",
         "YOU ARE THE CHOSEN ONE! Symbolfigur. Hilf uns die Freiheit zu erlangen uiii",
         "Bruder muss los. I'm on a mission.",
-        "Überlegs dir, du findest mich hier"
+        "Überlegs dir, du findest mich hier"*/
     };
 
     #endregion
