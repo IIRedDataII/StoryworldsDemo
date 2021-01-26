@@ -358,17 +358,17 @@ public static class Texts
         "Wer bist du und was willst du?",
         "Ich hab dir bis hierher geholfen",
         "Dann erklär mir mal warum alle meine Crewmitglieder tot sind und wieso mich alle umbringen wollen",
-        1"Der Grund ist die Gesellschaft und das aktuelle System in dem wir hier leben"
-        2"Das Leben der Chia ist von der hier herrschenden Religion bestimmt, diese stützt sich auf drei Prophezeiungen und in einer davon wird ein fremdes Lebewesen "+
+        "Der Grund ist die Gesellschaft und das aktuelle System in dem wir hier leben",
+        "Das Leben der Chia ist von der hier herrschenden Religion bestimmt, diese stützt sich auf drei Prophezeiungen und in einer davon wird ein fremdes Lebewesen "+
         "als der Grund für den Untergang der Rasse beschrieben.",
-        3"Die Chia hier glauben, dass wenn einer von euch diesen Planeten verlässt ihr zu tausend zurückkehrt und das Leben der chia beendet, deswegen haben alle Angst vor dir " +
+        "Die Chia hier glauben, dass wenn einer von euch diesen Planeten verlässt ihr zu tausend zurückkehrt und das Leben der chia beendet, deswegen haben alle Angst vor dir " +
         "und die Regierung will dich töten",
-        4"Dir ist vielleicht schon die Hierarchie hier aufgefallen und dass die weiß gekleideten Priester das Sagen haben",
-        5"Eine weitere Prophezeiung sagt, wenn die Spezies der Chia bis zu einem bestimmten Zeitpunkt überlebt werden alle die Erlösung finden",
-        6"Deswegen ist in der Gesellschaft alles darauf ausgerichtet möglichst lang zu überleben. Dies wird erzielt indem nur das Wohl der Spezies von Bedeutung ist und das " +
+        "Dir ist vielleicht schon die Hierarchie hier aufgefallen und dass die weiß gekleideten Priester das Sagen haben",
+        "Eine weitere Prophezeiung sagt, wenn die Spezies der Chia bis zu einem bestimmten Zeitpunkt überlebt werden alle die Erlösung finden",
+        "Deswegen ist in der Gesellschaft alles darauf ausgerichtet möglichst lang zu überleben. Dies wird erzielt indem nur das Wohl der Spezies von Bedeutung ist und das " +
         "Individuum bedeutungslos ist",
-        7"Ich gehöre deswegen einer Rebellengruppe an, deren Ziel es ist die Hierarchie und den Glauben aufzubrechen und die Bevölkerung davon zu überzeugen das Individuum wertzuschätzen",
-        8"Du könntest der Schlüssel dafür sein, wenn wir der Bevölkerung zeigen, dass du nicht den Untergang herbeiführst haben wir eine Chance unser Ziel zu erreichen, aber dafür musst du " +
+        "Ich gehöre deswegen einer Rebellengruppe an, deren Ziel es ist die Hierarchie und den Glauben aufzubrechen und die Bevölkerung davon zu überzeugen das Individuum wertzuschätzen",
+        "Du könntest der Schlüssel dafür sein, wenn wir der Bevölkerung zeigen, dass du nicht den Untergang herbeiführst haben wir eine Chance unser Ziel zu erreichen, aber dafür musst du " +
         "uns helfen",
         "Das erklärt einiges, danke für deine Hilfe bis hierher aber ich muss zurück zur Erde und zu meiner Familie, deswegen kann ich euch nicht helfen",
         "Dein Schiff ist im Norden der Stadt, aber falls du doch helfen willst komm zurück"

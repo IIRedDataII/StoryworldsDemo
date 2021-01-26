@@ -7,7 +7,8 @@ public class DoorTerminal : Interactable
 {
 
     [SerializeField] private MessageBox box;
-     
+    [SerializeField] private Font aurebesh;
+    [SerializeField] private Font numbers;
     [SerializeField] private Door door;
     [SerializeField] private Text text;
     [SerializeField] private GameObject keypad;
@@ -81,21 +82,27 @@ public class DoorTerminal : Interactable
     {
         if (_input == 0)
         {
+            text.font = aurebesh;
+            text.fontSize = 20;
             text.text = "*Insert Code*";
         }
         else if (_input < 0)
         {
+            text.font = aurebesh;
+            text.fontSize = 20;
             text.text = "*Sucess*";
         }
         else
         {
+            text.font = numbers;
+            text.fontSize = 30;
             text.text = _input.ToString();
         }
     }
 
     #endregion
 
-    public void reset()
+    public void Reset()
     {
         _input = 0;
         _open = false;
