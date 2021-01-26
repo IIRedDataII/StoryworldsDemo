@@ -402,9 +402,11 @@ public static class Texts
         "es ist tatsächlich unser schiff. endlich was bekanntest. heimisch.",
     };
     
+    //done Candidate
     public static readonly string[] EnterMainRoomMonologue =
     {
-        "alles leer. offenbar hats sonst niemand geschafft."    // erstmal
+        "Die Aliens haben hier alles ausgeräumt, aber ansonsten hat sich nichts getan ich bin wohl der einzigste Überlebende unserer Crew "
+        //"alles leer. offenbar hats sonst niemand geschafft."    // erstmal
     };
     
     public static readonly string[] EarthMessageLogHalfMonologue =
@@ -422,13 +424,18 @@ public static class Texts
         "Hoffnung: Family"
     };
 
+    //done Candidate
     // Info: "Wir sind auserwählt worden, die Erde verlassen zu dürfen. Dank dir.",
     public static readonly string[] FamilyMessageLogHalfMonologue =
     {
+        "Was??? Wieso sind die auf einer Mission? Mir wurde doch versichert, dass ihnen nichts passiert wenn ich hier mitmach",
+        "Vielleicht haben sie sich selbst dazu entschieden, sonst würden sie mir ja nicht dafür danken es ihnen ermöglicht zu haben",
+        "Dabei hab ich mich schon darauf gefreut sie zu treffen falls ich zur Erde zurückkomm, aber ich muss trotzdem erstmal zurück zur Erde und mich erkundigen wo sie hin sind"
+        /*
         "froh, was von ihnen zu hören",
         "sad weil so viel zeit vergangen",
         "wundert sich warum die denn weg sind",
-        "was isn da los? ich muss zurück"
+        "was isn da los? ich muss zurück"*/
     };
     
     public static readonly string[] FamilyMessageLogFullMonologue =
