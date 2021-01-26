@@ -240,10 +240,14 @@ public static class Texts
         "Unheimlich. Wie Bienen in einer Wabe."
     };
     
+    // done candidate
     public static readonly string[] AtSpaceshipMonologue =
     {
-        "wir sind tatsächlich abgestürzt, was ist schiefgelaufen",
+        "Endlich bin ich an unserem Schiff, jetzt muss ich das Ding nur noch zum laufen bringen, aber von außen wirkt es als würde der großteil noch gehen",
+        "Aber irgendwas muss defekt sein, sonst wären wir nicht abgestürzt"
+        /*"wir sind tatsächlich abgestürzt, was ist schiefgelaufen",
         "sieht ganz ok aus hoff es fliegt noch, ich muss da rein."
+        */
     };
     
     // done candidate
@@ -287,9 +291,11 @@ public static class Texts
         "wow *ehrfurcht* *neugier*"*/
     };
     
+    // done candidate
     public static readonly string[] AtChurchAltarMonologue =
     {
-        "scheint ja ECHT wichtig zu sein"
+        "Dieses religiöse Symbol scheint sehr wichtig zu sein, sieht aus wie eine heilige Dreieinigkeit"
+        //"scheint ja ECHT wichtig zu sein"
     };
 
     // done candidate
@@ -309,8 +315,8 @@ public static class Texts
     
     public static readonly string[] VisionOneMonologue =
     {
-        ""
-        //"balance between neugier/interesse und angst/unheimlich/nachhauuuse"
+        
+        "balance between neugier/interesse und angst/unheimlich/nachhauuuse"
     };
 
     public static readonly string[] VisionTwoMonologue =
