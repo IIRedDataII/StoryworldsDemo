@@ -1703,7 +1703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &238405005
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8690,6 +8690,8 @@ PlayableDirector:
     value: {fileID: 516700923}
   - key: {fileID: 600105757597757636, guid: d4c41af567fb0814b90e81a9b2a794df, type: 2}
     value: {fileID: 637520181}
+  - key: {fileID: -5822223656100520075, guid: d4c41af567fb0814b90e81a9b2a794df, type: 2}
+    value: {fileID: 1416358555}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1006674576
@@ -20421,6 +20423,7 @@ GameObject:
   - component: {fileID: 1416358553}
   - component: {fileID: 1416358554}
   - component: {fileID: 1416358552}
+  - component: {fileID: 1416358555}
   m_Layer: 0
   m_Name: BloodyTerminal
   m_TagString: Interactable
@@ -20436,7 +20439,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416358550}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.38, y: -1.5, z: 0}
+  m_LocalPosition: {x: 22.21, y: -1.379, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1697255177}
@@ -20497,7 +20500,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: ded0bdfdae9de334ba73d4477045a51b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99f03b3674369c944acb0e3308c9b9ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -20525,7 +20528,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 0.75}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 0.75, y: 0.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -20534,6 +20537,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5641384, y: 1.030388}
   m_EdgeRadius: 0
+--- !u!95 &1416358555
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416358550}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1418394305
 GameObject:
   m_ObjectHideFlags: 0
@@ -29314,10 +29336,10 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -0.37599945, y: -0.37716806, z: 0}
-  - {x: 0.37374496, y: -0.3749051, z: 0}
-  - {x: 0.3797264, y: 0.3768946, z: 0}
-  - {x: -0.37780952, y: 0.376606, z: 0}
+  - {x: -0.21, y: -0.34, z: 0}
+  - {x: 0.16, y: -0.34, z: 0}
+  - {x: 0.16, y: 0.27, z: 0}
+  - {x: -0.21, y: 0.27, z: 0}
 --- !u!1 &1710552819
 GameObject:
   m_ObjectHideFlags: 0
@@ -29663,12 +29685,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 4a495f63720f20641865674d06c60349, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed07a10b54f88ae4c8c5e7c4a158fe2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -29682,7 +29704,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723294492}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.17, y: -11.578, z: 0}
+  m_LocalPosition: {x: 12.17, y: -11.545, z: 0}
   m_LocalScale: {x: 0.7413688, y: 0.7135416, z: 0.7135416}
   m_Children:
   - {fileID: 212031799}
@@ -29728,8 +29750,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.15, y: 1.15}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
