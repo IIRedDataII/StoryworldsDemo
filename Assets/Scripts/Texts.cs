@@ -673,7 +673,7 @@ public static class Texts
         "Nicht Gewalt! Ich friedlich!",
         "...du kannst mit mir sprechen?",
         "Der Translator übersetzt ihn! Etwas lückenhaft... aber ich kann ihn verstehen.",
-        "Ich dir helfen. Du uns helfen",
+        "Ich dir helfen. Du uns helfen.",
         "Helfen? Wer bist du?",
         "Ich von Pandora.",
         "Was ist Pandora?",
@@ -686,7 +686,7 @@ public static class Texts
         "Du wichtig in Religion. Du Mensch. Mensch Teufel. Mensch Macht. Mensch Angst.",
         "Das Prophezeiung in Religion. Das sagen Zeichen auf Steintafel rechts. Menschen kommen. Menschen uns vernichten. ",
         "Aber das falsch. Du beweisen. Wir Volk zeigen. Du, wir, Frieden. Wir alle leben.",
-        "Also dieses Bild dort... es zeigt uns Menschen, nicht wahr? Wie wir kommen und eure Zivilisation vernichten.",
+        "Also dieses Bild dort... es zeigt uns Menschen? Wie wir kommen und eure Zivilisation vernichten.",
         "Ja. Religion sagen wir Chia überleben bis Komet kommt. Komet in Sonne fliegen. Dann Sonne groß werden, ausbreiten, Planeten verschlucken.",
         "Uns alle verschlucken. Das Erlösung. Chia-Spezies bis Erlösung überleben.",
         "Überleben, Überleben. Nur Spezies wichtig. Einzelner unwichtig. Einzelner opfern für Überleben von Spezies.",
@@ -728,7 +728,7 @@ public static class Texts
         "Die Aliens haben hier alles ausgeräumt, aber ansonsten hat sich nichts getan ich bin wohl der einzigste Überlebende unserer Crew",*/
         
         // Suggestion Julian
-        "Es ist so leer hier... alles wurde ausgeräumt. Sie haben es wahrscheimlich in's Labor gebracht.",
+        "Es ist so leer... alles wurde ausgeräumt. Sie haben es wahrscheimlich in's Labor gebracht.",
         "Und niemand ist hier... ich bin ganz allein.",
         "Bin ich wirklich der einzige überlebende von uns? Was soll ich jetzt tun?",
     };

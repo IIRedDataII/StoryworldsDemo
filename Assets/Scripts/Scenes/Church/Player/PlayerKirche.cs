@@ -72,8 +72,6 @@ public class PlayerKirche : MonoBehaviour
         shotProjectile.GetComponent<Rigidbody2D>().AddForce(playerToAlien * 10, ForceMode2D.Impulse);
         yield return new WaitForSeconds(1);
         messageBox.ShowMonologue("Jordan", Texts.ShotRebelMonologue);
-        
-        Utils.SetPlayerControls(true);
     }
     
     #endregion
