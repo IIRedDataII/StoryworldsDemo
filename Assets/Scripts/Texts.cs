@@ -20,17 +20,17 @@ public static class Texts
         
         // Suggestion Julian
         "Ouhh... mein Kopf...",
-        "....",
+        "...",
         "Hä..?",
         "Was ist hier..?",
         "Wo bin ich?!",
         "Bin ich in ohnmacht gefallen?",
         "Nein... ich war im Kälteschlaf... die Mission! Ja! Die Mission nach Aphelios! Zum Erobern neuer Lebensräume!",
-        "Aber Das hier ist nicht meine Schlafkapsel! Irgendwas ist schiefgelaufen!",
+        "Aber Das hier ist nicht meine Schlafkapsel! Was ist nur los!",
         "Und mein Kopf tut so weh... als würde er zerspringen.",
-        "Was ist nur passiert? Sind wir angekommen? Wo sind die anderen? Bin ich auf *insert planet name here*?",
-        "Irgendetwas muss schiefgelaufen sein. Wo bin ich?? Das hier ist alles so fremdartig.",
-        "Das ist nicht gut. Ich muss hier raus! Sofort!",
+        "Was ist nur passiert? Sind wir angekommen? Wo sind die anderen? Bin ich auf Aphelios?",
+        "Etwas muss schiefgelaufen sein. Wo bin ich?? Das hier ist alles so fremdartig.",
+        "Das ist nicht gut...",
     };
     
     public static readonly string[] DatapadRawMonologue =
@@ -122,7 +122,8 @@ public static class Texts
         
         // Suggestion Julian
         "Oh mein Gott! Jeff! Was ist passiert?! Er ist blutüberströmt! Nein! Jeff! Sag doch was!",
-        "Wo sind die anderen? Waren wir alle in diesen Kapseln? Was ist das für ein schrecklicher Ort, wo BIN ich?!",
+        "...",
+        "Wo sind die anderen? Waren wir alle in diesen Kapseln? Was ist das für ein Ort, wo BIN ich?!",
     };
     
     public static readonly string[] HallwayCapsulesFullMonologue =
@@ -183,7 +184,7 @@ public static class Texts
         // Suggestion Julian
         "Was ist das für ein Wesen?!",
         "Ich glaube, es ist tot...",
-        "Das ist kein Mensch... wir scheinen tatsächlich auf Aphelios zu sein.",
+        "Das ist kein Mensch... und das hier ist nicht die Erde!",
         "Aber was ist hier geschehen? Gab es einen Kampf?",
     };
     
