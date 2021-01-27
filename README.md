@@ -45,11 +45,7 @@ SPRITES
 MUST HAVE:
 Player
 Intro-Memories 1-3
-Opened Door after Start Room
-Bloody Terminal
-Blood Trace to Screen
 Bloody Password Screen
-Ventilation Shaft
 More AlienPods in Experiment Room
 !NeverGonnaGiveYouUp
 Bernd
