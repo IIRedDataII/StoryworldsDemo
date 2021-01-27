@@ -784,7 +784,7 @@ public static class Texts
         "...müssten sie in schätzungsweise 40 Jahren dort ankommen! Und ich kann von hier aus in 50 Jahren dort sein!",
         "Das bedeutet...",
         "Vielleicht kann ich sie dort antreffen! Vielleicht sehe ich sie wieder!!",
-        "Aber was meinen sie bloß damit, \"dank dir ausgewählt worden, die Erde verlassen zu dürfen\"?",
+        "Aber was meinen sie bloß mit \"dank dir ausgewählt worden, die Erde verlassen zu dürfen\"?",
         "Warum sind sie überhaupt aufgebrochen?",
         "Das klingt, als würde etwas auf der Erde vor sich gehen...",
         "Ich sollte mir die Bordcomputer-Logs ansehen.",
