@@ -121,7 +121,7 @@ public static class Texts
         "Irgendwer hat unsere Crew umgebracht, ich sollte hier erstmal weg, vielleicht weiß der andere Mensch mehr",*/
         
         // Suggestion Julian
-        "Oh mein Gott! Jeff! Was ist passiert?! Er ist blutüberströmt! Nein! Jeff! Sag doch was *rüttel*!",
+        "Oh mein Gott! Jeff! Was ist passiert?! Er ist blutüberströmt! Nein! Jeff! Sag doch was!",
         "Wo sind die anderen? Waren wir alle in diesen Kapseln? Was ist das für ein schrecklicher Ort, wo BIN ich?!",
     };
     
@@ -181,7 +181,7 @@ public static class Texts
         "Shit hier liegt ein totes Alien! Hat ein Crewmitglied geschaft zu entkommen?",*/
         
         // Suggestion Julian
-        "Oh Gott, was ist das für ein Wesen?",
+        "Was ist das für ein Wesen?!",
         "Ich glaube, es ist tot...",
         "Das ist kein Mensch... wir scheinen tatsächlich auf Aphelios zu sein.",
         "Aber was ist hier geschehen? Gab es einen Kampf?",
@@ -759,7 +759,6 @@ public static class Texts
         "EarthMessageLogFullMonologue",
     };
 
-    // Info: "Wir sind auserwählt worden, die Erde verlassen zu dürfen. Dank dir.", "Wir sind Im Kälteschlaf und müssten es immernoch sein, wenn du diese Nachricht liest."
     public static readonly string[] FamilyMessageLogHalfMonologue =
     {
         /* Summary
@@ -790,7 +789,6 @@ public static class Texts
         "Ich sollte mir die Bordcomputer-Logs ansehen.",
     };
     
-    // Info: "Wir sind auserwählt worden, die Erde verlassen zu dürfen. Dank dir.", "Wir sind Im Kälteschlaf und müssten aufwachen, wenn du diese Nachricht liest."
     public static readonly string[] FamilyMessageLogFullMonologue =
     {
         /* Summary
