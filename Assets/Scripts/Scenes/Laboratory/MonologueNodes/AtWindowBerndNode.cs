@@ -3,8 +3,13 @@
     
     protected override void SpecificStart()
     {
-        ID = 2;
+        ID = GameData.MonologueNodeID.AtWindowBernd;
+    }
+    
+    protected override void SetMessage()
+    {
         Messages = Texts.WindowBerndMonologue;
+        GameData.Instance.SeenBernd = true;
     }
     
 }

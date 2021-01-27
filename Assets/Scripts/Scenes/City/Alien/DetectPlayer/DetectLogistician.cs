@@ -50,13 +50,13 @@ public class DetectLogistician : DetectRun
         GetComponent<SpriteRenderer>().sprite = runningSprite;
         transform.rotation = Quaternion.Euler(0, 0, 0);
 
-        if (GameData.Instance.RebelTriggered)
+        if (GameData.Instance.RebelConversationHappened)
         {
-            messageBox.ShowMonologueOnce("Jordan", Texts.TriggerLogisticianSecondMonologue, 0);
+            messageBox.ShowMonologueOnce("Jordan", Texts.TriggerLogisticianFullMonologue, GameData.OneTimeMessageID.TriggerLogistician);
         }
         else
         {
-            messageBox.ShowMonologueOnce("Jordan", Texts.TriggerLogisticianFirstMonologue, 0);
+            messageBox.ShowMonologueOnce("Jordan", Texts.TriggerLogisticianHalfMonologue, GameData.OneTimeMessageID.TriggerLogistician);
         }
         
     }

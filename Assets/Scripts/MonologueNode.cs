@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEditor.Build.Reporting;
 using UnityEngine;
 
 public abstract class MonologueNode : MonoBehaviour
@@ -6,7 +7,7 @@ public abstract class MonologueNode : MonoBehaviour
 
     [SerializeField] protected MessageBox messageBox;
     protected string[] Messages;
-    protected int ID;
+    protected GameData.MonologueNodeID ID;
 
     private void Start()
     {
@@ -17,11 +18,14 @@ public abstract class MonologueNode : MonoBehaviour
     }
 
     protected abstract void SpecificStart();
+
+    protected abstract void SetMessage();
     
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            SetMessage();
             messageBox.ShowMonologue("Jordan", Messages);
             StartCoroutine(WaitForMessageBox());
         }

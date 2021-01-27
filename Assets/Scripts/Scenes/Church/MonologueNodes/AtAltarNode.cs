@@ -3,7 +3,11 @@
     
     protected override void SpecificStart()
     {
-        ID = 8;
+        ID = GameData.MonologueNodeID.AtAltar;
+    }
+
+    protected override void SetMessage()
+    {
         Messages = Texts.AtChurchAltarMonologue;
     }
     

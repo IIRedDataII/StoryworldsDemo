@@ -3,8 +3,12 @@
     
     protected override void SpecificStart()
     {
-        ID = 5;
-        Messages = Texts.AtSoldierAreaMonologue;
+        ID = GameData.MonologueNodeID.AtSoldierArea;
+    }
+    
+    protected override void SetMessage()
+    {
+        Messages = GameData.Instance.RebelConversationHappened ? Texts.AtSoldierAreaFullMonologue : Texts.AtSoldierAreaHalfMonologue;
     }
     
 }

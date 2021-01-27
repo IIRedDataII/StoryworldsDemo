@@ -27,6 +27,7 @@ public class PlayerKirche : MonoBehaviour
     
     private IEnumerator RebelSequenceTranslated()
     {
+        GameData.Instance.RebelConversationHappened = true;
         rebell.transform.position = new Vector3(rebell.transform.position.x,7.9f,0);
         while (rebell.transform.position.y < RebelHeight)
         {

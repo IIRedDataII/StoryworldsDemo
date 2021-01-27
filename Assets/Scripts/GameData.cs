@@ -3,13 +3,6 @@
  * DF: "don't forget"
  * NTH: "nice to have"
  * MH: "must have"
- *
- * Already in use One-Time-Message IDs:
- * {0, 1}
- * 
- * Already in use Message-Node-IDs IDs:
- * {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
- * 
  */
 
 using System.Collections;
@@ -41,6 +34,29 @@ public class GameData
     };
 
     public LastRoom SetGetlastRoom { get; set; } = LastRoom.Start;
+
+    
+    public enum MonologueNodeID
+    {
+        AtWindowBernd,
+        AtHallwayCapsule,
+        AtExperimentTable,
+        EnterWardenRoom,
+        EnterCity,
+        AtSoldierArea,
+        AtSpaceship,
+        EnterChurch,
+        AtAltar,
+        EnterSpaceship,
+        EnterMainRoom
+    }
+    
+    public enum OneTimeMessageID
+    {
+        PreStoneplate,
+        TriggerLogistician,
+    }
+
     public ArrayList TriggeredMessages = new ArrayList();
     public ArrayList TriggeredMonologueNodes = new ArrayList();
     
@@ -56,9 +72,10 @@ public class GameData
 
     #region Laboratory
 
-    public bool Respawned = false;
+    public bool Respawned = true;
     public bool BerndDead;
     public bool CanTranslate;
+    public bool SeenBernd;
     public bool[] DeadWardens = new bool[3];
 
     #endregion
@@ -73,6 +90,7 @@ public class GameData
 
     public bool WasInChurch;
     public bool RebelTriggered;
+    public bool RebelConversationHappened;
     
     #endregion
     
@@ -107,6 +125,7 @@ public class GameData
         Respawned = true;   // default value: false
         BerndDead = false;
         CanTranslate = false;
+        SeenBernd = false;
         for (int i = 0; i < DeadWardens.Length; i++)
         {
             DeadWardens[i] = false;
@@ -127,6 +146,7 @@ public class GameData
         
         WasInChurch = false;
         RebelTriggered = false;
+        RebelConversationHappened = false;
         
         #endregion
 

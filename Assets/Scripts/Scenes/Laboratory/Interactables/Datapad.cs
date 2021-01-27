@@ -19,7 +19,7 @@ public class Datapad : Interactable
         datapadImage.enabled = false;
         if (GameData.Instance.CanTranslate)
         {
-            box.ShowMonologue("Translator", Texts.DatapadTranslatedMonologue);
+            box.ShowMonologue("Translator", Texts.DatapadTranslatorMonologue);
         }
         else
         {

@@ -3,7 +3,11 @@
     
     protected override void SpecificStart()
     {
-        ID = 0;
+        ID = GameData.MonologueNodeID.AtExperimentTable;
+    }
+    
+    protected override void SetMessage()
+    {
         Messages = Texts.ExperimentTableMonologue;
     }
     

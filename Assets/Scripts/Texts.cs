@@ -1,7 +1,5 @@
 ﻿#region Regions
 
-// TODO: Add a lot of alternative dialogue depending on what the player has done so far and what not
-
 #region Classes
 
 public static class Texts
@@ -47,7 +45,7 @@ public static class Texts
         "Wir haben doch einen Translator bekommen. Vielleicht hilft der mir weiter.",
     };
 
-    public static readonly string[] DatapadTranslatedMonologue =
+    public static readonly string[] DatapadTranslatorMonologue =
     {
         /* Summary
         "Daten über Menschen",
@@ -60,7 +58,7 @@ public static class Texts
         "... oberer Teil enthält Hauptsteuerzentrale...\n...benötigen gleiche Umgebung zum leben...",
         "... zeigen Empfindlichkeit zu ...",
         // Jordan
-        "Dieser Bericht meint bestimmt uns Menschen. Aber wie sind sie an all diese Daten gekommen?",
+        //"Dieser Bericht meint bestimmt uns Menschen. Aber wie sind sie an all diese Daten gekommen?",
     };
 
     public static readonly string[] FamilyPictureMonologue =
@@ -78,7 +76,7 @@ public static class Texts
         "Alice, babe, ich hoffe es geht euch gut. *visible sadness*",
     };
 
-    public static readonly string[] TranslatorPickupMonologue =
+    public static readonly string[] TranslatorMonologue =
     {
         /* Summary
         "Oh! Translator!",
@@ -101,7 +99,7 @@ public static class Texts
         "Er hört mich nicht! Ich muss zu ihm!"
     };
     
-    public static readonly string[] HallwayCapsulesMonologue =
+    public static readonly string[] HallwayCapsulesHalfMonologue =
     {
         /* Summary
         "*schreck* ey hier sind leichen",
@@ -110,18 +108,40 @@ public static class Texts
         "ok hier ist offenbar was ganz mieses am abgehen. *angst*",
         */
         
-        // Suggestion Anian
+        /* Suggestion Anian
         "Was ist das für ein Raum?",
         "Diese Kapsel hab ich schon mal gesehen, in so einer bin ich aufgewacht",
         "Hey da ist jemand drin",
         "Das ist ja Jack und die anderen Crewmates sind auch hier",
         "aber wieso sind die alle tot und wieso bin ich aufgewacht?",
-        "Irgendwer hat unsere Crew umgebracht, ich sollte hier erstmal weg, vielleicht weiß der andere Mensch mehr",
+        "Irgendwer hat unsere Crew umgebracht, ich sollte hier erstmal weg, vielleicht weiß der andere Mensch mehr",*/
         
         // Suggestion Julian
         "Oh mein Gott! Jeff! Was ist passiert?! Er ist blutüberströmt! Nein! Jeff! Sag doch was *rüttel*!",
         "Wo sind die anderen? Waren wir alle in diesen Kapseln? Was ist das für ein schrecklicher Ort, wo BIN ich?!",
-        "Ich muss sofort die Person hinter dem Fenster finden! Das war ganz sicher ein Mensch!",
+    };
+    
+    public static readonly string[] HallwayCapsulesFullMonologue =
+    {
+        /* Summary
+        "*schreck* ey hier sind leichen",
+        "*erkennt wer das ist*",
+        "ich war selbst in einer gleichen kapsel",
+        "ok hier ist offenbar was ganz mieses am abgehen. *angst*",
+        */
+        
+        /* Suggestion Anian
+        "Was ist das für ein Raum?",
+        "Diese Kapsel hab ich schon mal gesehen, in so einer bin ich aufgewacht",
+        "Hey da ist jemand drin",
+        "Das ist ja Jack und die anderen Crewmates sind auch hier",
+        "aber wieso sind die alle tot und wieso bin ich aufgewacht?",
+        "Irgendwer hat unsere Crew umgebracht, ich sollte hier erstmal weg, vielleicht weiß der andere Mensch mehr",*/
+        
+        // Suggestion Julian
+        "Oh mein Gott! Jeff! Was ist passiert?! Er ist blutüberströmt! Nein! Jeff! Sag doch was *rüttel*!",
+        "Wo sind die anderen? Waren wir alle in diesen Kapseln? Was ist das für ein schrecklicher Ort, wo BIN ich?!",
+        "Ich muss die Person hinter dem Fenster finden! Das war ganz sicher ein Mensch!",
     };
     
     public static readonly string[] ExperimentTableMonologue =
@@ -131,10 +151,10 @@ public static class Texts
         "was ham die mit mir gemacht?",
         */
         
-        // Suggestion Anian
+        /* Suggestion Anian
         "Diesen Labortisch hab ich schon mal gesehen, ich war schonmal hier",
         "Aber wo sind diese komisch aussehenden Forscher hin?, Sind die für den Tod meiner Crew verantwortlich?",
-        "Ich kann mich noch erinneren, dass die hier irgendwas an meinem Kopf gemacht haben aber was?",
+        "Ich kann mich noch erinneren, dass die hier irgendwas an meinem Kopf gemacht haben aber was?",*/
         
         // Suggestion Julian
         "Dieser Tisch...",
@@ -152,9 +172,9 @@ public static class Texts
         "was hier passiert?",
         */
         
-        // Suggestion Anian
+        /* Suggestion Anian
         "Wir sind wohl tatsächlich auf Aphelios gelandet aber nicht aufgewacht",
-        "Shit hier liegt ein totes Alien! Hat ein Crewmitglied geschaft zu entkommen?",
+        "Shit hier liegt ein totes Alien! Hat ein Crewmitglied geschaft zu entkommen?",*/
         
         // Suggestion Julian
         "Oh Gott, was ist das für ein Wesen?",
@@ -163,14 +183,14 @@ public static class Texts
         "Aber was ist hier geschehen? Gab es einen Kampf?",
     };
     
-    public static readonly string[] PasswordScreenMonologue =
+    public static readonly string[] PasswordScreenRawMonologue =
     {
         /* Summary
         "seltsame zeichen...",
         */
         
         // Placeholder
-        "",
+        "PasswordScreenRawMonologue",
     };
     
     public static readonly string[] PasswordScreenTranslatorMonologue =
@@ -180,7 +200,7 @@ public static class Texts
         */
 
         // Placeholder
-        "",
+        "PasswordScreenTranslatorMonologue",
     };
     
     public static readonly string[] MainRoomCapsulesMonologue =
@@ -190,7 +210,7 @@ public static class Texts
         */
         
         // Placeholder
-        "",
+        "MainRoomCapsulesMonologue",
     };
 
     public static readonly string[] EnterWardenRoomMonologue =
@@ -200,7 +220,7 @@ public static class Texts
         */
         
         // Placeholder
-        "",
+        "EnterWardenRoomMonologue",
     };
     
     public static readonly string[] WindowSkylineMonologue =
@@ -211,7 +231,7 @@ public static class Texts
         */
         
         // Placeholder
-        "",
+        "WindowSkylineMonologue",
     };
     
     public static readonly string[] DoorTerminalFailureMonologue =
@@ -263,8 +283,8 @@ public static class Texts
         */
         
         // Placeholder
-        "",
-        "",
+        "KilledByBerndDialogue",
+        "KilledByBerndDialogue",
     };
     
     public static readonly string[] KillBerndDialogueSpeakers =
@@ -284,7 +304,7 @@ public static class Texts
         
         // Placeholder
         "jo wtf",
-        "ich wusste du Veräter gehörst zu den Alien \nHiiielfe",
+        "ich wusste du Veräter gehörst zu den Alien\nHiiielfe",
         "Halts Maul sonst bekommen des noch die Wächter da draußen mit",
         "AHHHHH"
     };
@@ -300,7 +320,7 @@ public static class Texts
         */
         
         // Placeholder
-        "",
+        "SurvivedBerndMonologue",
     };
 
     #endregion
@@ -314,14 +334,20 @@ public static class Texts
         */
         
         // Placeholder
-        "",
+        "EnterCityMonologue",
     };
     
-    public static readonly string[] AtSoldierAreaMonologue =
+    public static readonly string[] AtSoldierAreaHalfMonologue =
     {
         // Suggesetion Julian
-        "Hier ist alles so farblich aufgeteilt. Selbst die Wesen tragen farbige Uniformen.",
+        "Hier ist alles so farblich aufgeteilt. Selbst die Aphelianer tragen alle farbige Uniformen.",
         "Unheimlich. Wie Bienen in einer Wabe.",
+    };
+    
+    public static readonly string[] AtSoldierAreaFullMonologue =
+    {
+        // Placeholder
+        "Unheimlich. Die Chia sind wie Bienen in einer Wabe.",
     };
     
     public static readonly string[] AtSpaceshipMonologue =
@@ -331,9 +357,9 @@ public static class Texts
         "sieht ganz ok aus hoff es fliegt noch, ich muss da rein.",
         */
         
-        // Suggestion Anian
+        /* Suggestion Anian
         "Endlich bin ich an unserem Schiff, jetzt muss ich das Ding nur noch zum laufen bringen, aber von außen wirkt es als würde der großteil noch gehen",
-        "Aber irgendwas muss defekt sein, sonst wären wir nicht abgestürzt",
+        "Aber irgendwas muss defekt sein, sonst wären wir nicht abgestürzt",*/
         
         // Suggestion Julian
         "Es ist tatsächlich unser Schiff und wir sind offenbar mitten in dieser Stadt abgestürzt.",
@@ -342,7 +368,7 @@ public static class Texts
         "Es muss einfach...",
     };
     
-    public static readonly string[] TriggerLogisticianFirstMonologue =
+    public static readonly string[] TriggerLogisticianHalfMonologue =
     {
         /* Summary
         "warum so viel feindseligkeit? entwerde sie hauen ab oder sie wollen mich umbringen",
@@ -354,7 +380,7 @@ public static class Texts
         "Ich muss hier weg! Der Planet ist bewohnbar aber diese Wesen hassen Fremdlinge! Sie werden mich früher oder später umbringen!"
     };
 
-    public static readonly string[] TriggerLogisticianSecondMonologue =
+    public static readonly string[] TriggerLogisticianFullMonologue =
     {
         /* Summary
         "man ist der teufel ihrer religion!",
@@ -366,14 +392,31 @@ public static class Texts
         "Vielleicht kann ich mit meinem Status in ihrer Religion tatsächlich etwas bewirken?",
     };
     
-    public static readonly string[] AtCityAltarMonologue =
+    public static readonly string[] AtCityAltarHalfMonologue =
     {
         /* Summary
         "scheint wichtig zu sein"
         */
         
-        // Placeholder
-        "",
+        // Suggestion Julian
+        "Dieses Monument steht zentral in der Mitte des Platzes. Wie ein Götzenbild. Oder ein Mahnmal.",
+        "... ich sollte weg!"
+    };
+    
+    public static readonly string[] AtCityAltarFullMonologue =
+    {
+        /* Summary
+        "erkkärung"
+        */
+        
+        // Suggestion Julian
+        "Ich ich verstehe dieses Symbol langsam. Die drei Kugeln stellen die drei Himmelskörper dar, die die Erlösung bringen.",
+        "Der Planet.",
+        "Die Sonne.",
+        "Und der Komet.",
+        "In der Mitte die Sonne am Tag der Erlösung, wie sie riesig wird und alles verschluckt. Wie auf dem Bild in der Kirche.",
+        "Es erinnert die Chia täglich daran, worauf sie hinarbeiten. Ziemlich beeindruckende Religionspropaganda.",
+        "Die Armen.",
     };
     
     #endregion
@@ -388,10 +431,10 @@ public static class Texts
         "wow *ehrfurcht* *neugier*",
         */
         
-        // Suggestion Anian
+        /* Suggestion Anian
         "Wo bin ich jetzt gelandet",
         "So hell beleuchtet und dekoriert wie es hier ist erinnert es mich an eine Kirche",
-        "vielleicht erfahr ich hier was hier los ist",
+        "vielleicht erfahr ich hier was hier los ist",*/
         
         // Suggestion Julian
         "Ist das hell hier!",
@@ -405,41 +448,28 @@ public static class Texts
         "scheint ja ECHT wichtig zu sein",
         */
         
-        // Suggestion Anian
-        "Dieses religiöse Symbol scheint sehr wichtig zu sein, sieht aus wie eine heilige Dreieinigkeit",
+        /* Suggestion Anian
+        "Dieses religiöse Symbol scheint sehr wichtig zu sein, sieht aus wie eine heilige Dreieinigkeit",*/
         
         // Suggestion Julian
-        "Was ist das für ein Symbol? Es scheint bedeutend zu sein.",
-    };
-    
-    public static readonly string[] AtChurchAltar2Monologue =
-    {
-        /* Summary
-        "scheint ja ECHT wichtig zu sein",
-        */
-        
-        // Suggestion Anian
-        "Dieses religiöse Symbol scheint sehr wichtig zu sein, sieht aus wie eine heilige Dreieinigkeit",
-        
-        // Suggestion Julian
-        "Schon wieder dieses Dreieck. Es ist den Aphelianern sicher heilig.",
+        "Dieses Symbol war auch auf dem Platz draußen zu sehen. Es muss etwas bedeuten.",
     };
 
-    public static readonly string[] VisionPreMonologue =
+    public static readonly string[] VisionRawPreMonologue =
     {
         /* Summary
         "steintafeln? die sin ja uralt, wasmachensachen",
         */
         
-        // Suggestion Anian
-        "Irgendwas wurde auf diese antike Steintafel geschrieben, aber keine Ahnung was das bedeutet",
+        /* Suggestion Anian
+        "Irgendwas wurde auf diese antike Steintafel geschrieben, aber keine Ahnung was das bedeutet",*/
         
         // Suggestion Julian
         "Diese Steintafeln sind bedeckt mit eingeritzten Zeichen. Sie wirken uralt.",
         "Hätte ich jetzt nur das Übersetzungsgerät aus der Raumschiffausstattung",
     };
 
-    public static readonly string[] VisionPreTranslatorMonologue =
+    public static readonly string[] VisionTranslatorPreMonologue =
     {
         /* Summary
         "steintafeln? die sin ja uralt, wasmachensachen",
@@ -449,39 +479,69 @@ public static class Texts
         // Suggestion Anian
         "Irgendwas wurde auf diese antike Steintafel geschrieben, aber keine Ahnung was das bedeutet",
         
-        // Suggestion Julian
+        /* Suggestion Julian
         "Diese Steintafeln sind bedeckt mit eingeritzten Zeichen. Sie wirken uralt.",
-        "Nicht mal der Translator kann sie übersetzen.",
+        "Nicht mal der Translator kann sie übersetzen.",*/
     };
     
-    public static readonly string[] VisionOneMonologue =
+    public static readonly string[] VisionOneHalfMonologue =
     {
         /* Summary
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
         // Placeholder
-        "",
+        "VisionOneHalfMonologue",
+    };
+    
+    public static readonly string[] VisionOneFullMonologue =
+    {
+        /* Summary
+        "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
+        */
+        
+        // Placeholder
+        "VisionOneFullMonologue",
     };
 
-    public static readonly string[] VisionTwoMonologue =
+    public static readonly string[] VisionTwoHalfMonologue =
     {
         /* Summary
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
         // Placeholder
-        "",
+        "VisionTwoHalfMonologue",
+    };
+    
+    public static readonly string[] VisionTwoFullMonologue =
+    {
+        /* Summary
+        "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
+        */
+        
+        // Placeholder
+        "VisionTwoFullMonologue",
     };
 
-    public static readonly string[] VisionThreeMonologue =
+    public static readonly string[] VisionThreeHalfMonologue =
     {
         /* Summary
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
         // Placeholder
-        "",
+        "VisionThreeHalfMonologue",
+    };
+    
+    public static readonly string[] VisionThreeFullMonologue =
+    {
+        /* Summary
+        "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
+        */
+        
+        // Placeholder
+        "VisionThreFulleMonologue",
     };
     
     public static readonly string[] RebelAurebeshMonologue =
@@ -496,11 +556,13 @@ public static class Texts
         */
         
         // Placeholder
-        "",
+        "ShotRebelMonologue",
     };
     
     public static readonly string[] RebelDialogueTranslatedSpeakers =
     {
+        
+        /* A
         "Chia",
         "Jordan",
         "Chia",
@@ -514,7 +576,7 @@ public static class Texts
         "Chia",
         "Chia",
         "Jordan",
-        "Chia",
+        "Chia",*/
         
         // J
         "Jordan",
@@ -563,7 +625,7 @@ public static class Texts
         "Überlegs dir, du findest mich hier",
         */
         
-        // Suggestion Anian
+        /* Suggestion Anian
         "Warte! Ich greif dich nicht an",
         "Wer bist du und was willst du?",
         "Ich hab dir bis hierher geholfen",
@@ -581,7 +643,7 @@ public static class Texts
         "Du könntest der Schlüssel dafür sein, wenn wir der Bevölkerung zeigen, dass du nicht den Untergang herbeiführst haben wir eine Chance unser Ziel zu erreichen, aber dafür musst du " +
         "uns helfen",
         "Das erklärt einiges, danke für deine Hilfe bis hierher aber ich muss zurück zur Erde und zu meiner Familie, deswegen kann ich euch nicht helfen",
-        "Dein Schiff ist im Norden der Stadt, aber falls du doch helfen willst komm zurück",
+        "Dein Schiff ist im Norden der Stadt, aber falls du doch helfen willst komm zurück",*/
         
         // Suggestion Julian
         "He!",
@@ -629,7 +691,7 @@ public static class Texts
         */
         
         // Placeholder
-        "",
+        "EnterSpaceshipMonologue",
     };
     
     public static readonly string[] EnterMainRoomMonologue =
@@ -638,8 +700,8 @@ public static class Texts
         "alles leer. offenbar hats sonst niemand geschafft.",    // erstmal
         */
         
-        // Suggestion ANian
-        "Die Aliens haben hier alles ausgeräumt, aber ansonsten hat sich nichts getan ich bin wohl der einzigste Überlebende unserer Crew",
+        /* Suggestion Anian
+        "Die Aliens haben hier alles ausgeräumt, aber ansonsten hat sich nichts getan ich bin wohl der einzigste Überlebende unserer Crew",*/
         
         // Suggestion Julian
         "Es ist so leer hier... alles wurde ausgeräumt. Sie haben es wahrscheimlich in's Labor gebracht.",
@@ -656,7 +718,7 @@ public static class Texts
         */
         
         // Placeholder
-        "",
+        "EarthMessageLogHalfMonologue",
     };
     
     public static readonly string[] EarthMessageLogFullMonologue =
@@ -668,7 +730,7 @@ public static class Texts
         */
         
         // Placeholder
-        "",
+        "EarthMessageLogFullMonologue",
     };
 
     // Info: "Wir sind auserwählt worden, die Erde verlassen zu dürfen. Dank dir.", "Wir sind Im Kälteschlaf und müssten es immernoch sein, wenn du diese Nachricht liest."
@@ -681,10 +743,10 @@ public static class Texts
         "was isn da los? ich muss zurück",
         */
         
-        // Suggestion Anian
+        /* Suggestion Anian
         "Was??? Wieso sind die auf einer Mission? Mir wurde doch versichert, dass ihnen nichts passiert wenn ich hier mitmach",
         "Vielleicht haben sie sich selbst dazu entschieden, sonst würden sie mir ja nicht dafür danken es ihnen ermöglicht zu haben",
-        "Dabei hab ich mich schon darauf gefreut sie zu treffen falls ich zur Erde zurückkomm, aber ich muss trotzdem erstmal zurück zur Erde und mich erkundigen wo sie hin sind",
+        "Dabei hab ich mich schon darauf gefreut sie zu treffen falls ich zur Erde zurückkomm, aber ich muss trotzdem erstmal zurück zur Erde und mich erkundigen wo sie hin sind",*/
         
         // Suggestion Julian
         "Alice! Ava! Sie leben noch heute! Ich dachte, ich höre, nie wieder etwas von ihnen!",
@@ -732,7 +794,7 @@ public static class Texts
         */
         
         // Placeholder
-        "",
+        "StartButtonPreMonologue",
     };
 
     public static readonly string[] StartButtonHalfMonologue =

@@ -37,7 +37,7 @@ public class Steintafel : Interactable
     protected override void UndoSpecificAction()
     {
 
-        string[] preMonologue = GameData.Instance.CanTranslate ? Texts.VisionPreTranslatorMonologue : Texts.VisionPreMonologue;
+        string[] preMonologue = GameData.Instance.CanTranslate ? Texts.VisionTranslatorPreMonologue : Texts.VisionRawPreMonologue;
         string[] visionMonologue;
         string[] monologue;
         
@@ -45,21 +45,21 @@ public class Steintafel : Interactable
         {
             case 0:
                 visionOne.enabled = false;
-                visionMonologue = Texts.VisionOneMonologue;
+                visionMonologue = GameData.Instance.RebelConversationHappened ? Texts.VisionOneFullMonologue : Texts.VisionOneHalfMonologue;
                 break;
             case 1:
                 visionTwo.enabled = false;
-                visionMonologue = Texts.VisionTwoMonologue;
+                visionMonologue = GameData.Instance.RebelConversationHappened ? Texts.VisionTwoFullMonologue : Texts.VisionTwoHalfMonologue;
                 break;
             case 2:
                 visionThree.enabled = false;
-                visionMonologue = Texts.VisionThreeMonologue;
+                visionMonologue = GameData.Instance.RebelConversationHappened ? Texts.VisionThreeFullMonologue : Texts.VisionThreeHalfMonologue;
                 break;
             default:
                 throw new IndexOutOfRangeException("This is impossible to occur. Good Job.");
         }
         
-        if (Utils.CheckOneTimeMessage(1))
+        if (Utils.CheckOneTimeMessage(GameData.OneTimeMessageID.PreStoneplate))
         {
             monologue = new string[preMonologue.Length + visionMonologue.Length];
             preMonologue.CopyTo(monologue, 0);

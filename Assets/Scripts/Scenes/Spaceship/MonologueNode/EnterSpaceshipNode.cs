@@ -3,8 +3,13 @@
     
     protected override void SpecificStart()
     {
-        ID = 9;
+        ID = GameData.MonologueNodeID.EnterSpaceship;
+    }
+    
+    protected override void SetMessage()
+    {
         Messages = Texts.EnterSpaceshipMonologue;
+        GameData.Instance.TriggeredMonologueNodes.Add(GameData.MonologueNodeID.AtSpaceship);
     }
     
 }

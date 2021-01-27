@@ -1,6 +1,6 @@
 ﻿/* Documentation
  * 
- * in-game: press space to go to the next message
+ * in-game: press SPACE to go to the next message and ENTER end the message box
  * 
  * Add this to your global variables:
  * [SerializeField] private MessageBox messageBox;
@@ -80,6 +80,16 @@ public class MessageBox : MonoBehaviour
         
         #region Message Queueing
 
+        if (Input.GetKeyDown(KeyCode.Return) && GetMessageActive())
+        {
+            StopCoroutine(_spellMessage);
+            _box.enabled = false;
+            _text.enabled = false;
+            _messageBusy = false;
+            _messageDone = false;
+            Utils.SetPlayerControls(true);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (_messageBusy)
@@ -126,7 +136,7 @@ public class MessageBox : MonoBehaviour
     }
     
     
-    public void ShowMonologueOnce(string speaker, string[] messages, int id)
+    public void ShowMonologueOnce(string speaker, string[] messages, GameData.OneTimeMessageID id)
     {
         if (Utils.CheckOneTimeMessage(id))
             ShowMonologue(speaker, messages);
@@ -141,7 +151,7 @@ public class MessageBox : MonoBehaviour
     }
     
     
-    public void ShowDialogueOnce(string speakerFirst, string speakerSecond, string[] messages, int id)
+    public void ShowDialogueOnce(string speakerFirst, string speakerSecond, string[] messages, GameData.OneTimeMessageID id)
     {
         if (Utils.CheckOneTimeMessage(id))
             ShowDialogue(speakerFirst, speakerSecond, messages);
@@ -170,7 +180,7 @@ public class MessageBox : MonoBehaviour
     }*/
     
     
-    public void ShowMessagesOnce(string[] speakers, string[] messages, int id)
+    public void ShowMessagesOnce(string[] speakers, string[] messages, GameData.OneTimeMessageID id)
     {
         if (Utils.CheckOneTimeMessage(id))
             ShowMessages(speakers, messages);

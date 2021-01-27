@@ -3,7 +3,11 @@
     
     protected override void SpecificStart()
     {
-        ID = 10;
+        ID = GameData.MonologueNodeID.EnterMainRoom;
+    }
+
+    protected override void SetMessage()
+    {
         Messages = Texts.EnterMainRoomMonologue;
     }
     

@@ -12,7 +12,7 @@ public class CityAltar : Interactable
 
     protected override void UndoSpecificAction()
     {
-        messageBox.ShowMonologue("Jordan", Texts.AtCityAltarMonologue);
+        messageBox.ShowMonologue("Jordan", GameData.Instance.RebelConversationHappened ? Texts.AtCityAltarFullMonologue : Texts.AtCityAltarHalfMonologue);
     }
 
     protected override void SpecificUpdate()

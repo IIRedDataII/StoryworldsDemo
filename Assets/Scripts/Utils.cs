@@ -33,7 +33,7 @@ public static class Utils
     }
 
     // checks wether the passed id is already used. returns false is yes, stores the new id and returns true is no.
-    public static bool CheckOneTimeMessage(int messageId)
+    public static bool CheckOneTimeMessage(GameData.OneTimeMessageID messageId)
     {
         if (GameData.Instance.TriggeredMessages.Contains(messageId))
             return false;
