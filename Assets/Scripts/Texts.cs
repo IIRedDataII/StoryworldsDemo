@@ -41,6 +41,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "Hmm.. dieses Tablet zeigt eine Skizze eines Menschen, aber ich kann den Text daneben nicht verstehen.",
         "Wir haben doch einen Translator bekommen. Vielleicht hilft der mir weiter.",
     };
@@ -54,6 +55,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "...Spezies scheint durch Bahnen mit roter Flüssigkeit versorgt zu werden...",
         "... oberer Teil enthält Hauptsteuerzentrale...\n...benötigen gleiche Umgebung zum leben...",
         "... zeigen Empfindlichkeit zu ...",
@@ -71,6 +73,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "Wie kommt das denn hier her?!",
         "Das letzte mal, dass wir uns in den Armen halten konnten. Ava war so traurig, dass ich weg musste.",
         "Alice, babe, ich hoffe es geht euch gut. *visible sadness*",
@@ -86,6 +89,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "Moment, ist das...? Nein, das kann ich nicht glauben!",
         "Doch, das ist unser Translator. Vielleicht kann ich ihn benutzen um hier raus zu kommen.",
         "Es sollte auf jeden Fall einfacher sein, wenn ich einen Teil dieser Texte verstehen kann.",
@@ -190,6 +194,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "PasswordScreenRawMonologue",
     };
     
@@ -200,6 +205,7 @@ public static class Texts
         */
 
         // Placeholder
+        "PLACEHOLDER",
         "PasswordScreenTranslatorMonologue",
     };
     
@@ -210,6 +216,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "MainRoomCapsulesMonologue",
     };
 
@@ -220,6 +227,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "EnterWardenRoomMonologue",
     };
     
@@ -231,6 +239,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "WindowSkylineMonologue",
     };
     
@@ -241,12 +250,14 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "Verdammt, irgendwas stimmt nicht. Ich sollte mich mal umschauen.",
         "Vielleicht finde ich etwas, das wie der Code aussieht?",
     };
 
     public static readonly string[] BerndDialogueSpeakers =
     {
+        "Game",
         "Jordan",
         "Bernd",
         // more...
@@ -266,6 +277,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
          "jo wegen dir bin ich hier",
         "halts maul wir haben größere Probleme, wir kommen hier nie wieder weg deswegen bring ich dich jetzt um",
     };
@@ -283,12 +295,13 @@ public static class Texts
         */
         
         // Placeholder
-        "KilledByBerndDialogue",
+        "PLACEHOLDER",
         "KilledByBerndDialogue",
     };
     
     public static readonly string[] KillBerndDialogueSpeakers =
     {
+        "Game",
         "Jordan",
         "Bernd",
         "Jordan",
@@ -303,6 +316,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "jo wtf",
         "ich wusste du Veräter gehörst zu den Alien\nHiiielfe",
         "Halts Maul sonst bekommen des noch die Wächter da draußen mit",
@@ -320,6 +334,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "SurvivedBerndMonologue",
     };
 
@@ -334,6 +349,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "EnterCityMonologue",
     };
     
@@ -388,7 +404,7 @@ public static class Texts
         */
         
         // Suggestion Julian
-        "Bis auf diese Rebellengruppierung scheinen mich wirklich alle zu fürchten oder umbringen zu wollen.",
+        "Bis auf die Pandora scheinen mich wirklich alle zu fürchten oder umbringen zu wollen.",
         "Vielleicht kann ich mit meinem Status in ihrer Religion tatsächlich etwas bewirken?",
     };
     
@@ -476,12 +492,12 @@ public static class Texts
         "Nichtmal der Translator kann den Tafeltext übersetzen.",
         */
         
-        // Suggestion Anian
-        "Irgendwas wurde auf diese antike Steintafel geschrieben, aber keine Ahnung was das bedeutet",
+        /* Suggestion Anian
+        "Irgendwas wurde auf diese antike Steintafel geschrieben, aber keine Ahnung was das bedeutet",*/
         
-        /* Suggestion Julian
+        // Suggestion Julian
         "Diese Steintafeln sind bedeckt mit eingeritzten Zeichen. Sie wirken uralt.",
-        "Nicht mal der Translator kann sie übersetzen.",*/
+        "Nicht mal der Translator kann sie übersetzen.",
     };
     
     public static readonly string[] VisionOneHalfMonologue =
@@ -491,6 +507,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "VisionOneHalfMonologue",
     };
     
@@ -501,6 +518,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "VisionOneFullMonologue",
     };
 
@@ -511,6 +529,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "VisionTwoHalfMonologue",
     };
     
@@ -521,6 +540,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "VisionTwoFullMonologue",
     };
 
@@ -531,6 +551,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "VisionThreeHalfMonologue",
     };
     
@@ -541,6 +562,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "VisionThreFulleMonologue",
     };
     
@@ -556,6 +578,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "ShotRebelMonologue",
     };
     
@@ -663,7 +686,7 @@ public static class Texts
         "Du wichtig in Religion. Du Mensch. Mensch Teufel. Mensch Macht. Mensch Angst.",
         "Das Prophezeiung in Religion. Das sagen Zeichen auf Steintafel rechts. Menschen kommen. Menschen uns vernichten. ",
         "Aber das falsch. Du beweisen. Wir Volk zeigen. Du, wir, Frieden. Wir alle leben.",
-        "Und dieses Bild dort... es zeigt uns Menschen, nicht wahr? Wie wir kommen und eure Zivilisation vernichten.",
+        "Also dieses Bild dort... es zeigt uns Menschen, nicht wahr? Wie wir kommen und eure Zivilisation vernichten.",
         "Ja. Religion sagen wir Chia überleben bis Komet kommt. Komet in Sonne fliegen. Dann Sonne groß werden, ausbreiten, Planeten verschlucken.",
         "Uns alle verschlucken. Das Erlösung. Chia-Spezies bis Erlösung überleben.",
         "Überleben, Überleben. Nur Spezies wichtig. Einzelner unwichtig. Einzelner opfern für Überleben von Spezies.",
@@ -691,6 +714,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "EnterSpaceshipMonologue",
     };
     
@@ -718,6 +742,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "EarthMessageLogHalfMonologue",
     };
     
@@ -730,6 +755,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "EarthMessageLogFullMonologue",
     };
 
@@ -794,6 +820,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "StartButtonPreMonologue",
     };
 
@@ -805,6 +832,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "Das Schiff scheint noch überraschend intakt zu sein... Ich hätte jetzt die Gelegenheit, von diesem Planeten zu fliehen. Aber wohin?",
         "Was soll ich nur tun? Ich bin der einzige Überlebende... die Erde ist tot... meine Familie ist irgendwo da draußen...",
         "Soll ich versuchen, sie zu finden? Wer weiß, ob sie überhaupt noch leben? Oder bereits aus dem Kälteschlaf erwacht sind?",
@@ -819,6 +847,7 @@ public static class Texts
         */
         
         // Placeholder
+        "PLACEHOLDER",
         "Das Schiff scheint noch überraschend intakt zu sein... Ich hätte jetzt die Gelegenheit, von diesem Planeten zu fliehen. Aber wohin?",
         "Was soll ich nur tun? Ich bin der einzige Überlebende... die Erde ist tot... meine Familie ist irgendwo da draußen...",
         "Soll ich versuchen, sie zu finden? Wer weiß, ob sie überhaupt noch leben? Oder bereits aus dem Kälteschlaf erwacht sind?",

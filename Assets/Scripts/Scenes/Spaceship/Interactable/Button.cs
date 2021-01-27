@@ -8,6 +8,9 @@ public class Button : Interactable
     [SerializeField] private Image stayButton;
     [SerializeField] private Image leaveButton;
     [SerializeField] private Image deferButton;
+    [SerializeField] private GameObject ending1;
+    [SerializeField] private GameObject ending2;
+    [SerializeField] private GameObject ending3;
     private bool _readEnd;
     
     protected override void SpecificAction()
@@ -21,17 +24,9 @@ public class Button : Interactable
         if (GameData.Instance.ReadEarthLog && GameData.Instance.ReadFamilyLog)
         {
             
-            if (GameData.Instance.WasInChurch)
-            {
-                messageBox.ShowMonologue("Jordan", Texts.StartButtonFullMonologue);
-            }
-            else
-            {
-                messageBox.ShowMonologue("Jordan", Texts.StartButtonHalfMonologue);
-            }
-            
+            messageBox.ShowMonologue("Jordan", GameData.Instance.RebelConversationHappened ? Texts.StartButtonFullMonologue : Texts.StartButtonHalfMonologue);
+
             _readEnd = true;
-            
         }
         else
         {
@@ -55,7 +50,7 @@ public class Button : Interactable
     private void SetButtons(bool active)
     {
         leaveButton.gameObject.SetActive(active);
-        if (GameData.Instance.WasInChurch)
+        if (GameData.Instance.RebelConversationHappened)
             stayButton.gameObject.GetComponentInChildren<Text>().text = "stay on this planet and help the rebels";
         stayButton.gameObject.SetActive(active);
         deferButton.gameObject.SetActive(active);
@@ -65,17 +60,18 @@ public class Button : Interactable
 
     #region Button Functions
     
-    public void Stay()
+    public void Leave()
     {
-        Debug.Log("End: Stay");
-        Utils.SetPlayerControls(true);
+        ending1.SetActive(true);
         SetButtons(false);
     }
     
-    public void Leave()
+    public void Stay()
     {
-        Debug.Log("End: Leave");
-        Utils.SetPlayerControls(true);
+        if (GameData.Instance.RebelConversationHappened)
+            ending3.SetActive(true);
+        else
+            ending2.SetActive(true);
         SetButtons(false);
     }
 
