@@ -23,7 +23,7 @@ public class Translator : Interactable
 
     protected override void UndoSpecificAction()
     {
-        box.ShowMonologue("Jordan", Texts.TranslatorMonologue);
+        box.ShowMonologue("Jordan", GameData.Instance.SeenFamilyPicture ? Texts.TranslatorFullMonologue : Texts.TranslatorHalfMonologue);
         gameObject.SetActive(false);
     }
 

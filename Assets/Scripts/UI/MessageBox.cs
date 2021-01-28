@@ -36,7 +36,7 @@ public class MessageBox : MonoBehaviour
     
     #region Constants
     
-    private const float Speed = 40f;
+    private const float Speed = 100f;
     
     #endregion
     

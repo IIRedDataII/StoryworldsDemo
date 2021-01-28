@@ -75,6 +75,7 @@ public class GameData
     public bool Respawned = false;
     public bool BerndDead;
     public bool CanTranslate;
+    public bool SeenFamilyPicture;
     public bool SeenBernd;
     public bool[] DeadWardens = new bool[3];
 
@@ -125,6 +126,7 @@ public class GameData
         Respawned = true;   // default value: false
         BerndDead = false;
         CanTranslate = false;
+        SeenFamilyPicture = false;
         SeenBernd = false;
         for (int i = 0; i < DeadWardens.Length; i++)
         {

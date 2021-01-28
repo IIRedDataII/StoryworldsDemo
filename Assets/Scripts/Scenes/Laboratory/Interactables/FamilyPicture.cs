@@ -11,12 +11,13 @@ public class FamilyPicture : Interactable
     protected override void SpecificAction()
     {
         familyImage.enabled = true;
+        GameData.Instance.SeenFamilyPicture = true;
     }
 
     protected override void UndoSpecificAction()
     {
         familyImage.enabled = false;
-        box.ShowMonologue("Jordan", Texts.FamilyPictureMonologue);
+        box.ShowMonologue("Jordan", GameData.Instance.CanTranslate ? Texts.FamilyPictureFullMonologue : Texts.FamilyPictureHalfMonologue);
     }
     
     protected override void SpecificUpdate()

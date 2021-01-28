@@ -25,10 +25,10 @@ public static class Texts
         "Was ist hier..?",
         "Wo bin ich?!",
         "Bin ich in ohnmacht gefallen?",
-        "Nein... ich war im Kälteschlaf... die Mission! Ja! Die Mission nach Aphelios! Zum Erobern neuer Lebensräume!",
+        "Nein... ich war im Kälteschlaf... die Mission! Ja! Die Mission nach Aphelios! Zum Erschließen neuer Lebensräume!",
         "Aber Das hier ist nicht meine Schlafkapsel! Was ist nur los!",
         "Und mein Kopf tut so weh... als würde er zerspringen.",
-        "Was ist nur passiert? Sind wir angekommen? Wo sind die anderen? Bin ich auf Aphelios?",
+        "Was ist nur passiert? Wo sind die anderen?",
         "Etwas muss schiefgelaufen sein. Wo bin ich?? Das hier ist alles so fremdartig.",
         "Das ist nicht gut...",
     };
@@ -41,29 +41,27 @@ public static class Texts
         */
         
         // Placeholder
-        "PLACEHOLDER",
-        "Hmm.. dieses Tablet zeigt eine Skizze eines Menschen, aber ich kann den Text daneben nicht verstehen.",
-        "Wir haben doch einen Translator bekommen. Vielleicht hilft der mir weiter.",
+        "Ein Mensch?",
+        "Und diese Zeichen daneben... das sieht aus wie Venusianisch.",
+        "Bin ich wieder auf der Erde? Werden hier die Venusianer erforscht? Aber warum dann diese Abbildung eines Menschen?",
     };
 
     public static readonly string[] DatapadTranslatorMonologue =
     {
         /* Summary
         "Daten über Menschen",
-        // Jordan
-        "Seltsam #2: Das hier ist wahrscheinlich nicht Menschengemacht",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "...Spezies scheint durch Bahnen mit roter Flüssigkeit versorgt zu werden...",
-        "... oberer Teil enthält Hauptsteuerzentrale...\n...benötigen gleiche Umgebung zum leben...",
-        "... zeigen Empfindlichkeit zu ...",
-        // Jordan
-        //"Dieser Bericht meint bestimmt uns Menschen. Aber wie sind sie an all diese Daten gekommen?",
+        // Suggestion Julian
+        "... nennen sich selbst \"Menschen\"...",
+        "...stammen von Gaia...\nzerstörerische Lebensweise... Prophezeiung",
+        "Spezies... biologisch große Ähnlichkeit mit Chia... Hauptunterschiede im Folgenden...",
+        "...benötigen Sauerstoff... Zufuhr über zentrales Organ in der Mitte",
+        "...Doppelsensorik für elektromagnetische Wellen eines speziellen Spektrums...",
+        "... direkt an der Hauptsteuerzentrale... ermöglicht weit präzisere Orientierung",
     };
 
-    public static readonly string[] FamilyPictureMonologue =
+    public static readonly string[] FamilyPictureHalfMonologue =
     {
         /* Summary
         "Familie",
@@ -73,13 +71,48 @@ public static class Texts
         */
         
         // Placeholder
-        "PLACEHOLDER",
-        "Wie kommt das denn hier her?!",
-        "Das letzte mal, dass wir uns in den Armen halten konnten. Ava war so traurig, dass ich weg musste.",
-        "Alice, babe, ich hoffe es geht euch gut. *visible sadness*",
+        "Das Foto! Von mir, Alice und Mia! Was ich als Erinnerung mitgenommen hatte!",
+        "Wie kommt das denn hier her?",
+        "...",
+        "Wo auch immer ihr grade seid, ich hoffe es geht euch gut. Ich hoffe, sie behandeln euch gut.",
+        "Und Mia, ich hoffe, du kannst mir verzeihen, dass ich gegangen bin. Ich hab es für euch getan.",
+    };
+    
+    public static readonly string[] FamilyPictureFullMonologue =
+    {
+        /* Summary
+        "Familie",
+        "Wie kommt das hier her?",
+        "Missionsvorgeschichte",
+        "\"Seine\" involvierung",
+        */
+        
+        // Placeholder
+        "Das Foto! Von mir, Alice und Mia! Was ich als Erinnerung mitgenommen hatte!",
+        "Erst unser GVTD-3, jetzt mein Foto! Warum sind all unsere Sachen hier?",
+        "Sind wir vielleicht tatsächlich auf Aphelios angekommen?",
+        "Aber was ist das hier dann für ein Labor? Und warum wurden wir nicht vor der Landung geweckt?",
+        "...",
+        "Wo auch immer ihr grade seid, ich hoffe es geht euch gut. Ich hoffe, sie behandeln euch gut.",
+        "Und Mia, ich hoffe, du kannst mir verzeihen, dass ich gegangen bin. Ich hab es für euch getan.",
     };
 
-    public static readonly string[] TranslatorMonologue =
+    public static readonly string[] TranslatorHalfMonologue =
+    {
+        /* Summary
+        "Oh! Translator!",
+        "Funktioniert noch? Geil! Wird mir helfen.",
+        "Warum ist das hier?",
+        "Warum sind alle meine Sachen hier???", // optional: monologue after pickup up familyimage AND translator
+        */
+        
+        // Suggestion Julian
+        "Das ist ein General Venusian Translation Device!",
+        "Genau der gleiche GVTD-3 wie der, den wir auf unserer Mission dabei hatten!",
+        "Nein, nicht der gleiche... der selbe! Warum ist er hier?",
+    };
+    
+    public static readonly string[] TranslatorFullMonologue =
     {
         /* Summary
         "Oh! Translator!",
@@ -89,10 +122,10 @@ public static class Texts
         */
         
         // Placeholder
-        "PLACEHOLDER",
-        "Moment, ist das...? Nein, das kann ich nicht glauben!",
-        "Doch, das ist unser Translator. Vielleicht kann ich ihn benutzen um hier raus zu kommen.",
-        "Es sollte auf jeden Fall einfacher sein, wenn ich einen Teil dieser Texte verstehen kann.",
+        "Das ist unser General Venusian Translation Device!",
+        "Erst mein Foto, jetzt unser GVTD-3! Warum sind all unsere Sachen hier?",
+        "Sind wir vielleicht tatsächlich auf Aphelios angekommen?",
+        "Aber was ist das hier dann für ein Labor? Und warum wurden wir nicht vor der Landung geweckt?"
     };
     
     public static readonly string[] WindowBerndMonologue =
@@ -121,9 +154,10 @@ public static class Texts
         "Irgendwer hat unsere Crew umgebracht, ich sollte hier erstmal weg, vielleicht weiß der andere Mensch mehr",*/
         
         // Suggestion Julian
-        "Oh mein Gott! Jeff! Was ist passiert?! Er ist blutüberströmt! Nein! Jeff! Sag doch was!",
+        "Oh mein Gott! Jeff! Er ist blutüberströmt! Nein! Jeff! Sag doch was! Was ist passiert?! ",
         "...",
         "Wo sind die anderen? Waren wir alle in diesen Kapseln? Was ist das für ein Ort, wo BIN ich?!",
+        "Ich muss hier raus!"
     };
     
     public static readonly string[] HallwayCapsulesFullMonologue =
@@ -144,8 +178,9 @@ public static class Texts
         "Irgendwer hat unsere Crew umgebracht, ich sollte hier erstmal weg, vielleicht weiß der andere Mensch mehr",*/
         
         // Suggestion Julian
-        "Oh mein Gott! Jeff! Was ist passiert?! Er ist blutüberströmt! Nein! Jeff! Sag doch was *rüttel*!",
-        "Wo sind die anderen? Waren wir alle in diesen Kapseln? Was ist das für ein schrecklicher Ort, wo BIN ich?!",
+        "Oh mein Gott! Jeff! Er ist blutüberströmt! Nein! Jeff! Sag doch was! Was ist passiert?! ",
+        "...",
+        "Wo sind die anderen? Waren wir alle in diesen Kapseln? Was ist das für ein Ort, wo BIN ich?!",
         "Ich muss die Person hinter dem Fenster finden! Das war ganz sicher ein Mensch!",
     };
     
@@ -167,6 +202,9 @@ public static class Texts
         "Ich erinnere mich... ich lag hier drauf..",
         "Ich habe Bilder gesehen... Bilder von der Erde.",
         "Von meiner Familie. Von der Mission...",
+        
+        "*backstory*",
+        
         "Irgendetwas wurde mit mir gemacht! Wahrscheinlich mit uns allen!",
     };
     
@@ -182,9 +220,10 @@ public static class Texts
         "Shit hier liegt ein totes Alien! Hat ein Crewmitglied geschaft zu entkommen?",*/
         
         // Suggestion Julian
-        "Was ist das für ein Wesen?!",
-        "Ich glaube, es ist tot...",
-        "Das ist kein Mensch... und das hier ist nicht die Erde!",
+        "Nicht noch jemand! Bitte nicht!",
+        "... unmöglich! Das ist keiner von uns! Das ist...",
+        "Ein Alien! Also... ein Aphelianer?",
+        "Ich bin nicht auf der Erde!",
         "Aber was ist hier geschehen? Gab es einen Kampf?",
     };
     
@@ -194,9 +233,7 @@ public static class Texts
         "seltsame zeichen...",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "PasswordScreenRawMonologue",
+        "Venusianische Zeichen?",
     };
     
     public static readonly string[] PasswordScreenTranslatorMonologue =
@@ -205,9 +242,7 @@ public static class Texts
         "unreadable",
         */
 
-        // Placeholder
-        "PLACEHOLDER",
-        "PasswordScreenTranslatorMonologue",
+        "Error.",
     };
     
     public static readonly string[] MainRoomCapsulesMonologue =
@@ -217,8 +252,11 @@ public static class Texts
         */
         
         // Placeholder
-        "PLACEHOLDER",
-        "MainRoomCapsulesMonologue",
+        "Nein... sie sind es wirklich... die Mannschaft... sie sind alle tot... alle...",
+        "...",
+        "Okay Jordan, beruhige dich! Beruhige dich! Du wurdest hierfür ausgebildet!",
+        "Du bist hier nicht allein! Irgendjemand hat diesen Aphelianer dort umgebracht!",
+        "Uns die Crew war größer! Das hier sind nicht alle! Jemand hat überlebt!",
     };
 
     public static readonly string[] EnterWardenRoomMonologue =

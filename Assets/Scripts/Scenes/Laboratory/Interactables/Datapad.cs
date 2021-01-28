@@ -19,7 +19,7 @@ public class Datapad : Interactable
         datapadImage.enabled = false;
         if (GameData.Instance.CanTranslate)
         {
-            box.ShowMonologue("Translator", Texts.DatapadTranslatorMonologue);
+            box.ShowMonologue("GVTD-3", Texts.DatapadTranslatorMonologue);
         }
         else
         {
