@@ -813,7 +813,7 @@ public static class Texts
         "Dabei hab ich mich schon darauf gefreut sie zu treffen falls ich zur Erde zurückkomm, aber ich muss trotzdem erstmal zurück zur Erde und mich erkundigen wo sie hin sind",*/
         
         // Suggestion Julian
-        "Alice! Ava! Sie leben noch heute! Ich dachte, ich höre, nie wieder etwas von ihnen!",
+        "Alice! Mia! Sie leben noch heute! Ich dachte, ich höre nie wieder etwas von ihnen!",
         "Wie alt mögen sie zum Zeitpunkt dieser Nachricht wohl gewesen sein?",
         "...moment!",
         "Das Nyx-System ist ähnlich weit von der Erde entfernt, wie Aphelios und nur 25 Lichtjahre von hier aus!",
@@ -838,7 +838,7 @@ public static class Texts
         */
         
         // Suggestion Julian
-        "Alice! Ava! Sie leben noch heute! Ich dachte, ich höre nie wieder etwas von ihnen!",
+        "Alice! Mia! Sie leben noch heute! Ich dachte, ich höre nie wieder etwas von ihnen!",
         "Sie haben es also tatsächlich geschafft, die Erde zu verlassen!",
         "Wie alt mögen sie zum Zeitpunkt dieser Nachricht wohl gewesen sein?",
         "...moment!",
