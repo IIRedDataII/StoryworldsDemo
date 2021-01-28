@@ -43,7 +43,6 @@ Layer Structure
 SPRITES
 
 MUST HAVE:
-Player
 Intro-Memories 1-3
 Bloody Password Screen
 More AlienPods in Experiment Room
