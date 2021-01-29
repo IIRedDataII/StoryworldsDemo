@@ -24,7 +24,7 @@ SPRITES
 
 
 MUST HAVE:
-[Remove Garfield]
+[Remove Garfield] -Ju
 Intro-Memories 1-3 - Anian
 Spaceship Beds -Anian
 More AlienPods in Experiment Room -Timon
