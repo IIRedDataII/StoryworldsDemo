@@ -64,8 +64,8 @@ public class GameData
     
     #region Weapon
 
-    public int Ammunition = 30;
-    public int RoundsInMagazine = 7;
+    public int Ammunition = 12;
+    public int RoundsInMagazine = 6;
     public bool CanShoot;
     
     #endregion
