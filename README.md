@@ -1,23 +1,12 @@
 # StoryworldsDemo
 
 
-
-
-
-
-
 Folder Structure:
 Assests
 	Scenes
 	Scripts
 	Sprites
 	Materials
-
-
-
-
-
-
 
 
 Layer Structure
@@ -31,38 +20,28 @@ Layer Structure
 7: Overlay
 
 
-
-
-
-
-
-
-
-
-
 SPRITES
 
 
 MUST HAVE:
 [Remove Garfield]
-Intro-Memories 1-3
-More AlienPods in Experiment Room
-!NeverGonnaGiveYouUp
-Bloody Password Screen
-More Tubes in Experiment Room
-Bernd
-Family Message Log Small
-Family Message Log Big
-Earth Messag Log Small
-Earth Messag Log Big
-
+Intro-Memories 1-3 - Anian
+Spaceship Beds -Anian
+More AlienPods in Experiment Room -Timon
+Bloody Password Screen -Timon
+More Tubes in Experiment Room - Timon
+Bernd -Timon
+Family Message Log Small -Ju
+Family Message Log Big -Ju
+Earth Messag Log Small -Ju
+Earth Messag Log Big -Ju
+!NeverGonnaGiveYouUp (City Skyline) -Ju
 
 
 COULD HAVE:
 City Buildings
 City Deco
 Spaceship Deco
-
 
 
 NICE TO HAVE:
@@ -72,26 +51,7 @@ Church Deco
 
 
 
-
-
-
-
-
-
-
-
 TEXTS
-
-
-
-
-
-
-
-
-
-
-
 
 
 
