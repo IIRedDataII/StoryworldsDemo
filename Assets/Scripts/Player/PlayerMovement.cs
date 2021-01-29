@@ -43,22 +43,20 @@ public class PlayerMovement : MonoBehaviour
     {
         
         #region Direction
-        
+
         if (CanMove)
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+                _spriteRenderer.sprite = lookLeft;
+
+            if (Input.GetKeyDown(KeyCode.D))
+                _spriteRenderer.sprite = lookRight;
             _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        }
+
         else
             _direction = Vector2.zero;
         
-        #endregion
-        
-        #region Sprite
-
-        if (Input.GetKeyDown(KeyCode.A))
-            _spriteRenderer.sprite = lookLeft;
-
-        if (Input.GetKeyDown(KeyCode.D))
-            _spriteRenderer.sprite = lookRight;
-
         #endregion
         
     }
