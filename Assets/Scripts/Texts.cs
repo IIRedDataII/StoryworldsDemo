@@ -44,12 +44,23 @@ public static class Texts
         "Bin ich wieder auf der Erde? Werden hier die Venusianer erforscht? Aber warum dann diese Abbildung eines Menschen?",
     };
 
+    public static readonly string[] DatapadTranslatorMonologueSpeakers =
+    {
+        "Jordan",
+        "GVTD-3",
+        "GVTD-3",
+        "GVTD-3",
+        "GVTD-3",
+        "GVTD-3",
+        "GVTD-3",
+    };
     public static readonly string[] DatapadTranslatorMonologue =
     {
         /* Summary
         "Daten über Menschen",
         */
         
+        "Das GVTD-3 kann es tatsächlich übersetzen, wenn auch nur bruchstückhaft! Es ist venusianisch!",
         "... nennen sich selbst \"Menschen\"...",
         "...stammen von Gaia...\nzerstörerische Lebensweise... Prophezeiung",
         "Spezies... biologisch große Ähnlichkeit mit Chia... Hauptunterschiede im Folgenden...",
@@ -211,8 +222,8 @@ public static class Texts
         
         "Nicht noch jemand! Bitte nicht!",
         "... unmöglich! Das ist keiner von uns! Das ist...",
-        "Ein Alien! Also... ein Aphelianer?",
-        "Ich bin nicht auf der Erde!",
+        "Ein Alien!",
+        "Ich bin also nicht auf der Erde!",
         "Aber was ist hier geschehen? Gab es einen Kampf?",
     };
     
@@ -340,7 +351,7 @@ public static class Texts
         
         // Placeholder
         "VERSCHWINDE ENDLICH! LASS MICH IN RUHE!",
-        "Beruhige dich! Ich will dich nicht verletzten!",
+        "Bernd! Beruhige dich! Ich will dich nicht verletzten!",
         "ICH WUSSTE ES! DU GEHÖRST ZU IHNEN!",
         "SEI STILL! Sonst werden wir noch gehört! Komm nicht näher! Ich warne dich!",
         "VERRÄTER!! STIRB!",
