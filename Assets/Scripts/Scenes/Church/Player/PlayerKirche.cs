@@ -2,13 +2,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class PlayerKirche : MonoBehaviour
 {
     
     #region Constants
 
-    private const float RebelHeight = 11.9f;
+    private const float RebelHeight = 12f;
     
     #endregion
     
@@ -86,7 +85,6 @@ public class PlayerKirche : MonoBehaviour
             GameData.Instance.RebelTriggered = true;
             Utils.SetPlayerControls(false);
             rebell.GetComponent<SpriteRenderer>().enabled = true;
-            GameData.Instance.WasInChurch = true;
             StartCoroutine(GameData.Instance.CanTranslate ? RebelSequenceTranslated() : RebelSequence());
         }
         

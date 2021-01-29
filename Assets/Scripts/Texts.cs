@@ -431,7 +431,6 @@ public static class Texts
         */
         
         "Der Planet ist bewohnbar aber die Aphelianer hassen Fremdlinge! Alle haben sie Angst vor mir oder wollen mich umbringen!",
-        "Ich muss zur Erde zurück!",
     };
 
     public static readonly string[] TriggerLogisticianFullMonologue =
@@ -628,36 +627,35 @@ public static class Texts
         
         // J
         "Jordan",
-        "Translator",
+        "GVTD-3",
         "Jordan",
         "Jordan",
-        "Translator",
+        "GVTD-3",
         "Jordan",
-        "Translator",
+        "GVTD-3",
         "Jordan",
-        "Translator",
+        "GVTD-3",
         "Jordan",
-        "Translator",
+        "GVTD-3",
         "Jordan",
-        "Translator",
+        "GVTD-3",
         "Jordan",
-        "Translator",
-        "Translator",
-        "Translator",
+        "GVTD-3",
+        "GVTD-3",
+        "GVTD-3",
         "Jordan",
-        "Translator",
-        "Translator",
-        "Translator",
-        "Translator",
-        "Translator",
+        "GVTD-3",
+        "GVTD-3",
+        "GVTD-3",
+        "GVTD-3",
+        "GVTD-3",
         "Jordan",
-        "Jordan",
-        "Translator",
-        "Translator",
-        "Jordan",
+        "GVTD-3",
+        "GVTD-3",
         "Jordan",
         "Jordan",
-        "Translator",
+        "Jordan",
+        "GVTD-3",
     };
     public static readonly string[] RebelDialogueTranslated =
     {
@@ -697,7 +695,7 @@ public static class Texts
         "He!",
         "Nicht Gewalt! Ich friedlich!",
         "...du kannst mit mir sprechen?",
-        "Der Translator übersetzt ihn! Etwas lückenhaft... aber ich kann ihn verstehen.",
+        "Das GVTD-3 übersetzt ihn! Etwas lückenhaft... aber ich kann ihn verstehen.",
         "Ich dir helfen. Du uns helfen.",
         "Helfen? Wer bist du?",
         "Ich von Pandora.",
@@ -717,15 +715,13 @@ public static class Texts
         "Überleben, Überleben. Nur Spezies wichtig. Einzelner unwichtig. Einzelner opfern für Überleben von Spezies.",
         "Wenn Spezies empfangen Erlösung, dann alle Erlösung. Auch Einzelner. Auch wenn einzelner tot. Das Religion. Das System.",
         "Einzelner haben Rolle. Aufgabe. Farbe. Weiß, Gelb, Grün, Blau, Rot, Grau. Das Hierarchie. Pandora nicht Farbe. Wir Schwarz. Wir frei.",
-        "\"Chia\" nennt ihr euch also. Und eure Religion bestimmt euer System. Die Farben sind die Hierarchie.",
-        "Sie dient dem Ziel, dass die Art überlebt, ohne Rücksicht auf den Einzelnen. Und wir Menschen sind eine Gefahr für die Art.",
-        "Ja. Aber System falsch. Religion Lüge. Sonne nicht Erlösung. Sonne Tod. Einzelner wichtig. Einzelner gut Leben wichtig.",
+        "\"Chia\" nennt ihr euch also. Und euer Religionssystem hat das Ziel, dass die Art überlebt, ohne Rücksicht auf den Einzelnen, wofür wir Menschen eine Gefahr sind?",
+        "Ja. Aber System falsch. Religion Lüge. Sonne nicht Erlösung. Sonne Tod. Einzelner wichtig. Einzelner gut leben wichtig.",
         "Du helfen. Du Volk zeigen Menschen nicht böse. Du Volk zeigen Religion falsch. Du Pandora helfen System abschaffen.",
         "Ich... ",
         "Ich kann euch nicht helfen. Ich kann nicht hier bleiben. Ich muss...",
         "Ich muss zur Erde zurück. Es tut mir leid.",
-        "Du entscheiden. Du uns finden hier. Aber du erinnern: Wir dir geholfen.",
-
+        "Du entscheiden. Du mich finden hier. Aber du erinnern: Wir dir geholfen.",
     };
 
     #endregion

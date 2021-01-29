@@ -89,7 +89,6 @@ public class GameData
     
     #region Church
 
-    public bool WasInChurch;
     public bool RebelTriggered;
     public bool RebelConversationHappened;
     
@@ -146,7 +145,6 @@ public class GameData
         
         #region Church
         
-        WasInChurch = false;
         RebelTriggered = false;
         RebelConversationHappened = false;
         
@@ -161,8 +159,9 @@ public class GameData
         
         #region WTF
 
-        // no clue why, but this one doesn't reset upon reloading the city
+        // no clue why, but these dont't reset upon reloading
         Surround.Trigger = false;
+        PlayerKirche.LetztesBildWasEnabled = false;
         
         #endregion
     
