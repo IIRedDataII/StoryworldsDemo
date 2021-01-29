@@ -42,24 +42,27 @@ Layer Structure
 
 SPRITES
 
+
 MUST HAVE:
+[Remove Garfield]
 Intro-Memories 1-3
-Bloody Password Screen
 More AlienPods in Experiment Room
 !NeverGonnaGiveYouUp
+Bloody Password Screen
+More Tubes in Experiment Room
 Bernd
-Church Paintings
 Family Message Log Small
 Family Message Log Big
 Earth Messag Log Small
 Earth Messag Log Big
 
 
+
 COULD HAVE:
-[AlienPod Rework (perspective)]
-[City Buildings]
-[City Deco]
-[Spaceship Deco]
+City Buildings
+City Deco
+Spaceship Deco
+
 
 
 NICE TO HAVE:
@@ -93,5 +96,5 @@ TEXTS
 
 
 
-GameLogic:
+GameLogic
 
