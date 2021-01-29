@@ -41,7 +41,8 @@ public static class Texts
         
         "Ein Mensch?",
         "Und diese Zeichen daneben... das sieht aus wie Venusianisch.",
-        "Bin ich wieder auf der Erde? Werden hier die Venusianer erforscht? Aber warum dann diese Abbildung eines Menschen?",
+        "Bin ich wieder auf der Erde? Wird hier Venusianisch erforscht? Aber warum dann diese Abbildung eines Menschen?",
+        "Das sieht eher aus als würde...",
     };
 
     public static readonly string[] DatapadTranslatorMonologueSpeakers =
