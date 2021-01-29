@@ -27,7 +27,6 @@ MUST HAVE:
 Intro-Memories 1-3 - Anian
 Spaceship Beds -Anian
 More AlienPods in Experiment Room -Timon
-Bloody Password Screen -Timon
 Family Message Log Small -Ju
 Family Message Log Big -Ju
 Earth Messag Log Small -Ju
