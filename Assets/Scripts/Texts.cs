@@ -277,6 +277,7 @@ public static class Texts
         "sehe raumschiff",
         */
         
+        "Ich bin mitten in einer Stadt!",
         "Und ich kann unser Raumschiff sehen! Es ist nicht weit entfernt abgestürzt.",
         "Dort finde ich vielleicht Überlebende!",
         "Es scheint die Landung auch gut überstanden zu haben. Womöglich fliegt es noch!",
