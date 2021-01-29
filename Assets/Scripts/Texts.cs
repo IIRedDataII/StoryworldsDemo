@@ -244,7 +244,7 @@ public static class Texts
         "...",
         "Okay Jordan, beruhige dich! Beruhige dich! Du wurdest hierfür ausgebildet!",
         "Du bist hier nicht allein! Irgendjemand hat diesen Aphelianer dort umgebracht!",
-        "Uns die Crew war größer! Das hier sind nicht alle! Jemand hat überlebt!",
+        "Und die Crew war größer! Das hier sind nicht alle! Jemand hat überlebt!",
     };
 
     public static readonly string[] EnterWardenRoomMonologue =
@@ -265,8 +265,8 @@ public static class Texts
         "sehe raumschiff",
         */
         
-        "Das Labor liegt mitten in einer Stadt! Und ich kann unser Raumschiff sehen! Es ist nicht weit entfernt abgestürzt.",
-        "Dort finde ich bestimmt etwas! Informationen oder sogar Überlebende!",
+        "Und ich kann unser Raumschiff sehen! Es ist nicht weit entfernt abgestürzt.",
+        "Dort finde ich vielleicht Überlebende!",
         "Es scheint die Landung auch gut überstanden zu haben. Womöglich fliegt es noch!",
         "Ich kann es schaffen!",
     };
@@ -343,7 +343,7 @@ public static class Texts
         "Beruhige dich! Ich will dich nicht verletzten!",
         "ICH WUSSTE ES! DU GEHÖRST ZU IHNEN!",
         "SEI STILL! Sonst werden wir noch gehört! Komm nicht näher! Ich warne dich!",
-        "VERRÄTER!!",
+        "VERRÄTER!! STIRB!",
     };
     
     // TODO
@@ -480,7 +480,7 @@ public static class Texts
         /* Suggestion Anian
         "Dieses religiöse Symbol scheint sehr wichtig zu sein, sieht aus wie eine heilige Dreieinigkeit",*/
         
-        "Dieses Symbol war auch auf dem Platz draußen zu sehen. Es muss etwas bedeuten.",
+        "Dieses Symbol habe ich schon mal gesehen. Es muss etwas bedeuten.",
     };
 
     public static readonly string[] VisionRawPreMonologue =
@@ -849,7 +849,7 @@ public static class Texts
         "Aphelios ist bewohnbar. Er ist wertvoll.",
         "Vielleicht kann ich wirklich Pandora helfen. Vielleicht kann ich dafür sorgen, dass auf diesem Planet Menschen willkommen sind.",
         "Und all die ausgesandten Raumschiffe der Erde nach und nach hier her lotsen. Vielleicht kann ich uns hier eine neue Heimat finden.",
-        "Aber wer weiß, wo all diese Raumschiffe sind? Wie seit weg sie sind? Ob sie immer noch willkommen sein werden, wenn sie in hunderten von Jahren hier ankommen?",
+        "Aber wer weiß, wo all diese Raumschiffe sind? Wie weit weg sie sind? Ob sie immer noch willkommen sein werden, wenn sie in hunderten von Jahren hier ankommen?",
         "Wo soll ich nur hin?",
     };
     
