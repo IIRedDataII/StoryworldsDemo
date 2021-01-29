@@ -358,7 +358,6 @@ public static class Texts
         "VERRÄTER!! STIRB!",
     };
     
-    // TODO
     public static readonly string[] SurvivedBerndMonologue =
     {
         /* Summary
@@ -369,7 +368,17 @@ public static class Texts
         "episode IV: Raumschiff",
         */
         
-        "PLACEHOLDER: SurvivedBerndMonologue",
+        "Ich...",
+        "Ich hab ihn erschossen...!",
+        "...",
+        "Ich musste es tun!",
+        "Er wollte mich umbringen!",
+        "Er...",
+        "Er ist verrückt geworden... er hatte zu viel Angst...",
+        "Ich bin alleine. Ich werde hier sterben... wie alle anderen.",
+        "...",
+        "Beruhige dich! Einatmen, ausatmen!",
+        "Raumschiff! Ja! Unser Raumschiff! Es ist in der Nähe! Und ich habe jetzt eine Waffe! Ich kann es erreichen!",
     };
 
     #endregion
@@ -521,64 +530,66 @@ public static class Texts
         "Nicht mal das GVTD-3 kann sie übersetzen.",
     };
     
-    // TODO
     public static readonly string[] VisionOneHalfMonologue =
     {
         /* Summary
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
-        "PLACEHOLDER: VisionOneHalfMonologue",
+        "Auf diesem Bild sehen alle Aphelianer zur Sonne auf. Sie ist riesig. Und hinter ihr ist noch etwas anderes."
     };
     
-    // TODO
     public static readonly string[] VisionOneFullMonologue =
     {
         /* Summary
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
-        "PLACEHOLDER: VisionOneFullMonologue",
+        "Die Sonne ist riesig! Und das dahinter... das muss der Komet sein!",
+        "Dann stellt das hier die Erlösung dar! Wie sie Sonne alles verschluckt!",
     };
 
-    // TODO
     public static readonly string[] VisionTwoHalfMonologue =
     {
         /* Summary
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
-        "PLACEHOLDER: VisionTwoHalfMonologue",
+        "Auf diesem Bild ist die Sonne verdunkelt. Alle Aphelianer sind tot, die Stadt zerstört."
     };
     
-    // TODO
     public static readonly string[] VisionTwoFullMonologue =
     {
         /* Summary
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
-        "PLACEHOLDER: VisionTwoFullMonologue",
+        "Die Sonne ist verdunkelt. Und alles ist tot und zerstört.",
+        "Dann stellt das hier das Szenario dar, dass die Erlösung nicht erreicht wurde. Dass die Aphelianer davor ausgestorben sind.",
+        "Als eine Art Mahnung, dass jeder seinen Teil beitragen soll. Sonst herrscht hier irgendwann nur noch ewige Dunkelheit.",
     };
 
-    // TODO
     public static readonly string[] VisionThreeHalfMonologue =
     {
         /* Summary
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
-        "PLACEHOLDER: VisionThreeHalfMonologue",
+        "Auf diesem Bild sind fremde Wesen auf Aphelios gelandet. Überall wo sie sind wird alles schwarz... selbst die Aphelianer.",
+        "Diese Wesen! Sollen das Menschen sein?",
     };
     
-    // TODO
     public static readonly string[] VisionThreeFullMonologue =
     {
         /* Summary
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
-        "PLACEHOLDER: VisionThreFulleMonologue",
+        "Wenn ich richtig verstehe, sind die Menschen in dieser Religion die Teufel. Dann wird hier gezeigt, wie sie auf Aphelios landen und...",
+        "Und was? Hier sieht es eher aus aus, als würden sie die Aphelianer \"beeinflussen\", anstatt alles zu zerstören.",
+        "Beeinflussen womit? Mit unserem \"zerstörerischen Lebensstil\"? Wenn ich mich richtig erinnere, hat der Text auf dem Datenpad im Labor diese Fomulierung verwendet.",
+        "Dann will Pandora in gewisser Weise genau das, was hier dargestellt ist. Das System abschaffen um ein neues zu erschaffen. Ein individuelleres. Ohne Hierarchie.",
+        "Mithilfe der Menschen. Mir. Wahrscheinlich tragen sie deshalb schwarz. Sie sehen genau so aus wie die Aphelianer auf diesem Bild.",
     };
     
     public static readonly string[] RebelAurebeshMonologue =
@@ -744,7 +755,6 @@ public static class Texts
         "Bin ich wirklich der einzige überlebende? Was soll ich jetzt tun?",
     };
     
-    // TODO
     public static readonly string[] EarthMessageLogHalfMonologue =
     {
         /* Summary
@@ -753,10 +763,18 @@ public static class Texts
         "wo soll ich hin? keine heimat? allein, soooooo alleiiiin",
         */
         
-        "PLACEHOLDER: EarthMessageLogHalfMonologue",
+        "Die Erde ist ...tot?",
+        "Wie ist das möglich! Das kann nicht sein! Es kann einfach nicht sein! Wann hat uns diese Nachricht erreicht??",
+        "... Vor 20 Jahren. Dann wurde sie abgeschickt ...vor über 100 Jahren.",
+        "Die Erde ist... seit mehr als 100 Jahren... unbewohnbar...",
+        "Alle, die ich kannte... sind bereits tot.",
+        "Alle.",
+        "...",
+        "Nein! Es hieß es wurden Raumschiffe entsandt! Es gibt noch Menschen! Irgendwo im Universum vertreut! Aber... so weit weg... Nachrichtenaustausch würde hunterte von Jahren dauern.",
+        "Meine Familie! Alice, Mia!! Leben sie noch? Haben sie es auf ein Raumschiff geschafft?",
+        "Ich muss mir sofort meine persönlichen Nachrichten ansehen! Sie hätten mir doch sicher etwas zukommen lassen!",
     };
     
-    // TODO
     public static readonly string[] EarthMessageLogFullMonologue =
     {
         /* Summary
@@ -765,7 +783,15 @@ public static class Texts
         "Hoffnung: Family",
         */
         
-        "PLACEHOLDER: EarthMessageLogFullMonologue",
+        "Die Erde ist ...tot?",
+        "Wie ist das möglich! Das kann nicht sein! Es kann einfach nicht sein! Wann hat uns diese Nachricht erreicht??",
+        "... Vor 20 Jahren. Dann wurde sie abgeschickt ...vor über 100 Jahren.",
+        "Die Erde ist... seit mehr als 100 Jahren... unbewohnbar...",
+        "Alle, die ich kannte... sind bereits tot.",
+        "...",
+        "Nein! Alice und Mia haben es geschafft! Sie waren auf einem der Raumschiffe! Und es sind noch mehr Menschen auf Raumschiffen irgendwo im Universum vertreut.",
+        "Aber... so weit weg... Nachrichtenaustausch würde hunterte von Jahren dauern.",
+        "Kann dieses Schiff noch fliegen?"
     };
 
     public static readonly string[] FamilyMessageLogHalfMonologue =
@@ -783,10 +809,10 @@ public static class Texts
         "Dabei hab ich mich schon darauf gefreut sie zu treffen falls ich zur Erde zurückkomm, aber ich muss trotzdem erstmal zurück zur Erde und mich erkundigen wo sie hin sind",*/
         
         // Suggestion Julian
-        "Alice! Mia! Sie leben noch heute! Ich dachte, ich höre nie wieder etwas von ihnen!",
+        "Alice! Mia! Sie leben noch heute!",
         "Wie alt mögen sie zum Zeitpunkt dieser Nachricht wohl gewesen sein?",
         "...moment!",
-        "Das Nyx-System ist ähnlich weit von der Erde entfernt, wie Aphelios und nur 25 Lichtjahre von hier aus!",
+        "Das Nyx-System ist ähnlich weit von der Erde entfernt, wie Aphelios und von hier aus nur 25 Lichtjahre!",
         "Diese Nachricht hat uns vor ca. 80 Jahren erreicht, müsste also so um 2120 abgeschickt worden sein!",
         "Wenn sie also seit dem auf dem Weg nach Elpis im Kälteschlaf sind...",
         "...müssten sie in schätzungsweise 40 Jahren dort ankommen! Und ich kann von hier aus in 50 Jahren dort sein!",
@@ -807,7 +833,7 @@ public static class Texts
         "Hoffnung",
         */
         
-        "Alice! Mia! Sie leben noch heute! Ich dachte, ich höre nie wieder etwas von ihnen!",
+        "Alice! Mia! Sie leben noch heute!",
         "Sie haben es also tatsächlich geschafft, die Erde zu verlassen!",
         "Wie alt mögen sie zum Zeitpunkt dieser Nachricht wohl gewesen sein?",
         "...moment!",
@@ -817,6 +843,7 @@ public static class Texts
         "...müssten sie in schätzungsweise 40 Jahren dort ankommen! Und ich kann von hier aus in 50 Jahren dort sein!",
         "Das bedeutet...",
         "Vielleicht kann ich sie dort antreffen! Vielleicht sehe ich sie wieder!!",
+        "Kann dieses Schiff noch fliegen?"
     };
 
     public static readonly string[] StartButtonPreMonologue =
