@@ -285,7 +285,6 @@ public static class Texts
     {
         "Game",
         "Jordan",
-        "Bernd",
         // more...
     };
     public static readonly string[] BerndDialogue =
@@ -304,8 +303,7 @@ public static class Texts
         
         // Placeholder
         "PLACEHOLDER",
-         "jo wegen dir bin ich hier",
-        "halts maul wir haben größere Probleme, wir kommen hier nie wieder weg deswegen bring ich dich jetzt um",
+        "BerndDialogue",
     };
     
     public static readonly string[] KilledByBerndDialogueSpeakers =
@@ -359,8 +357,7 @@ public static class Texts
         "episode IV: Raumschiff",
         */
         
-        // Placeholder
-        "SurvivedBerndMonologue",
+        "PLACEHOLDER: SurvivedBerndMonologue",
     };
 
     #endregion
@@ -519,9 +516,7 @@ public static class Texts
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "VisionOneHalfMonologue",
+        "PLACEHOLDER: VisionOneHalfMonologue",
     };
     
     // TODO
@@ -531,9 +526,7 @@ public static class Texts
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "VisionOneFullMonologue",
+        "PLACEHOLDER: VisionOneFullMonologue",
     };
 
     // TODO
@@ -543,9 +536,7 @@ public static class Texts
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "VisionTwoHalfMonologue",
+        "PLACEHOLDER: VisionTwoHalfMonologue",
     };
     
     // TODO
@@ -555,9 +546,7 @@ public static class Texts
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "VisionTwoFullMonologue",
+        "PLACEHOLDER: VisionTwoFullMonologue",
     };
 
     // TODO
@@ -567,9 +556,7 @@ public static class Texts
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "VisionThreeHalfMonologue",
+        "PLACEHOLDER: VisionThreeHalfMonologue",
     };
     
     // TODO
@@ -579,9 +566,7 @@ public static class Texts
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "VisionThreFulleMonologue",
+        "PLACEHOLDER: VisionThreFulleMonologue",
     };
     
     public static readonly string[] RebelAurebeshMonologue =
@@ -730,9 +715,7 @@ public static class Texts
         "es ist tatsächlich unser schiff. endlich was bekanntest. heimisch.",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "EnterSpaceshipMonologue",
+        "Hier ist wohl alles beim alten.",
     };
     
     public static readonly string[] EnterMainRoomMonologue =
@@ -744,11 +727,9 @@ public static class Texts
         /* Suggestion Anian
         "Die Aliens haben hier alles ausgeräumt, aber ansonsten hat sich nichts getan ich bin wohl der einzigste Überlebende unserer Crew",*/
         
-        // Placeholder
-        "PLACEHOLDER",
-        "Es ist so leer... alles wurde ausgeräumt. Sie haben es wahrscheimlich in's Labor gebracht.",
-        "Und niemand ist hier... ich bin ganz allein.",
-        "Bin ich wirklich der einzige überlebende von uns? Was soll ich jetzt tun?",
+        "Es ist leer! Alles wurde ausgeräumt.",
+        "Und es ist niemand hier! ...ich bin ganz allein.",
+        "Bin ich wirklich der einzige überlebende? Was soll ich jetzt tun?",
     };
     
     // TODO
@@ -760,9 +741,7 @@ public static class Texts
         "wo soll ich hin? keine heimat? allein, soooooo alleiiiin",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "EarthMessageLogHalfMonologue",
+        "PLACEHOLDER: EarthMessageLogHalfMonologue",
     };
     
     // TODO
@@ -774,9 +753,7 @@ public static class Texts
         "Hoffnung: Family",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "EarthMessageLogFullMonologue",
+        "PLACEHOLDER: EarthMessageLogFullMonologue",
     };
 
     public static readonly string[] FamilyMessageLogHalfMonologue =
@@ -836,9 +813,7 @@ public static class Texts
         "Ich möchte mich lieber noch etwas hier umsehen, bevor ich das Schiff starte.",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "StartButtonPreMonologue",
+        "Wir waren 200 Jahre unterwegs. Ich will mir zuerst die eingegangenen Nachrichten ansehen.",
     };
 
     public static readonly string[] StartButtonHalfMonologue =
@@ -848,11 +823,14 @@ public static class Texts
         "Optionen: Family suchen: uncertainties (sind sie schon da? aufgewacht? lebensie noch? War das alles nicht viel zu lange her?)",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "Das Schiff scheint noch überraschend intakt zu sein... Ich hätte jetzt die Gelegenheit, von diesem Planeten zu fliehen. Aber wohin?",
-        "Was soll ich nur tun? Ich bin der einzige Überlebende... die Erde ist tot... meine Familie ist irgendwo da draußen...",
-        "Soll ich versuchen, sie zu finden? Wer weiß, ob sie überhaupt noch leben? Oder bereits aus dem Kälteschlaf erwacht sind?",
+        "Es funktioniert! Alle Systeme hochgefahren! Ich kann starten!",
+        "Aber...",
+        "Wohin? Ich kann nicht zurück zur Erde. Dort gibts es nichts mehr.",
+        "Zu meiner Familie? Nach Elpis?",
+        "Aber vielleicht ist Elpis unbewohnbar und sie sind schon wieder weg? Oder sie sind noch gar nicht da, ich komme viel zu früh an und kann dort nicht überleben?",
+        "Aphelios ist bewohnbar. Er ist wertvoll. Aber was hilft es mir, wenn mich hier alles töten will und ich ganz allein bin?",
+        "Selbst wenn ich all die ausgesandten Raumschiffe der Erde hier her lotse, würden sie wenn sie in hunderten von Jahren ankommen hier nur den Tod finden, so wie wir...",
+        "Wo soll ich nur hin?",
     };
 
     public static readonly string[] StartButtonFullMonologue =
@@ -863,13 +841,16 @@ public static class Texts
         "Alternative: Rebellen helfen: vorteile. der Planet ist bewohnbar. Man kann hier vieleicht ein neues leben aufbauen, eine neue Familie finden?)",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "Das Schiff scheint noch überraschend intakt zu sein... Ich hätte jetzt die Gelegenheit, von diesem Planeten zu fliehen. Aber wohin?",
-        "Was soll ich nur tun? Ich bin der einzige Überlebende... die Erde ist tot... meine Familie ist irgendwo da draußen...",
-        "Soll ich versuchen, sie zu finden? Wer weiß, ob sie überhaupt noch leben? Oder bereits aus dem Kälteschlaf erwacht sind?",
-        "Oder soll ich hierbleiben? Ich verdanke den Rebellen mein Leben. Möglicherweise kann ich ihnen wirklich helfen...",
-        "Vielleicht finde ich in ihnen sogar eine neue Familie? Ein neues Leben? Wer weiß, ob ich je wieder einen so bewohnbaren Planeten finde?",
+        "Es funktioniert! Alle Systeme hochgefahren! Ich kann starten!",
+        "Aber...",
+        "Wohin? Ich kann nicht zurück zur Erde. Dort gibts es nichts mehr.",
+        "Zu meiner Familie? Nach Elpis?",
+        "Aber vielleicht ist Elpis unbewohnbar und sie sind schon wieder weg? Oder sie sind noch gar nicht da, ich komme viel zu früh an und kann dort nicht überleben?",
+        "Aphelios ist bewohnbar. Er ist wertvoll.",
+        "Vielleicht kann ich wirklich Pandora helfen. Vielleicht kann ich dafür sorgen, dass auf diesem Planet Menschen willkommen sind.",
+        "Und all die ausgesandten Raumschiffe der Erde nach und nach hier her lotsen. Vielleicht kann ich uns hier eine neue Heimat finden.",
+        "Aber wer weiß, wo all diese Raumschiffe sind? Wie seit weg sie sind? Ob sie immer noch willkommen sein werden, wenn sie in hunderten von Jahren hier ankommen?",
+        "Wo soll ich nur hin?",
     };
     
     #endregion
