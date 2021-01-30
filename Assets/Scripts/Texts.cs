@@ -296,9 +296,27 @@ public static class Texts
     // TODO
     public static readonly string[] BerndDialogueSpeakers =
     {
-        "Game",
         "Jordan",
-        // more...
+        "Bernd",
+        "Jordan",
+        "Jordan",
+        "Bernd",
+        "Jordan",
+        "Jordan",
+        "Jordan",
+        "Bernd",
+        "Jordan",
+        "Bernd",
+        "Jordan",
+        "Bernd",
+        "Jordan",
+        "Bernd",
+        "Bernd",
+        "Bernd",
+        "Jordan",
+        "Bernd",
+        "Jordan",
+        "Bernd",
     };
     public static readonly string[] BerndDialogue =
     {
@@ -314,15 +332,34 @@ public static class Texts
         "ey! du bist ja verrückt! Scheiße!",
         */
         
-        // Placeholder
-        "PLACEHOLDER",
-        "BerndDialogue",
+        "Bernd! Du lebst!",
+        "Jordan?",
+        "War ja klar, dass von allen DU es schaffst! Ich hoffe du bist zufrieden! Was ist hier passiert?",
+        "Passiert? Nichts ist passiert! Alle Systeme laufen normal!",
+        "Systeme? Was redest du? Wir sind nicht mehr auf unserem Raumschiff, \"Captain\"!",
+        "Doch! Wir ... sind ... auf der Axiom... alles normal...",
+        "Sieh dich doch um! Diese Behälter! Sieht das für dich aus wie unsere Kälfteschlafkapseln? Hör mal. Draußen vor dieser Tür sind Aliens!",
+        "Wir sind auf Aphelios! Wir sind da! Aber irgendwas ist schiefgelaufen, sonst wären wir geweckt worden! Und außerdem...",
+        "Aphelios... Aliens...",
+        "Außerdem... habe ich Jeff gesehen. Und die anderen. Sie sind... tot. Sie liegen in diesen Kapseln, eingefroren oder aufgeschnitten...",
+        "Jeff... die anderen... TOT! JA! SIE SIND TOT! HAHAHAHAHAH! WIR ALLE WERDEN BALD TOT SEIN!",
+        "... Bernd?",
+        "Die Mission ist gescheitert! Wir haben versagt! ES IST AUS! WIR BEIDE SOLLTEN AUCH STERBEN!",
+        "Bernd! Komm runter! Wie können hier vielleicht rauskommen! Ich habe aus dem Fenster sehen können! Unser Raumschiff ist nicht weit von hier!",
+        "...",
+        "Nein! Du willst mich manipulieren... du willst mir Hoffnung machen und dann... dann zerschlägst du sie vor meinen Augen! Hoffnung trügt... vertraue ihr nie!",
+        "Du willst diese Waffe dort nehmen... und wenn ich aus dem Fenster sehe... schießt du mir in den Rücken!",
+        "Bernd... was ist mir dir?",
+        "Sind sie Gestaltwandler? GEHÖRST DU ZU IHNEN? REDE!",
+        "Nein! Natürlich nicht! Du bist ja verrückt!",
+        "ICH HOL SIE MIR VOR DIR!",
     };
     
     public static readonly string[] KilledByBerndDialogueSpeakers =
     {
         "Bernd",
-        "Jordan"
+        "Jordan",
+        "Bernd",
     };
     public static readonly string[] KilledByBerndDialogue =
     {
@@ -333,6 +370,7 @@ public static class Texts
         
         "VERSCHWINDE ENDLICH! LASS MICH IN RUHE!",
         "Bernd! Nicht!!!",
+        "STIRB!",
     };
     
     public static readonly string[] KillBerndDialogueSpeakers =
@@ -356,7 +394,7 @@ public static class Texts
         "Bernd! Beruhige dich! Ich will dich nicht verletzten!",
         "ICH WUSSTE ES! DU GEHÖRST ZU IHNEN!",
         "SEI STILL! Sonst werden wir noch gehört! Komm nicht näher! Ich warne dich!",
-        "VERRÄTER!! STIRB!",
+        "STIRB!",
     };
     
     public static readonly string[] SurvivedBerndMonologue =
