@@ -25,9 +25,9 @@ public static class Texts
         "Wo bin ich?!",
         "Bin ich in ohnmacht gefallen?",
         "Nein... ich war im Kälteschlaf... die Mission! Ja! Die Mission nach Aphelios! Zum Erschließen neuer Lebensräume!",
-        "Aber Das hier ist nicht meine Schlafkapsel! Was ist nur los!",
-        "Und mein Kopf tut so weh... als würde er zerspringen.",
-        "Was ist nur passiert? Wo sind die anderen?",
+        "Aber das hier ist nicht meine Schlafkapsel! Was ist nur los?",
+        "Und mein Kopf tut so weh... als würde er zerspringen!",
+        "Was ist passiert? Wo sind die anderen?",
         "Etwas muss schiefgelaufen sein. Wo bin ich?? Das hier ist alles so fremdartig.",
         "Das ist nicht gut...",
     };
@@ -63,7 +63,7 @@ public static class Texts
         
         "Das GVTD-3 kann es tatsächlich übersetzen, wenn auch nur bruchstückhaft! Es ist venusianisch!",
         "... nennen sich selbst \"Menschen\"...",
-        "...stammen von Gaia...\nzerstörerische Lebensweise... Prophezeiung",
+        "...stammen von Erde...\nzerstörerische Lebensweise... Prophezeiung",
         "Spezies... biologisch große Ähnlichkeit mit Chia... Hauptunterschiede im Folgenden...",
         "...benötigen Sauerstoff... Zufuhr über zentrales Organ in der Mitte",
         "...Doppelsensorik für elektromagnetische Wellen eines speziellen Spektrums...",
@@ -82,7 +82,7 @@ public static class Texts
         "Das Foto! Von mir, Alice und Mia! Was ich als Erinnerung mitgenommen hatte!",
         "Wie kommt das denn hier her?",
         "...",
-        "Wo auch immer ihr grade seid, ich hoffe es geht euch gut. Ich hoffe, sie behandeln euch gut.",
+        "Wo auch immer ihr gerade seid, ich hoffe, es geht euch gut. Ich hoffe, sie behandeln euch gut.",
         "Und Mia, ich hoffe, du kannst mir verzeihen, dass ich gegangen bin. Ich hab es für euch getan.",
     };
     
@@ -100,7 +100,7 @@ public static class Texts
         "Sind wir vielleicht tatsächlich auf Aphelios angekommen?",
         "Aber was ist das hier dann für ein Labor? Und warum wurden wir nicht vor der Landung geweckt?",
         "...",
-        "Wo auch immer ihr grade seid, ich hoffe es geht euch gut. Ich hoffe, sie behandeln euch gut.",
+        "Wo auch immer ihr gerade seid, ich hoffe, es geht euch gut. Ich hoffe, sie behandeln euch gut.",
         "Und Mia, ich hoffe, du kannst mir verzeihen, dass ich gegangen bin. Ich hab es für euch getan.",
     };
 
@@ -113,7 +113,7 @@ public static class Texts
         "Warum sind alle meine Sachen hier???", // optional: monologue after pickup up familyimage AND translator
         */
         
-        "Das ist ein General Venusian Translation Device!",
+        "Das ist ein General Venusian-Translation Device!",
         "Genau der gleiche GVTD-3 wie der, den wir auf unserer Mission dabei hatten!",
         "Nein, nicht der gleiche... der selbe! Warum ist er hier?",
     };
@@ -127,7 +127,7 @@ public static class Texts
         "Warum sind alle meine Sachen hier???", // optional: monologue after pickup up familyimage AND translator
         */
         
-        "Das ist unser General Venusian Translation Device!",
+        "Das ist unser General Venusian-Translation Device!",
         "Erst mein Foto, jetzt unser GVTD-3! Warum sind all unsere Sachen hier?",
         "Sind wir vielleicht tatsächlich auf Aphelios angekommen?",
         "Aber was ist das hier dann für ein Labor? Und warum wurden wir nicht vor der Landung geweckt?"
@@ -157,7 +157,7 @@ public static class Texts
         "aber wieso sind die alle tot und wieso bin ich aufgewacht?",
         "Irgendwer hat unsere Crew umgebracht, ich sollte hier erstmal weg, vielleicht weiß der andere Mensch mehr",*/
         
-        "Oh mein Gott! Jeff! Er ist blutüberströmt! Nein! Jeff! Sag doch was! Was ist passiert?! ",
+        "Oh mein Gott! Jeff! Er ist blutüberströmt! Nein! Jeff! Sag doch was! Was ist passiert?!",
         "...",
         "Wo sind die anderen? Waren wir alle in diesen Kapseln? Was ist das für ein Ort, wo BIN ich?!",
         "Ich muss hier raus!"
@@ -180,7 +180,7 @@ public static class Texts
         "aber wieso sind die alle tot und wieso bin ich aufgewacht?",
         "Irgendwer hat unsere Crew umgebracht, ich sollte hier erstmal weg, vielleicht weiß der andere Mensch mehr",*/
         
-        "Oh mein Gott! Jeff! Er ist blutüberströmt! Nein! Jeff! Sag doch was! Was ist passiert?! ",
+        "Oh mein Gott! Jeff! Er ist blutüberströmt! Nein! Jeff! Sag doch was! Was ist passiert?!",
         "...",
         "Wo sind die anderen? Waren wir alle in diesen Kapseln? Was ist das für ein Ort, wo BIN ich?!",
         "Ich muss die Person hinter dem Fenster finden! Das war ganz sicher ein Mensch!",
@@ -204,8 +204,8 @@ public static class Texts
         "Von meiner Familie. Von der Mission.",
         "Wie alles anfing... wie ich zur falschen Zeit am falschen Ort war und mitgehört habe, was der Erde bevorsteht.",
         "Wie sie mich erpresst haben, mich der Mission anzuschließen und einen Schweigevertrag zu unterschreiben.",
-        "Wenistens hat sich von diesen feigen Bürokraten am Ende zumindest einer getraut, ebenfalls mitzukommen!",
-        "Hätte in der Kapsel statt Jeff nicht er liegen können? Wäre ihm recht geschehen!",
+        "Wenistens hat sich von diesen feigen Bürokraten am Ende zumindest einer getraut, ebenfalls mitzukommen! Und er wurde natürlich zum Captain gemacht.",
+        "Hätte in der Kapsel statt Jeff nicht er liegen können? Wäre ihm rechtgeschehen!",
         "...",
         "Irgendetwas wurde mit mir auf diesem Tisch gemacht! Wahrscheinlich mit uns allen!",
     };
@@ -222,8 +222,8 @@ public static class Texts
         "Shit hier liegt ein totes Alien! Hat ein Crewmitglied geschaft zu entkommen?",*/
         
         "Nicht noch jemand! Bitte nicht!",
-        "... unmöglich! Das ist keiner von uns! Das ist...",
-        "Ein Alien!",
+        "...unmöglich! Das ist keiner von uns! Das ist...",
+        "Ein Alien?",
         "Ich bin also nicht auf der Erde!",
         "Aber was ist hier geschehen? Gab es einen Kampf?",
     };
@@ -255,7 +255,7 @@ public static class Texts
         "Nein... sie sind es wirklich... die Mannschaft... sie sind alle tot... alle...",
         "...",
         "Okay Jordan, beruhige dich! Beruhige dich! Du wurdest hierfür ausgebildet!",
-        "Du bist hier nicht allein! Irgendjemand hat diesen Aphelianer dort umgebracht!",
+        "Du bist hier nicht allein! Irgendjemand hat diesen Aphelianer umgebracht!",
         "Und die Crew war größer! Das hier sind nicht alle! Jemand hat überlebt!",
     };
 
@@ -265,7 +265,7 @@ public static class Texts
         "Aliens! Die Leben! Die ham Waffen! *gefäääährlicher ort*",
         */
         
-        "Aliens! Sie haben Waffen!",
+        "Aphelianer! Sie haben Waffen!",
         "Ich bin wirklich in einem aphelianischen Labor!",
         "Ich darf um keinen Preis entdeckt werden!",
     };
@@ -293,7 +293,6 @@ public static class Texts
         "Hinter dieser Tür müsste sich der Raum befinden, in dem ich den Menschen gesehen habe! Ich muss irgendwie hinein!"
     };
 
-    // TODO
     public static readonly string[] BerndDialogueSpeakers =
     {
         "Jordan",
@@ -338,26 +337,25 @@ public static class Texts
         "Passiert? Nichts ist passiert! Alle Systeme laufen normal!",
         "Systeme? Was redest du? Wir sind nicht mehr auf unserem Raumschiff, \"Captain\"!",
         "Doch! Wir ... sind ... auf der Axiom... alles normal...",
-        "Sieh dich doch um! Diese Behälter! Sieht das für dich aus wie unsere Kälfteschlafkapseln? Hör mal. Draußen vor dieser Tür sind Aliens!",
+        "Sieh dich doch um! Diese Behälter! Sieht das für dich aus wie unsere Kälteschlafkapseln? Hör mal. Draußen vor dieser Tür sind Aliens!",
         "Wir sind auf Aphelios! Wir sind da! Aber irgendwas ist schiefgelaufen, sonst wären wir geweckt worden! Und außerdem...",
         "Aphelios... Aliens...",
-        "Außerdem... habe ich Jeff gesehen. Und die anderen. Sie sind... tot. Sie liegen in diesen Kapseln, eingefroren oder aufgeschnitten...",
+        "...außerdem habe ich Jeff gesehen. Und die anderen. Sie sind... tot. Sie liegen in diesen Kapseln, eingefroren oder aufgeschnitten...",
         "Jeff... die anderen... TOT! JA! SIE SIND TOT! HAHAHAHAHAH! WIR ALLE WERDEN BALD TOT SEIN!",
         "... Bernd?",
-        "Die Mission ist gescheitert! Wir haben versagt! ES IST AUS! WIR BEIDE SOLLTEN AUCH STERBEN!",
+        "Die Mission ist gescheitert! Wir haben versagt! ES IST AUS! WIR SOLLTEN AUCH STERBEN!",
         "Bernd! Komm runter! Wie können hier vielleicht rauskommen! Ich habe aus dem Fenster sehen können! Unser Raumschiff ist nicht weit von hier!",
         "...",
         "Nein! Du willst mich manipulieren... du willst mir Hoffnung machen und dann... dann zerschlägst du sie vor meinen Augen! Hoffnung trügt... vertraue ihr nie!",
-        "Du willst diese Waffe dort nehmen... und wenn ich aus dem Fenster sehe... schießt du mir in den Rücken!",
+        "Die Waffe dort... wenn ich aus dem Fenster sehe... schießt du mir mit ihr in den Rücken!",
         "Bernd... was ist mir dir?",
         "Sind sie Gestaltwandler? GEHÖRST DU ZU IHNEN? REDE!",
         "Nein! Natürlich nicht! Du bist ja verrückt!",
-        "ICH HOL SIE MIR VOR DIR!",
+        "ICH HOL MIR DIE WAFFE VOR DIR!",
     };
     
     public static readonly string[] KilledByBerndDialogueSpeakers =
     {
-        "Bernd",
         "Jordan",
         "Bernd",
     };
@@ -368,7 +366,6 @@ public static class Texts
         "boy chill! Hilfe!", // optional
         */
         
-        "VERSCHWINDE ENDLICH! LASS MICH IN RUHE!",
         "Bernd! Nicht!!!",
         "STIRB!",
     };
@@ -389,8 +386,7 @@ public static class Texts
         "HÖR AUF! *panik*",
         */
         
-        // Placeholder
-        "VERSCHWINDE ENDLICH! LASS MICH IN RUHE!",
+        "VERSCHWINDE! LASS MICH IN RUHE!",
         "Bernd! Beruhige dich! Ich will dich nicht verletzten!",
         "ICH WUSSTE ES! DU GEHÖRST ZU IHNEN!",
         "SEI STILL! Sonst werden wir noch gehört! Komm nicht näher! Ich warne dich!",
@@ -408,7 +404,7 @@ public static class Texts
         */
         
         "Ich...",
-        "Ich hab ihn erschossen...!",
+        "Ich hab ihn erschossen..!",
         "...",
         "Ich musste es tun!",
         "Er wollte mich umbringen!",
@@ -417,7 +413,7 @@ public static class Texts
         "Ich bin alleine. Ich werde hier sterben... wie alle anderen.",
         "...",
         "Beruhige dich! Einatmen, ausatmen!",
-        "Raumschiff! Ja! Unser Raumschiff! Es ist in der Nähe! Und ich habe jetzt eine Waffe! Ich kann es erreichen!",
+        "Raumschiff! Ja! Unser Raumschiff! Es ist in der Nähe! Und ich habe eine Waffe! Ich kann es erreichen!",
     };
 
     #endregion
@@ -469,7 +465,7 @@ public static class Texts
         "warum so viel feindseligkeit? entwerde sie hauen ab oder sie wollen mich umbringen",
         */
         
-        "Der Planet ist bewohnbar aber die Aphelianer hassen Fremdlinge! Alle haben sie Angst vor mir oder wollen mich umbringen!",
+        "Der Planet ist bewohnbar, aber die Aphelianer hassen Fremdlinge! Alle haben sie Angst vor mir oder wollen mich umbringen!",
     };
 
     public static readonly string[] TriggerLogisticianFullMonologue =
@@ -479,7 +475,7 @@ public static class Texts
         "vielleicht kann man den rebellen tatsächlich helfen?",
         */
         
-        "Bis auf die Pandora scheinen mich wirklich alle zu fürchten oder umbringen zu wollen.",
+        "Bis auf die Pandora scheinen mich wirklich alle zu fürchten, oder umbringen zu wollen.",
         "Vielleicht kann ich mit meinem Status in ihrer Religion tatsächlich etwas bewirken?",
     };
     
@@ -499,7 +495,7 @@ public static class Texts
         "erkkärung"
         */
         
-        "Ich ich verstehe dieses Symbol langsam. Die drei Kugeln stellen die drei Himmelskörper dar, die die Erlösung bringen.",
+        "Ich glaube, ich verstehe dieses Symbol langsam. Die drei Kugeln stellen die drei Himmelskörper dar, die die Erlösung bringen.",
         "Der Planet.",
         "Die Sonne.",
         "Und der Komet.",
@@ -584,7 +580,7 @@ public static class Texts
         */
         
         "Die Sonne ist riesig! Und das dahinter... das muss der Komet sein!",
-        "Dann stellt das hier die Erlösung dar! Wie sie Sonne alles verschluckt!",
+        "Dann stellt das hier die Erlösung dar! Wie die Sonne alles verschluckt!",
     };
 
     public static readonly string[] VisionTwoHalfMonologue =
@@ -613,7 +609,7 @@ public static class Texts
         "balance between neugier/interesse und angst/unheimlich/nachhauuuse",
         */
         
-        "Auf diesem Bild sind fremde Wesen auf Aphelios gelandet. Überall wo sie sind wird alles schwarz... selbst die Aphelianer.",
+        "Auf diesem Bild sind fremde Wesen auf Aphelios gelandet. Überall, wo sie sind wird alles schwarz... selbst die Aphelianer.",
         "Diese Wesen! Sollen das Menschen sein?",
     };
     
@@ -748,7 +744,7 @@ public static class Texts
         "Du wichtig in Religion. Du Mensch. Mensch Teufel. Mensch Macht. Mensch Angst.",
         "Das Prophezeiung in Religion. Das sagen Zeichen auf Steintafel rechts. Menschen kommen. Menschen uns vernichten. ",
         "Aber das falsch. Du beweisen. Wir Volk zeigen. Du, wir, Frieden. Wir alle leben.",
-        "Also dieses Bild dort... es zeigt uns Menschen? Wie wir kommen und eure Zivilisation vernichten.",
+        "Also dieses Bild dort... es zeigt uns Menschen? Wie wir kommen und eure Zivilisation vernichten?",
         "Ja. Religion sagen wir Chia überleben bis Komet kommt. Komet in Sonne fliegen. Dann Sonne groß werden, ausbreiten, Planeten verschlucken.",
         "Uns alle verschlucken. Das Erlösung. Chia-Spezies bis Erlösung überleben.",
         "Überleben, Überleben. Nur Spezies wichtig. Einzelner unwichtig. Einzelner opfern für Überleben von Spezies.",
@@ -773,7 +769,7 @@ public static class Texts
         "es ist tatsächlich unser schiff. endlich was bekanntest. heimisch.",
         */
         
-        "Hier ist wohl alles beim alten.",
+        "Es wirkt, als wäre alles beim alten.",
     };
     
     public static readonly string[] EnterMainRoomMonologue =
@@ -786,7 +782,7 @@ public static class Texts
         "Die Aliens haben hier alles ausgeräumt, aber ansonsten hat sich nichts getan ich bin wohl der einzigste Überlebende unserer Crew",*/
         
         "Es ist leer! Alles wurde ausgeräumt.",
-        "Und es ist niemand hier! ...ich bin ganz allein.",
+        "Und es ist niemand hier! ...Ich bin ganz allein.",
         "Bin ich wirklich der einzige überlebende? Was soll ich jetzt tun?",
     };
     
@@ -805,7 +801,7 @@ public static class Texts
         "Alle, die ich kannte... sind bereits tot.",
         "Alle.",
         "...",
-        "Nein! Es hieß es wurden Raumschiffe entsandt! Es gibt noch Menschen! Irgendwo im Universum vertreut! Aber... so weit weg... Nachrichtenaustausch würde hunterte von Jahren dauern.",
+        "Nein! Es hieß es wurden Raumschiffe entsandt! Es gibt noch Menschen! Irgendwo im Universum vertreut! Aber... so weit weg... Nachrichtenaustausch würde hunderte von Jahren dauern.",
         "Meine Familie! Alice, Mia!! Leben sie noch? Haben sie es auf ein Raumschiff geschafft?",
         "Ich muss mir sofort meine persönlichen Nachrichten ansehen! Sie hätten mir doch sicher etwas zukommen lassen!",
     };
@@ -825,7 +821,7 @@ public static class Texts
         "Alle, die ich kannte... sind bereits tot.",
         "...",
         "Nein! Alice und Mia haben es geschafft! Sie waren auf einem der Raumschiffe! Und es sind noch mehr Menschen auf Raumschiffen irgendwo im Universum vertreut.",
-        "Aber... so weit weg... Nachrichtenaustausch würde hunterte von Jahren dauern.",
+        "Aber... so weit weg... Nachrichtenaustausch würde hunderte von Jahren dauern.",
         "Kann dieses Schiff noch fliegen?"
     };
 
@@ -856,7 +852,7 @@ public static class Texts
         "Aber was meinen sie bloß mit \"dank dir ausgewählt worden, die Erde verlassen zu dürfen\"?",
         "Warum sind sie überhaupt aufgebrochen?",
         "Das klingt, als würde etwas auf der Erde vor sich gehen...",
-        "Ich sollte mir die Bordcomputer-Logs ansehen.",
+        "Ich sollte mir die Bordcomputer-Nachrichten ansehen.",
     };
     
     public static readonly string[] FamilyMessageLogFullMonologue =
@@ -903,7 +899,7 @@ public static class Texts
         "Zu meiner Familie? Nach Elpis?",
         "Aber vielleicht ist Elpis unbewohnbar und sie sind schon wieder weg? Oder sie sind noch gar nicht da, ich komme viel zu früh an und kann dort nicht überleben?",
         "Aphelios ist bewohnbar. Er ist wertvoll. Aber was hilft es mir, wenn mich hier alles töten will und ich ganz allein bin?",
-        "Selbst wenn ich all die ausgesandten Raumschiffe der Erde hier her lotse, würden sie wenn sie in hunderten von Jahren ankommen hier nur den Tod finden, so wie wir...",
+        "Selbst wenn ich all die ausgesandten Raumschiffe der Erde hier her lotse, würden sie, wenn sie in hunderten von Jahren ankommen, hier nur den Tod finden, so wie wir...",
         "Wo soll ich nur hin?",
     };
 
