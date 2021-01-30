@@ -620,9 +620,10 @@ public static class Texts
         
         "Wenn ich richtig verstehe, sind die Menschen in dieser Religion die Teufel. Dann wird hier gezeigt, wie sie auf Aphelios landen und...",
         "Und was? Hier sieht es eher aus aus, als würden sie die Aphelianer \"beeinflussen\", anstatt alles zu zerstören.",
-        "Beeinflussen womit? Mit unserem \"zerstörerischen Lebensstil\"? Wenn ich mich richtig erinnere, hat der Text auf dem Datenpad im Labor diese Fomulierung verwendet.",
-        "Dann will Pandora in gewisser Weise genau das, was hier dargestellt ist. Das System abschaffen um ein neues zu erschaffen. Ein individuelleres. Ohne Hierarchie.",
-        "Mithilfe der Menschen. Mir. Wahrscheinlich tragen sie deshalb schwarz. Sie sehen genau so aus wie die Aphelianer auf diesem Bild.",
+        "Beeinflussen womit? Mit unserem \"zerstörerischen Lebensstil\"? Ich glaube, der Text auf dem Datenpad im Labor hat diese Fomulierung verwendet.",
+        "Dann will Pandora in gewisser Weise genau das, was hier dargestellt ist. Das System abschaffen um ein neues zu erschaffen.",
+        "Ein individuelleres. Ohne Hierarchie. Mithilfe der Menschen. Mir.",
+        "Wahrscheinlich tragen sie deshalb schwarz. Sie sehen genau so aus wie die Aphelianer auf diesem Bild.",
     };
     
     public static readonly string[] RebelAurebeshMonologue =
