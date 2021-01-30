@@ -24,13 +24,12 @@ SPRITES
 
 
 MUST HAVE:
-Intro-Memories 2-3 - Anian
+Intro-Memories 2 & 3 - Anian
 More AlienPods in Experiment Room -Timon
 Family Message Log Small -Ju
 Family Message Log Big -Ju
 Earth Messag Log Small -Ju
 Earth Messag Log Big -Ju
-
 
 
 COULD HAVE:
