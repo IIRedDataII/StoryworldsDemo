@@ -51,7 +51,7 @@ public class Button : Interactable
     {
         leaveButton.gameObject.SetActive(active);
         if (GameData.Instance.RebelConversationHappened)
-            stayButton.gameObject.GetComponentInChildren<Text>().text = "stay on this planet and help the rebels";
+            stayButton.gameObject.GetComponentInChildren<Text>().text = "Hier bleiben und\nPandora helfen";
         stayButton.gameObject.SetActive(active);
         deferButton.gameObject.SetActive(active);
     }
