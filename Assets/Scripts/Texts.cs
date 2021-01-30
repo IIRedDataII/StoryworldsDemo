@@ -277,8 +277,8 @@ public static class Texts
         "sehe raumschiff",
         */
         
-        "Ich bin mitten in einer Stadt!",
-        "Und ich kann unser Raumschiff sehen! Es ist nicht weit entfernt abgestürzt.",
+        "Ich bin mitten in einer Stadt! Diese Farben...\n...moment!",
+        "Ich kann unser Raumschiff sehen! Es ist nicht weit entfernt abgestürzt.",
         "Dort finde ich vielleicht Überlebende!",
         "Es scheint die Landung auch gut überstanden zu haben. Womöglich fliegt es noch!",
         "Ich kann es schaffen!",
@@ -290,7 +290,7 @@ public static class Texts
         "ich MUSS dahin (Weil da isch der Typ)".
         */
         
-        "Hinter dieser Tür müsste sich der Raum befinden, in dem ich den Menschen gesehen habe! Ich muss irgendwie hinein!"
+        "Hinter dieser Tür müsste sich der Raum befinden, in dem ich die Person gesehen habe! Ich muss irgendwie hinein!"
     };
 
     public static readonly string[] BerndDialogueSpeakers =
