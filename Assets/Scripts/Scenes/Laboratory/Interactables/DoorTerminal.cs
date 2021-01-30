@@ -123,6 +123,8 @@ public class DoorTerminal : Interactable
     private void WrongInput()
     {
         _input = 0;
+        text.font = aurebesh;
+        text.fontSize = 20;
         StartCoroutine(Error());
     }
 
