@@ -277,7 +277,7 @@ public static class Texts
         "sehe raumschiff",
         */
         
-        "Ich bin mitten in einer Stadt! Diese Farben...\n...moment!",
+        "Ich bin mitten in einer Stadt! Diese Farben...\n\n...moment!",
         "Ich kann unser Raumschiff sehen! Es ist nicht weit entfernt abgestürzt.",
         "Dort finde ich vielleicht Überlebende!",
         "Es scheint die Landung auch gut überstanden zu haben. Womöglich fliegt es noch!",
@@ -344,7 +344,7 @@ public static class Texts
         "Jeff... die anderen... TOT! JA! SIE SIND TOT! HAHAHAHAHAH! WIR ALLE WERDEN BALD TOT SEIN!",
         "... Bernd?",
         "Die Mission ist gescheitert! Wir haben versagt! ES IST AUS! WIR SOLLTEN AUCH STERBEN!",
-        "Bernd! Komm runter! Wie können hier vielleicht rauskommen! Ich habe aus dem Fenster sehen können! Unser Raumschiff ist nicht weit von hier!",
+        "Bernd! Komm runter! Wir können hier vielleicht rauskommen! Ich habe aus dem Fenster sehen können! Unser Raumschiff ist nicht weit von hier!",
         "...",
         "Nein! Du willst mich manipulieren... du willst mir Hoffnung machen und dann... dann zerschlägst du sie vor meinen Augen! Hoffnung trügt... vertraue ihr nie!",
         "Die Waffe dort... wenn ich aus dem Fenster sehe... schießt du mir mit ihr in den Rücken!",
