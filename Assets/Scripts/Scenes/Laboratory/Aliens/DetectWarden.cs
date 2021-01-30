@@ -57,7 +57,8 @@ public class DetectWarden : DetectPlayer
         Vector3 position = thisTransform.position;
         Vector3 projectileOffset = new Vector3(thisTransform.rotation.y == 0 ? 0.75f : -0.75f, 0.215f, 0f);
         Vector3 shootDirection = Player.transform.position - (position + projectileOffset);
-        Instantiate(projectile, position + projectileOffset, Quaternion.Euler(0, 0, (float) Utils.VectorToAngle(shootDirection)));
+        GameObject shot = Instantiate(projectile, position + projectileOffset, Quaternion.Euler(0, 0, (float) Utils.VectorToAngle(shootDirection)));
+        shot.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
     }
     
     #endregion

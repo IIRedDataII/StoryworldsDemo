@@ -26,7 +26,6 @@ SPRITES
 MUST HAVE:
 Intro-Memories 2-3 - Anian
 Endentscheidungsknöpfe - Timon
-Sprich deutsch du Endentscheidungstext -Ju
 E-Knopf - Timon
 
 Intro Bilder verschwommen -Anian

@@ -204,7 +204,7 @@ public static class Texts
         "Von meiner Familie. Von der Mission.",
         "Wie alles anfing... wie ich zur falschen Zeit am falschen Ort war und mitgehört habe, was der Erde bevorsteht.",
         "Wie sie mich erpresst haben, mich der Mission anzuschließen und einen Geheimhaltungsvertrag zu unterschreiben.",
-        "Zumindest hat sich von diesen feigen Bürokraten am Ende zumindest einer getraut, ebenfalls mitzukommen! Und er wurde natürlich zum Captain gemacht.",
+        "Wenigstens hat sich von diesen feigen Bürokraten am Ende zumindest einer getraut, ebenfalls mitzukommen! Und er wurde natürlich zum Captain gemacht.",
         "Hätte in der Kapsel statt Jeff nicht er liegen können? Wäre ihm rechtgeschehen!",
         "...",
         "Irgendetwas wurde mit mir auf diesem Tisch gemacht! Wahrscheinlich mit uns allen!",
@@ -277,8 +277,8 @@ public static class Texts
         "sehe raumschiff",
         */
         
-        "Ich bin mitten in einer Stadt!",
-        "Und ich kann unser Raumschiff sehen! Es ist nicht weit entfernt abgestürzt.",
+        "Ich bin mitten in einer Stadt! Diese Farben...\n\n...moment!",
+        "Ich kann unser Raumschiff sehen! Es ist nicht weit entfernt abgestürzt.",
         "Dort finde ich vielleicht Überlebende!",
         "Es scheint die Landung auch gut überstanden zu haben. Womöglich fliegt es noch!",
         "Ich kann es schaffen!",
@@ -290,7 +290,7 @@ public static class Texts
         "ich MUSS dahin (Weil da isch der Typ)".
         */
         
-        "Hinter dieser Tür müsste sich der Raum befinden, in dem ich den Menschen gesehen habe! Ich muss irgendwie hinein!"
+        "Hinter dieser Tür müsste sich der Raum befinden, in dem ich die Person gesehen habe! Ich muss irgendwie hinein!"
     };
 
     public static readonly string[] BerndDialogueSpeakers =
@@ -344,7 +344,7 @@ public static class Texts
         "Jeff... die anderen... TOT! JA! SIE SIND TOT! HAHAHAHAHAH! WIR ALLE WERDEN BALD TOT SEIN!",
         "... Bernd?",
         "Die Mission ist gescheitert! Wir haben versagt! ES IST AUS! WIR SOLLTEN AUCH STERBEN!",
-        "Bernd! Komm runter! Wie können hier vielleicht rauskommen! Ich habe aus dem Fenster sehen können! Unser Raumschiff ist nicht weit von hier!",
+        "Bernd! Komm runter! Wir können hier vielleicht rauskommen! Ich habe aus dem Fenster sehen können! Unser Raumschiff ist nicht weit von hier!",
         "...",
         "Nein! Du willst mich manipulieren... du willst mir Hoffnung machen und dann... dann zerschlägst du sie vor meinen Augen! Hoffnung trügt... vertraue ihr nie!",
         "Die Waffe dort... wenn ich aus dem Fenster sehe... schießt du mir mit ihr in den Rücken!",
