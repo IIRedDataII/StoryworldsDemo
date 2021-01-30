@@ -24,14 +24,12 @@ SPRITES
 
 
 MUST HAVE:
-Intro-Memories 1-3 - Anian
-Spaceship Beds -Anian
+Intro-Memories 2 & 3 - Anian
 More AlienPods in Experiment Room -Timon
 Family Message Log Small -Ju
 Family Message Log Big -Ju
 Earth Messag Log Small -Ju
 Earth Messag Log Big -Ju
-!NeverGonnaGiveYouUp (City Skyline) -Ju
 
 
 COULD HAVE:
