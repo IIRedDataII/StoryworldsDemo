@@ -203,7 +203,7 @@ public static class Texts
         "Und habe Erinnerungen gesehen... Bilder von der Erde.",
         "Von meiner Familie. Von der Mission.",
         "Wie alles anfing... wie ich zur falschen Zeit am falschen Ort war und mitgehört habe, was der Erde bevorsteht.",
-        "Wie sie mich erpresst haben, mich der Mission anzuschließen und einen Schweigevertrag zu unterschreiben.",
+        "Wie sie mich erpresst haben, mich der Mission anzuschließen und einen Geheimhaltungsvertrag zu unterschreiben.",
         "Wenistens hat sich von diesen feigen Bürokraten am Ende zumindest einer getraut, ebenfalls mitzukommen! Und er wurde natürlich zum Captain gemacht.",
         "Hätte in der Kapsel statt Jeff nicht er liegen können? Wäre ihm rechtgeschehen!",
         "...",
@@ -501,7 +501,6 @@ public static class Texts
         "Und der Komet.",
         "In der Mitte die Sonne am Tag der Erlösung, wie sie riesig wird und alles verschluckt. Wie auf dem Bild in der Kirche.",
         "Es erinnert die Chia täglich daran, worauf sie hinarbeiten. Ziemlich beeindruckende Religionspropaganda.",
-        "Die Armen.",
     };
     
     #endregion
