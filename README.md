@@ -25,11 +25,11 @@ SPRITES
 
 MUST HAVE:
 Intro-Memories 2-3 - Anian
-More AlienPods in Experiment Room -Timon
-Family Message Log With Text -Ju
-Earth Messag Log With Text -Ju
+Endentscheidungsknöpfe - Timon
+Sprich deutsch du Endentscheidungstext -Ju
+E-Knopf - Timon
 
-
+Intro Bilder verschwommen -Anian
 
 COULD HAVE:
 City Buildings
@@ -38,7 +38,7 @@ Spaceship Deco
 
 
 NICE TO HAVE:
-Aliens
+neue Aliens
 Player/Aliens from Top in City
 Church Deco
 

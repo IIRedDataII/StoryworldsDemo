@@ -52,6 +52,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: AlienPods
+    uniqueID: 827243193
+    locked: 0
   - name: BlockAlienCone
     uniqueID: 1802859651
     locked: 0
