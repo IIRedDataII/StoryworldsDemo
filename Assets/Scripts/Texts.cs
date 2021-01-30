@@ -929,14 +929,12 @@ public static class Texts
 
     public static readonly string[] BerndDeathMessages =
     {
-        // Placeholder
-        "Bernd hat dich Waffe vor dir erreicht und dich erschossen."
+        "Bernd hat die Waffe vor dir erreicht und dich erschossen.\n\n\n>Press [Space] to respawn"
     };
 
     public static readonly string[] AlienDeathMessages =
     {
-        // Placeholder
-        "Du wurdest erschossen. Eure Mission ist gescheitert. Alle sind tot."
+        "Du wurdest erschossen. Eure Mission ist gescheitert. Alle sind tot.\n\n\n>Press [Space] to respawn"
     };
     
     #endregion

@@ -9,6 +9,8 @@ public class Weapon : Interactable
     public Transform bernd;
     public Transform playerPos;
     public MessageBox messageBox;
+    public Sprite playerLooksLeftSprite;
+    private SpriteRenderer _playerSpriteRenderer;
     
     public void Awake()
     {
@@ -20,6 +22,7 @@ public class Weapon : Interactable
     
     protected override void SpecificAction()
     {
+        _playerSpriteRenderer = PlayerCollider.gameObject.GetComponent<SpriteRenderer>();
         GameData.Instance.CanShoot = true;
         UndoAction();
         // Enter TextBox Stuff for weapon, Maybe enable Weapon GUI Stuff
@@ -42,6 +45,7 @@ public class Weapon : Interactable
         Bernd.MoveToWeapon = false;
         PlayerMovement.CanMove = false;
         PlayerShoot.AllowInput = false;
+        _playerSpriteRenderer.sprite = playerLooksLeftSprite;
         messageBox.ShowMessages(Texts.KillBerndDialogueSpeakers, Texts.KillBerndDialogue);
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
         Vector2 projectileDir = bernd.position - playerPos.position;
