@@ -819,7 +819,8 @@ public static class Texts
         "Die Erde ist... seit mehr als 100 Jahren... unbewohnbar...",
         "Alle, die ich kannte... sind bereits tot.",
         "...",
-        "Nein! Alice und Mia haben es geschafft! Sie waren auf einem der Raumschiffe! Und es sind noch mehr Menschen auf Raumschiffen irgendwo im Universum vertreut.",
+        "Nein! Alice und Mia haben es geschafft, sie waren auf einem der Raumschiffe! Es wurde sich um sie gekümmert! Dann konnte ich doch etwas für sie tun, indem ich gegangen bin.",
+        "Und es sind noch mehr Menschen auf Raumschiffen irgendwo im Universum vertreut!",
         "Aber... so weit weg... Nachrichtenaustausch würde hunderte von Jahren dauern.",
         "Kann dieses Schiff noch fliegen?"
     };
@@ -864,7 +865,7 @@ public static class Texts
         */
         
         "Alice! Mia! Sie leben noch heute!",
-        "Sie haben es also tatsächlich geschafft, die Erde zu verlassen!",
+        "Sie haben es also tatsächlich geschafft, die Erde zu verlassen! Es wurde sich um sie gekümmert! Dann konnte ich doch etwas für sie tun, indem ich gegangen bin.",
         "Wie alt mögen sie zum Zeitpunkt dieser Nachricht wohl gewesen sein?",
         "...moment!",
         "Das Nyx-System ist ähnlich weit von der Erde entfernt, wie Aphelios und nur 25 Lichtjahre von hier aus!",
