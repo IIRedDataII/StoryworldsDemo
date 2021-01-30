@@ -204,7 +204,7 @@ public static class Texts
         "Von meiner Familie. Von der Mission.",
         "Wie alles anfing... wie ich zur falschen Zeit am falschen Ort war und mitgehört habe, was der Erde bevorsteht.",
         "Wie sie mich erpresst haben, mich der Mission anzuschließen und einen Geheimhaltungsvertrag zu unterschreiben.",
-        "Zumindest hat sich von diesen feigen Bürokraten am Ende zumindest einer getraut, ebenfalls mitzukommen! Und er wurde natürlich zum Captain gemacht.",
+        "Wenigstens hat sich von diesen feigen Bürokraten am Ende zumindest einer getraut, ebenfalls mitzukommen! Und er wurde natürlich zum Captain gemacht.",
         "Hätte in der Kapsel statt Jeff nicht er liegen können? Wäre ihm rechtgeschehen!",
         "...",
         "Irgendetwas wurde mit mir auf diesem Tisch gemacht! Wahrscheinlich mit uns allen!",
