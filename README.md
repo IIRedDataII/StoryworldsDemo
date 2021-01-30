@@ -25,9 +25,6 @@ SPRITES
 
 MUST HAVE:
 Intro-Memories 2-3 - Anian
-Endentscheidungsknöpfe - Timon
-E-Knopf - Timon
-
 Intro Bilder verschwommen -Anian
 
 COULD HAVE:
