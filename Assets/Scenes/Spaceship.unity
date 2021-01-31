@@ -2570,8 +2570,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Du bist auf dem Planeten geblieben und hast versucht, in dieser feindlichen
-    Umgebung zu \xFCberleben.\nLeider wurdest du einen Monat sp\xE4ter von einer
-    Wache erschossen.\r\n\r\nDu hast die falsche Entscheidung getroffen.\r\n\r\nDie
+    Umgebung zu \xFCberleben.\nOhne Hilfe wurdest du leider einen Monat sp\xE4ter
+    von einer Wache erschossen.\r\n\r\nDu hast die falsche Entscheidung getroffen.\r\n\r\nDie
     Demo endet hier. Danke f\xFCr's Spielen!"
 --- !u!222 &470304320
 CanvasRenderer:
@@ -25619,7 +25619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1813287101
 RectTransform:
   m_ObjectHideFlags: 0
