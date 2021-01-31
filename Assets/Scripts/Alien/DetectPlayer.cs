@@ -46,22 +46,22 @@ public abstract class DetectPlayer : MonoBehaviour
         {
             
             Transform thisTransform = transform;
-            Vector3 position = thisTransform.position;
+            Vector3 correctedPosition = thisTransform.position + new Vector3(0f, 0.38f, 0f);
             Quaternion rotation = thisTransform.rotation;
             
-            Debug.DrawLine(position, (Vector2) position + Utils.AngleToVector(rotation.y == 0 ? -ViewRange : 180 + ViewRange) * ViewDistance, Color.yellow);
-            Debug.DrawLine(position, (Vector2) position + Utils.AngleToVector(rotation.y == 0 ? 0 : 180) * ViewDistance, Color.yellow);
-            Debug.DrawLine(position, (Vector2) position + Utils.AngleToVector(rotation.y == 0 ? ViewRange : 180 - ViewRange) * ViewDistance, Color.yellow);
+            Debug.DrawLine(correctedPosition, (Vector2) correctedPosition + Utils.AngleToVector(rotation.y == 0 ? -ViewRange : 180 + ViewRange) * ViewDistance, Color.yellow);
+            Debug.DrawLine(correctedPosition, (Vector2) correctedPosition + Utils.AngleToVector(rotation.y == 0 ? 0 : 180) * ViewDistance, Color.yellow);
+            Debug.DrawLine(correctedPosition, (Vector2) correctedPosition + Utils.AngleToVector(rotation.y == 0 ? ViewRange : 180 - ViewRange) * ViewDistance, Color.yellow);
         
-            Vector2 alienToPlayerVector = ((Vector2) Player.transform.position - (Vector2) position).normalized;
+            Vector2 alienToPlayerVector = ((Vector2) Player.transform.position - (Vector2) correctedPosition).normalized;
             double alienToPlayerAngle = Utils.VectorToAngle(alienToPlayerVector);
             bool looksRight = rotation.y == 0;
         
             if (looksRight ? (alienToPlayerAngle >= -ViewRange && alienToPlayerAngle <= ViewRange) : (alienToPlayerAngle >= 180 - ViewRange || alienToPlayerAngle <= - 180 + ViewRange))
             {
-                Debug.DrawLine(position, position + (Vector3) alienToPlayerVector * ViewDistance, Color.red);
+                Debug.DrawLine(correctedPosition, correctedPosition + (Vector3) alienToPlayerVector * ViewDistance, Color.red);
             
-                RaycastHit2D hit = Physics2D.Raycast(position, alienToPlayerVector, ViewDistance);
+                RaycastHit2D hit = Physics2D.Raycast(correctedPosition, alienToPlayerVector, ViewDistance);
                 if (hit && hit.collider.CompareTag("Player"))
                 {
                     DetectAction();
