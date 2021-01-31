@@ -66,3 +66,21 @@ Assets/Plugins/Editor/JetBrains*
 
 # Visual Studio Code configuration
 .vscode/
+
+#TexStuff
+*.aux
+*.blg
+*.bbl
+*.dvi
+*.fdb_latexmk
+*.fls
+*.idx
+*.ind
+*.ilg
+*.log
+*.lov
+*.lot
+*.out
+*.tmp
+*.toc
+*.synctex.gz
