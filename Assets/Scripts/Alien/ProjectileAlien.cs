@@ -50,6 +50,7 @@ public class ProjectileAlien : MonoBehaviour
             other.CompareTag("Junction") ||
             other.CompareTag("SceneChange") ||
             other.CompareTag("Interactable") ||
+            other.CompareTag("Box") ||
             other.CompareTag("Object"))
             return;
         

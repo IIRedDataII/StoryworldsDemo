@@ -15,6 +15,7 @@ TagManager:
   - Projectile
   - Warden
   - Rebel
+  - Box
   layers:
   - Default
   - TransparentFX

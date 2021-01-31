@@ -72,7 +72,7 @@ public class GameData
 
     #region Laboratory
 
-    public bool Respawned = false;
+    public bool Respawned = true;
     public bool BerndDead;
     public bool CanTranslate;
     public bool SeenFamilyPicture;
