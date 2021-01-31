@@ -60,4 +60,15 @@ public class Weapon : Interactable
         Destroy(gameObject);
     }
     
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Interactable") && other is CapsuleCollider2D)
+        {
+            Bernd.MoveToWeapon = false;
+            PlayerMovement.CanMove = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            StartCoroutine(other.gameObject.GetComponent<Bernd>().KillPlayer());
+        }
+    }
+    
 }

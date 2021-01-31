@@ -76,7 +76,8 @@ public class PlayerInteract : MonoBehaviour
         {
             interactPrompt.enabled = false;
             _canInteract = false;
-            _interactable.highlight.SetActive(false);
+            if (_interactable)
+                _interactable.highlight.SetActive(false);
             _interactable = null;
         }
     }

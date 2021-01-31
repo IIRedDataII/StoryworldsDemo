@@ -42,7 +42,7 @@ public class Bernd : Interactable
             Vector2 weapon = new Vector2(WeaponPos.transform.position.x, WeaponPos.transform.position.y);
             if (gameObject.transform.position.x < weapon.x && gameObject.transform.position.y > weapon.y)
             {
-                gameObject.transform.Translate(dir * (5 * Time.deltaTime));
+                gameObject.transform.Translate(dir * (4 * Time.deltaTime));
             }
         }
     }
@@ -62,7 +62,7 @@ public class Bernd : Interactable
         MoveToWeapon = true;
     }
 
-    private IEnumerator KillPlayer()
+    public IEnumerator KillPlayer()
     {
         messageBox.ShowMessages(Texts.KilledByBerndDialogueSpeakers, Texts.KilledByBerndDialogue);
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
@@ -78,16 +78,6 @@ public class Bernd : Interactable
         temp.GetComponent<Rigidbody2D>().AddForce(projectileDir.normalized * 15, ForceMode2D.Impulse);
     }
     
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        
-        if(other.name.Equals("Weapon"))
-        {
-            MoveToWeapon = false;
-            PlayerMovement.CanMove = false;
-            WeaponPos.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            StartCoroutine(KillPlayer());
-        }
-    }
+    
     
 }
