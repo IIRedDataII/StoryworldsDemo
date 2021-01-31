@@ -24,8 +24,7 @@ SPRITES
 
 
 MUST HAVE:
-Intro-Memories 2-3 - Anian
-Intro Bilder verschwommen -Anian
+
 
 COULD HAVE:
 City Buildings
