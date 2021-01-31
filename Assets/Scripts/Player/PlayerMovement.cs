@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
     
     #region Constants
     
-    private const float Speed = 10;
+    private const float Speed = 7;
     
     #endregion
     
@@ -46,10 +46,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (CanMove)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKey(KeyCode.A))
                 _spriteRenderer.sprite = lookLeft;
 
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKey(KeyCode.D))
                 _spriteRenderer.sprite = lookRight;
             _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
