@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     
     #region Variables
 
+    public static bool LookingRight;
+
     [SerializeField] private Sprite lookRight;
     [SerializeField] private Sprite lookLeft;
     
@@ -46,11 +48,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (CanMove)
         {
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                LookingRight = false;
                 _spriteRenderer.sprite = lookLeft;
+            }
 
-            if (Input.GetKey(KeyCode.D))
+
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                LookingRight = true;
                 _spriteRenderer.sprite = lookRight;
+            }
+
             _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
 

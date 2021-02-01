@@ -9,7 +9,7 @@ public class Weapon : Interactable
     public Transform bernd;
     public Transform playerPos;
     public MessageBox messageBox;
-    public Sprite playerLooksLeftSprite;
+    public Sprite playerLooksLeftSpriteShoot;
     private SpriteRenderer _playerSpriteRenderer;
     
     public void Awake()
@@ -45,9 +45,9 @@ public class Weapon : Interactable
         Bernd.MoveToWeapon = false;
         PlayerMovement.CanMove = false;
         PlayerShoot.AllowInput = false;
-        _playerSpriteRenderer.sprite = playerLooksLeftSprite;
+        _playerSpriteRenderer.sprite = playerLooksLeftSpriteShoot;
         messageBox.ShowMessages(Texts.KillBerndDialogueSpeakers, Texts.KillBerndDialogue);
-        yield return new WaitWhile(()=>messageBox.GetMessageActive());
+        yield return new WaitWhile(() => messageBox.GetMessageActive());
         Vector2 projectileDir = bernd.position - playerPos.position;
         float angle = Mathf.Acos(Vector2.Dot(projectileDir, Vector2.up) / projectileDir.magnitude) * Mathf.Rad2Deg;
         if (projectileDir.x > 0)

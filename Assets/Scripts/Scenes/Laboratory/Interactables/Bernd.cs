@@ -9,6 +9,7 @@ public class Bernd : Interactable
     public Sprite alive;
     public Sprite dead;
     public Sprite weapon;
+    public Sprite playerLooksLeftSprite;
     public GameObject WeaponPos;
     public Transform PlayerPos;
     public static bool MoveToWeapon;
@@ -55,11 +56,13 @@ public class Bernd : Interactable
         gameObject.GetComponent<SpriteRenderer>().sprite = dead;
         PlayerMovement.CanMove = true;
         PlayerShoot.AllowInput = true;
+        PlayerPos.gameObject.GetComponent<SpriteRenderer>().sprite = playerLooksLeftSprite;
         messageBox.ShowMonologue("Jordan", Texts.SurvivedBerndMonologue);
     }
 
     private IEnumerator StartBernd()
-    {   yield return new WaitWhile(()=>messageBox.GetMessageActive());
+    {  
+        yield return new WaitWhile(()=>messageBox.GetMessageActive());
         MoveToWeapon = true;
     }
 
@@ -67,7 +70,7 @@ public class Bernd : Interactable
     {
         GetComponent<SpriteRenderer>().sprite = weapon;
         messageBox.ShowMessages(Texts.KilledByBerndDialogueSpeakers, Texts.KilledByBerndDialogue);
-        yield return new WaitWhile(()=>messageBox.GetMessageActive());
+        yield return new WaitWhile(() => messageBox.GetMessageActive());
         Vector2 projectileDir = PlayerPos.position - transform.position;
         float angle = Mathf.Acos(Vector2.Dot(projectileDir, Vector2.up) / projectileDir.magnitude) * Mathf.Rad2Deg;
         if (projectileDir.x > 0)

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,15 +13,27 @@ public class PlayerKirche : MonoBehaviour
     #endregion
     
     #region Variables
-    
+
     public MessageBox messageBox;
     public Font aurebeshFont;
     public Font translatedFont;
     public GameObject rebell;
     public GameObject projectile;
     public static bool LetztesBildWasEnabled = false;
+
+    [SerializeField] private Sprite looksLeft;
+    [SerializeField] private Sprite looksRight;
+    [SerializeField] private Sprite looksLeftShoot;
+    [SerializeField] private Sprite looksRightShoot;
+
+    private SpriteRenderer _spriteRenderer;
     
     #endregion
+
+    private void Start()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    } 
     
     #region Coroutines
     
@@ -36,7 +49,7 @@ public class PlayerKirche : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         messageBox.ShowMessages(Texts.RebelDialogueTranslatedSpeakers, Texts.RebelDialogueTranslated);
-        yield return new WaitWhile(()=>messageBox.GetMessageActive());
+        yield return new WaitWhile(() => messageBox.GetMessageActive());
         Utils.SetPlayerControls(false);
         yield return new WaitForSeconds(1);
         while (rebell.transform.position.y > 7.9f)
@@ -62,15 +75,25 @@ public class PlayerKirche : MonoBehaviour
         messageBox.GetComponentInChildren<Text>().font = aurebeshFont;
         messageBox.ShowMonologue("Chia", Texts.RebelAurebeshMonologue);
         yield return new WaitWhile(() => messageBox.GetMessageActive());
+        
         messageBox.GetComponentInChildren<Text>().font = translatedFont;
         Utils.SetPlayerControls(false);
 
+        _spriteRenderer.sprite = PlayerMovement.LookingRight ? looksRightShoot : looksLeftShoot;
+        StartCoroutine(ChangeSprite());
+        
         Vector3 playerPosition = transform.position;
         Vector2 playerToAlien = (rebell.transform.position - playerPosition).normalized;
         GameObject shotProjectile = Instantiate(projectile, playerPosition, Quaternion.Euler(0f, 0f, (float) Utils.VectorToAngle(playerToAlien) - 90));
         shotProjectile.GetComponent<Rigidbody2D>().AddForce(playerToAlien * 10, ForceMode2D.Impulse);
         yield return new WaitForSeconds(1);
         messageBox.ShowMonologue("Jordan", Texts.ShotRebelMonologue);
+    }
+    
+    private IEnumerator ChangeSprite()
+    {
+        yield return new WaitForSeconds(1f);
+        _spriteRenderer.sprite = PlayerMovement.LookingRight ? looksRight : looksLeft;
     }
     
     #endregion

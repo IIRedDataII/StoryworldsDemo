@@ -1,11 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerShoot : MonoBehaviour
 {
+    
     #region Attributes
 
     public static bool AllowInput;
+
+    [SerializeField] private Sprite looksLeft;
+    [SerializeField] private Sprite looksRight;
+    [SerializeField] private Sprite looksLeftShoot;
+    [SerializeField] private Sprite looksRightShoot;
+    
     [SerializeField] private GameObject projectile;
     [SerializeField] private float projectileVelocity;
     [SerializeField] private int magSize;
@@ -13,12 +21,17 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private Image weaponStatsImage;
     [SerializeField] private Text weaponStatsText;
 
+    private SpriteRenderer _spriteRenderer;
+
+    private Coroutine _shooting;
+
     #endregion
 
     void Start()
     {
         weaponStatsText.enabled = false;
         weaponStatsImage.enabled = false;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         //GameData.Instance.CanShoot = false;
         AllowInput = true;
     }
@@ -56,6 +69,10 @@ public class PlayerShoot : MonoBehaviour
 
     private void FireProjectile()
     {
+        _spriteRenderer.sprite = PlayerMovement.LookingRight ? looksRightShoot : looksLeftShoot;
+        if (!(_shooting is null))
+            StopCoroutine(_shooting);
+        _shooting = StartCoroutine(ChangeSprite());
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Acos(Vector2.Dot(mousePos, Vector2.up) / mousePos.magnitude) * Mathf.Rad2Deg;
         if (mousePos.x > 0)
@@ -96,4 +113,11 @@ public class PlayerShoot : MonoBehaviour
         weaponStatsText.text = GameData.Instance.RoundsInMagazine + "/" +
                                GameData.Instance.Ammunition;
     }
+
+    private IEnumerator ChangeSprite()
+    {
+        yield return new WaitForSeconds(1f);
+        _spriteRenderer.sprite = PlayerMovement.LookingRight ? looksRight : looksLeft;
+    }
+    
 }
