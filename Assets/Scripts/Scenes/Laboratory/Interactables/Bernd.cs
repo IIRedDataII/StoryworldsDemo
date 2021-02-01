@@ -8,6 +8,7 @@ public class Bernd : Interactable
     public MessageBox messageBox;
     public Sprite alive;
     public Sprite dead;
+    public Sprite weapon;
     public GameObject WeaponPos;
     public Transform PlayerPos;
     public static bool MoveToWeapon;
@@ -64,6 +65,7 @@ public class Bernd : Interactable
 
     public IEnumerator KillPlayer()
     {
+        GetComponent<SpriteRenderer>().sprite = weapon;
         messageBox.ShowMessages(Texts.KilledByBerndDialogueSpeakers, Texts.KilledByBerndDialogue);
         yield return new WaitWhile(()=>messageBox.GetMessageActive());
         Vector2 projectileDir = PlayerPos.position - transform.position;
@@ -72,7 +74,6 @@ public class Bernd : Interactable
         {
             angle *= - 1;
         }
-
         GameObject temp = Instantiate(projectile, transform);
         temp.transform.Rotate(0f,0f,angle);
         temp.GetComponent<Rigidbody2D>().AddForce(projectileDir.normalized * 15, ForceMode2D.Impulse);
