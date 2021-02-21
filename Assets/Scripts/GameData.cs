@@ -114,8 +114,8 @@ public class GameData
 
         #region Weapon
         
-        Ammunition = 30;
-        RoundsInMagazine = 7;
+        Ammunition = 12;
+        RoundsInMagazine = 6;
         CanShoot = false;
         
         #endregion
